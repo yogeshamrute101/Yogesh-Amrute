@@ -1,0 +1,6 @@
+{
+  "name": "AI Video Creator",
+  "description": "AI-powered video creation and real-time editing studio with multi-track timeline, AI script co-pilot, smart captions, and instant social media export tools.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
