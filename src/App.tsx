@@ -555,7 +555,7 @@ export default function App() {
   };
 
   const handleCycleSpeed = () => {
-    const speeds = [1.0, 1.25, 1.5, 0.5];
+    const speeds = [0.5, 1.0, 1.25, 1.5, 1.75, 2.0];
     const clip = timeline.clips.find((c) => c.id === selectedClipId) || timeline.clips[0];
     const currentSpeed = clip?.speed || 1.0;
     const currentIdx = speeds.indexOf(currentSpeed);
