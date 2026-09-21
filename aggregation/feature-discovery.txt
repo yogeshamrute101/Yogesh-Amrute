@@ -1,0 +1,2073 @@
+src/core/relationships/index.ts:1:export * from "./RelationshipEngine";
+src/core/relationships/RelationshipEngine.ts:1:export type RelationshipType =
+src/core/relationships/RelationshipEngine.ts:11:export interface Relationship {
+src/core/relationships/RelationshipEngine.ts:20:export class RelationshipEngine {
+src/core/causal/index.ts:1:export { CausalReasoning } from "./CausalReasoning";
+src/core/causal/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./CausalReasoning";
+src/core/causal/CausalReasoning.ts:9:export type VerificationState =
+src/core/causal/CausalReasoning.ts:20:export interface EvidenceRecord {
+src/core/causal/CausalReasoning.ts:29:export interface VerificationResult {
+src/core/causal/CausalReasoning.ts:37:export class CausalReasoning {
+src/core/social/index.ts:1:export * from "./SocialInteractionEngine";
+src/core/social/SocialInteractionEngine.ts:1:export type SocialMode =
+src/core/social/SocialInteractionEngine.ts:9:export interface SocialContext {
+src/core/social/SocialInteractionEngine.ts:18:export interface SocialResponse {
+src/core/social/SocialInteractionEngine.ts:26:export class SocialInteractionEngine {
+src/core/physicalai/central/CentralComputer.ts:1:export interface CentralComputerState {
+src/core/physicalai/central/CentralComputer.ts:6:export const centralComputer: CentralComputerState = {
+src/core/physicalai/index.ts:1:export * from "./PhysicalAIOrchestrator";
+src/core/physicalai/PhysicalAIOrchestrator.ts:1:export type PhysicalNodeType =
+src/core/physicalai/PhysicalAIOrchestrator.ts:8:export type PhysicalActionRisk =
+src/core/physicalai/PhysicalAIOrchestrator.ts:14:export type PhysicalCommandStatus =
+src/core/physicalai/PhysicalAIOrchestrator.ts:24:export interface PhysicalNode {
+src/core/physicalai/PhysicalAIOrchestrator.ts:33:export interface RobotCommand {
+src/core/physicalai/PhysicalAIOrchestrator.ts:43:export interface SensorState {
+src/core/physicalai/PhysicalAIOrchestrator.ts:51:export interface PhysicalExecutionResult {
+src/core/physicalai/PhysicalAIOrchestrator.ts:59:export class PhysicalAIOrchestrator {
+src/core/physicalai/PhysicalAIOrchestrator.ts:211:export const physicalAI = new PhysicalAIOrchestrator();
+src/core/physicalai/robot/HumanoidRobot.ts:1:export interface HumanoidRobotProfile {
+src/core/physicalai/robot/HumanoidRobot.ts:9:export const humanoidRobotProfile: HumanoidRobotProfile = {
+src/core/physicalai/supercomputer/Supercomputer.ts:1:export interface SupercomputerTask {
+src/core/physicalai/supercomputer/Supercomputer.ts:12:export interface SupercomputerResult {
+src/core/physicalai/supercomputer/Supercomputer.ts:18:export class SupercomputerInterface {
+src/core/physicalai/supercomputer/Supercomputer.ts:27:export const supercomputer = new SupercomputerInterface();
+src/core/physicalai/safety/PhysicalSafety.ts:1:export interface PhysicalSafetyPolicy {
+src/core/physicalai/safety/PhysicalSafety.ts:8:export const physicalSafetyPolicy: PhysicalSafetyPolicy = {
+src/core/physicalai/simulation/SimulationLayer.ts:1:export interface SimulationRequest {
+src/core/physicalai/simulation/SimulationLayer.ts:8:export interface SimulationResult {
+src/core/physicalai/simulation/SimulationLayer.ts:15:export class PhysicalSimulationLayer {
+src/core/physicalai/simulation/SimulationLayer.ts:30:export const simulationLayer = new PhysicalSimulationLayer();
+src/core/activity/index.ts:1:export * from "./ActivityUnderstanding";
+src/core/activity/ActivityPipeline.ts:7:export class ActivityPipeline {
+src/core/activity/ActivityUnderstanding.ts:7:export interface ActivityEvidence {
+src/core/activity/ActivityUnderstanding.ts:12:export interface ActivityConclusion {
+src/core/activity/ActivityUnderstanding.ts:21:export class ActivityUnderstanding {
+src/core/chess/ChessLearning.ts:3:export interface ChessGameResult {
+src/core/chess/ChessLearning.ts:9:export class ChessLearningEngine {
+src/core/chess/ChessGameManager.ts:4:export class ChessGameManager {
+src/core/chess/index.ts:1:export * from "./ChessTypes";
+src/core/chess/index.ts:2:export * from "./ChessEngine";
+src/core/chess/index.ts:3:export * from "./ChessGameManager";
+src/core/chess/index.ts:4:export * from "./ChessLearning";
+src/core/chess/ChessTypes.ts:1:export type Color = "WHITE" | "BLACK";
+src/core/chess/ChessTypes.ts:3:export type PieceType =
+src/core/chess/ChessTypes.ts:11:export interface ChessPiece {
+src/core/chess/ChessTypes.ts:16:export interface ChessMove {
+src/core/chess/ChessTypes.ts:23:export interface ChessPosition {
+src/core/chess/ChessEngine.ts:7:export interface MoveEvaluation {
+src/core/chess/ChessEngine.ts:15:export class ChessEngine {
+src/core/projectawareness/index.ts:1:export * from "./ProjectAwareness";
+src/core/projectawareness/ProjectAwareness.ts:1:export type ProjectState = {
+src/core/projectawareness/ProjectAwareness.ts:16:export class ProjectAwareness {
+src/core/access/index.ts:1:export * from "./RestrictedCapabilityAccess";
+src/core/access/RestrictedCapabilityAccess.ts:1:export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+src/core/access/RestrictedCapabilityAccess.ts:3:export interface CapabilityAccessRequest {
+src/core/access/RestrictedCapabilityAccess.ts:10:export interface AccessDecision {
+src/core/access/RestrictedCapabilityAccess.ts:17:export class RestrictedCapabilityAccess {
+src/core/memory/index.ts:1:export * from "./MemoryKnowledgeLayer";
+src/core/memory/MemoryKnowledgeLayer.ts:1:export type MemoryRecord = {
+src/core/memory/MemoryKnowledgeLayer.ts:10:export class MemoryKnowledgeLayer {
+src/core/resourceenergy/index.ts:1:export * from "./ExternalResourceRegistry";
+src/core/resourceenergy/index.ts:2:export * from "./ResourceEnergyAllocator";
+src/core/resourceenergy/index.ts:3:export * from "./EnergySafetyGovernor";
+src/core/resourceenergy/index.ts:4:export * from "./ResourceEnergyCenter";
+src/core/resourceenergy/EnergySafetyGovernor.ts:1:export interface EnergyPolicy {
+src/core/resourceenergy/EnergySafetyGovernor.ts:7:export interface EnergyDecision {
+src/core/resourceenergy/EnergySafetyGovernor.ts:13:export class EnergySafetyGovernor {
+src/core/resourceenergy/ExternalResourceRegistry.ts:1:export type ResourceType =
+src/core/resourceenergy/ExternalResourceRegistry.ts:15:export interface ExternalResource {
+src/core/resourceenergy/ExternalResourceRegistry.ts:27:export class ExternalResourceRegistry {
+src/core/resourceenergy/ResourceEnergyAllocator.ts:6:export interface ResourceRequest {
+src/core/resourceenergy/ResourceEnergyAllocator.ts:15:export interface Allocation {
+src/core/resourceenergy/ResourceEnergyAllocator.ts:24:export class ResourceEnergyAllocator {
+src/core/resourceenergy/ResourceEnergyCenter.ts:11:export class ResourceEnergyCenter {
+src/core/metareasoning/MetaReasoning.ts:9:export type VerificationState =
+src/core/metareasoning/MetaReasoning.ts:20:export interface EvidenceRecord {
+src/core/metareasoning/MetaReasoning.ts:29:export interface VerificationResult {
+src/core/metareasoning/MetaReasoning.ts:37:export class MetaReasoning {
+src/core/metareasoning/index.ts:1:export { MetaReasoning } from "./MetaReasoning";
+src/core/metareasoning/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./MetaReasoning";
+src/core/communication/index.ts:1:export * from "./CommunicationLayer";
+src/core/communication/CommunicationLayer.ts:1:export type CommunicationMessage = {
+src/core/communication/CommunicationLayer.ts:7:export class CommunicationLayer {
+src/core/optionselection/DecisionMemory.ts:1:export interface DecisionRecord {
+src/core/optionselection/DecisionMemory.ts:12:export class DecisionMemory {
+src/core/optionselection/OptionSimulation.ts:3:export interface SimulationResult {
+src/core/optionselection/OptionSimulation.ts:10:export class OptionSimulation {
+src/core/optionselection/index.ts:1:export * from "./BestOptionEngine";
+src/core/optionselection/index.ts:2:export * from "./DecisionMemory";
+src/core/optionselection/index.ts:3:export * from "./OptionSimulation";
+src/core/optionselection/BestOptionEngine.ts:1:export interface DecisionOption {
+src/core/optionselection/BestOptionEngine.ts:20:export interface DecisionWeights {
+src/core/optionselection/BestOptionEngine.ts:35:export interface OptionEvaluation {
+src/core/optionselection/BestOptionEngine.ts:42:export interface BestOptionResult {
+src/core/optionselection/BestOptionEngine.ts:64:export class BestOptionEngine {
+src/core/identitymap/index.ts:1:export * from "./IdentityMap";
+src/core/identitymap/IdentityMap.ts:1:export type IdentityLink = {
+src/core/identitymap/IdentityMap.ts:8:export class IdentityMap {
+src/core/versioning/index.ts:1:export * from "./ChangeManagementLayer";
+src/core/versioning/ChangeManagementLayer.ts:1:export type ChangeRecord = {
+src/core/versioning/ChangeManagementLayer.ts:9:export class ChangeManagementLayer {
+src/core/files/index.ts:1:export * from "./DocumentFileManager";
+src/core/files/DocumentFileManager.ts:4:export type GeneratedFileType =
+src/core/files/DocumentFileManager.ts:12:export interface GeneratedFile {
+src/core/files/DocumentFileManager.ts:20:export class DocumentFileManager {
+src/core/oversight/index.ts:1:export * from "./HumanOversightLayer";
+src/core/oversight/HumanOversightLayer.ts:1:export type ApprovalRequest = {
+src/core/oversight/HumanOversightLayer.ts:8:export class HumanOversightLayer {
+src/core/gap/GapUtilizationEngine.ts:1:export type GapKind =
+src/core/gap/GapUtilizationEngine.ts:11:export interface Gap {
+src/core/gap/GapUtilizationEngine.ts:21:export interface GapScanResult {
+src/core/gap/GapUtilizationEngine.ts:27:export class GapUtilizationEngine {
+src/core/gap/index.ts:1:export * from "./GapUtilizationEngine";
+src/core/explainability/index.ts:1:export * from "./ExplainabilityLayer";
+src/core/explainability/ExplainabilityLayer.ts:1:export type Explanation = {
+src/core/explainability/ExplainabilityLayer.ts:9:export class ExplainabilityLayer {
+src/core/mission/MissionControl.ts:1:export type MissionStatus =
+src/core/mission/MissionControl.ts:13:export interface MissionObjective {
+src/core/mission/MissionControl.ts:21:export interface MissionMilestone {
+src/core/mission/MissionControl.ts:29:export interface MissionRisk {
+src/core/mission/MissionControl.ts:37:export interface MissionResource {
+src/core/mission/MissionControl.ts:45:export interface Mission {
+src/core/mission/MissionControl.ts:58:export class MissionControl {
+src/core/mission/index.ts:1:export * from "./MissionControl";
+src/core/technical/index.ts:1:export * from "./UniversalTechnicalOperations";
+src/core/technical/UniversalTechnicalOperations.ts:1:export type TechnicalDomain =
+src/core/technical/UniversalTechnicalOperations.ts:28:export type TechnicalOperation =
+src/core/technical/UniversalTechnicalOperations.ts:55:export type TechnicalRisk =
+src/core/technical/UniversalTechnicalOperations.ts:61:export interface TechnicalTask {
+src/core/technical/UniversalTechnicalOperations.ts:80:export interface TechnicalResult {
+src/core/technical/UniversalTechnicalOperations.ts:90:export class UniversalTechnicalOperations {
+src/core/technical/registerTechnicalCapabilities.ts:3:export const TECHNICAL_DOMAINS: TechnicalDomain[] = [
+src/core/evolution/index.ts:1:export * from "./EvolutionLayer";
+src/core/evolution/CapabilityEvolutionEngine.ts:1:export type EvolutionAction =
+src/core/evolution/CapabilityEvolutionEngine.ts:9:export interface EvolutionProposal {
+src/core/evolution/CapabilityEvolutionEngine.ts:20:export class CapabilityEvolutionEngine {
+src/core/evolution/EvolutionLayer.ts:1:export type Improvement = {
+src/core/evolution/EvolutionLayer.ts:8:export class EvolutionLayer {
+src/core/researchcenter/index.ts:1:export * from "./RunningResearchCenter";
+src/core/researchcenter/RunningResearchCenter.ts:11:export type ResearchState =
+src/core/researchcenter/RunningResearchCenter.ts:23:export interface ResearchProject {
+src/core/researchcenter/RunningResearchCenter.ts:36:export class RunningResearchCenter {
+src/core/reality/index.ts:1:export * from "./RealityBoundaryLayer";
+src/core/reality/RealityBoundaryLayer.ts:1:export type RealityState =
+src/core/reality/RealityBoundaryLayer.ts:8:export type RealityAssessment = {
+src/core/reality/RealityBoundaryLayer.ts:14:export class RealityBoundaryLayer {
+src/core/geometry/index.ts:1:export * from "./GeometryEngine";
+src/core/geometry/GeometryEngine.ts:1:export type GeometryConcept =
+src/core/geometry/GeometryEngine.ts:6:export interface GeometryObject {
+src/core/geometry/GeometryEngine.ts:11:export class GeometryEngine {
+src/core/efficiency/index.ts:1:export * from "./MinimumEffortEngine";
+src/core/efficiency/index.ts:2:export * from "./SmartExecutionPlanner";
+src/core/efficiency/MinimumEffortEngine.ts:1:export interface EffortEstimate {
+src/core/efficiency/MinimumEffortEngine.ts:8:export interface EfficiencyCandidate {
+src/core/efficiency/MinimumEffortEngine.ts:17:export class MinimumEffortEngine {
+src/core/efficiency/SmartExecutionPlanner.ts:1:export interface ExecutionTask {
+src/core/efficiency/SmartExecutionPlanner.ts:9:export class SmartExecutionPlanner {
+src/core/future/FuturePossibilityEngine.ts:1:export type PossibilityStatus =
+src/core/future/FuturePossibilityEngine.ts:10:export interface FuturePossibility {
+src/core/future/FuturePossibilityEngine.ts:23:export class FuturePossibilityEngine {
+src/core/future/index.ts:1:export * from "./FuturePossibilityEngine";
+src/core/dependencies/index.ts:1:export * from "./DependencyLayer";
+src/core/dependencies/DependencyLayer.ts:1:export type Dependency = {
+src/core/dependencies/DependencyLayer.ts:8:export class DependencyLayer {
+src/core/identity/index.ts:1:export * from "./IdentityContextLayer";
+src/core/identity/IdentityContextLayer.ts:1:export type SystemContext = {
+src/core/identity/IdentityContextLayer.ts:8:export class IdentityContextLayer {
+src/core/law/index.ts:1:export * from "./UniversalLawEngine";
+src/core/law/UniversalLawEngine.ts:1:export type LawLevel =
+src/core/law/UniversalLawEngine.ts:11:export interface Rule {
+src/core/law/UniversalLawEngine.ts:20:export interface LawDecision {
+src/core/law/UniversalLawEngine.ts:28:export class UniversalLawEngine {
+src/core/deployment/index.ts:1:export * from "./DeploymentInfrastructureLayer";
+src/core/deployment/DeploymentInfrastructureLayer.ts:1:export type DeploymentEnvironment =
+src/core/deployment/DeploymentInfrastructureLayer.ts:8:export class DeploymentInfrastructureLayer {
+src/core/medical/MedicalIntelligenceLayer.ts:1:export type MedicalDomain =
+src/core/medical/MedicalIntelligenceLayer.ts:21:export type MedicalRisk =
+src/core/medical/MedicalIntelligenceLayer.ts:27:export interface MedicalEvidence {
+src/core/medical/MedicalIntelligenceLayer.ts:41:export interface ClinicalObservation {
+src/core/medical/MedicalIntelligenceLayer.ts:48:export interface MedicalAssessment {
+src/core/medical/MedicalIntelligenceLayer.ts:58:export interface MedicalAction {
+src/core/medical/MedicalIntelligenceLayer.ts:66:export class MedicalIntelligenceLayer {
+src/core/medical/index.ts:1:export * from "./MedicalIntelligenceLayer";
+src/core/medical/registerMedicalCapabilities.ts:3:export const MEDICAL_CAPABILITIES: MedicalDomain[] = [
+src/core/movement/index.ts:1:export * from "./UniversalMovementEngine";
+src/core/movement/index.ts:2:export * from "./MovementTracker";
+src/core/movement/index.ts:3:export * from "./MovementPrediction";
+src/core/movement/MovementPrediction.ts:3:export interface MovementPrediction {
+src/core/movement/MovementPrediction.ts:9:export class MovementPredictionEngine {
+src/core/movement/UniversalMovementEngine.ts:1:export type MovementDomain =
+src/core/movement/UniversalMovementEngine.ts:17:export type MovementType =
+src/core/movement/UniversalMovementEngine.ts:32:export interface Movement {
+src/core/movement/UniversalMovementEngine.ts:48:export interface MovementAssessment {
+src/core/movement/UniversalMovementEngine.ts:57:export class UniversalMovementEngine {
+src/core/movement/MovementTracker.ts:3:export class MovementTracker {
+src/core/planning/index.ts:1:export * from "./AdvancedPlanner";
+src/core/planning/AdvancedPlanner.ts:1:export interface PlanningGoal {
+src/core/planning/AdvancedPlanner.ts:8:export interface PlanningStep {
+src/core/planning/AdvancedPlanner.ts:17:export interface AdvancedPlan {
+src/core/planning/AdvancedPlanner.ts:29:export interface PlanningContext {
+src/core/planning/AdvancedPlanner.ts:36:export class AdvancedPlanner {
+src/core/resistance/index.ts:1:export * from "./SafetyResistanceEngine";
+src/core/resistance/SafetyResistanceEngine.ts:1:export type ThreatLevel =
+src/core/resistance/SafetyResistanceEngine.ts:7:export type ResistanceAction =
+src/core/resistance/SafetyResistanceEngine.ts:16:export interface SafetyEvent {
+src/core/resistance/SafetyResistanceEngine.ts:24:export interface ResistanceDecision {
+src/core/resistance/SafetyResistanceEngine.ts:32:export class SafetyResistanceEngine {
+src/core/commandsafety/index.ts:1:export * from "./CommandSafety";
+src/core/commandsafety/CommandSafety.ts:1:export type CommandRisk =
+src/core/commandsafety/CommandSafety.ts:8:export type CommandAssessment = {
+src/core/commandsafety/CommandSafety.ts:15:export class CommandSafety {
+src/core/selfrepair/index.ts:1:export * from "./SelfErrorRepairEngine";
+src/core/selfrepair/SelfErrorRepairEngine.ts:1:export type ErrorSource =
+src/core/selfrepair/SelfErrorRepairEngine.ts:12:export type RepairStatus =
+src/core/selfrepair/SelfErrorRepairEngine.ts:22:export interface ErrorEvidence {
+src/core/selfrepair/SelfErrorRepairEngine.ts:31:export interface RepairPlan {
+src/core/selfrepair/SelfErrorRepairEngine.ts:39:export interface RepairResult {
+src/core/selfrepair/SelfErrorRepairEngine.ts:50:export class SelfErrorRepairEngine {
+src/core/qa/index.ts:1:export * from "./QualityAssuranceLayer";
+src/core/qa/QualityAssuranceLayer.ts:1:export type TestResult = {
+src/core/qa/QualityAssuranceLayer.ts:7:export class QualityAssuranceLayer {
+src/core/editing/index.ts:1:export * from "./UniversalEditingEngine";
+src/core/editing/UniversalEditingEngine.ts:1:export type EditDomain =
+src/core/editing/UniversalEditingEngine.ts:7:  | "AUDIO"
+src/core/editing/UniversalEditingEngine.ts:8:  | "CAPTION"
+src/core/editing/UniversalEditingEngine.ts:13:export type EditOperation =
+src/core/editing/UniversalEditingEngine.ts:26:export interface EditRequest {
+src/core/editing/UniversalEditingEngine.ts:35:export interface EditResult {
+src/core/editing/UniversalEditingEngine.ts:47:export class UniversalEditingEngine {
+src/core/documents/index.ts:1:export * from "./DocumentUnderstandingEngine";
+src/core/documents/DocumentUnderstandingEngine.ts:1:export type DocumentType =
+src/core/documents/DocumentUnderstandingEngine.ts:11:export interface DocumentStructure {
+src/core/documents/DocumentUnderstandingEngine.ts:19:export class DocumentUnderstandingEngine {
+src/core/rca/index.ts:1:export * from "./RootCauseAnalysis";
+src/core/rca/RootCauseAnalysis.ts:1:export type CauseCandidate = {
+src/core/rca/RootCauseAnalysis.ts:7:export class RootCauseAnalysis {
+src/core/experimentation/index.ts:1:export * from "./ExperimentationLayer";
+src/core/experimentation/ExperimentationLayer.ts:1:export type Experiment = {
+src/core/experimentation/ExperimentationLayer.ts:7:export class ExperimentationLayer {
+src/core/systembuilder/index.ts:1:export * from "./UniversalSystemBuilder";
+src/core/systembuilder/SystemTemplates.ts:3:export interface SystemTemplate {
+src/core/systembuilder/SystemTemplates.ts:8:export const SYSTEM_TEMPLATES: SystemTemplate[] = [
+src/core/systembuilder/UniversalSystemBuilder.ts:1:export type SystemType =
+src/core/systembuilder/UniversalSystemBuilder.ts:20:export type BuildStage =
+src/core/systembuilder/UniversalSystemBuilder.ts:35:export interface SystemRequirement {
+src/core/systembuilder/UniversalSystemBuilder.ts:42:export interface SystemModule {
+src/core/systembuilder/UniversalSystemBuilder.ts:55:export interface SystemSpecification {
+src/core/systembuilder/UniversalSystemBuilder.ts:68:export interface BuildResult {
+src/core/systembuilder/UniversalSystemBuilder.ts:79:export class UniversalSystemBuilder {
+src/core/audit/index.ts:1:export * from "./AuditLayer";
+src/core/audit/AuditLayer.ts:1:export type AuditEvent = {
+src/core/audit/AuditLayer.ts:9:export class AuditLayer {
+src/core/connectivity/ConnectivityManager.ts:1:export type ConnectionType =
+src/core/connectivity/ConnectivityManager.ts:12:export type ConnectionStatus =
+src/core/connectivity/ConnectivityManager.ts:21:export interface SystemEndpoint {
+src/core/connectivity/ConnectivityManager.ts:33:export interface ConnectionRequest {
+src/core/connectivity/ConnectivityManager.ts:40:export interface ConnectionResult {
+src/core/connectivity/ConnectivityManager.ts:48:export class ConnectivityManager {
+src/core/connectivity/ConnectivityManager.ts:191:export const connectivityManager =
+src/core/connectivity/index.ts:1:export * from "./ConnectivityManager";
+src/core/interaction/index.ts:1:export * from "./HumanComputerCommand";
+src/core/interaction/HumanComputerCommand.ts:1:export type CommandSource = "HUMAN" | "SYSTEM" | "AUTOMATION";
+src/core/interaction/HumanComputerCommand.ts:3:export type CommandRisk = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+src/core/interaction/HumanComputerCommand.ts:5:export type CommandStatus =
+src/core/interaction/HumanComputerCommand.ts:15:export interface HumanCommand {
+src/core/interaction/HumanComputerCommand.ts:23:export interface CommandUnderstanding {
+src/core/interaction/HumanComputerCommand.ts:33:export interface ComputerCapability {
+src/core/interaction/HumanComputerCommand.ts:41:export interface CommandResult {
+src/core/interaction/HumanComputerCommand.ts:49:export class HumanComputerCommandEngine {
+src/core/interaction/HumanComputerCommand.ts:186:export const humanComputerCommand =
+src/core/localization/index.ts:1:export * from "./LocalizationLayer";
+src/core/localization/LocalizationLayer.ts:1:export type Locale = "en" | "mr" | "hi" | string;
+src/core/localization/LocalizationLayer.ts:3:export class LocalizationLayer {
+src/core/humanunderstanding/index.ts:1:export * from "./HumanUnderstandingEngine";
+src/core/humanunderstanding/HumanUnderstandingEngine.ts:1:export type HumanSignal =
+src/core/humanunderstanding/HumanUnderstandingEngine.ts:12:export interface HumanContext {
+src/core/humanunderstanding/HumanUnderstandingEngine.ts:21:export class HumanUnderstandingEngine {
+src/core/policy/index.ts:1:export * from "./PolicyEthicsLayer";
+src/core/policy/PolicyEthicsLayer.ts:1:export type PolicyDecision = {
+src/core/policy/PolicyEthicsLayer.ts:7:export class PolicyEthicsLayer {
+src/core/uncertainty/index.ts:1:export { UncertaintyEngine } from "./UncertaintyEngine";
+src/core/uncertainty/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./UncertaintyEngine";
+src/core/uncertainty/UncertaintyEngine.ts:9:export type VerificationState =
+src/core/uncertainty/UncertaintyEngine.ts:20:export interface EvidenceRecord {
+src/core/uncertainty/UncertaintyEngine.ts:29:export interface VerificationResult {
+src/core/uncertainty/UncertaintyEngine.ts:37:export class UncertaintyEngine {
+src/core/networkunderstanding/index.ts:1:export * from "./NetworkUnderstandingEngine";
+src/core/networkunderstanding/NetworkUnderstandingEngine.ts:1:export type NetworkEntity =
+src/core/networkunderstanding/NetworkUnderstandingEngine.ts:11:export interface NetworkNode {
+src/core/networkunderstanding/NetworkUnderstandingEngine.ts:20:export class NetworkUnderstandingEngine {
+src/core/aerospace/index.ts:1:export * from "./AerospaceEngineeringLayer";
+src/core/aerospace/AerospaceEngineeringLayer.ts:1:export type AerospaceDomain =
+src/core/aerospace/AerospaceEngineeringLayer.ts:15:export type EngineeringStage =
+src/core/aerospace/AerospaceEngineeringLayer.ts:24:export interface AerospaceTask {
+src/core/aerospace/AerospaceEngineeringLayer.ts:31:export interface EngineeringResult {
+src/core/aerospace/AerospaceEngineeringLayer.ts:40:export class AerospaceEngineeringLayer {
+src/core/performance/index.ts:1:export * from "./PerformanceCostLayer";
+src/core/performance/PerformanceCostLayer.ts:1:export type ResourceMetric = {
+src/core/performance/PerformanceCostLayer.ts:8:export class PerformanceCostLayer {
+src/core/solar/index.ts:1:export * from "./SolarEnergyIntelligence";
+src/core/solar/SolarEnergyIntelligence.ts:1:export type SolarOperation =
+src/core/solar/SolarEnergyIntelligence.ts:13:export interface SolarTask {
+src/core/solar/SolarEnergyIntelligence.ts:21:export interface SolarResult {
+src/core/solar/SolarEnergyIntelligence.ts:30:export class SolarEnergyIntelligence {
+src/core/stepcontrol/CorrectionLoop.ts:1:export type CorrectionAction =
+src/core/stepcontrol/CorrectionLoop.ts:8:export interface CorrectionDecision {
+src/core/stepcontrol/CorrectionLoop.ts:14:export class CorrectionLoop {
+src/core/stepcontrol/index.ts:1:export * from "./ReversibleStepController";
+src/core/stepcontrol/index.ts:2:export * from "./InstructionComplianceEngine";
+src/core/stepcontrol/index.ts:3:export * from "./CorrectionLoop";
+src/core/stepcontrol/InstructionComplianceEngine.ts:3:export interface ComplianceResult {
+src/core/stepcontrol/InstructionComplianceEngine.ts:9:export class InstructionComplianceEngine {
+src/core/stepcontrol/ReversibleStepController.ts:1:export type StepStatus =
+src/core/stepcontrol/ReversibleStepController.ts:10:export interface Instruction {
+src/core/stepcontrol/ReversibleStepController.ts:17:export interface ExecutionStep {
+src/core/stepcontrol/ReversibleStepController.ts:29:export interface Checkpoint {
+src/core/stepcontrol/ReversibleStepController.ts:37:export class ReversibleStepController {
+src/core/humanskills/index.ts:1:export * from "./HumanSkillsEngine";
+src/core/humanskills/HumanSkillsEngine.ts:1:export type HumanSkillDomain =
+src/core/humanskills/HumanSkillsEngine.ts:19:export type SkillOperation =
+src/core/humanskills/HumanSkillsEngine.ts:29:export interface SkillRequest {
+src/core/humanskills/HumanSkillsEngine.ts:37:export interface SkillResult {
+src/core/humanskills/HumanSkillsEngine.ts:47:export class HumanSkillsEngine {
+src/core/humanskills/HumanSkillsEngine.ts:63:        "Use available audio, video or sensor evidence when provided.",
+src/core/world/index.ts:1:export * from "./WorldIntelligence";
+src/core/world/WorldIntelligence.ts:1:export type WorldDomain =
+src/core/world/WorldIntelligence.ts:19:export type KnowledgeType =
+src/core/world/WorldIntelligence.ts:29:export type SituationLevel =
+src/core/world/WorldIntelligence.ts:36:export interface WorldEntity {
+src/core/world/WorldIntelligence.ts:50:export interface WorldObservation {
+src/core/world/WorldIntelligence.ts:61:export interface SituationAssessment {
+src/core/world/WorldIntelligence.ts:77:export interface WorldState {
+src/core/world/WorldIntelligence.ts:84:export class WorldIntelligence {
+src/core/world/WorldIntelligence.ts:291:export const worldIntelligence = new WorldIntelligence();
+src/core/engineering/index.ts:1:export * from "./EngineeringOperationsLayer";
+src/core/engineering/EngineeringOperationsLayer.ts:1:export type EngineeringDomain =
+src/core/engineering/EngineeringOperationsLayer.ts:26:export type EngineeringOperation =
+src/core/engineering/EngineeringOperationsLayer.ts:46:export type EngineeringRisk =
+src/core/engineering/EngineeringOperationsLayer.ts:52:export interface EngineeringEvidence {
+src/core/engineering/EngineeringOperationsLayer.ts:67:export interface EngineeringRequirement {
+src/core/engineering/EngineeringOperationsLayer.ts:75:export interface EngineeringOperationRequest {
+src/core/engineering/EngineeringOperationsLayer.ts:94:export interface EngineeringResult {
+src/core/engineering/EngineeringOperationsLayer.ts:104:export class EngineeringOperationsLayer {
+src/core/engineering/registerEngineeringCapabilities.ts:3:export const ENGINEERING_DOMAINS: EngineeringDomain[] = [
+src/core/correctness/index.ts:1:export { CorrectnessFabric } from "./CorrectnessFabric";
+src/core/correctness/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./CorrectnessFabric";
+src/core/correctness/CorrectnessFabric.ts:9:export type VerificationState =
+src/core/correctness/CorrectnessFabric.ts:20:export interface EvidenceRecord {
+src/core/correctness/CorrectnessFabric.ts:29:export interface VerificationResult {
+src/core/correctness/CorrectnessFabric.ts:37:export class CorrectnessFabric {
+src/core/assistant/index.ts:1:export * from "./VidoAIAssistantCore";
+src/core/assistant/VidoAIAssistantCore.ts:1:export type AssistantMode =
+src/core/assistant/VidoAIAssistantCore.ts:11:export interface AssistantContext {
+src/core/assistant/VidoAIAssistantCore.ts:19:export interface AssistantResponse {
+src/core/assistant/VidoAIAssistantCore.ts:29:export class VidoAIAssistantCore {
+src/core/assistant/VidoAIAssistantCore.ts:81:export default VidoAIAssistantCore;
+src/core/spreadsheet/index.ts:1:export * from "./SpreadsheetEngine";
+src/core/spreadsheet/SpreadsheetEngine.ts:1:export interface SpreadsheetCell {
+src/core/spreadsheet/SpreadsheetEngine.ts:8:export interface SpreadsheetSheet {
+src/core/spreadsheet/SpreadsheetEngine.ts:13:export class SpreadsheetEngine {
+src/core/multimodal/ChemistryReactionEngine.ts:1:export interface ChemicalReaction {
+src/core/multimodal/ChemistryReactionEngine.ts:8:export class ChemistryReactionEngine {
+src/core/multimodal/ActivityMediaUnderstanding.ts:1:export interface MediaSegment {
+src/core/multimodal/ActivityMediaUnderstanding.ts:8:export interface MediaUnderstanding {
+src/core/multimodal/ActivityMediaUnderstanding.ts:9:  modality: "CAMERA" | "AUDIO" | "VIDEO";
+src/core/multimodal/ActivityMediaUnderstanding.ts:17:export class ActivityMediaUnderstanding {
+src/core/multimodal/index.ts:1:export * from "./UniversalMultimodalUnderstanding";
+src/core/multimodal/index.ts:2:export * from "./DesignLayoutEngine";
+src/core/multimodal/index.ts:3:export * from "./MapTrackingEngine";
+src/core/multimodal/index.ts:4:export * from "./ActivityMediaUnderstanding";
+src/core/multimodal/index.ts:5:export * from "./KnowledgeLanguageEngine";
+src/core/multimodal/index.ts:6:export * from "./ChemistryReactionEngine";
+src/core/multimodal/index.ts:7:export * from "./AnimationCreationEngine";
+src/core/multimodal/index.ts:8:export * from "./OutputLearningEngine";
+src/core/multimodal/AnimationCreationEngine.ts:1:export type AnimationSource = "TEXT" | "IMAGE" | "VIDEO";
+src/core/multimodal/AnimationCreationEngine.ts:3:export interface AnimationRequest {
+src/core/multimodal/AnimationCreationEngine.ts:11:export interface AnimationPlan {
+src/core/multimodal/AnimationCreationEngine.ts:15:  audioPlan: string[];
+src/core/multimodal/AnimationCreationEngine.ts:19:export class AnimationCreationEngine {
+src/core/multimodal/AnimationCreationEngine.ts:29:      audioPlan: [],
+src/core/multimodal/AnimationCreationEngine.ts:33:        "CHECK_AUDIO_SYNC",
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:1:export type InputModality =
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:5:  | "AUDIO"
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:12:export type UnderstandingDomain =
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:30:export interface MultimodalInput {
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:39:export interface UnderstandingResult {
+src/core/multimodal/UniversalMultimodalUnderstanding.ts:51:export class UniversalMultimodalUnderstanding {
+src/core/multimodal/OutputLearningEngine.ts:1:export interface CreationOutcome {
+src/core/multimodal/OutputLearningEngine.ts:9:export class OutputLearningEngine {
+src/core/multimodal/DesignLayoutEngine.ts:1:export interface DesignElement {
+src/core/multimodal/DesignLayoutEngine.ts:12:export interface LayoutModel {
+src/core/multimodal/DesignLayoutEngine.ts:19:export class DesignLayoutEngine {
+src/core/multimodal/MapTrackingEngine.ts:1:export interface TrackPoint {
+src/core/multimodal/MapTrackingEngine.ts:9:export interface Track {
+src/core/multimodal/MapTrackingEngine.ts:14:export class MapTrackingEngine {
+src/core/multimodal/KnowledgeLanguageEngine.ts:1:export interface KnowledgeEntry {
+src/core/multimodal/KnowledgeLanguageEngine.ts:10:export class KnowledgeLanguageEngine {
+src/core/eventbus/index.ts:1:export * from "./SystemEventBus";
+src/core/eventbus/SystemEventBus.ts:1:export type SystemEvent = {
+src/core/eventbus/SystemEventBus.ts:16:export class SystemEventBus {
+src/core/security/index.ts:1:export * from "./SecurityLayer";
+src/core/security/SecurityLayer.ts:1:export type SecurityCheck = {
+src/core/security/SecurityLayer.ts:8:export class SecurityLayer {
+src/core/fastscheduler/ParallelWorkCoordinator.ts:1:export interface ParallelTask {
+src/core/fastscheduler/ParallelWorkCoordinator.ts:7:export class ParallelWorkCoordinator {
+src/core/fastscheduler/index.ts:1:export * from "./FastAdaptiveScheduler";
+src/core/fastscheduler/index.ts:2:export * from "./StepOptimizer";
+src/core/fastscheduler/index.ts:3:export * from "./ParallelWorkCoordinator";
+src/core/fastscheduler/FastAdaptiveScheduler.ts:1:export type Priority =
+src/core/fastscheduler/FastAdaptiveScheduler.ts:8:export interface WorkItem {
+src/core/fastscheduler/FastAdaptiveScheduler.ts:19:export interface WorkStep {
+src/core/fastscheduler/FastAdaptiveScheduler.ts:30:export interface ScheduledWork {
+src/core/fastscheduler/FastAdaptiveScheduler.ts:45:export class FastAdaptiveScheduler {
+src/core/fastscheduler/StepOptimizer.ts:3:export interface StepDecision {
+src/core/fastscheduler/StepOptimizer.ts:9:export class StepOptimizer {
+src/core/universalcontrol/UniversalControlOrchestrator.ts:11:export type TargetType =
+src/core/universalcontrol/UniversalControlOrchestrator.ts:23:export type ControlAction =
+src/core/universalcontrol/UniversalControlOrchestrator.ts:45:export type ControlStatus =
+src/core/universalcontrol/UniversalControlOrchestrator.ts:61:export interface ControlTarget {
+src/core/universalcontrol/UniversalControlOrchestrator.ts:72:export interface ControlRequest {
+src/core/universalcontrol/UniversalControlOrchestrator.ts:82:export interface ControlResult {
+src/core/universalcontrol/UniversalControlOrchestrator.ts:91:export interface ControlAdapter {
+src/core/universalcontrol/UniversalControlOrchestrator.ts:112:export class UniversalControlOrchestrator {
+src/core/universalcontrol/index.ts:1:export * from "./UniversalControlOrchestrator";
+src/core/scope/ScopePurposeLimitEngine.ts:1:export interface ScopeDefinition {
+src/core/scope/ScopePurposeLimitEngine.ts:11:export class ScopePurposeLimitEngine {
+src/core/scope/index.ts:1:export * from "./ScopePurposeLimitEngine";
+src/core/signals/index.ts:1:export * from "./UniversalSignalIntelligence";
+src/core/signals/UniversalSignalIntelligence.ts:1:export type SignalType =
+src/core/signals/UniversalSignalIntelligence.ts:2:  | "AUDIO"
+src/core/signals/UniversalSignalIntelligence.ts:13:export interface SignalInput {
+src/core/signals/UniversalSignalIntelligence.ts:21:export interface SignalResult {
+src/core/signals/UniversalSignalIntelligence.ts:31:export class UniversalSignalIntelligence {
+src/core/internalroles/index.ts:1:export * from "./InternalRoleRegistry";
+src/core/internalroles/InternalRoleRegistry.ts:1:export type InternalRole =
+src/core/internalroles/InternalRoleRegistry.ts:16:export interface InternalRoleDefinition {
+src/core/internalroles/InternalRoleRegistry.ts:24:export class InternalRoleRegistry {
+src/core/aihub/UniversalAIHub.ts:1:export type AIProvider =
+src/core/aihub/UniversalAIHub.ts:4:  | "GEMINI"
+src/core/aihub/UniversalAIHub.ts:9:export type AITask =
+src/core/aihub/UniversalAIHub.ts:22:export interface AIRequest {
+src/core/aihub/UniversalAIHub.ts:30:export interface AIResponse {
+src/core/aihub/UniversalAIHub.ts:42:export interface AIProviderAdapter {
+src/core/aihub/UniversalAIHub.ts:54:export class UniversalAIHub {
+src/core/aihub/index.ts:1:export * from "./UniversalAIHub";
+src/core/creator/index.ts:1:export * from "./CreatorEngine";
+src/core/creator/CreatorEngine.ts:1:export type CreationType =
+src/core/creator/CreatorEngine.ts:12:export interface CreationRequest {
+src/core/creator/CreatorEngine.ts:20:export class CreatorEngine {
+src/core/optimization/index.ts:1:export * from "./ResultOptimizationEngine";
+src/core/optimization/ResultOptimizationEngine.ts:1:export interface OptimizationTarget {
+src/core/optimization/ResultOptimizationEngine.ts:8:export interface OptimizationResult {
+src/core/optimization/ResultOptimizationEngine.ts:17:export class ResultOptimizationEngine {
+src/core/fastagent/index.ts:1:export * from "./FastProjectAgent";
+src/core/fastagent/FastProjectAgent.ts:1:export type AgentMode =
+src/core/fastagent/FastProjectAgent.ts:8:export interface AgentResult {
+src/core/fastagent/FastProjectAgent.ts:17:export class FastProjectAgent {
+src/core/decision/DecisionEngine.ts:1:export type DecisionClass =
+src/core/decision/DecisionEngine.ts:9:export interface DecisionEvidence {
+src/core/decision/DecisionEngine.ts:15:export interface DecisionContext {
+src/core/decision/DecisionEngine.ts:22:export interface DecisionResult {
+src/core/decision/DecisionEngine.ts:34:export class DecisionEngine {
+src/core/decision/index.ts:1:export * from "./DecisionEngine";
+src/core/improvement/index.ts:1:export * from "./ClosedLoopImprovement";
+src/core/improvement/ClosedLoopImprovement.ts:1:export type ImprovementStage =
+src/core/improvement/ClosedLoopImprovement.ts:12:export type ImprovementCycle = {
+src/core/improvement/ClosedLoopImprovement.ts:20:export class ClosedLoopImprovement {
+src/core/metasystem/SystemOfSystems.ts:1:export interface Subsystem {
+src/core/metasystem/SystemOfSystems.ts:8:export class SystemOfSystems {
+src/core/metasystem/index.ts:1:export * from "./MetaSystemCore";
+src/core/metasystem/index.ts:2:export * from "./MetaSystemPlanner";
+src/core/metasystem/index.ts:3:export * from "./SystemOfSystems";
+src/core/metasystem/index.ts:4:export * from "./MetaVerification";
+src/core/metasystem/MetaVerification.ts:1:export interface VerificationCheck {
+src/core/metasystem/MetaVerification.ts:7:export class MetaVerification {
+src/core/metasystem/MetaSystemCore.ts:1:export type MetaSystemMode =
+src/core/metasystem/MetaSystemCore.ts:11:export interface SystemCapability {
+src/core/metasystem/MetaSystemCore.ts:19:export interface MetaTask {
+src/core/metasystem/MetaSystemCore.ts:27:export interface MetaResult {
+src/core/metasystem/MetaSystemCore.ts:36:export class MetaSystemCore {
+src/core/metasystem/MetaSystemPlanner.ts:3:export interface SystemPlan {
+src/core/metasystem/MetaSystemPlanner.ts:11:export class MetaSystemPlanner {
+src/core/privacy/index.ts:1:export * from "./PrivacyLayer";
+src/core/privacy/PrivacyLayer.ts:1:export type PrivacyAction = "collect" | "use" | "store" | "share" | "delete";
+src/core/privacy/PrivacyLayer.ts:3:export class PrivacyLayer {
+src/core/disaster/index.ts:1:export * from "./DisasterRecoveryLayer";
+src/core/disaster/DisasterRecoveryLayer.ts:1:export type RecoveryPlan = {
+src/core/disaster/DisasterRecoveryLayer.ts:8:export class DisasterRecoveryLayer {
+src/core/integration/index.ts:1:export * from "./IntegrationLayer";
+src/core/integration/IntegrationLayer.ts:1:export type Integration = {
+src/core/integration/IntegrationLayer.ts:8:export class IntegrationLayer {
+src/core/lifeloop/index.ts:1:export * from "./ContinuousLifeLoop";
+src/core/lifeloop/ContinuousLifeLoop.ts:1:export type LifePhase =
+src/core/lifeloop/ContinuousLifeLoop.ts:12:export type LifeState = {
+src/core/lifeloop/ContinuousLifeLoop.ts:20:export type LifeLoopOptions = {
+src/core/lifeloop/ContinuousLifeLoop.ts:26:export class ContinuousLifeLoop {
+src/core/futureintelligence/FutureIntelligenceCenter.ts:6:export class FutureIntelligenceCenter {
+src/core/futureintelligence/index.ts:1:export * from "./HistoricalExperienceEngine";
+src/core/futureintelligence/index.ts:2:export * from "./ProbabilityForecastEngine";
+src/core/futureintelligence/index.ts:3:export * from "./WorldConditionMatrix";
+src/core/futureintelligence/index.ts:4:export * from "./ScenarioFutureEngine";
+src/core/futureintelligence/index.ts:5:export * from "./FutureIntelligenceCenter";
+src/core/futureintelligence/ProbabilityForecastEngine.ts:8:export interface ForecastScenario {
+src/core/futureintelligence/ProbabilityForecastEngine.ts:17:export interface ForecastRequest {
+src/core/futureintelligence/ProbabilityForecastEngine.ts:27:export class ProbabilityForecastEngine {
+src/core/futureintelligence/HistoricalExperienceEngine.ts:8:export type EvidenceQuality =
+src/core/futureintelligence/HistoricalExperienceEngine.ts:15:export interface HistoricalObservation {
+src/core/futureintelligence/HistoricalExperienceEngine.ts:25:export interface HistoricalPattern {
+src/core/futureintelligence/HistoricalExperienceEngine.ts:36:export class HistoricalExperienceEngine {
+src/core/futureintelligence/WorldConditionMatrix.ts:7:export interface WorldCondition {
+src/core/futureintelligence/WorldConditionMatrix.ts:16:export class WorldConditionMatrix {
+src/core/futureintelligence/ScenarioFutureEngine.ts:7:export type FutureType =
+src/core/futureintelligence/ScenarioFutureEngine.ts:15:export interface FutureScenario {
+src/core/futureintelligence/ScenarioFutureEngine.ts:24:export class ScenarioFutureEngine {
+src/core/reliability/index.ts:1:export { ReliabilityMetrics } from "./ReliabilityMetrics";
+src/core/reliability/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./ReliabilityMetrics";
+src/core/reliability/ReliabilityMetrics.ts:9:export type VerificationState =
+src/core/reliability/ReliabilityMetrics.ts:20:export interface EvidenceRecord {
+src/core/reliability/ReliabilityMetrics.ts:29:export interface VerificationResult {
+src/core/reliability/ReliabilityMetrics.ts:37:export class ReliabilityMetrics {
+src/core/provenance/index.ts:1:export { EvidenceProvenance } from "./EvidenceProvenance";
+src/core/provenance/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./EvidenceProvenance";
+src/core/provenance/EvidenceProvenance.ts:9:export type VerificationState =
+src/core/provenance/EvidenceProvenance.ts:20:export interface EvidenceRecord {
+src/core/provenance/EvidenceProvenance.ts:29:export interface VerificationResult {
+src/core/provenance/EvidenceProvenance.ts:37:export class EvidenceProvenance {
+src/core/engineeringcontext/index.ts:1:export * from "./EngineeringContext";
+src/core/engineeringcontext/EngineeringContext.ts:1:export type EngineeringEvent =
+src/core/engineeringcontext/EngineeringContext.ts:11:export type EngineeringRecord = {
+src/core/engineeringcontext/EngineeringContext.ts:19:export class EngineeringContext {
+src/core/orchestrator/index.ts:1:export * from "./SystemOrchestrator";
+src/core/orchestrator/SystemOrchestrator.ts:1:export type CapabilityStatus =
+src/core/orchestrator/SystemOrchestrator.ts:10:export interface Capability {
+src/core/orchestrator/SystemOrchestrator.ts:19:export interface SystemTask {
+src/core/orchestrator/SystemOrchestrator.ts:28:export interface VerificationResult {
+src/core/orchestrator/SystemOrchestrator.ts:35:export class SystemOrchestrator {
+src/core/orchestrator/registerExisting.ts:3:export function createSystemOrchestrator() {
+src/core/portability/index.ts:1:export * from "./PortabilityEngine";
+src/core/portability/PortabilityEngine.ts:7:export interface RuntimeCapabilities {
+src/core/portability/PortabilityEngine.ts:15:export interface MigrationResult {
+src/core/portability/PortabilityEngine.ts:22:export class PortabilityEngine {
+src/core/daemon/index.ts:1:export * from "./AlwaysOnSystem";
+src/core/daemon/AlwaysOnSystem.ts:1:export type SystemState =
+src/core/daemon/AlwaysOnSystem.ts:9:export interface SystemHealth {
+src/core/daemon/AlwaysOnSystem.ts:18:export class AlwaysOnSystem {
+src/core/universal/memory/MemoryEngine.ts:1:export interface MemoryEvent {
+src/core/universal/memory/MemoryEngine.ts:8:export class MemoryEngine {
+src/core/universal/UniversalCore.ts:14:export type ResourceKind =
+src/core/universal/UniversalCore.ts:24:export interface Resource {
+src/core/universal/UniversalCore.ts:32:export interface ProcessingTask<T = unknown> {
+src/core/universal/UniversalCore.ts:39:export interface ProcessingResult<T = unknown> {
+src/core/universal/UniversalCore.ts:46:export interface UniversalAdapter {
+src/core/universal/UniversalCore.ts:51:export class UniversalCore {
+src/core/universal/executor/UniversalExecutor.ts:9:export async function executeTask(
+src/core/universal/index.ts:1:export * from "./UniversalSystem";
+src/core/universal/index.ts:2:export * from "./UniversalCopilotBridge";
+src/core/universal/index.ts:3:export * from "./orchestration/SelfManager";
+src/core/universal/index.ts:4:export * from "./verification/SystemVerifier";
+src/core/universal/index.ts:5:export * from "./integration/FeatureRegistry";
+src/core/universal/index.ts:6:export * from "./integration/UniversalRouter";
+src/core/universal/index.ts:7:export * from "./integration/registerFeatures";
+src/core/universal/learning/ExperienceMemory.ts:10:export function recordExperience(
+src/core/universal/learning/ExperienceMemory.ts:25:export function findRelevantExperience(goal: string) {
+src/core/universal/ToolBus.ts:1:export type Permission =
+src/core/universal/ToolBus.ts:6:export interface UniversalTool {
+src/core/universal/ToolBus.ts:14:export class ToolBus {
+src/core/universal/security/PermissionManager.ts:7:export class PermissionManager {
+src/core/universal/integration/FeatureRegistry.ts:1:export type FeatureHandler = (input: any) => Promise<any> | any;
+src/core/universal/integration/FeatureRegistry.ts:42:export const featureRegistry = new FeatureRegistry();
+src/core/universal/integration/UniversalRouter.ts:4:  "reel-maker": ["reel", "short", "viral", "shorts"],
+src/core/universal/integration/UniversalRouter.ts:5:  captions: ["caption", "subtitle", "subtitles", "text"],
+src/core/universal/integration/UniversalRouter.ts:6:  audio: ["audio", "music", "sound", "voice"],
+src/core/universal/integration/UniversalRouter.ts:7:  editor: ["edit", "trim", "cut", "split", "timeline"],
+src/core/universal/integration/UniversalRouter.ts:8:  export: ["export", "render", "download"],
+src/core/universal/integration/UniversalRouter.ts:9:  copilot: ["ai", "copilot", "assistant"],
+src/core/universal/integration/UniversalRouter.ts:21:  return "copilot";
+src/core/universal/integration/UniversalRouter.ts:24:export async function routeUniversalCommand(
+src/core/universal/integration/registerFeatures.ts:5:export function registerExistingFeatures() {
+src/core/universal/integration/registerFeatures.ts:14:  featureRegistry.register("copilot", async input => ({
+src/core/universal/integration/registerFeatures.ts:15:    intent: "copilot",
+src/core/universal/integration/registerFeatures.ts:18:    message: "Command routed to AI Copilot.",
+src/core/universal/integration/registerFeatures.ts:21:  featureRegistry.register("reel-maker", async input => ({
+src/core/universal/integration/registerFeatures.ts:22:    intent: "reel-maker",
+src/core/universal/integration/registerFeatures.ts:28:  featureRegistry.register("captions", async input => ({
+src/core/universal/integration/registerFeatures.ts:29:    intent: "captions",
+src/core/universal/integration/registerFeatures.ts:32:    message: "Command routed to Captions.",
+src/core/universal/integration/registerFeatures.ts:35:  featureRegistry.register("audio", async input => ({
+src/core/universal/integration/registerFeatures.ts:36:    intent: "audio",
+src/core/universal/integration/registerFeatures.ts:39:    message: "Command routed to Audio.",
+src/core/universal/integration/registerFeatures.ts:49:  featureRegistry.register("export", async input => ({
+src/core/universal/integration/registerFeatures.ts:50:    intent: "export",
+src/core/universal/integration/registerFeatures.ts:53:    message: "Command routed to Export.",
+src/core/universal/orchestrator/UniversalOrchestrator.ts:11:export async function runUniversalTask(
+src/core/universal/UniversalCopilotBridge.ts:4:export async function runUniversalCommand(
+src/core/universal/orchestration/SelfManager.ts:3:export class SelfManager {
+src/core/universal/orchestration/SelfManager.ts:32:export const selfManager = new SelfManager();
+src/core/universal/verification/VerificationEngine.ts:1:export interface VerificationResult {
+src/core/universal/verification/VerificationEngine.ts:7:export class VerificationEngine {
+src/core/universal/verification/UniversalVerifier.ts:6:export function verifyTask(
+src/core/universal/verification/SystemVerifier.ts:3:export function verifySystemIntegrity() {
+src/core/universal/agents/MasterAgent.ts:7:export class MasterAgent {
+src/core/universal/recovery/SelfRecovery.ts:3:export function prepareRecovery(task: UniversalTask): UniversalTask {
+src/core/universal/recovery/SelfRecovery.ts:12:export function shouldRetry(task: UniversalTask, maxAttempts = 3) {
+src/core/universal/queue/TaskQueue.ts:10:export class TaskQueue {
+src/core/universal/research/ResearchEngine.ts:1:export interface ResearchResult {
+src/core/universal/research/ResearchEngine.ts:8:export class ResearchEngine {
+src/core/universal/types/SystemTypes.ts:1:export type Priority = "critical" | "high" | "normal" | "low";
+src/core/universal/types/SystemTypes.ts:3:export type TaskStatus =
+src/core/universal/types/SystemTypes.ts:13:export interface UniversalTask {
+src/core/universal/types/SystemTypes.ts:27:export interface ExecutionPlan {
+src/core/universal/types/SystemTypes.ts:34:export interface VerificationResult {
+src/core/universal/types/SystemTypes.ts:42:export interface SystemResult {
+src/core/universal/planner/UniversalPlanner.ts:11:export function createUniversalPlan(
+src/core/universal/UniversalSystem.ts:1:export type TaskStatus =
+src/core/universal/UniversalSystem.ts:10:export interface UniversalTask {
+src/core/universal/UniversalSystem.ts:23:export interface SystemDecision {
+src/core/universal/UniversalSystem.ts:29:export interface SystemState {
+src/core/universal/UniversalSystem.ts:38:export class UniversalSystem {
+src/core/universal/UniversalSystem.ts:79:    if (description.includes("caption"))
+src/core/universal/UniversalSystem.ts:80:      return ["read media", "generate captions", "verify captions", "apply captions"];
+src/core/universal/UniversalSystem.ts:82:    if (description.includes("audio"))
+src/core/universal/UniversalSystem.ts:83:      return ["inspect audio", "process audio", "verify audio", "apply audio"];
+src/core/universal/UniversalSystem.ts:85:    if (description.includes("export"))
+src/core/universal/UniversalSystem.ts:86:      return ["validate project", "prepare export", "export media", "verify export"];
+src/core/universal/UniversalSystem.ts:181:export const universalSystem = new UniversalSystem();
+src/core/science/ScientificMethod.ts:1:export interface ScientificHypothesis {
+src/core/science/ScientificMethod.ts:8:export interface Experiment {
+src/core/science/ScientificMethod.ts:17:export interface ScientificConclusion {
+src/core/science/ScientificMethod.ts:25:export class ScientificMethod {
+src/core/science/index.ts:1:export * from "./ScientificMethod";
+src/core/science/ScienceDomainEngine.ts:1:export type ScienceDomain =
+src/core/science/ScienceDomainEngine.ts:6:export interface ScientificConcept {
+src/core/science/ScienceDomainEngine.ts:15:export class ScienceDomainEngine {
+src/core/systemintegration/UniversalIntegrationCenter.ts:6:export class UniversalIntegrationCenter {
+src/core/systemintegration/SystemUnderstandingEngine.ts:4:export interface SystemUnderstanding {
+src/core/systemintegration/SystemUnderstandingEngine.ts:14:export class SystemUnderstandingEngine {
+src/core/systemintegration/index.ts:1:export * from "./ExternalSystemRegistry";
+src/core/systemintegration/index.ts:2:export * from "./SystemRelationshipGraph";
+src/core/systemintegration/index.ts:3:export * from "./SystemUnderstandingEngine";
+src/core/systemintegration/index.ts:4:export * from "./CorrelationEngine";
+src/core/systemintegration/index.ts:5:export * from "./UniversalIntegrationCenter";
+src/core/systemintegration/CorrelationEngine.ts:1:export interface CorrelationEvent {
+src/core/systemintegration/CorrelationEngine.ts:8:export interface Correlation {
+src/core/systemintegration/CorrelationEngine.ts:15:export class CorrelationEngine {
+src/core/systemintegration/ExternalSystemRegistry.ts:1:export type ExternalSystemType =
+src/core/systemintegration/ExternalSystemRegistry.ts:13:export interface ExternalSystem {
+src/core/systemintegration/ExternalSystemRegistry.ts:25:export class ExternalSystemRegistry {
+src/core/systemintegration/SystemRelationshipGraph.ts:1:export type RelationshipType =
+src/core/systemintegration/SystemRelationshipGraph.ts:12:export interface SystemRelationship {
+src/core/systemintegration/SystemRelationshipGraph.ts:20:export class SystemRelationshipGraph {
+src/core/sense/index.ts:1:export * from "./SenseEngine";
+src/core/sense/SenseEngine.ts:1:export type SenseType =
+src/core/sense/SenseEngine.ts:3:  | "audio"
+src/core/sense/SenseEngine.ts:9:export interface SenseInput {
+src/core/sense/SenseEngine.ts:18:export interface SystemState {
+src/core/sense/SenseEngine.ts:26:export class SenseEngine {
+src/core/differentiation/index.ts:1:export * from "./DifferentiationEngine";
+src/core/differentiation/DifferentiationEngine.ts:3:export type DifferenceType =
+src/core/differentiation/DifferentiationEngine.ts:12:export type DifferenceResult = {
+src/core/differentiation/DifferentiationEngine.ts:19:export class DifferentiationEngine {
+src/core/projection/index.ts:1:export * from "./ProjectionEngine";
+src/core/projection/ProjectionEngine.ts:1:export interface Projection {
+src/core/projection/ProjectionEngine.ts:11:export interface ProjectionContext {
+src/core/projection/ProjectionEngine.ts:18:export class ProjectionEngine {
+src/core/symbols/index.ts:1:export * from "./SymbolUnderstandingEngine";
+src/core/symbols/SymbolUnderstandingEngine.ts:1:export interface SymbolDefinition {
+src/core/symbols/SymbolUnderstandingEngine.ts:9:export class SymbolUnderstandingEngine {
+src/core/scaling/index.ts:1:export * from "./DynamicScalingEngine";
+src/core/scaling/DynamicScalingEngine.ts:1:export type ScalingAction =
+src/core/scaling/DynamicScalingEngine.ts:12:export interface ScalingRequest {
+src/core/scaling/DynamicScalingEngine.ts:19:export class DynamicScalingEngine {
+src/core/horizon/index.ts:1:export { HorizonIntelligence } from "./HorizonIntelligence";
+src/core/horizon/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./HorizonIntelligence";
+src/core/horizon/HorizonIntelligence.ts:9:export type VerificationState =
+src/core/horizon/HorizonIntelligence.ts:20:export interface EvidenceRecord {
+src/core/horizon/HorizonIntelligence.ts:29:export interface VerificationResult {
+src/core/horizon/HorizonIntelligence.ts:37:export class HorizonIntelligence {
+src/core/extensibility/index.ts:1:export * from "./ExtensionRegistry";
+src/core/extensibility/ExtensionRegistry.ts:1:export interface ExtensionContract {
+src/core/extensibility/ExtensionRegistry.ts:12:export class ExtensionRegistry {
+src/core/worldmodel/index.ts:1:export { WorldModel } from "./WorldModel";
+src/core/worldmodel/index.ts:2:export type { EvidenceRecord, VerificationResult, VerificationState } from "./WorldModel";
+src/core/worldmodel/WorldModel.ts:9:export type VerificationState =
+src/core/worldmodel/WorldModel.ts:20:export interface EvidenceRecord {
+src/core/worldmodel/WorldModel.ts:29:export interface VerificationResult {
+src/core/worldmodel/WorldModel.ts:37:export class WorldModel {
+src/core/maker/MakerEngine.ts:1:export type MakingMode =
+src/core/maker/MakerEngine.ts:11:export interface MakerRequest {
+src/core/maker/MakerEngine.ts:18:export class MakerEngine {
+src/core/maker/index.ts:1:export * from "./MakerEngine";
+src/core/foodactivity/index.ts:1:export * from "./FoodActivityIntelligence";
+src/core/foodactivity/FoodActivityIntelligence.ts:1:export type SubjectType =
+src/core/foodactivity/FoodActivityIntelligence.ts:7:export type FoodOperation =
+src/core/foodactivity/FoodActivityIntelligence.ts:17:export type ActivityOperation =
+src/core/foodactivity/FoodActivityIntelligence.ts:27:export interface FoodRequest {
+src/core/foodactivity/FoodActivityIntelligence.ts:37:export interface ActivityRequest {
+src/core/foodactivity/FoodActivityIntelligence.ts:47:export interface FoodResult {
+src/core/foodactivity/FoodActivityIntelligence.ts:56:export interface ActivityResult {
+src/core/foodactivity/FoodActivityIntelligence.ts:64:export class FoodActivityIntelligence {
+src/core/centers/index.ts:1:export * from "./ResearchProjectBuilderCenter";
+src/core/centers/ResearchProjectBuilderCenter.ts:4:export class ResearchProjectBuilderCenter {
+src/core/softwareunderstanding/index.ts:1:export * from "./SoftwareUnderstandingEngine";
+src/core/softwareunderstanding/SoftwareUnderstandingEngine.ts:1:export type SoftwareComponent =
+src/core/softwareunderstanding/SoftwareUnderstandingEngine.ts:12:export interface SoftwareEntity {
+src/core/softwareunderstanding/SoftwareUnderstandingEngine.ts:21:export class SoftwareUnderstandingEngine {
+src/core/constitution/index.ts:1:export * from "./SystemConstitution";
+src/core/constitution/SystemConstitution.ts:1:export type ConstitutionRule = {
+src/core/constitution/SystemConstitution.ts:8:export class SystemConstitution {
+src/core/control/index.ts:1:export * from "./CapabilityControl";
+src/core/control/CapabilityControl.ts:1:export type ControlLevel =
+src/core/control/CapabilityControl.ts:8:export type ResourceType =
+src/core/control/CapabilityControl.ts:20:export type ControlDecision =
+src/core/control/CapabilityControl.ts:27:export interface CapabilityPolicy {
+src/core/control/CapabilityControl.ts:36:export interface UsageRequest {
+src/core/control/CapabilityControl.ts:45:export interface ControlResult {
+src/core/control/CapabilityControl.ts:52:export class CapabilityControl {
+src/core/control/CapabilityControl.ts:164:export const capabilityControl = new CapabilityControl();
+src/core/statistics/index.ts:1:export * from "./StatisticsEngine";
+src/core/statistics/StatisticsEngine.ts:1:export interface StatisticsSummary {
+src/core/statistics/StatisticsEngine.ts:10:export class StatisticsEngine {
+src/core/knowledgegraph/index.ts:1:export * from "./KnowledgeGraph";
+src/core/knowledgegraph/KnowledgeGraph.ts:1:export type KnowledgeNode = {
+src/core/knowledgegraph/KnowledgeGraph.ts:7:export type KnowledgeEdge = {
+src/core/knowledgegraph/KnowledgeGraph.ts:13:export class KnowledgeGraph {
+src/core/affective/AffectiveLifeSystem.ts:1:export type AffectiveState =
+src/core/affective/AffectiveLifeSystem.ts:13:export type Motivation =
+src/core/affective/AffectiveLifeSystem.ts:24:export interface AffectiveSnapshot {
+src/core/affective/AffectiveLifeSystem.ts:36:export interface Expression {
+src/core/affective/AffectiveLifeSystem.ts:47:export interface DigitalReproductionRequest {
+src/core/affective/AffectiveLifeSystem.ts:53:export class AffectiveLifeSystem {
+src/core/affective/AffectiveLifeSystem.ts:175:export const affectiveLifeSystem =
+src/core/affective/index.ts:1:export * from "./AffectiveLifeSystem";
+src/core/safety/index.ts:1:export * from "./SafetyIntelligence";
+src/core/safety/SafetyIntelligence.ts:1:export type SafetyDomain =
+src/core/safety/SafetyIntelligence.ts:8:export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" | "UNKNOWN";
+src/core/safety/SafetyIntelligence.ts:10:export type SafetyAction =
+src/core/safety/SafetyIntelligence.ts:21:export interface SafetyObservation {
+src/core/safety/SafetyIntelligence.ts:31:export interface SafetyAssessment {
+src/core/safety/SafetyIntelligence.ts:41:export interface SafetyState {
+src/core/safety/SafetyIntelligence.ts:47:export class SafetyIntelligence {
+src/core/safety/SafetyIntelligence.ts:182:export const safetyIntelligence = new SafetyIntelligence();
+src/core/mastermind/index.ts:1:export * from "./MasterMind";
+src/core/mastermind/MasterMind.ts:6:export interface MasterMindInput {
+src/core/mastermind/MasterMind.ts:12:export interface MasterMindResult {
+src/core/mastermind/MasterMind.ts:23:export class MasterMind {
+src/core/internalprocessor/index.ts:1:export * from "./InternalProcessor";
+src/core/internalprocessor/InternalProcessor.ts:1:export type ProcessingMode =
+src/core/internalprocessor/InternalProcessor.ts:11:export interface ProcessingRequest {
+src/core/internalprocessor/InternalProcessor.ts:18:export interface ProcessingResult {
+src/core/internalprocessor/InternalProcessor.ts:27:export class InternalProcessor {
+src/core/truth/index.ts:1:export * from "./TruthUncertaintyLayer";
+src/core/truth/TruthUncertaintyLayer.ts:1:export type KnowledgeStatus =
+src/core/truth/TruthUncertaintyLayer.ts:8:export type KnowledgeItem = {
+src/core/truth/TruthUncertaintyLayer.ts:15:export class TruthUncertaintyLayer {
+src/core/capabilities/index.ts:1:export * from "./CapabilityRegistry";
+src/core/capabilities/CapabilityRegistry.ts:1:export type CapabilityStatus =
+src/core/capabilities/CapabilityRegistry.ts:10:export type Capability = {
+src/core/capabilities/CapabilityRegistry.ts:17:export class CapabilityRegistry {
+src/core/canary/index.ts:1:export * from "./CanaryTestingLayer";
+src/core/canary/CanaryTestingLayer.ts:1:export type CanaryResult = {
+src/core/canary/CanaryTestingLayer.ts:8:export class CanaryTestingLayer {
+src/core/universalunderstanding/index.ts:1:export * from "./UniversalUnderstandingEngine";
+src/core/universalunderstanding/UniversalUnderstandingEngine.ts:1:export type UnderstandingDomain =
+src/core/universalunderstanding/UniversalUnderstandingEngine.ts:7:export interface UnderstandingRequest {
+src/core/universalunderstanding/UniversalUnderstandingEngine.ts:14:export interface UnderstandingResult {
+src/core/universalunderstanding/UniversalUnderstandingEngine.ts:26:export class UniversalUnderstandingEngine {
+src/core/commerce/index.ts:1:export * from "./CommerceIntelligence";
+src/core/commerce/CommerceIntelligence.ts:1:export type CommerceDomain =
+src/core/commerce/CommerceIntelligence.ts:18:export interface CommerceTask {
+src/core/commerce/CommerceIntelligence.ts:24:export interface CommerceResult {
+src/core/commerce/CommerceIntelligence.ts:33:export class CommerceIntelligence {
+src/core/multiproject/index.ts:1:export * from "./MultiProjectOrchestrator";
+src/core/multiproject/index.ts:2:export * from "./ProjectResourceScheduler";
+src/core/multiproject/index.ts:3:export * from "./ProjectIsolation";
+src/core/multiproject/index.ts:4:export * from "./ProjectRecovery";
+src/core/multiproject/ProjectRecovery.ts:3:export class ProjectRecovery {
+src/core/multiproject/MultiProjectOrchestrator.ts:1:export type ProjectStatus =
+src/core/multiproject/MultiProjectOrchestrator.ts:10:export type ProjectPriority =
+src/core/multiproject/MultiProjectOrchestrator.ts:16:export interface ProjectTask {
+src/core/multiproject/MultiProjectOrchestrator.ts:25:export interface Project {
+src/core/multiproject/MultiProjectOrchestrator.ts:42:export interface ProjectExecutionState {
+src/core/multiproject/MultiProjectOrchestrator.ts:57:export class MultiProjectOrchestrator {
+src/core/multiproject/ProjectResourceScheduler.ts:6:export interface AvailableResources {
+src/core/multiproject/ProjectResourceScheduler.ts:14:export class ProjectResourceScheduler {
+src/core/multiproject/ProjectIsolation.ts:3:export interface ProjectIsolationContext {
+src/core/multiproject/ProjectIsolation.ts:10:export class ProjectIsolation {
+src/core/internalworld/index.ts:1:export * from "./InternalWorldCoordinator";
+src/core/internalworld/InternalWorldCoordinator.ts:4:export class InternalWorldCoordinator {
+src/core/verification/index.ts:1:export * from "./VerificationLayer";
+src/core/verification/IndependentVerification.ts:9:export type VerificationState =
+src/core/verification/IndependentVerification.ts:20:export interface EvidenceRecord {
+src/core/verification/IndependentVerification.ts:29:export interface VerificationResult {
+src/core/verification/IndependentVerification.ts:37:export class IndependentVerification {
+src/core/verification/VerificationLayer.ts:1:export type VerificationResult = {
+src/core/verification/VerificationLayer.ts:8:export class VerificationLayer {
+src/core/verification/VerificationContract.ts:9:export type TruthState =
+src/core/verification/VerificationContract.ts:20:export interface VerificationContext {
+src/core/verification/VerificationContract.ts:37:export interface VerificationPolicy {
+src/core/verification/VerificationContract.ts:45:export const DEFAULT_VERIFICATION_POLICY: VerificationPolicy = {
+src/core/verification/VerificationContract.ts:53:export function isVerificationAcceptable(
+src/core/resultquality/index.ts:1:export * from "./VerifiedResultEngine";
+src/core/resultquality/VerifiedResultEngine.ts:1:export interface ResultCheck {
+src/core/resultquality/VerifiedResultEngine.ts:7:export interface VerifiedResult<T = unknown> {
+src/core/resultquality/VerifiedResultEngine.ts:15:export class VerifiedResultEngine {
+src/core/logic/index.ts:1:export * from "./LogicControl";
+src/core/logic/LogicControl.ts:1:export type LogicOperator =
+src/core/logic/LogicControl.ts:11:export type LogicResult =
+src/core/logic/LogicControl.ts:18:export interface LogicCondition {
+src/core/logic/LogicControl.ts:24:export interface LogicRule {
+src/core/logic/LogicControl.ts:32:export interface LogicEvaluation {
+src/core/logic/LogicControl.ts:39:export class LogicControl {
+src/core/continuity/index.ts:1:export * from "./ContinuousState";
+src/core/continuity/ContinuityEngine.ts:1:export type RuntimeState =
+src/core/continuity/ContinuityEngine.ts:8:export interface SystemSnapshot {
+src/core/continuity/ContinuityEngine.ts:18:export interface TransferPackage {
+src/core/continuity/ContinuityEngine.ts:27:export interface RecoveryResult {
+src/core/continuity/ContinuityEngine.ts:34:export class ContinuityEngine {
+src/core/continuity/ContinuousState.ts:1:export type ContinuousState = {
+src/core/continuity/ContinuousState.ts:9:export class ContinuousStateStore {
+src/core/lifecycle/index.ts:1:export * from "./ResultLifecycle";
+src/core/lifecycle/ResultLifecycle.ts:1:export type LifecycleStage =
+src/core/lifecycle/ResultLifecycle.ts:14:export interface LifecycleRun {
+src/core/lifecycle/ResultLifecycle.ts:25:export class ResultLifecycle {
+src/core/goals/index.ts:1:export * from "./GoalMissionLayer";
+src/core/goals/GoalMissionLayer.ts:1:export type Goal = {
+src/core/goals/GoalMissionLayer.ts:9:export class GoalMissionLayer {
+src/core/unknown/index.ts:1:export * from "./UnknownCapabilityRegistry";
+src/core/unknown/UnknownCapabilityRegistry.ts:1:export interface UnknownCapability {
+src/core/unknown/UnknownCapabilityRegistry.ts:10:export class UnknownCapabilityRegistry {
+src/core/perception/index.ts:1:export * from "./MultimodalPerception";
+src/core/perception/MultimodalPerception.ts:1:export type PerceptionType = "watch" | "read" | "hear";
+src/core/perception/MultimodalPerception.ts:3:export interface PerceptionInput {
+src/core/perception/MultimodalPerception.ts:12:export interface PerceptionResult {
+src/core/perception/MultimodalPerception.ts:21:export class MultimodalPerception {
+src/core/perception/MultimodalPerception.ts:34:      observations.push("Audio input received");
+src/core/filesystem/index.ts:1:export * from "./FileFolderUnderstanding";
+src/core/filesystem/FileFolderUnderstanding.ts:1:export interface FileSystemNode {
+src/core/filesystem/FileFolderUnderstanding.ts:12:export class FileFolderUnderstanding {
+src/core/worlds/index.ts:1:export * from "./InternalWorldRegistry";
+src/core/worlds/InternalWorldRegistry.ts:1:export type InternalWorldType =
+src/core/worlds/InternalWorldRegistry.ts:18:export interface InternalWorld {
+src/core/worlds/InternalWorldRegistry.ts:28:export class InternalWorldRegistry {
+src/core/formulation/index.ts:1:export * from "./UniversalFormulationEngine";
+src/core/formulation/index.ts:2:export * from "./FormulaModel";
+src/core/formulation/index.ts:3:export * from "./ProcessManufacturingPlanner";
+src/core/formulation/index.ts:4:export * from "./ProductArchitectureEngine";
+src/core/formulation/index.ts:5:export * from "./UniversalProductionCenter";
+src/core/formulation/ProcessManufacturingPlanner.ts:1:export interface ProcessStep {
+src/core/formulation/ProcessManufacturingPlanner.ts:12:export interface ManufacturingPlan {
+src/core/formulation/ProcessManufacturingPlanner.ts:21:export class ProcessManufacturingPlanner {
+src/core/formulation/UniversalFormulationEngine.ts:11:export type ProductState =
+src/core/formulation/UniversalFormulationEngine.ts:24:export type FormulationStage =
+src/core/formulation/UniversalFormulationEngine.ts:37:export interface IngredientOrComponent {
+src/core/formulation/UniversalFormulationEngine.ts:46:export interface FormulationSpecification {
+src/core/formulation/UniversalFormulationEngine.ts:62:export class UniversalFormulationEngine {
+src/core/formulation/UniversalProductionCenter.ts:9:export class UniversalProductionCenter {
+src/core/formulation/ProductArchitectureEngine.ts:1:export type ArchitectureDomain =
+src/core/formulation/ProductArchitectureEngine.ts:14:export interface ProductArchitecture {
+src/core/formulation/ProductArchitectureEngine.ts:25:export class ProductArchitectureEngine {
+src/core/formulation/FormulaModel.ts:8:export interface FormulaVariable {
+src/core/formulation/FormulaModel.ts:14:export interface FormulaModel {
+src/core/formulation/FormulaModel.ts:28:export class FormulaModelRegistry {
+src/core/operations/index.ts:1:export * from "./OperationsCenter";
+src/core/operations/OperationsCenter.ts:3:export interface OperationCheck {
+src/core/operations/OperationsCenter.ts:9:export interface MissionReadiness {
+src/core/operations/OperationsCenter.ts:14:export class OperationsCenter {
+src/core/operations/UniversalOperationEngine.ts:8:export type UniversalOperation =
+src/core/operations/UniversalOperationEngine.ts:43:  | "EXPORT"
+src/core/operations/UniversalOperationEngine.ts:51:export type OperationStatus =
+src/core/operations/UniversalOperationEngine.ts:64:export interface OperationRequest {
+src/core/operations/UniversalOperationEngine.ts:75:export interface OperationPlan {
+src/core/operations/UniversalOperationEngine.ts:84:export interface OperationResult {
+src/core/operations/UniversalOperationEngine.ts:94:export interface OperationAdapter {
+src/core/operations/UniversalOperationEngine.ts:115:export class UniversalOperationEngine {
+src/core/operations/UniversalOperationEngine.ts:131:      "EXPORT","CREATE","ARCHIVE","UNARCHIVE","VALIDATE","VERIFY","SIMULATE"
+src/core/universalloop/UniversalEverythingLoop.ts:1:export type UniversalLoopStage =
+src/core/universalloop/UniversalEverythingLoop.ts:19:export interface UniversalLoopState {
+src/core/universalloop/UniversalEverythingLoop.ts:32:export interface UniversalLoopHooks {
+src/core/universalloop/UniversalEverythingLoop.ts:64:export class UniversalEverythingLoop {
+src/core/universalloop/index.ts:1:export * from "./UniversalEverythingLoop";
+src/core/governance/GovernanceLayer.ts:1:export type PermissionLevel = "observe" | "suggest" | "request" | "execute" | "admin";
+src/core/governance/GovernanceLayer.ts:3:export class GovernanceLayer {
+src/core/governance/index.ts:1:export * from "./GovernanceLayer";
+src/core/research/index.ts:1:export * from "./UniversalResearchEngine";
+src/core/research/UniversalResearchEngine.ts:1:export type ResearchDomain =
+src/core/research/UniversalResearchEngine.ts:17:export interface ResearchQuestion {
+src/core/research/UniversalResearchEngine.ts:25:export interface ResearchSource {
+src/core/research/UniversalResearchEngine.ts:41:export interface ResearchFinding {
+src/core/research/UniversalResearchEngine.ts:48:export interface ScientificStudy {
+src/core/research/UniversalResearchEngine.ts:61:export class UniversalResearchEngine {
+src/core/integrity/index.ts:1:export * from "./SystemIntegrity";
+src/core/integrity/SystemIntegrity.ts:1:export type IntegrityStatus =
+src/core/integrity/SystemIntegrity.ts:8:export type SystemDomain =
+src/core/integrity/SystemIntegrity.ts:26:export interface IntegrityCheck {
+src/core/integrity/SystemIntegrity.ts:37:export interface IntegrityReport {
+src/core/integrity/SystemIntegrity.ts:79:export class SystemIntegrity {
+src/core/integrity/SystemIntegrity.ts:271:export const systemIntegrity = new SystemIntegrity();
+src/core/capa/CorrectivePreventiveAction.ts:1:export type CAPAStatus =
+src/core/capa/CorrectivePreventiveAction.ts:10:export type CAPACase = {
+src/core/capa/CorrectivePreventiveAction.ts:19:export class CorrectivePreventiveAction {
+src/core/capa/index.ts:1:export * from "./CorrectivePreventiveAction";
+src/core/helper/index.ts:1:export * from "./HelperEngine";
+src/core/helper/HelperEngine.ts:1:export type HelpMode =
+src/core/helper/HelperEngine.ts:10:export interface HelpRequest {
+src/core/helper/HelperEngine.ts:17:export class HelperEngine {
+src/core/ux/index.ts:1:export * from "./UXAccessibilityLayer";
+src/core/ux/UXAccessibilityLayer.ts:1:export type UXCheck = {
+src/core/ux/UXAccessibilityLayer.ts:8:export class UXAccessibilityLayer {
+src/core/aggregation/index.ts:2:export {};
+src/core/aggregation/AggregationStore.ts:3:export interface AggregationStore {
+src/core/aggregation/AggregationStore.ts:11:export class MemoryAggregationStore implements AggregationStore {
+src/core/aggregation/types.ts:1:export type AggregationStatus =
+src/core/aggregation/types.ts:8:export interface AggregatedData {
+src/core/aggregation/AggregationEngine.ts:4:export class AggregationEngine {
+src/core/migration/index.ts:1:export * from "./FutureMigrationEngine";
+src/core/migration/FutureMigrationEngine.ts:1:export interface MigrationPlan {
+src/core/migration/FutureMigrationEngine.ts:10:export class FutureMigrationEngine {
+src/core/entries/index.ts:1:export * from "./EntryRegistry";
+src/core/entries/EntryRegistry.ts:1:export type EntryStatus =
+src/core/entries/EntryRegistry.ts:10:export type Entry = {
+src/core/entries/EntryRegistry.ts:22:export class EntryRegistry {
+src/core/writing/index.ts:1:export * from "./BookWritingEngine";
+src/core/writing/BookWritingEngine.ts:4:export interface BookChapter {
+src/core/writing/BookWritingEngine.ts:10:export interface Book {
+src/core/writing/BookWritingEngine.ts:18:export class BookWritingEngine {
+src/core/math/index.ts:1:export * from "./MathematicsEngine";
+src/core/math/MathematicsEngine.ts:1:export type MathDomain =
+src/core/math/MathematicsEngine.ts:16:export interface FormulaRequest {
+src/core/math/MathematicsEngine.ts:23:export interface FormulaResult {
+src/core/math/MathematicsEngine.ts:32:export class MathematicsEngine {
+src/core/compatibility/index.ts:1:export * from "./FutureCompatibilityEngine";
+src/core/compatibility/FutureCompatibilityEngine.ts:1:export interface CompatibilityCheck {
+src/core/compatibility/FutureCompatibilityEngine.ts:9:export class FutureCompatibilityEngine {
+src/core/resources/index.ts:1:export * from "./ResourceManager";
+src/core/resources/ResourceManager.ts:1:export type ResourceType =
+src/core/resources/ResourceManager.ts:5:export type ResourceRequest = {
+src/core/resources/ResourceManager.ts:11:export class ResourceManager {
+src/core/presentation/index.ts:1:export * from "./PresentationEngine";
+src/core/presentation/PresentationEngine.ts:1:export interface PresentationSlide {
+src/core/presentation/PresentationEngine.ts:8:export interface PresentationTemplate {
+src/core/presentation/PresentationEngine.ts:14:export class PresentationEngine {
+src/core/projectexpansion/index.ts:1:export * from "./MassiveProjectEngine";
+src/core/projectexpansion/index.ts:2:export * from "./SpaceTimeProjectPlanner";
+src/core/projectexpansion/SpaceTimeProjectPlanner.ts:1:export interface ProjectSchedule {
+src/core/projectexpansion/SpaceTimeProjectPlanner.ts:8:export class SpaceTimeProjectPlanner {
+src/core/projectexpansion/MassiveProjectEngine.ts:1:export interface ProjectNode {
+src/core/projectexpansion/MassiveProjectEngine.ts:9:export interface ExpansionPlan {
+src/core/projectexpansion/MassiveProjectEngine.ts:16:export class MassiveProjectEngine {
+src/core/longterm/index.ts:1:export * from "./LongTermThinking";
+src/core/longterm/LongTermThinking.ts:1:export type Horizon =
+src/core/longterm/LongTermThinking.ts:7:export interface FutureGoal {
+src/core/longterm/LongTermThinking.ts:17:export interface FutureRisk {
+src/core/longterm/LongTermThinking.ts:25:export interface FutureOpportunity {
+src/core/longterm/LongTermThinking.ts:32:export interface FutureAction {
+src/core/longterm/LongTermThinking.ts:40:export interface LongTermPlan {
+src/core/longterm/LongTermThinking.ts:52:export interface ThinkingContext {
+src/core/longterm/LongTermThinking.ts:60:export class LongTermThinking {
+src/core/quality/ValidationQualification.ts:1:export type ValidationStage =
+src/core/quality/ValidationQualification.ts:6:export interface ValidationRequirement {
+src/core/quality/ValidationQualification.ts:13:export interface ValidationEvidence {
+src/core/quality/ValidationQualification.ts:22:export class ValidationQualificationEngine {
+src/core/quality/DocumentControl.ts:1:export interface ControlledDocument {
+src/core/quality/DocumentControl.ts:14:export class DocumentControl {
+src/core/quality/QualityLifecycle.ts:1:export type QualityLifecycleStage =
+src/core/quality/QualityLifecycle.ts:21:export const QUALITY_LIFECYCLE: QualityLifecycleStage[] = [
+src/core/quality/index.ts:1:export * from "./QualityManagementCenter";
+src/core/quality/index.ts:2:export * from "./DocumentControl";
+src/core/quality/index.ts:3:export * from "./DeviationObservation";
+src/core/quality/index.ts:4:export * from "./ValidationQualification";
+src/core/quality/index.ts:5:export * from "./ResponsibilityTraining";
+src/core/quality/index.ts:6:export * from "./QualityLifecycle";
+src/core/quality/DeviationObservation.ts:1:export type DeviationSeverity = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
+src/core/quality/DeviationObservation.ts:3:export interface Observation {
+src/core/quality/DeviationObservation.ts:12:export interface Deviation {
+src/core/quality/DeviationObservation.ts:24:export class DeviationObservationManager {
+src/core/quality/QualityManagementCenter.ts:1:export type QualityObjectType =
+src/core/quality/QualityManagementCenter.ts:9:export type QualityStatus =
+src/core/quality/QualityManagementCenter.ts:15:export interface QualityObject {
+src/core/quality/QualityManagementCenter.ts:31:export interface QualityRequirement {
+src/core/quality/QualityManagementCenter.ts:39:export class QualityManagementCenter {
+src/core/quality/ResponsibilityTraining.ts:1:export interface Responsibility {
+src/core/quality/ResponsibilityTraining.ts:9:export interface TrainingRecord {
+src/core/quality/ResponsibilityTraining.ts:18:export class ResponsibilityTrainingManager {
+src/core/resilience/index.ts:1:export * from "./ResilienceLayer";
+src/core/resilience/ResilienceLayer.ts:1:export type RecoveryState = "healthy" | "degraded" | "recovering" | "safe-mode";
+src/core/resilience/ResilienceLayer.ts:3:export class ResilienceLayer {
+src/core/humancapability/index.ts:1:export * from "./HumanCapabilityOrchestrator";
+src/core/humancapability/HumanCapabilityOrchestrator.ts:1:export type HumanCapabilityDomain =
+src/core/humancapability/HumanCapabilityOrchestrator.ts:27:export type ActionRisk =
+src/core/humancapability/HumanCapabilityOrchestrator.ts:33:export type ExecutionMode =
+src/core/humancapability/HumanCapabilityOrchestrator.ts:39:export interface HumanCapability {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:49:export interface HumanTask {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:64:export class HumanCapabilityOrchestrator {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:123:export default HumanCapabilityOrchestrator;
+src/core/humancapability/registerHumanCapabilities.ts:6:export function createHumanCapabilitySystem() {
+src/core/survival/index.ts:1:export * from "./SurvivalOrchestrator";
+src/core/survival/index.ts:2:export * from "./CheckpointManager";
+src/core/survival/index.ts:3:export * from "./Watchdog";
+src/core/survival/index.ts:4:export * from "./DegradedMode";
+src/core/survival/SurvivalOrchestrator.ts:8:export type FailureType =
+src/core/survival/SurvivalOrchestrator.ts:20:export type RecoveryAction =
+src/core/survival/SurvivalOrchestrator.ts:35:export interface SystemCheckpoint {
+src/core/survival/SurvivalOrchestrator.ts:43:export interface FailureEvent {
+src/core/survival/SurvivalOrchestrator.ts:52:export interface RecoveryResult {
+src/core/survival/SurvivalOrchestrator.ts:60:export interface RecoveryAdapter {
+src/core/survival/SurvivalOrchestrator.ts:68:export class SurvivalOrchestrator {
+src/core/survival/DegradedMode.ts:7:export type DegradedLevel =
+src/core/survival/DegradedMode.ts:13:export class DegradedModeController {
+src/core/survival/Watchdog.ts:8:export class Watchdog {
+src/core/survival/CheckpointManager.ts:10:export class CheckpointManager {
+src/core/simulation/SimulationLayer.ts:1:export type SimulationResult = {
+src/core/simulation/SimulationLayer.ts:7:export class SimulationLayer {
+src/core/simulation/index.ts:1:export * from "./SimulationLayer";
+src/core/simulation/ScenarioSimulation.ts:9:export type VerificationState =
+src/core/simulation/ScenarioSimulation.ts:20:export interface EvidenceRecord {
+src/core/simulation/ScenarioSimulation.ts:29:export interface VerificationResult {
+src/core/simulation/ScenarioSimulation.ts:37:export class ScenarioSimulation {
+src/core/diagnostics/index.ts:1:export * from "./SelfDiagnosticLayer";
+src/core/diagnostics/SelfDiagnosticLayer.ts:1:export type DiagnosticResult = {
+src/core/diagnostics/SelfDiagnosticLayer.ts:8:export class SelfDiagnosticLayer {
+src/core/chemistry/index.ts:1:export * from "./ChemicalSafetyEngineering";
+src/core/chemistry/ChemicalSafetyEngineering.ts:1:export type ChemicalOperation =
+src/core/chemistry/ChemicalSafetyEngineering.ts:12:export interface ChemicalSafetyTask {
+src/core/chemistry/ChemicalSafetyEngineering.ts:18:export class ChemicalSafetyEngineering {
+src/core/traceability/index.ts:1:export * from "./TraceabilityMatrix";
+src/core/traceability/TraceabilityMatrix.ts:1:export interface TraceabilityLink {
+src/core/traceability/TraceabilityMatrix.ts:13:export class TraceabilityMatrix {
+src/core/multitask/index.ts:1:export * from "./MultiTaskingEngine";
+src/core/multitask/MultiTaskingEngine.ts:1:export type TaskStatus =
+src/core/multitask/MultiTaskingEngine.ts:10:export interface MultiTask {
+src/core/multitask/MultiTaskingEngine.ts:20:export interface TaskResult {
+src/core/multitask/MultiTaskingEngine.ts:27:export interface MultiTaskReport {
+src/core/multitask/MultiTaskingEngine.ts:33:export class MultiTaskingEngine {
+src/core/actionreaction/index.ts:1:export * from "./ActionReactionEngine";
+src/core/actionreaction/index.ts:2:export * from "./ReactiveControlLoop";
+src/core/actionreaction/ActionReactionEngine.ts:1:export type ReactionType =
+src/core/actionreaction/ActionReactionEngine.ts:10:export interface ActionRecord {
+src/core/actionreaction/ActionReactionEngine.ts:19:export interface ReactionAssessment {
+src/core/actionreaction/ActionReactionEngine.ts:28:export class ActionReactionEngine {
+src/core/actionreaction/ReactiveControlLoop.ts:7:export class ReactiveControlLoop {
+src/core/spacetime/SpaceTimeModel.ts:1:export type ScaleDimension =
+src/core/spacetime/SpaceTimeModel.ts:11:export interface SpaceTimeState {
+src/core/spacetime/SpaceTimeModel.ts:18:export class SpaceTimeModel {
+src/core/spacetime/index.ts:1:export * from "./SpaceTimeModel";
+src/core/office/index.ts:1:export * from "./OfficeWorkEngine";
+src/core/office/OfficeWorkEngine.ts:1:export type OfficeArtifact =
+src/core/office/OfficeWorkEngine.ts:11:export class OfficeWorkEngine {
+src/core/office/OfficeWorkEngine.ts:23:        "EXPORT",
+src/core/mind/AutonomousMind.ts:18:export interface MindContext {
+src/core/mind/AutonomousMind.ts:25:export interface MindPlan {
+src/core/mind/AutonomousMind.ts:32:export interface MindResult {
+src/core/mind/AutonomousMind.ts:41:export interface MindCapability {
+src/core/mind/AutonomousMind.ts:47:export class AutonomousMind {
+src/core/experience/index.ts:1:export * from "./ExperienceEngine";
+src/core/experience/index.ts:2:export * from "./ExperienceDecisionEngine";
+src/core/experience/index.ts:3:export * from "./ExperienceUpdateEngine";
+src/core/experience/ExperienceUpdateEngine.ts:3:export class ExperienceUpdateEngine {
+src/core/experience/ExperienceDecisionEngine.ts:6:export interface ExperienceDecision {
+src/core/experience/ExperienceDecisionEngine.ts:14:export class ExperienceDecisionEngine {
+src/core/experience/ExperienceEngine.ts:1:export type ExperienceOutcome =
+src/core/experience/ExperienceEngine.ts:7:export interface ExperienceRecord {
+src/core/experience/ExperienceEngine.ts:21:export interface ExperiencePattern {
+src/core/experience/ExperienceEngine.ts:30:export class ExperienceEngine {
+src/core/plugincontracts/index.ts:1:export * from "./UniversalPluginContract";
+src/core/plugincontracts/UniversalPluginContract.ts:1:export interface UniversalPluginContract {
+src/core/plugincontracts/UniversalPluginContract.ts:13:export class UniversalPluginContractRegistry {
+src/core/projectbuilder/ProjectBuilderCenter.ts:11:export type ProjectBuildState =
+src/core/projectbuilder/ProjectBuilderCenter.ts:25:export interface BuildTask {
+src/core/projectbuilder/ProjectBuilderCenter.ts:33:export interface ManagedProject {
+src/core/projectbuilder/ProjectBuilderCenter.ts:43:export class ProjectBuilderCenter {
+src/core/projectbuilder/index.ts:1:export * from "./ProjectBuilderCenter";
+src/core/correlation/UniversalCorrelationEngine.ts:1:export type CorrelationType =
+src/core/correlation/UniversalCorrelationEngine.ts:14:export type CorrelationDirection =
+src/core/correlation/UniversalCorrelationEngine.ts:20:export interface Observation {
+src/core/correlation/UniversalCorrelationEngine.ts:28:export interface CorrelationResult {
+src/core/correlation/UniversalCorrelationEngine.ts:42:export class UniversalCorrelationEngine {
+src/core/correlation/index.ts:1:export * from "./UniversalCorrelationEngine";
+src/core/correlation/index.ts:2:export * from "./TemporalCorrelationEngine";
+src/core/correlation/index.ts:3:export * from "./CorrelationEvidence";
+src/core/correlation/CorrelationEvidence.ts:1:export interface CorrelationEvidence {
+src/core/correlation/CorrelationEvidence.ts:9:export class CorrelationEvidenceEngine {
+src/core/correlation/TemporalCorrelationEngine.ts:1:export interface TimedEvent {
+src/core/correlation/TemporalCorrelationEngine.ts:7:export interface TemporalCorrelation {
+src/core/correlation/TemporalCorrelationEngine.ts:15:export class TemporalCorrelationEngine {
+src/core/unifiedlayer/index.ts:1:export * from "./UnifiedMetaLayer";
+src/core/unifiedlayer/index.ts:2:export * from "./LayerAggregationEngine";
+src/core/unifiedlayer/index.ts:3:export * from "./DynamicLayerFactory";
+src/core/unifiedlayer/UnifiedMetaLayer.ts:1:export type LayerStatus =
+src/core/unifiedlayer/UnifiedMetaLayer.ts:10:export interface LogicalLayer {
+src/core/unifiedlayer/UnifiedMetaLayer.ts:24:export interface LayerExecution {
+src/core/unifiedlayer/UnifiedMetaLayer.ts:37:export class UnifiedMetaLayer {
+src/core/unifiedlayer/LayerAggregationEngine.ts:3:export class LayerAggregationEngine {
+src/core/unifiedlayer/DynamicLayerFactory.ts:3:export class DynamicLayerFactory {
+src/core/heartbeat/index.ts:1:export * from "./SystemHeartbeat";
+src/core/heartbeat/SystemHeartbeat.ts:1:export type Heartbeat = {
+src/core/heartbeat/SystemHeartbeat.ts:7:export class SystemHeartbeat {
+src/screens/ProjectsScreen.tsx:14:import { AppScreen, ProjectTimeline, SavedProject } from '../types';
+src/screens/ProjectsScreen.tsx:19:  onOpenProject: (timeline: ProjectTimeline) => void;
+src/screens/ProjectsScreen.tsx:26:export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({
+src/screens/ProjectsScreen.tsx:130:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx:174:                        onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx:191:                      {proj.timeline?.aspectRatio || '9:16'}
+src/screens/ProjectsScreen.tsx:193:                    <span>{proj.timeline?.clips?.length || 0} clips</span>
+src/screens/ProjectsScreen.tsx:194:                    <span>{proj.timeline?.captions?.length || 0} captions</span>
+src/screens/ProjectsScreen.tsx:206:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/AiScriptScreen.tsx:14:import { AiScriptResponse, CaptionItem, ProjectTimeline } from '../types';
+src/screens/AiScriptScreen.tsx:18:  timeline?: ProjectTimeline;
+src/screens/AiScriptScreen.tsx:19:  onApplyScriptAsCaptions?: (captions: CaptionItem[]) => void;
+src/screens/AiScriptScreen.tsx:23:export const AiScriptScreen: React.FC<AiScriptScreenProps> = ({
+src/screens/AiScriptScreen.tsx:25:  timeline,
+src/screens/AiScriptScreen.tsx:26:  onApplyScriptAsCaptions,
+src/screens/AiScriptScreen.tsx:52:          aspectRatio: timeline?.aspectRatio || '9:16',
+src/screens/AiScriptScreen.tsx:82:  const handleApplyToTimeline = () => {
+src/screens/AiScriptScreen.tsx:86:    const newCaptions: CaptionItem[] = scriptResult.scenes.map((scene, idx) => {
+src/screens/AiScriptScreen.tsx:88:      const cap: CaptionItem = {
+src/screens/AiScriptScreen.tsx:100:    onApplyScriptAsCaptions(newCaptions);
+src/screens/AiScriptScreen.tsx:217:                <span>Scripting with Gemini 3.8...</span>
+src/screens/AiScriptScreen.tsx:261:              onClick={handleApplyToTimeline}
+src/screens/AiScriptScreen.tsx:265:              <span>Apply Script to Timeline as Captions</span>
+src/screens/CaptionsScreen.tsx:15:import { CaptionItem, CaptionStyle, ProjectTimeline } from '../types';
+src/screens/CaptionsScreen.tsx:17:interface CaptionsScreenProps {
+src/screens/CaptionsScreen.tsx:19:  timeline?: ProjectTimeline;
+src/screens/CaptionsScreen.tsx:20:  onUpdateCaptions?: (captions: CaptionItem[]) => void;
+src/screens/CaptionsScreen.tsx:24:const CAPTION_STYLES: { id: CaptionStyle; label: string; preview: string; color: string }[] = [
+src/screens/CaptionsScreen.tsx:32:export const CaptionsScreen: React.FC<CaptionsScreenProps> = ({
+src/screens/CaptionsScreen.tsx:34:  timeline,
+src/screens/CaptionsScreen.tsx:35:  onUpdateCaptions,
+src/screens/CaptionsScreen.tsx:38:  const [captions, setCaptions] = useState<CaptionItem[]>(timeline?.captions || []);
+src/screens/CaptionsScreen.tsx:39:  const [activeStyle, setActiveStyle] = useState<CaptionStyle>('yellow_viral');
+src/screens/CaptionsScreen.tsx:43:  const handleGenerateAutoCaptions = () => {
+src/screens/CaptionsScreen.tsx:47:      const generated: CaptionItem[] = [
+src/screens/CaptionsScreen.tsx:76:      setCaptions(generated);
+src/screens/CaptionsScreen.tsx:82:    setCaptions((prev) => prev.map((c) => (c.id === id ? { ...c, text } : c)));
+src/screens/CaptionsScreen.tsx:86:    setCaptions((prev) => prev.filter((c) => c.id !== id));
+src/screens/CaptionsScreen.tsx:90:    const lastEnd = captions.length > 0 ? captions[captions.length - 1].endMs : 0;
+src/screens/CaptionsScreen.tsx:91:    const newCap: CaptionItem = {
+src/screens/CaptionsScreen.tsx:99:    setCaptions((prev) => [...prev, newCap]);
+src/screens/CaptionsScreen.tsx:102:  const handleApplyStyleToAll = (style: CaptionStyle) => {
+src/screens/CaptionsScreen.tsx:104:    setCaptions((prev) => prev.map((c) => ({ ...c, style })));
+src/screens/CaptionsScreen.tsx:109:    setCaptions((prev) => prev.map((c) => ({ ...c, position: pos })));
+src/screens/CaptionsScreen.tsx:113:    onUpdateCaptions(captions);
+src/screens/CaptionsScreen.tsx:129:            <h1 className="text-sm font-bold tracking-wide text-white">AUTO CAPTIONS</h1>
+src/screens/CaptionsScreen.tsx:146:          onClick={handleGenerateAutoCaptions}
+src/screens/CaptionsScreen.tsx:151:          <span>{isGenerating ? 'Transcribing Speech & Timing...' : 'Generate Auto Captions'}</span>
+src/screens/CaptionsScreen.tsx:190:            {CAPTION_STYLES.map((st) => (
+src/screens/CaptionsScreen.tsx:212:        {/* CAPTION SEGMENTS LIST */}
+src/screens/CaptionsScreen.tsx:216:              Caption Segments ({captions.length})
+src/screens/CaptionsScreen.tsx:227:          {captions.length === 0 ? (
+src/screens/CaptionsScreen.tsx:230:              <p className="text-xs text-neutral-400">No captions yet</p>
+src/screens/CaptionsScreen.tsx:232:                Tap "Generate Auto Captions" to auto-sync subtitle timings.
+src/screens/CaptionsScreen.tsx:236:            captions.map((cap, idx) => (
+src/screens/EditorScreen.tsx:26:  ProjectTimeline,
+src/screens/EditorScreen.tsx:28:  CaptionItem,
+src/screens/EditorScreen.tsx:30:import { bgAudioEngine } from '../utils/audioSynth';
+src/screens/EditorScreen.tsx:32:import { Timeline } from '../components/Timeline';
+src/screens/EditorScreen.tsx:34:export type ActiveCategoryTab = 'edit' | 'ai' | 'text' | 'audio' | 'effects' | 'captions';
+src/screens/EditorScreen.tsx:37:  timeline: ProjectTimeline;
+src/screens/EditorScreen.tsx:47:  onOpenAiCoPilot,
+src/screens/EditorScreen.tsx:48: onOpenAiReelMaker: () => void;
+src/screens/EditorScreen.tsx:54:  onOpenCaptionsScreen: () => void;
+src/screens/EditorScreen.tsx:55:  onOpenAudioScreen: () => void;
+src/screens/EditorScreen.tsx:69:  onUpdateCaption: (id: string, text: string) => void;
+src/screens/EditorScreen.tsx:70:  onDeleteCaption: (id: string) => void;
+src/screens/EditorScreen.tsx:72:  onAddCaptionAtPlayhead: () => void;
+src/screens/EditorScreen.tsx:74:  onSelectAudioGenre: (genre: 'phonk' | 'lofi' | 'cinematic') => void;
+src/screens/EditorScreen.tsx:76:  onGenerateAutoCaptions: () => void;
+src/screens/EditorScreen.tsx:79:export default function EditorScreen({
+src/screens/EditorScreen.tsx:80:  timeline,
+src/screens/EditorScreen.tsx:90:  onOpenAiCoPilot,
+src/screens/EditorScreen.tsx:91: onOpenAiReelMaker,
+src/screens/EditorScreen.tsx:97:  onOpenCaptionsScreen,
+src/screens/EditorScreen.tsx:98:  onOpenAudioScreen,
+src/screens/EditorScreen.tsx:112:  onUpdateCaption,
+src/screens/EditorScreen.tsx:113:  onDeleteCaption,
+src/screens/EditorScreen.tsx:115:  onAddCaptionAtPlayhead,
+src/screens/EditorScreen.tsx:117:  onSelectAudioGenre,
+src/screens/EditorScreen.tsx:119:  onGenerateAutoCaptions,
+src/screens/EditorScreen.tsx:124:    timeline.clips.find((c) => c.id === selectedClipId) || timeline.clips[0];
+src/screens/EditorScreen.tsx:136:      {/* 1. TOP HEADER:  ← Back | VIDOAI STUDIO | Undo Redo Export */}
+src/screens/EditorScreen.tsx:181:            title="Export Video"
+src/screens/EditorScreen.tsx:183:            <span>Export</span>
+src/screens/EditorScreen.tsx:195:          clips={timeline.clips}
+src/screens/EditorScreen.tsx:196:          captions={timeline.captions}
+src/screens/EditorScreen.tsx:197:          stickers={timeline.stickers || []}
+src/screens/EditorScreen.tsx:200:          aspectRatio={timeline.aspectRatio}
+src/screens/EditorScreen.tsx:210:          onClick={onOpenAiCoPilot}
+src/screens/EditorScreen.tsx:238:      {/* 3. BOTTOM TOOLBAR: Edit | AI | Text | Audio | Effects | Captions */}
+src/screens/EditorScreen.tsx:246:            { id: 'audio', label: 'Audio', icon: Music },
+src/screens/EditorScreen.tsx:248:            { id: 'captions', label: 'Captions', icon: Type },
+src/screens/EditorScreen.tsx:322:          onClick={onOpenAiReelMaker}
+src/screens/EditorScreen.tsx:355:              onClick={onGenerateAutoCaptions}
+src/screens/EditorScreen.tsx:359:              <span>✨ Auto Captions</span>
+src/screens/EditorScreen.tsx:362:              onClick={onAddCaptionAtPlayhead}
+src/screens/EditorScreen.tsx:378:        {activeTab === 'audio' && (
+src/screens/EditorScreen.tsx:381:              onClick={onOpenAudioScreen}
+src/screens/EditorScreen.tsx:387:              onClick={() => onSelectAudioGenre('phonk')}
+src/screens/EditorScreen.tsx:389:                timeline.bgAudio?.genre === 'phonk'
+src/screens/EditorScreen.tsx:397:              onClick={() => onSelectAudioGenre('lofi')}
+src/screens/EditorScreen.tsx:399:                timeline.bgAudio?.genre === 'lofi'
+src/screens/EditorScreen.tsx:407:              onClick={() => onSelectAudioGenre('cinematic')}
+src/screens/EditorScreen.tsx:409:                timeline.bgAudio?.genre === 'cinematic'
+src/screens/EditorScreen.tsx:431:                onClick={() => bgAudioEngine.playSfx(sfx.id as any)}
+src/screens/EditorScreen.tsx:459:        {activeTab === 'captions' && (
+src/screens/EditorScreen.tsx:462:              onClick={onOpenCaptionsScreen}
+src/screens/EditorScreen.tsx:465:              💬 Open Captions Studio →
+src/screens/EditorScreen.tsx:468:              onClick={onGenerateAutoCaptions}
+src/screens/EditorScreen.tsx:479:      {/* 5. MULTI-TRACK TIMELINE                                  */}
+src/screens/EditorScreen.tsx:482:        <Timeline
+src/screens/EditorScreen.tsx:483:          clips={timeline.clips}
+src/screens/EditorScreen.tsx:484:          captions={timeline.captions}
+src/screens/EditorScreen.tsx:485:          stickers={timeline.stickers || []}
+src/screens/EditorScreen.tsx:486:          bgAudio={timeline.bgAudio}
+src/screens/EditorScreen.tsx:498:          onUpdateCaption={onUpdateCaption}
+src/screens/EditorScreen.tsx:499:          onDeleteCaption={onDeleteCaption}
+src/screens/EditorScreen.tsx:501:          onAddCaptionAtPlayhead={onAddCaptionAtPlayhead}
+src/screens/EditorScreen.tsx:560:            {timeline.aspectRatio}
+src/screens/SettingsScreen.tsx:23:export const SettingsScreen: React.FC<SettingsScreenProps> = ({
+src/screens/SettingsScreen.tsx:30:  const [aiModel, setAiModel] = useState<'gemini-3.8-flash' | 'gemini-1.5-pro'>('gemini-3.8-flash');
+src/screens/SettingsScreen.tsx:64:              Gemini Vision & Reasoning Model:
+src/screens/SettingsScreen.tsx:68:                { id: 'gemini-3.8-flash', label: 'Gemini 3.8 Flash', desc: 'Real-time & Fast (Recommended)' },
+src/screens/SettingsScreen.tsx:69:                { id: 'gemini-1.5-pro', label: 'Gemini Pro', desc: 'Deep Creative Scripting' },
+src/screens/SettingsScreen.tsx:101:        {/* 2. EXPORT SETTINGS */}
+src/screens/SettingsScreen.tsx:105:            <span>Export & Render Quality</span>
+src/screens/SettingsScreen.tsx:187:            All project edits and video timelines are safely stored locally on your device in your browser's persistent storage.
+src/screens/SettingsScreen.tsx:215:            Professional AI Video Editor with multi-track timeline, safe atomic operations, and instant reel rendering.
+src/screens/AudioScreen.tsx:16:import { AudioTrackItem, ProjectTimeline } from '../types';
+src/screens/AudioScreen.tsx:17:import { bgAudioEngine } from '../utils/audioSynth';
+src/screens/AudioScreen.tsx:19:interface AudioScreenProps {
+src/screens/AudioScreen.tsx:21:  timeline?: ProjectTimeline;
+src/screens/AudioScreen.tsx:22:  onUpdateAudio?: (audio: AudioTrackItem | null) => void;
+src/screens/AudioScreen.tsx:27:export const AudioScreen: React.FC<AudioScreenProps> = ({
+src/screens/AudioScreen.tsx:29:  timeline,
+src/screens/AudioScreen.tsx:30:  onUpdateAudio,
+src/screens/AudioScreen.tsx:35:  const [selectedGenre, setSelectedGenre] = useState<AudioTrackItem['genre']>(
+src/screens/AudioScreen.tsx:36:    timeline?.bgAudio?.genre || 'phonk'
+src/screens/AudioScreen.tsx:38:  const [volume, setVolume] = useState<number>(timeline?.bgAudio ? timeline.bgAudio.volume : 0.6);
+src/screens/AudioScreen.tsx:39:  const [ducking, setDucking] = useState<boolean>(timeline?.bgAudio ? timeline.bgAudio.ducking : true);
+src/screens/AudioScreen.tsx:40:  const [isAudioMuted, setIsAudioMuted] = useState<boolean>(
+src/screens/AudioScreen.tsx:41:    timeline?.bgAudio ? timeline.bgAudio.isMuted : false
+src/screens/AudioScreen.tsx:47:  const [recordedAudioUrl, setRecordedAudioUrl] = useState<string | null>(null);
+src/screens/AudioScreen.tsx:49:  const audioChunksRef = useRef<Blob[]>([]);
+src/screens/AudioScreen.tsx:62:  const handleApplyMusic = (genre: AudioTrackItem['genre'], title: string) => {
+src/screens/AudioScreen.tsx:64:    const updated: AudioTrackItem = {
+src/screens/AudioScreen.tsx:65:      id: `audio_${genre}_${Date.now()}`,
+src/screens/AudioScreen.tsx:69:      isMuted: isAudioMuted,
+src/screens/AudioScreen.tsx:73:    onUpdateAudio(updated);
+src/screens/AudioScreen.tsx:74:    bgAudioEngine.setGenre(genre);
+src/screens/AudioScreen.tsx:75:    bgAudioEngine.setVolume(volume);
+src/screens/AudioScreen.tsx:78:  const handleRemoveAudio = () => {
+src/screens/AudioScreen.tsx:79:    onUpdateAudio(null);
+src/screens/AudioScreen.tsx:80:    bgAudioEngine.stop();
+src/screens/AudioScreen.tsx:86:      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+src/screens/AudioScreen.tsx:89:      audioChunksRef.current = [];
+src/screens/AudioScreen.tsx:92:        if (e.data.size > 0) audioChunksRef.current.push(e.data);
+src/screens/AudioScreen.tsx:96:        const blob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+src/screens/AudioScreen.tsx:98:        setRecordedAudioUrl(url);
+src/screens/AudioScreen.tsx:123:  // Synthesize instant SFX preview using Web Audio
+src/screens/AudioScreen.tsx:126:    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+src/screens/AudioScreen.tsx:180:            <h1 className="text-sm font-bold tracking-wide text-white">AUDIO</h1>
+src/screens/AudioScreen.tsx:194:      {/* TABS: Music, Voiceover, Sound Effects, Extract Audio */}
+src/screens/AudioScreen.tsx:228:                  const isActive = timeline.bgAudio?.genre === t.genre;
+src/screens/AudioScreen.tsx:265:              {timeline.bgAudio && (
+src/screens/AudioScreen.tsx:267:                  onClick={handleRemoveAudio}
+src/screens/AudioScreen.tsx:276:            {timeline.bgAudio && (
+src/screens/AudioScreen.tsx:291:                    if (timeline.bgAudio) {
+src/screens/AudioScreen.tsx:292:                      onUpdateAudio({ ...timeline.bgAudio, volume: val });
+src/screens/AudioScreen.tsx:293:                      bgAudioEngine.setVolume(val);
+src/screens/AudioScreen.tsx:301:                    <span className="text-xs font-semibold text-white block">Smart Audio Ducking</span>
+src/screens/AudioScreen.tsx:311:                      if (timeline.bgAudio) {
+src/screens/AudioScreen.tsx:312:                        onUpdateAudio({ ...timeline.bgAudio, ducking: e.target.checked });
+src/screens/AudioScreen.tsx:360:            {recordedAudioUrl && (
+src/screens/AudioScreen.tsx:365:                <audio src={recordedAudioUrl} controls className="w-full h-8" />
+src/screens/AudioScreen.tsx:402:        {/* OPTION 4: EXTRACT AUDIO */}
+src/screens/AudioScreen.tsx:409:              <h3 className="text-xs font-bold text-white">Extract Audio from Video</h3>
+src/screens/AudioScreen.tsx:411:                Separates original video audio into an independent track for precise volume automation and EQ.
+src/screens/AudioScreen.tsx:416:                alert('Extracted audio from timeline video clips to audio track!');
+src/screens/AudioScreen.tsx:421:              Extract Timeline Audio
+src/screens/AiReelMakerScreen.tsx:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx:26:interface AiReelMakerScreenProps {
+src/screens/AiReelMakerScreen.tsx:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx:48:export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
+src/screens/AiReelMakerScreen.tsx:50:  timeline = {
+src/screens/AiReelMakerScreen.tsx:55:    captions: [],
+src/screens/AiReelMakerScreen.tsx:57:    bgAudio: null,
+src/screens/AiReelMakerScreen.tsx:63:  const safeClips = timeline?.clips || [];
+src/screens/AiReelMakerScreen.tsx:80:    { num: 6, title: 'Export' },
+src/screens/AiReelMakerScreen.tsx:93:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx:94:        clips: timeline.clips,
+src/screens/AiReelMakerScreen.tsx:111:      const report = validateAiOperations(rawOps, timeline);
+src/screens/AiReelMakerScreen.tsx:124:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/screens/AiReelMakerScreen.tsx:126:      onApplyReel?.(tx.newTimeline);
+src/screens/AiReelMakerScreen.tsx:151:            <p className="text-[10px] text-neutral-400">Transform timeline clips into a viral 9:16 short</p>
+src/screens/AiReelMakerScreen.tsx:189:              Aspect Ratio: {timeline.aspectRatio || '9:16'}
+src/screens/AiReelMakerScreen.tsx:300:              {activeStep === 2 ? 'Analyzing media & detecting highlights...' : 'Building Reel Timeline & Captions...'}
+src/screens/AiReelMakerScreen.tsx:351:              <span>Apply to Timeline & Open in Editor</span>
+src/screens/HomeScreen.tsx:18:import { AppScreen, ProjectTimeline, SavedProject, TimelineClip } from '../types';
+src/screens/HomeScreen.tsx:22:  onOpenProject: (timeline: ProjectTimeline) => void;
+src/screens/HomeScreen.tsx:30:export const HomeScreen: React.FC<HomeScreenProps> = ({
+src/screens/HomeScreen.tsx:144:            <span className="text-[10px] text-[#8B5CF6] font-mono font-medium">Gemini 3.8</span>
+src/screens/HomeScreen.tsx:201:            {/* Captions */}
+src/screens/HomeScreen.tsx:203:              onClick={() => onNavigate('captions')}
+src/screens/HomeScreen.tsx:211:                  Captions
+src/screens/HomeScreen.tsx:252:                    onClick={() => onOpenProject(proj.timeline)}
+src/screens/HomeScreen.tsx:285:                        <span className="text-cyan-400">{proj.timeline.aspectRatio}</span>
+src/utils/audioSynth.ts:2: * Web Audio Procedural Synthesizer for Background Music
+src/utils/audioSynth.ts:7:class BackgroundAudioEngine {
+src/utils/audioSynth.ts:8:  private ctx: AudioContext | null = null;
+src/utils/audioSynth.ts:14:  private destinationNode: MediaStreamAudioDestinationNode | null = null;
+src/utils/audioSynth.ts:19:      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+src/utils/audioSynth.ts:20:      this.ctx = new AudioContextClass();
+src/utils/audioSynth.ts:32:  public getAudioStreamDestination(): MediaStreamAudioDestinationNode | null {
+src/utils/audioSynth.ts:421:export const bgAudioEngine = new BackgroundAudioEngine();
+src/utils/videoExporter.ts:2: * VIDOAI STUDIO - Production-Grade Canvas Video Exporter
+src/utils/videoExporter.ts:7:import { AspectRatio, ExportSettings } from '../types';
+src/utils/videoExporter.ts:9:export interface ExportProgress {
+src/utils/videoExporter.ts:10:  stage: 'initializing' | 'rendering' | 'processing_audio' | 'encoding' | 'completed' | 'cancelled' | 'error';
+src/utils/videoExporter.ts:17:export interface ExportHandle {
+src/utils/videoExporter.ts:22:export function exportCanvasVideoAdvanced(
+src/utils/videoExporter.ts:24:  audioDestination: MediaStreamAudioDestinationNode | null,
+src/utils/videoExporter.ts:26:  settings: ExportSettings,
+src/utils/videoExporter.ts:27:  onProgress: (prog: ExportProgress) => void
+src/utils/videoExporter.ts:28:): ExportHandle {
+src/utils/videoExporter.ts:48:      message: 'Export was cancelled by user.',
+src/utils/videoExporter.ts:88:      // 3. Create high-resolution export canvas & transfer stream
+src/utils/videoExporter.ts:89:      const exportCanvas = document.createElement('canvas');
+src/utils/videoExporter.ts:90:      exportCanvas.width = targetW;
+src/utils/videoExporter.ts:91:      exportCanvas.height = targetH;
+src/utils/videoExporter.ts:92:      const exportCtx = exportCanvas.getContext('2d');
+src/utils/videoExporter.ts:94:      if (!exportCtx) throw new Error('Could not initialize 2D export canvas');
+src/utils/videoExporter.ts:99:        exportCtx.drawImage(sourceCanvas, 0, 0, targetW, targetH);
+src/utils/videoExporter.ts:105:      const canvasStream = exportCanvas.captureStream(settings.fps);
+src/utils/videoExporter.ts:107:      // Add audio track if present
+src/utils/videoExporter.ts:109:      if (audioDestination && audioDestination.stream.getAudioTracks().length > 0) {
+src/utils/videoExporter.ts:110:        tracks.push(...audioDestination.stream.getAudioTracks());
+src/utils/videoExporter.ts:141:        let currentStage: ExportProgress['stage'] = 'rendering';
+src/utils/videoExporter.ts:145:          currentStage = 'processing_audio';
+src/utils/videoExporter.ts:146:          msg = `Synchronizing audio & voice ducking... ${percent}%`;
+src/utils/videoExporter.ts:150:          msg = `Baking animated captions & color LUTs... ${percent}%`;
+src/utils/videoExporter.ts:165:          reject(new Error('Export was cancelled.'));
+src/utils/videoExporter.ts:177:            reject(new Error('Export was cancelled.'));
+src/utils/videoExporter.ts:184:            message: `Export Complete! (${(blob.size / (1024 * 1024)).toFixed(1)} MB)`,
+src/utils/videoExporter.ts:212:        message: err.message || 'Export initialization failed',
+src/types.ts:1:export type AspectRatio = '9:16' | '1:1' | '16:9' | '4:5';
+src/types.ts:3:export type FilterType = 
+src/types.ts:12:export type TransitionType = 
+src/types.ts:23:export type CaptionStyle = 
+src/types.ts:30:export interface ClipTransform {
+src/types.ts:43:export interface ColorAdjustments {
+src/types.ts:52:export interface StickerItem {
+src/types.ts:65:export interface TimelineClip {
+src/types.ts:85:export interface CaptionItem {
+src/types.ts:90:  style: CaptionStyle;
+src/types.ts:95:export interface AudioTrackItem {
+src/types.ts:107:export interface SavedProject {
+src/types.ts:110:  timeline: ProjectTimeline;
+src/types.ts:116:export type AppScreen =
+src/types.ts:121:  | 'captions'
+src/types.ts:122:  | 'audio'
+src/types.ts:126:export interface ProjectTimeline {
+src/types.ts:130:  clips: TimelineClip[];
+src/types.ts:131:  captions: CaptionItem[];
+src/types.ts:133:  bgAudio: AudioTrackItem | null;
+src/types.ts:137:export interface ScriptScene {
+src/types.ts:148:export interface AiScriptResponse {
+src/types.ts:160:export type SupportedOpType =
+src/types.ts:174:  | 'CAPTION'
+src/types.ts:175:  | 'AUDIO'
+src/types.ts:182:  | 'ADD_CAPTIONS'
+src/types.ts:183:  | 'ADD_AUDIO'
+src/types.ts:191:export interface AiCropValues {
+src/types.ts:198:export interface AiEditOperation {
+src/types.ts:229:  captionText?: string;
+src/types.ts:230:  style?: CaptionStyle | string;
+src/types.ts:232:  audioVibe?: string;
+src/types.ts:246:export type ReelPreset =
+src/types.ts:257:export interface AiPlanItem {
+src/types.ts:266:export interface ValidationReport {
+src/types.ts:275:export interface ReelMakerOptions {
+src/types.ts:279:  includeCaptions: boolean;
+src/types.ts:284:export interface AiCoPilotResult {
+src/types.ts:295:export interface SocialPlatformData {
+src/types.ts:296:  caption: string;
+src/types.ts:306:export interface SocialPackageResponse {
+src/types.ts:316:export interface ExportSettings {
+src/types.ts:323:export interface SceneDetectionResult {
+src/components/MediaLibraryModal.tsx:4:import { TimelineClip } from '../types';
+src/components/MediaLibraryModal.tsx:9:  onAddClipToTimeline: (clip: TimelineClip) => void;
+src/components/MediaLibraryModal.tsx:12:export const MediaLibraryModal: React.FC<MediaLibraryModalProps> = ({
+src/components/MediaLibraryModal.tsx:15:  onAddClipToTimeline,
+src/components/MediaLibraryModal.tsx:31:    const newClip: TimelineClip = {
+src/components/MediaLibraryModal.tsx:46:    onAddClipToTimeline(newClip);
+src/components/MediaLibraryModal.tsx:57:    const newClip: TimelineClip = {
+src/components/MediaLibraryModal.tsx:72:    onAddClipToTimeline(newClip);
+src/components/MediaLibraryModal.tsx:81:        audio: true,
+src/components/MediaLibraryModal.tsx:108:      const newClip: TimelineClip = {
+src/components/MediaLibraryModal.tsx:123:      onAddClipToTimeline(newClip);
+src/components/MediaLibraryModal.tsx:285:                    <span>Stop & Add to Timeline</span>
+src/components/AndroidFrame.tsx:11:export const AndroidFrame: React.FC<AndroidFrameProps> = ({
+src/components/ClipInspectorModal.tsx:16:import { TimelineClip, FilterType, TransitionType, ClipTransform, ColorAdjustments } from '../types';
+src/components/ClipInspectorModal.tsx:17:import { bgAudioEngine } from '../utils/audioSynth';
+src/components/ClipInspectorModal.tsx:20:  clip: TimelineClip;
+src/components/ClipInspectorModal.tsx:23:  onUpdateClip: (updated: TimelineClip) => void;
+src/components/ClipInspectorModal.tsx:26:export const ClipInspectorModal: React.FC<ClipInspectorModalProps> = ({
+src/components/ClipInspectorModal.tsx:34:  const [activeTab, setActiveTab] = useState<'transform' | 'color' | 'transition' | 'audio'>('transform');
+src/components/ClipInspectorModal.tsx:67:  // Audio state
+src/components/ClipInspectorModal.tsx:161:            onClick={() => setActiveTab('audio')}
+src/components/ClipInspectorModal.tsx:163:              activeTab === 'audio' ? 'text-cyan-400 border-b-2 border-cyan-400 bg-cyan-950/20' : 'text-neutral-400 hover:text-neutral-200'
+src/components/ClipInspectorModal.tsx:167:            <span>Audio Fade</span>
+src/components/ClipInspectorModal.tsx:289:                      bgAudioEngine.playTransitionSfx(t.id);
+src/components/ClipInspectorModal.tsx:308:          {/* 4. AUDIO FADE TAB */}
+src/components/ClipInspectorModal.tsx:309:          {activeTab === 'audio' && (
+src/components/StickerOverlayModal.tsx:5:import { bgAudioEngine } from '../utils/audioSynth';
+src/components/StickerOverlayModal.tsx:33:export const StickerOverlayModal: React.FC<StickerOverlayModalProps> = ({
+src/components/StickerOverlayModal.tsx:54:    bgAudioEngine.playSfx('pop');
+src/components/StickerOverlayModal.tsx:178:          {/* Active Stickers on Timeline */}
+src/components/StickerOverlayModal.tsx:181:              <span className="text-[11px] text-neutral-400 block mb-2 font-medium">Active Stickers on Timeline ({existingStickers.length})</span>
+src/components/UniversalSystemPanel.tsx:2:import { runUniversalCommand } from "../core/universal/UniversalCopilotBridge";
+src/components/UniversalSystemPanel.tsx:5:export default function UniversalSystemPanel() {
+src/components/AiSceneDetectionModal.tsx:3:import { TimelineClip, SceneDetectionResult, AiEditOperation } from '../types';
+src/components/AiSceneDetectionModal.tsx:8:  clips: TimelineClip[];
+src/components/AiSceneDetectionModal.tsx:12:export const AiSceneDetectionModal: React.FC<AiSceneDetectionModalProps> = ({
+src/components/AiSceneDetectionModal.tsx:97:                  Gemini analyzes visual motion vectors, pacing, and dead speech gaps to extract only high-retention segments.
+src/components/AiSceneDetectionModal.tsx:113:              <p className="font-medium text-white">Scanning audio waveforms and motion dynamics...</p>
+src/components/Timeline.tsx:22:import { AudioTrackItem, CaptionItem, StickerItem, TimelineClip } from '../types';
+src/components/Timeline.tsx:24:interface TimelineProps {
+src/components/Timeline.tsx:25:  clips: TimelineClip[];
+src/components/Timeline.tsx:26:  captions: CaptionItem[];
+src/components/Timeline.tsx:28:  bgAudio: AudioTrackItem | null;
+src/components/Timeline.tsx:42:  onUpdateCaption: (id: string, text: string) => void;
+src/components/Timeline.tsx:43:  onDeleteCaption: (id: string) => void;
+src/components/Timeline.tsx:45:  onAddCaptionAtPlayhead: () => void;
+src/components/Timeline.tsx:49:export const Timeline: React.FC<TimelineProps> = ({
+src/components/Timeline.tsx:51:  captions,
+src/components/Timeline.tsx:53:  bgAudio,
+src/components/Timeline.tsx:67:  onUpdateCaption,
+src/components/Timeline.tsx:68:  onDeleteCaption,
+src/components/Timeline.tsx:70:  onAddCaptionAtPlayhead,
+src/components/Timeline.tsx:76:  const [editingCaptionId, setEditingCaptionId] = useState<string | null>(null);
+src/components/Timeline.tsx:79:  const timelineContentWidth = Math.max(700, Math.round(totalDurationMs * zoomScale) + 240);
+src/components/Timeline.tsx:81:  // Handle click/scrub on timeline
+src/components/Timeline.tsx:82:  const handleTimelineScrub = (clientX: number) => {
+src/components/Timeline.tsx:93:    handleTimelineScrub(e.clientX);
+src/components/Timeline.tsx:98:      handleTimelineScrub(e.clientX);
+src/components/Timeline.tsx:108:      handleTimelineScrub(e.touches[0].clientX);
+src/components/Timeline.tsx:117:      {/* Timeline Controls & Quick Action Bar */}
+src/components/Timeline.tsx:234:            onClick={onAddCaptionAtPlayhead}
+src/components/Timeline.tsx:236:            title="Add Subtitle Caption at Playhead"
+src/components/Timeline.tsx:239:            <span>+ Caption</span>
+src/components/Timeline.tsx:245:            title="Add Media to Timeline"
+src/components/Timeline.tsx:252:        {/* Timeline Zoom Controls */}
+src/components/Timeline.tsx:257:            title="Zoom Out Timeline"
+src/components/Timeline.tsx:267:            title="Zoom In Timeline"
+src/components/Timeline.tsx:274:      {/* Multi-Track Scrollable Timeline Canvas */}
+src/components/Timeline.tsx:284:          style={{ width: `${timelineContentWidth}px` }}
+src/components/Timeline.tsx:292:          {/* 1. Captions Track */}
+src/components/Timeline.tsx:299:            {captions.map((cap) => {
+src/components/Timeline.tsx:302:              const isEditing = editingCaptionId === cap.id;
+src/components/Timeline.tsx:311:                    setEditingCaptionId(cap.id);
+src/components/Timeline.tsx:320:                        onUpdateCaption(cap.id, e.target.value);
+src/components/Timeline.tsx:321:                        setEditingCaptionId(null);
+src/components/Timeline.tsx:325:                          onUpdateCaption(cap.id, (e.target as HTMLInputElement).value);
+src/components/Timeline.tsx:326:                          setEditingCaptionId(null);
+src/components/Timeline.tsx:337:                      onDeleteCaption(cap.id);
+src/components/Timeline.tsx:473:          {/* 4. Background Audio Track */}
+src/components/Timeline.tsx:477:              <span className="truncate">AUDIO</span>
+src/components/Timeline.tsx:480:            {bgAudio ? (
+src/components/Timeline.tsx:487:                  <span className="font-medium truncate">{bgAudio.title} ({bgAudio.genre.toUpperCase()})</span>
+src/components/Timeline.tsx:500:              <span className="text-[10px] text-neutral-400 italic">No background audio loaded</span>
+src/components/VideoCanvasPlayer.tsx:3:import { AspectRatio, CaptionItem, FilterType, StickerItem, TimelineClip } from '../types';
+src/components/VideoCanvasPlayer.tsx:4:import { bgAudioEngine } from '../utils/audioSynth';
+src/components/VideoCanvasPlayer.tsx:7:  clips: TimelineClip[];
+src/components/VideoCanvasPlayer.tsx:8:  captions: CaptionItem[];
+src/components/VideoCanvasPlayer.tsx:19:export interface VideoCanvasPlayerRef {
+src/components/VideoCanvasPlayer.tsx:23:export const VideoCanvasPlayer = forwardRef<VideoCanvasPlayerRef, VideoCanvasPlayerProps>(({
+src/components/VideoCanvasPlayer.tsx:25:  captions,
+src/components/VideoCanvasPlayer.tsx:50:  let timeInClipTimelineMs = 0;
+src/components/VideoCanvasPlayer.tsx:57:      timeInClipTimelineMs = Math.max(0, currentPlayheadMs - accumulatedMs);
+src/components/VideoCanvasPlayer.tsx:58:      clipLocalMs = timeInClipTimelineMs * clip.speed + clip.startTrimMs;
+src/components/VideoCanvasPlayer.tsx:66:  // Trigger audio SFX on transition cut
+src/components/VideoCanvasPlayer.tsx:72:        bgAudioEngine.playTransitionSfx(activeClip.transition);
+src/components/VideoCanvasPlayer.tsx:132:        timeInClipTimelineMs < 450 &&
+src/components/VideoCanvasPlayer.tsx:136:      const transProgress = isTransitioning ? Math.min(1, Math.max(0, timeInClipTimelineMs / 450)) : 1;
+src/components/VideoCanvasPlayer.tsx:249:      // 4. Subtitles / Captions Layer
+src/components/VideoCanvasPlayer.tsx:250:      renderCaptionsLayer(ctx, captions, currentPlayheadMs, width, height);
+src/components/VideoCanvasPlayer.tsx:265:  }, [videoLoaded, activeClip, currentPlayheadMs, captions, stickers, showSafeZones, aspectRatio]);
+src/components/VideoCanvasPlayer.tsx:359:        {/* Active Clip Title Indicator & Audio Waveform */}
+src/components/VideoCanvasPlayer.tsx:366:            {/* Live Audio Equalizer Bars */}
+src/components/VideoCanvasPlayer.tsx:543:  clip: TimelineClip | null
+src/components/VideoCanvasPlayer.tsx:597:// Helper: Subtitle / Captions Layer
+src/components/VideoCanvasPlayer.tsx:598:function renderCaptionsLayer(
+src/components/VideoCanvasPlayer.tsx:600:  captions: CaptionItem[],
+src/components/VideoCanvasPlayer.tsx:605:  // Find current active caption
+src/components/VideoCanvasPlayer.tsx:606:  const activeCaption = captions.find(
+src/components/VideoCanvasPlayer.tsx:610:  if (!activeCaption || !activeCaption.text) return;
+src/components/VideoCanvasPlayer.tsx:613:  const text = activeCaption.text;
+src/components/VideoCanvasPlayer.tsx:614:  const style = activeCaption.style;
+src/components/VideoCanvasPlayer.tsx:618:  if (activeCaption.position === 'center') posY = h * 0.5;
+src/components/VideoCanvasPlayer.tsx:619:  if (activeCaption.position === 'top') posY = h * 0.22;
+src/components/VideoCanvasPlayer.tsx:623:  const capDuration = Math.max(1, activeCaption.endMs - activeCaption.startMs);
+src/components/VideoCanvasPlayer.tsx:624:  const progress = Math.max(0, Math.min(0.999, (currentMs - activeCaption.startMs) / capDuration));
+src/components/VideoCanvasPlayer.tsx:641:      const isActive = idx === activeWordIdx || (activeCaption.highlightWord && uWord.includes(activeCaption.highlightWord.toUpperCase()));
+src/components/VideoCanvasPlayer.tsx:741:  // Bottom caption & audio ticker zone
+src/components/VideoCanvasPlayer.tsx:756:  ctx.fillText('BOTTOM CAPTION & SOUND ZONE', w / 2, h * 0.91);
+src/components/EditorToolbar.tsx:38:  onOpenAiCoPilot: () => void;
+src/components/EditorToolbar.tsx:43:  onGenerateAutoCaptions: () => void;
+src/components/EditorToolbar.tsx:47:export const EditorToolbar: React.FC<EditorToolbarProps> = ({
+src/components/EditorToolbar.tsx:61:  onOpenAiCoPilot,
+src/components/EditorToolbar.tsx:66:  onGenerateAutoCaptions,
+src/components/EditorToolbar.tsx:259:              title="Crop, Rotate, Color Adjustments & Audio"
+src/components/EditorToolbar.tsx:290:          {/* Auto Captions AI */}
+src/components/EditorToolbar.tsx:292:            onClick={onGenerateAutoCaptions}
+src/components/EditorToolbar.tsx:297:            <span className="hidden sm:inline">Captions</span>
+src/components/EditorToolbar.tsx:302:            onClick={onOpenAiCoPilot}
+src/components/EditorToolbar.tsx:311:        {/* Share & Export */}
+src/components/EditorToolbar.tsx:325:            title="Export & Share to Social Media"
+src/components/EditorToolbar.tsx:328:            <span>Export</span>
+src/components/AiReelMakerModal.tsx:26:import { ProjectTimeline, ReelPreset, ValidationReport } from '../types';
+src/components/AiReelMakerModal.tsx:29:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiReelMakerModal.tsx:32:interface AiReelMakerModalProps {
+src/components/AiReelMakerModal.tsx:35:  timeline: ProjectTimeline;
+src/components/AiReelMakerModal.tsx:36:  onApplyReelTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/AiReelMakerModal.tsx:48:  { id: 'Pharma', label: 'Pharma / Health', desc: 'Golden hour grade, ambient audio, calm', icon: <Pill className="w-4 h-4 text-emerald-400" />, defaultDuration: 30 },
+src/components/AiReelMakerModal.tsx:54:  { id: 'Instagram Reel', label: 'Instagram Reel', desc: 'Trending 9:16 audio sync with dynamic text', icon: <Instagram className="w-4 h-4 text-purple-400" />, defaultDuration: 20 },
+src/components/AiReelMakerModal.tsx:65:  '8. Build timeline',
+src/components/AiReelMakerModal.tsx:66:  '9. Generate captions',
+src/components/AiReelMakerModal.tsx:72:  '15. Export readiness',
+src/components/AiReelMakerModal.tsx:75:export const AiReelMakerModal: React.FC<AiReelMakerModalProps> = ({
+src/components/AiReelMakerModal.tsx:78:  timeline,
+src/components/AiReelMakerModal.tsx:85:  const [includeCaptions, setIncludeCaptions] = useState<boolean>(true);
+src/components/AiReelMakerModal.tsx:112:      const response = await GeminiProvider.requestReelMaker({
+src/components/AiReelMakerModal.tsx:113:        clips: timeline.clips,
+src/components/AiReelMakerModal.tsx:134:      const report = validateAiOperations(rawOps, timeline);
+src/components/AiReelMakerModal.tsx:150:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/AiReelMakerModal.tsx:152:      onApplyReelTransaction(tx.newTimeline, tx.auditLog);
+src/components/AiReelMakerModal.tsx:194:                Source Clips ({timeline.clips.length}):
+src/components/AiReelMakerModal.tsx:197:                {timeline.clips.length} ready for highlight assembly
+src/components/AiReelMakerModal.tsx:202:              {timeline.clips.map((c, i) => (
+src/components/UniversalCommandBar.tsx:7:export default function UniversalCommandBar() {
+src/components/UniversalCommandBar.tsx:58:        placeholder="Example: Make a 30 second viral Reel with captions and music"
+src/components/CoPilotPanel.tsx:3:interface CoPilotPanelProps {
+src/components/CoPilotPanel.tsx:10:export const CoPilotPanel: React.FC<CoPilotPanelProps> = ({
+src/components/CoPilotPanel.tsx:54:            Timeline: {clips.length} clips · Playhead: {currentPlayheadMs}ms
+src/components/CoPilotPanel.tsx:81:export default CoPilotPanel;
+src/components/AiScriptWriterModal.tsx:8:  onApplyScriptToTimeline: (script: AiScriptResponse) => void;
+src/components/AiScriptWriterModal.tsx:11:export const AiScriptWriterModal: React.FC<AiScriptWriterModalProps> = ({
+src/components/AiScriptWriterModal.tsx:14:  onApplyScriptToTimeline,
+src/components/AiScriptWriterModal.tsx:63:  const handleLoadToTimeline = () => {
+src/components/AiScriptWriterModal.tsx:65:      onApplyScriptToTimeline(scriptResult);
+src/components/AiScriptWriterModal.tsx:83:              <p className="text-xs text-neutral-400">Generate viral scripts with automatic timeline assembly</p>
+src/components/AiScriptWriterModal.tsx:164:                  <span>Gemini Writing Storyboard...</span>
+src/components/AiScriptWriterModal.tsx:254:              {/* Action Button: Assemble to Timeline */}
+src/components/AiScriptWriterModal.tsx:256:                onClick={handleLoadToTimeline}
+src/components/AiScriptWriterModal.tsx:260:                <span>Build Timeline from this Script</span>
+src/components/system/SystemFrontline.tsx:27:export default function SystemFrontline() {
+src/components/SocialShareModal.tsx:17:import { AspectRatio, ExportSettings, ProjectTimeline, SocialPackageResponse } from '../types';
+src/components/SocialShareModal.tsx:18:import { exportCanvasVideoAdvanced, ExportProgress, ExportHandle } from '../utils/videoExporter';
+src/components/SocialShareModal.tsx:19:import { bgAudioEngine } from '../utils/audioSynth';
+src/components/SocialShareModal.tsx:24:  timeline: ProjectTimeline;
+src/components/SocialShareModal.tsx:29:export const SocialShareModal: React.FC<SocialShareModalProps> = ({
+src/components/SocialShareModal.tsx:32:  timeline,
+src/components/SocialShareModal.tsx:37:  const [exportSettings, setExportSettings] = useState<ExportSettings>({
+src/components/SocialShareModal.tsx:38:    aspectRatio: timeline.aspectRatio,
+src/components/SocialShareModal.tsx:44:  const [exportProgress, setExportProgress] = useState<ExportProgress>({
+src/components/SocialShareModal.tsx:49:  const [isExporting, setIsExporting] = useState(false);
+src/components/SocialShareModal.tsx:50:  const [exportedBlob, setExportedBlob] = useState<Blob | null>(null);
+src/components/SocialShareModal.tsx:51:  const [exportedUrl, setExportedUrl] = useState<string | null>(null);
+src/components/SocialShareModal.tsx:56:  const exportHandleRef = useRef<ExportHandle | null>(null);
+src/components/SocialShareModal.tsx:69:            title: timeline.name || 'Viral Video',
+src/components/SocialShareModal.tsx:70:            description: `A ${Math.round(totalDurationMs / 1000)}s ${timeline.aspectRatio} video created with VIDOAI Studio`,
+src/components/SocialShareModal.tsx:87:  }, [isOpen, timeline.name, timeline.aspectRatio, totalDurationMs]);
+src/components/SocialShareModal.tsx:91:  // Start Advanced Canvas Video Export
+src/components/SocialShareModal.tsx:92:  const handleStartExport = async () => {
+src/components/SocialShareModal.tsx:95:    setIsExporting(true);
+src/components/SocialShareModal.tsx:96:    setExportedBlob(null);
+src/components/SocialShareModal.tsx:97:    setExportedUrl(null);
+src/components/SocialShareModal.tsx:100:      const audioDest = bgAudioEngine.getAudioStreamDestination();
+src/components/SocialShareModal.tsx:103:      const handle = exportCanvasVideoAdvanced(
+src/components/SocialShareModal.tsx:105:        audioDest,
+src/components/SocialShareModal.tsx:107:        exportSettings,
+src/components/SocialShareModal.tsx:109:          setExportProgress(prog);
+src/components/SocialShareModal.tsx:113:      exportHandleRef.current = handle;
+src/components/SocialShareModal.tsx:116:      setExportedBlob(blob);
+src/components/SocialShareModal.tsx:117:      setExportedUrl(url);
+src/components/SocialShareModal.tsx:119:      if (err.message !== 'Export was cancelled.') {
+src/components/SocialShareModal.tsx:120:        console.error('Export failed:', err);
+src/components/SocialShareModal.tsx:123:      setIsExporting(false);
+src/components/SocialShareModal.tsx:124:      exportHandleRef.current = null;
+src/components/SocialShareModal.tsx:128:  const handleCancelExport = () => {
+src/components/SocialShareModal.tsx:129:    if (exportHandleRef.current) {
+src/components/SocialShareModal.tsx:130:      exportHandleRef.current.cancel();
+src/components/SocialShareModal.tsx:131:      setIsExporting(false);
+src/components/SocialShareModal.tsx:137:    const shareTitle = socialData?.tiktok.caption || timeline.name;
+src/components/SocialShareModal.tsx:142:        if (exportedBlob) {
+src/components/SocialShareModal.tsx:144:            [exportedBlob],
+src/components/SocialShareModal.tsx:145:            `${timeline.name.toLowerCase().replace(/\s+/g, '_')}_${exportSettings.resolution}.mp4`,
+src/components/SocialShareModal.tsx:146:            { type: exportedBlob.type }
+src/components/SocialShareModal.tsx:152:              title: timeline.name,
+src/components/SocialShareModal.tsx:160:          title: timeline.name,
+src/components/SocialShareModal.tsx:173:    if (!exportedUrl) return;
+src/components/SocialShareModal.tsx:175:    a.href = exportedUrl;
+src/components/SocialShareModal.tsx:176:    a.download = `${timeline.name.toLowerCase().replace(/\s+/g, '_')}_${exportSettings.resolution}.mp4`;
+src/components/SocialShareModal.tsx:200:                <span>VIDOAI Production Export Studio</span>
+src/components/SocialShareModal.tsx:202:                  {timeline.aspectRatio}
+src/components/SocialShareModal.tsx:219:          {/* Export Settings Panel */}
+src/components/SocialShareModal.tsx:227:                {exportSettings.resolution.toUpperCase()} • {exportSettings.fps} FPS • {exportSettings.quality.toUpperCase()}
+src/components/SocialShareModal.tsx:242:                    onClick={() => setExportSettings((prev) => ({ ...prev, resolution: r.id as any }))}
+src/components/SocialShareModal.tsx:243:                    disabled={isExporting}
+src/components/SocialShareModal.tsx:245:                      exportSettings.resolution === r.id
+src/components/SocialShareModal.tsx:265:                      onClick={() => setExportSettings((prev) => ({ ...prev, fps: f as any }))}
+src/components/SocialShareModal.tsx:266:                      disabled={isExporting}
+src/components/SocialShareModal.tsx:268:                        exportSettings.fps === f
+src/components/SocialShareModal.tsx:285:                      onClick={() => setExportSettings((prev) => ({ ...prev, quality: q as any }))}
+src/components/SocialShareModal.tsx:286:                      disabled={isExporting}
+src/components/SocialShareModal.tsx:288:                        exportSettings.quality === q
+src/components/SocialShareModal.tsx:301:            {isExporting ? (
+src/components/SocialShareModal.tsx:304:                  <span className="text-cyan-400 font-medium animate-pulse">{exportProgress.message}</span>
+src/components/SocialShareModal.tsx:305:                  <span className="font-mono font-bold text-white">{exportProgress.progressPercent}%</span>
+src/components/SocialShareModal.tsx:310:                    style={{ width: `${exportProgress.progressPercent}%` }}
+src/components/SocialShareModal.tsx:315:                    onClick={handleCancelExport}
+src/components/SocialShareModal.tsx:319:                    <span>Cancel Export</span>
+src/components/SocialShareModal.tsx:323:            ) : exportedBlob ? (
+src/components/SocialShareModal.tsx:328:                    {(exportedBlob.size / (1024 * 1024)).toFixed(1)} MB • {exportSettings.resolution} • {exportSettings.fps} FPS
+src/components/SocialShareModal.tsx:350:                onClick={handleStartExport}
+src/components/SocialShareModal.tsx:401:                      <span>Caption & Trending Sound</span>
+src/components/SocialShareModal.tsx:403:                        onClick={() => copyToClipboard(socialData.tiktok.caption + '\n\n' + socialData.tiktok.hashtags.join(' '), 'tt')}
+src/components/SocialShareModal.tsx:411:                      {socialData.tiktok.caption}
+src/components/SocialShareModal.tsx:426:                      <span>Carousel Caption & Engagement</span>
+src/components/SocialShareModal.tsx:428:                        onClick={() => copyToClipboard(socialData.instagram.caption + '\n\n' + socialData.instagram.hashtags.join(' '), 'ig')}
+src/components/SocialShareModal.tsx:436:                      {socialData.instagram.caption}
+src/components/SocialShareModal.tsx:495:            {exportedBlob ? '✅ File prepared for device sharing' : 'Configure settings and start render'}
+src/components/AiCoPilotModal.tsx:18:import { AiCoPilotResult, ProjectTimeline, ValidationReport } from '../types';
+src/components/AiCoPilotModal.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiCoPilotModal.tsx:24:interface AiCoPilotModalProps {
+src/components/AiCoPilotModal.tsx:27:  timeline: ProjectTimeline;
+src/components/AiCoPilotModal.tsx:28:  onApplyTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/AiCoPilotModal.tsx:31:export const AiCoPilotModal: React.FC<AiCoPilotModalProps> = ({
+src/components/AiCoPilotModal.tsx:34:  timeline,
+src/components/AiCoPilotModal.tsx:39:  const [lastResult, setLastResult] = useState<AiCoPilotResult | null>(null);
+src/components/AiCoPilotModal.tsx:51:    { label: '• Add captions', text: 'Add captions to this video.' },
+src/components/AiCoPilotModal.tsx:54:    { label: '• 15s Highlight', text: 'Make this video 15 seconds and add captions.' },
+src/components/AiCoPilotModal.tsx:68:      // Step 1: Query AI via GeminiProvider
+src/components/AiCoPilotModal.tsx:69:      const res = await GeminiProvider.requestEdit({
+src/components/AiCoPilotModal.tsx:71:        timeline,
+src/components/AiCoPilotModal.tsx:81:      const report = validateAiOperations(res.data.operations, timeline);
+src/components/AiCoPilotModal.tsx:85:        throw new Error(report.error || 'Operations failed timeline safety verification.');
+src/components/AiCoPilotModal.tsx:89:      const analysis = AiEditPlanner.analyzePlan(report.validatedOperations, timeline);
+src/components/AiCoPilotModal.tsx:108:    // Step 4: Atomic timeline transaction (all or nothing)
+src/components/AiCoPilotModal.tsx:109:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/AiCoPilotModal.tsx:111:      onApplyTransaction(tx.newTimeline, tx.auditLog);
+src/components/AiCoPilotModal.tsx:131:                  Atomic Timeline
+src/data/sampleClips.ts:1:import { TimelineClip } from '../types';
+src/data/sampleClips.ts:3:export const INITIAL_SAMPLE_CLIPS: TimelineClip[] = [
+src/data/sampleClips.ts:51:export const STOCK_LIBRARY_CLIPS: {
+src/data/sampleClips.ts:58:  recommendedFilter: TimelineClip['filter'];
+src/App.tsx:1:import { AiCoPilotModal } from './components/AiCoPilotModal';
+src/App.tsx:43:  CaptionItem,
+src/App.tsx:45:  ProjectTimeline,
+src/App.tsx:46:  TimelineClip,
+src/App.tsx:54:import { bgAudioEngine } from './utils/audioSynth';
+src/App.tsx:57:import { Timeline } from './components/Timeline';
+src/App.tsx:58:import { AiReelMakerModal } from './components/AiReelMakerModal';
+src/App.tsx:70:import { AiReelMakerScreen } from './screens/AiReelMakerScreen';
+src/App.tsx:72:import { CaptionsScreen } from './screens/CaptionsScreen';
+src/App.tsx:73:import { AudioScreen } from './screens/AudioScreen';
+src/App.tsx:78:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx:83:  captions: [
+src/App.tsx:104:      text: 'Real-time Cuts & Viral Export ✨',
+src/App.tsx:126:  bgAudio: {
+src/App.tsx:127:    id: 'audio_phonk_1',
+src/App.tsx:138:type ActiveCategoryTab = 'edit' | 'ai' | 'text' | 'audio' | 'effects' | 'captions';
+src/App.tsx:140:export default function App() {
+src/App.tsx:141:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx:147:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx:148:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx:149:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx:156:  // Category Tab Selection: 'edit' | 'ai' | 'text' | 'audio' | 'effects' | 'captions'
+src/App.tsx:157: const [isAiCoPilotOpen, setIsAiCoPilotOpen] = useState(false);
+src/App.tsx:165:  const [isAiReelMakerOpen, setIsAiReelMakerOpen] = useState(false);
+src/App.tsx:187:          setTimeline(parsed);
+src/App.tsx:199:      projectStorage.saveProject(timeline);
+src/App.tsx:204:  }, [timeline]);
+src/App.tsx:215:      const clips: TimelineClip[] = [];
+src/App.tsx:265:    pushHistory(INITIAL_TIMELINE);
+src/App.tsx:266:    setSelectedClipId(INITIAL_TIMELINE.clips[0].id);
+src/App.tsx:272:  const totalDurationMs = timeline.clips.reduce(
+src/App.tsx:279:    (newTimeline: ProjectTimeline) => {
+src/App.tsx:280:      setHistory((prev) => [...prev.slice(-25), timeline]);
+src/App.tsx:282:      setTimeline(newTimeline);
+src/App.tsx:284:    [timeline]
+src/App.tsx:291:    setRedoHistory((prev) => [timeline, ...prev]);
+src/App.tsx:292:    setTimeline(previous);
+src/App.tsx:294:  }, [history, timeline]);
+src/App.tsx:300:    setHistory((prev) => [...prev, timeline]);
+src/App.tsx:301:    setTimeline(next);
+src/App.tsx:303:  }, [redoHistory, timeline]);
+src/App.tsx:305:  // Audio & Clock Loop
+src/App.tsx:309:      bgAudioEngine.stop();
+src/App.tsx:313:    if (timeline.bgAudio && !timeline.bgAudio.isMuted) {
+src/App.tsx:314:      bgAudioEngine.setGenre(timeline.bgAudio.genre);
+src/App.tsx:315:      bgAudioEngine.setVolume(timeline.bgAudio.volume);
+src/App.tsx:316:      bgAudioEngine.start();
+src/App.tsx:330:          bgAudioEngine.stop();
+src/App.tsx:343:      bgAudioEngine.stop();
+src/App.tsx:345:  }, [isPlaying, totalDurationMs, timeline.bgAudio]);
+src/App.tsx:380:    for (let i = 0; i < timeline.clips.length; i++) {
+src/App.tsx:381:      const clipDuration = (timeline.clips[i].endTrimMs - timeline.clips[i].startTrimMs) / timeline.clips[i].speed;
+src/App.tsx:394:    const clip = timeline.clips[targetIndex];
+src/App.tsx:403:    const partA: TimelineClip = { ...clip, endTrimMs: cutPointMs };
+src/App.tsx:404:    const partB: TimelineClip = {
+src/App.tsx:411:    const newClips = [...timeline.clips];
+src/App.tsx:415:      ...timeline,
+src/App.tsx:424:    const clipId = selectedClipId || timeline.clips[0]?.id;
+src/App.tsx:426:    const clip = timeline.clips.find((c) => c.id === clipId);
+src/App.tsx:429:    const copy: TimelineClip = {
+src/App.tsx:434:    const index = timeline.clips.findIndex((c) => c.id === clipId);
+src/App.tsx:435:    const newClips = [...timeline.clips];
+src/App.tsx:439:      ...timeline,
+src/App.tsx:448:    const clipId = selectedClipId || timeline.clips[0]?.id;
+src/App.tsx:449:    if (timeline.clips.length <= 1) {
+src/App.tsx:450:      showToast('Timeline must have at least 1 clip');
+src/App.tsx:453:    const newClips = timeline.clips.filter((c) => c.id !== clipId);
+src/App.tsx:455:      ...timeline,
+src/App.tsx:465:    const idx = timeline.clips.findIndex((c) => c.id === clipId);
+src/App.tsx:468:    if (targetIdx < 0 || targetIdx >= timeline.clips.length) return;
+src/App.tsx:470:    const newClips = [...timeline.clips];
+src/App.tsx:475:      ...timeline,
+src/App.tsx:483:  const handleUpdateClip = (clipId: string, partial: Partial<TimelineClip>) => {
+src/App.tsx:484:    const newClips = timeline.clips.map((c) => (c.id === clipId ? { ...c, ...partial } : c));
+src/App.tsx:486:      ...timeline,
+src/App.tsx:500:      ...timeline,
+src/App.tsx:501:      stickers: [...(timeline.stickers || []), newSticker],
+src/App.tsx:509:      ...timeline,
+src/App.tsx:510:      stickers: (timeline.stickers || []).filter((s) => s.id !== id),
+src/App.tsx:518:    const report = validateAiOperations(operations, timeline);
+src/App.tsx:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:521:      pushHistory(tx.newTimeline);
+src/App.tsx:534:        { type: 'ADD_CAPTIONS', captionText: '⚡️ Silence Removed' },
+src/App.tsx:536:      timeline
+src/App.tsx:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:540:      pushHistory(tx.newTimeline);
+src/App.tsx:548:    const currentIdx = ratios.indexOf(timeline.aspectRatio);
+src/App.tsx:551:      ...timeline,
+src/App.tsx:560:    const clip = timeline.clips.find((c) => c.id === selectedClipId) || timeline.clips[0];
+src/App.tsx:565:    const newClips = timeline.clips.map((c) => {
+src/App.tsx:572:      ...timeline,
+src/App.tsx:581:    const newClips = timeline.clips.map((c) => {
+src/App.tsx:588:      ...timeline,
+src/App.tsx:595:  // Audio genre switch
+src/App.tsx:596:  const handleSelectAudioGenre = (genre: 'phonk' | 'lofi' | 'cinematic') => {
+src/App.tsx:598:      ...timeline,
+src/App.tsx:599:      bgAudio: {
+src/App.tsx:610:    showToast(`Audio: ${genre.toUpperCase()} beat synchronized`);
+src/App.tsx:613:  // Auto-captions 1-tap generator
+src/App.tsx:614:  const handleGenerateAutoCaptions = async () => {
+src/App.tsx:615:    showToast('Analyzing speech & generating synced captions...');
+src/App.tsx:617:      const res = await fetch('/api/ai/captions', {
+src/App.tsx:622:          contextText: timeline.name,
+src/App.tsx:626:      if (data.success && data.captions) {
+src/App.tsx:627:        const mapped: CaptionItem[] = data.captions.map((c: any) => ({
+src/App.tsx:637:          ...timeline,
+src/App.tsx:638:          captions: mapped,
+src/App.tsx:641:        showToast('✨ AI Synced captions generated!');
+src/App.tsx:645:      showToast('Caption generation failed');
+src/App.tsx:650:  const handleApplyScriptToTimeline = (script: AiScriptResponse) => {
+src/App.tsx:651:    const newCaptions: CaptionItem[] = [];
+src/App.tsx:654:    const newClips: TimelineClip[] = script.scenes.map((scene, i) => {
+src/App.tsx:658:      newCaptions.push({
+src/App.tsx:686:      ...timeline,
+src/App.tsx:690:      captions: newCaptions,
+src/App.tsx:691:      bgAudio: {
+src/App.tsx:714:  const selectedClip = timeline.clips.find((c) => c.id === selectedClipId) || timeline.clips[0];
+src/App.tsx:730:        projectName={timeline.name}
+src/App.tsx:739:                  setTimeline(proj);
+src/App.tsx:758:                timeline={timeline}
+src/App.tsx:768:            onOpenAiCoPilot={() => setIsAiCoPilotOpen(true)}
+src/App.tsx:769:                onOpenAiReelMaker={() => setCurrentScreen('reel_maker')}
+src/App.tsx:775:                onOpenCaptionsScreen={() => setCurrentScreen('captions')}
+src/App.tsx:776:                onOpenAudioScreen={() => setCurrentScreen('audio')}
+src/App.tsx:794:                  const newClips = timeline.clips.map((c) =>
+src/App.tsx:797:                  pushHistory({ ...timeline, clips: newClips, updatedAt: Date.now() });
+src/App.tsx:799:                onUpdateCaption={(id, text) => {
+src/App.tsx:800:                  const newCaps = timeline.captions.map((c) =>
+src/App.tsx:803:                  pushHistory({ ...timeline, captions: newCaps, updatedAt: Date.now() });
+src/App.tsx:805:                onDeleteCaption={(id) => {
+src/App.tsx:806:                  const newCaps = timeline.captions.filter((c) => c.id !== id);
+src/App.tsx:807:                  pushHistory({ ...timeline, captions: newCaps, updatedAt: Date.now() });
+src/App.tsx:810:                onAddCaptionAtPlayhead={() => {
+src/App.tsx:820:                    ...timeline,
+src/App.tsx:821:                    captions: [...timeline.captions, newCap],
+src/App.tsx:826:                onSelectAudioGenre={handleSelectAudioGenre}
+src/App.tsx:828:                onGenerateAutoCaptions={handleGenerateAutoCaptions}
+src/App.tsx:836:                  setTimeline(proj);
+src/App.tsx:853:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx:863:                defaultAspect={timeline.aspectRatio}
+src/App.tsx:870:              <AiReelMakerScreen
+src/App.tsx:871:                timeline={timeline}
+src/App.tsx:872:                onApplyReel={(newTimeline) => {
+src/App.tsx:873:                  pushHistory(newTimeline);
+src/App.tsx:875:                  showToast('AI Reel applied to timeline!');
+src/App.tsx:884:                timeline={timeline}
+src/App.tsx:885:                onApplyScriptAsCaptions={(captions) => {
+src/App.tsx:887:                    ...timeline,
+src/App.tsx:888:                    captions: [...timeline.captions, ...captions],
+src/App.tsx:892:                  showToast('AI Script captions applied!');
+src/App.tsx:899:            {currentScreen === 'captions' && (
+src/App.tsx:900:              <CaptionsScreen
+src/App.tsx:901:                timeline={timeline}
+src/App.tsx:902:                onUpdateCaptions={(captions) => {
+src/App.tsx:904:                    ...timeline,
+src/App.tsx:905:                    captions,
+src/App.tsx:908:                  showToast('Captions updated');
+src/App.tsx:915:            {currentScreen === 'audio' && (
+src/App.tsx:916:              <AudioScreen
+src/App.tsx:917:                timeline={timeline}
+src/App.tsx:919:                onUpdateAudio={(audio) => {
+src/App.tsx:920:                  pushHistory({ ...timeline, bgAudio: audio, updatedAt: Date.now() });
+src/App.tsx:921:                  showToast('Audio settings updated');
+src/App.tsx:985:  {isAiReelMakerOpen && (
+src/App.tsx:986:        <AiReelMakerModal
+src/App.tsx:987:          isOpen={isAiReelMakerOpen}
+src/App.tsx:988:          onClose={() => setIsAiReelMakerOpen(false)}
+src/App.tsx:989:          timeline={timeline}
+src/App.tsx:990:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx:991:            pushHistory(newTimeline);
+src/App.tsx:1001:          onApplyScriptToTimeline={handleApplyScriptToTimeline}
+src/App.tsx:1009:          timeline={timeline}
+src/App.tsx:1019:          onAddClipToTimeline={(clip) => {
+src/App.tsx:1021:              ...timeline,
+src/App.tsx:1022:              clips: [...timeline.clips, clip],
+src/App.tsx:1026:            showToast(`Added "${clip.name}" to timeline`);
+src/App.tsx:1054:            clips={timeline.clips}
+src/App.tsx:1059:        {isAiCoPilotOpen && (
+src/App.tsx:1060:      <AiCoPilotModal
+src/App.tsx:1061:        isOpen={isAiCoPilotOpen}
+src/App.tsx:1062:        onClose={() => setIsAiCoPilotOpen(false)}
+src/App.tsx:1063:        timeline={timeline}
+src/App.tsx:1064:        onApplyTransaction={(newTimeline, auditLog) => {
+src/App.tsx:1065:          setTimeline(newTimeline);
+src/App.tsx:1066:          setIsAiCoPilotOpen(false);
+src/services/commandTransaction.ts:3:  CaptionItem,
+src/services/commandTransaction.ts:4:  ProjectTimeline,
+src/services/commandTransaction.ts:5:  TimelineClip,
+src/services/commandTransaction.ts:8:export interface TransactionSession {
+src/services/commandTransaction.ts:10:  originalSnapshot: ProjectTimeline;
+src/services/commandTransaction.ts:11:  draftTimeline: ProjectTimeline;
+src/services/commandTransaction.ts:17:export interface TransactionResult {
+src/services/commandTransaction.ts:19:  newTimeline: ProjectTimeline;
+src/services/commandTransaction.ts:29:export class CommandTransactionManager {
+src/services/commandTransaction.ts:33:  static beginTransaction(timeline: ProjectTimeline): TransactionSession {
+src/services/commandTransaction.ts:34:    const originalSnapshot: ProjectTimeline = JSON.parse(JSON.stringify(timeline));
+src/services/commandTransaction.ts:35:    const draftTimeline: ProjectTimeline = JSON.parse(JSON.stringify(timeline));
+src/services/commandTransaction.ts:40:      draftTimeline,
+src/services/commandTransaction.ts:57:      let workingClips = [...session.draftTimeline.clips];
+src/services/commandTransaction.ts:58:      let workingCaptions = [...session.draftTimeline.captions];
+src/services/commandTransaction.ts:59:      let workingStickers = [...(session.draftTimeline.stickers || [])];
+src/services/commandTransaction.ts:60:      let workingRatio = session.draftTimeline.aspectRatio;
+src/services/commandTransaction.ts:61:      let workingAudio = session.draftTimeline.bgAudio ? { ...session.draftTimeline.bgAudio } : null;
+src/services/commandTransaction.ts:97:            const partA: TimelineClip = {
+src/services/commandTransaction.ts:101:            const partB: TimelineClip = {
+src/services/commandTransaction.ts:137:            session.auditLog.push(`Updated audio volume to ${Math.round(vol * 100)}%`);
+src/services/commandTransaction.ts:149:            session.auditLog.push(muted ? 'Muted clip audio' : 'Unmuted clip audio');
+src/services/commandTransaction.ts:231:              const clone: TimelineClip = {
+src/services/commandTransaction.ts:270:          case 'CAPTION':
+src/services/commandTransaction.ts:271:          case 'ADD_CAPTIONS': {
+src/services/commandTransaction.ts:272:            const text = op.captionText || op.text || '✨ Viral Hook';
+src/services/commandTransaction.ts:274:            const newCap: CaptionItem = {
+src/services/commandTransaction.ts:283:            workingCaptions = [...workingCaptions, newCap];
+src/services/commandTransaction.ts:284:            session.auditLog.push(`Generated captions: "${text}"`);
+src/services/commandTransaction.ts:288:          case 'AUDIO':
+src/services/commandTransaction.ts:289:          case 'ADD_AUDIO':
+src/services/commandTransaction.ts:291:            const genre = (op.genre || op.audioVibe || 'phonk').toLowerCase() as any;
+src/services/commandTransaction.ts:292:            workingAudio = {
+src/services/commandTransaction.ts:341:            workingAudio = {
+src/services/commandTransaction.ts:418:      session.draftTimeline = {
+src/services/commandTransaction.ts:419:        ...session.draftTimeline,
+src/services/commandTransaction.ts:421:        captions: workingCaptions,
+src/services/commandTransaction.ts:424:        bgAudio: workingAudio,
+src/services/commandTransaction.ts:443:        newTimeline: session.originalSnapshot,
+src/services/commandTransaction.ts:452:      newTimeline: session.draftTimeline,
+src/services/commandTransaction.ts:462:    session.draftTimeline = JSON.parse(JSON.stringify(session.originalSnapshot));
+src/services/commandTransaction.ts:467:      newTimeline: session.originalSnapshot,
+src/services/commandTransaction.ts:477:export function executeCommandTransaction(
+src/services/commandTransaction.ts:478:  currentTimeline: ProjectTimeline,
+src/services/commandTransaction.ts:481:  const session = CommandTransactionManager.beginTransaction(currentTimeline);
+src/services/commandTransaction.ts:491:function calculateTotalDuration(clips: TimelineClip[]): number {
+src/services/aiOperationValidator.ts:6:  ProjectTimeline,
+src/services/aiOperationValidator.ts:8:  TimelineClip,
+src/services/aiOperationValidator.ts:36:const VALID_AUDIO_GENRES = ['phonk', 'lofi', 'cinematic', 'ambient'];
+src/services/aiOperationValidator.ts:47: * - Clip existence in timeline
+src/services/aiOperationValidator.ts:51: * - Non-empty timeline integrity
+src/services/aiOperationValidator.ts:53: * If validation fails, returns isValid: false and timeline is NEVER modified.
+src/services/aiOperationValidator.ts:55:export function validateAiOperations(
+src/services/aiOperationValidator.ts:57:  timeline: ProjectTimeline
+src/services/aiOperationValidator.ts:82:  // Check timeline clips integrity
+src/services/aiOperationValidator.ts:83:  if (!timeline || !Array.isArray(timeline.clips)) {
+src/services/aiOperationValidator.ts:87:      warnings: ['Current timeline has invalid clips collection'],
+src/services/aiOperationValidator.ts:89:      error: 'Current timeline has invalid clips collection',
+src/services/aiOperationValidator.ts:109:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:114:            warnings: [`Clip ID "${op.clipId || op.clipIndex}" not found in current timeline`],
+src/services/aiOperationValidator.ts:166:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:199:        const target = op.clipId || typeof op.clipIndex === 'number' ? resolveTargetClip(op, timeline) : null;
+src/services/aiOperationValidator.ts:232:        const target = op.clipId || typeof op.clipIndex === 'number' ? resolveTargetClip(op, timeline) : null;
+src/services/aiOperationValidator.ts:266:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:286:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:318:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:376:        const target = op.clipId || typeof op.clipIndex === 'number' ? resolveTargetClip(op, timeline) : null;
+src/services/aiOperationValidator.ts:398:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:401:          clipId: target ? target.id : timeline.clips[0]?.id,
+src/services/aiOperationValidator.ts:414:          from < 0 || from >= timeline.clips.length ||
+src/services/aiOperationValidator.ts:415:          to < 0 || to >= timeline.clips.length
+src/services/aiOperationValidator.ts:420:            warnings: [`MOVE indices out of bounds (from: ${from}, to: ${to}, clipCount: ${timeline.clips.length})`],
+src/services/aiOperationValidator.ts:422:            error: `MOVE indices [${from} -> ${to}] out of timeline bounds (0 - ${timeline.clips.length - 1})`,
+src/services/aiOperationValidator.ts:435:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:454:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:465:        if (timeline.clips.length <= 1) {
+src/services/aiOperationValidator.ts:469:            warnings: ['Cannot delete the only clip in the timeline'],
+src/services/aiOperationValidator.ts:471:            error: 'Cannot delete the only clip in the timeline (at least 1 clip required)',
+src/services/aiOperationValidator.ts:506:      case 'CAPTION':
+src/services/aiOperationValidator.ts:507:      case 'ADD_CAPTIONS': {
+src/services/aiOperationValidator.ts:509:          type: 'CAPTION',
+src/services/aiOperationValidator.ts:511:          captionText: op.captionText || op.text || '🔥 Trending Reel Moment',
+src/services/aiOperationValidator.ts:518:      case 'AUDIO':
+src/services/aiOperationValidator.ts:519:      case 'ADD_AUDIO':
+src/services/aiOperationValidator.ts:521:        const genre = (op.genre || op.audioVibe || 'phonk').toLowerCase();
+src/services/aiOperationValidator.ts:522:        const safeGenre = VALID_AUDIO_GENRES.includes(genre) ? genre : 'phonk';
+src/services/aiOperationValidator.ts:525:          type: 'AUDIO',
+src/services/aiOperationValidator.ts:527:          audioVibe: safeGenre,
+src/services/aiOperationValidator.ts:585:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:597:        const target = resolveTargetClip(op, timeline);
+src/services/aiOperationValidator.ts:637:function resolveTargetClip(op: AiEditOperation, timeline: ProjectTimeline): TimelineClip | null {
+src/services/aiOperationValidator.ts:639:    const found = timeline.clips.find((c) => c.id === op.clipId);
+src/services/aiOperationValidator.ts:645:    if (timeline.clips[op.clipIndex]) {
+src/services/aiOperationValidator.ts:646:      return timeline.clips[op.clipIndex];
+src/services/aiOperationValidator.ts:651:  return timeline.clips[0] || null;
+src/services/aiProvider/AiResponseValidator.ts:1:export interface TopLevelValidationResult {
+src/services/aiProvider/AiResponseValidator.ts:10: * Performs structural verification on the parsed AI response before semantic timeline checks.
+src/services/aiProvider/AiResponseValidator.ts:12:export class AiResponseValidator {
+src/services/aiProvider/GeminiProvider.ts:1:import { ProjectTimeline } from '../../types';
+src/services/aiProvider/GeminiProvider.ts:5:export interface CoPilotRequestOptions {
+src/services/aiProvider/GeminiProvider.ts:7:  timeline: ProjectTimeline;
+src/services/aiProvider/GeminiProvider.ts:11:export interface CoPilotResponse {
+src/services/aiProvider/GeminiProvider.ts:26: * GeminiProvider
+src/services/aiProvider/GeminiProvider.ts:29: * The UI never touches direct Gemini keys or internal SDK methods.
+src/services/aiProvider/GeminiProvider.ts:31:export class GeminiProvider {
+src/services/aiProvider/GeminiProvider.ts:34:  static async requestEdit(options: CoPilotRequestOptions): Promise<CoPilotResponse> {
+src/services/aiProvider/GeminiProvider.ts:35:    const { prompt, timeline, timeoutMs = this.DEFAULT_TIMEOUT_MS } = options;
+src/services/aiProvider/GeminiProvider.ts:49:      // Calculate light timeline summary to send
+src/services/aiProvider/GeminiProvider.ts:50:      const totalDurationMs = timeline.clips.reduce(
+src/services/aiProvider/GeminiProvider.ts:62:          currentTimeline: {
+src/services/aiProvider/GeminiProvider.ts:63:            clipCount: timeline.clips.length,
+src/services/aiProvider/GeminiProvider.ts:64:            aspectRatio: timeline.aspectRatio,
+src/services/aiProvider/GeminiProvider.ts:66:            clips: timeline.clips.map((c) => ({
+src/services/aiProvider/GeminiProvider.ts:159:  static async requestReelMaker(options: {
+src/services/aiProvider/GeminiProvider.ts:165:  }): Promise<CoPilotResponse> {
+src/services/aiProvider/GeminiProvider.ts:172:      const response = await fetch('/api/ai/reel-maker', {
+src/services/aiProvider/AiEditPlanner.ts:1:import { AiEditOperation, AiPlanItem, ProjectTimeline, ReelPreset } from '../../types';
+src/services/aiProvider/AiEditPlanner.ts:3:export interface PlanAnalysis {
+src/services/aiProvider/AiEditPlanner.ts:15:export class AiEditPlanner {
+src/services/aiProvider/AiEditPlanner.ts:16:  static analyzePlan(operations: AiEditOperation[], timeline: ProjectTimeline): PlanAnalysis {
+src/services/aiProvider/AiEditPlanner.ts:25:    let hasCaptions = false;
+src/services/aiProvider/AiEditPlanner.ts:26:    let hasAudio = false;
+src/services/aiProvider/AiEditPlanner.ts:45:          const target = op.clipId ? timeline.clips.find((c) => c.id === op.clipId) : timeline.clips[op.clipIndex ?? 0];
+src/services/aiProvider/AiEditPlanner.ts:65:          const target = op.clipId ? timeline.clips.find((c) => c.id === op.clipId) : timeline.clips[op.clipIndex ?? 0];
+src/services/aiProvider/AiEditPlanner.ts:88:        case 'CAPTION':
+src/services/aiProvider/AiEditPlanner.ts:89:        case 'ADD_CAPTIONS':
+src/services/aiProvider/AiEditPlanner.ts:90:          hasCaptions = true;
+src/services/aiProvider/AiEditPlanner.ts:93:            description: op.captionText ? `Add animated captions: "${op.captionText}"` : 'Add dynamic viral captions',
+src/services/aiProvider/AiEditPlanner.ts:94:            opType: 'CAPTION',
+src/services/aiProvider/AiEditPlanner.ts:98:        case 'AUDIO':
+src/services/aiProvider/AiEditPlanner.ts:99:        case 'ADD_AUDIO':
+src/services/aiProvider/AiEditPlanner.ts:101:          hasAudio = true;
+src/services/aiProvider/AiEditPlanner.ts:104:            description: `Synchronize ${op.genre || op.audioVibe || 'viral'} background soundtrack`,
+src/services/aiProvider/AiEditPlanner.ts:105:            opType: 'AUDIO',
+src/services/aiProvider/AiEditPlanner.ts:187:            description: op.isMuted || op.muted ? 'Mute clip audio' : 'Unmute clip audio',
+src/services/aiProvider/AiEditPlanner.ts:212:    // ✓ Add dynamic captions
+src/services/aiProvider/AiEditPlanner.ts:221:    if (hasCaptions) {
+src/services/aiProvider/AiEditPlanner.ts:222:      summaryItems.push('Add dynamic captions');
+src/services/aiProvider/AiEditPlanner.ts:230:    if (hasAudio) {
+src/services/aiProvider/AiEditPlanner.ts:231:      summaryItems.push('Synchronize background audio & auto-ducking');
+src/services/aiProvider/AiEditPlanner.ts:240:    timeline.clips.forEach((c) => {
+src/services/aiProvider/AiEditPlanner.ts:263:    captionStyle: string;
+src/services/aiProvider/AiEditPlanner.ts:274:          captionStyle: 'yellow_viral',
+src/services/aiProvider/AiEditPlanner.ts:284:          captionStyle: 'clean_glass',
+src/services/aiProvider/AiEditPlanner.ts:294:          captionStyle: 'clean_glass',
+src/services/aiProvider/AiEditPlanner.ts:304:          captionStyle: 'clean_glass',
+src/services/aiProvider/AiEditPlanner.ts:314:          captionStyle: 'minimal_dark',
+src/services/aiProvider/AiEditPlanner.ts:324:          captionStyle: 'yellow_viral',
+src/services/aiProvider/AiEditPlanner.ts:334:          captionStyle: 'comic_pop',
+src/services/aiProvider/AiEditPlanner.ts:344:          captionStyle: 'yellow_viral',
+src/services/aiProvider/AiEditPlanner.ts:355:          captionStyle: 'yellow_viral',
+src/services/aiProvider/AiOperationParser.ts:3:export interface ParseResult {
+src/services/aiProvider/AiOperationParser.ts:28:  'CAPTION',
+src/services/aiProvider/AiOperationParser.ts:29:  'AUDIO',
+src/services/aiProvider/AiOperationParser.ts:36:  'ADD_CAPTIONS',
+src/services/aiProvider/AiOperationParser.ts:37:  'ADD_AUDIO',
+src/services/aiProvider/AiOperationParser.ts:51:export class AiOperationParser {
+src/services/aiProvider/AiOperationParser.ts:90:      : 'AI Timeline Edit';
+src/services/aiProvider/AiOperationParser.ts:117:      if (rawType === 'ADD_CAPTIONS') opType = 'CAPTION';
+src/services/aiProvider/AiOperationParser.ts:118:      if (rawType === 'ADD_AUDIO') opType = 'AUDIO';
+src/services/aiProvider/AiOperationParser.ts:183:      if (typeof item.captionText === 'string') op.captionText = item.captionText;
+src/services/aiProvider/AiOperationParser.ts:186:      if (typeof item.audioVibe === 'string') op.audioVibe = item.audioVibe;
+src/services/projectStorage.ts:1:import { ProjectTimeline, SavedProject, TimelineClip } from '../types';
+src/services/projectStorage.ts:7:export const DEFAULT_INITIAL_PROJECT: ProjectTimeline = {
+src/services/projectStorage.ts:12:  captions: [
+src/services/projectStorage.ts:33:      text: 'Real-time Cuts & Viral Export ✨',
+src/services/projectStorage.ts:55:  bgAudio: {
+src/services/projectStorage.ts:56:    id: 'audio_phonk_1',
+src/services/projectStorage.ts:67:export const projectStorage = {
+src/services/projectStorage.ts:76:          timeline: DEFAULT_INITIAL_PROJECT,
+src/services/projectStorage.ts:84:          timeline: {
+src/services/projectStorage.ts:106:  saveProject(timeline: ProjectTimeline): void {
+src/services/projectStorage.ts:109:      const durationMs = timeline.clips.reduce(
+src/services/projectStorage.ts:113:      const thumbnail = timeline.clips[0]?.thumbnail || '';
+src/services/projectStorage.ts:115:      const existingIdx = projects.findIndex((p) => p.id === timeline.id);
+src/services/projectStorage.ts:117:        id: timeline.id,
+src/services/projectStorage.ts:118:        name: timeline.name || 'Untitled Project',
+src/services/projectStorage.ts:119:        timeline,
+src/services/projectStorage.ts:132:      localStorage.setItem(CURRENT_PROJECT_KEY, timeline.id);
+src/services/projectStorage.ts:150:    const duplicatedTimeline: ProjectTimeline = {
+src/services/projectStorage.ts:151:      ...JSON.parse(JSON.stringify(source.timeline)),
+src/services/projectStorage.ts:159:      name: duplicatedTimeline.name,
+src/services/projectStorage.ts:160:      timeline: duplicatedTimeline,
+src/services/projectStorage.ts:171:  createNewProjectWithClips(clips: TimelineClip[], projectName = 'New Video Project'): ProjectTimeline {
+src/services/projectStorage.ts:172:    const newTimeline: ProjectTimeline = {
+src/services/projectStorage.ts:177:      captions: [],
+src/services/projectStorage.ts:179:      bgAudio: {
+src/services/projectStorage.ts:180:        id: `audio_${Date.now()}`,
+src/services/projectStorage.ts:191:    this.saveProject(newTimeline);
+src/services/projectStorage.ts:192:    return newTimeline;
+src/services/dcs/DeepCreativeScripting.ts:1:export interface DCSCharacter {
+src/services/dcs/DeepCreativeScripting.ts:8:export interface DCSScene {
+src/services/dcs/DeepCreativeScripting.ts:23:  caption: string;
+src/services/dcs/DeepCreativeScripting.ts:27:export interface DCSFilm {
+src/services/dcs/DeepCreativeScripting.ts:37:export const DCS_SYSTEM_PROMPT = `
+src/services/dcs/DeepCreativeScripting.ts:92:      "caption": "",
+src/services/dcs/DeepCreativeScripting.ts:113:export function buildDCSPrompt(
+src/services/dcs/DeepCreativeScripting.ts:147:- captions
+server/research/index.ts:1:export * from "./AutonomousStudyEngine";
+server/research/AutonomousStudyEngine.ts:4:export type KnowledgeStatus =
+server/research/AutonomousStudyEngine.ts:12:export interface StudyTopic {
+server/research/AutonomousStudyEngine.ts:19:export interface KnowledgeRecord {
+server/research/AutonomousStudyEngine.ts:32:export class AutonomousStudyEngine {
+server/ai/brain.ts:3:export interface BrainRequest {
+server/ai/brain.ts:7:export interface BrainResult {
+server/ai/brain.ts:17:export async function runBrain(
+server/ai/knowledge.ts:1:export type AlphabetLetter =
+server/ai/knowledge.ts:5:export type RepresentationKind =
+server/ai/knowledge.ts:15:export interface InformationItem {
+server/ai/knowledge.ts:24:export interface Bond {
+server/ai/knowledge.ts:32:export interface Bundle {
+server/ai/knowledge.ts:39:export interface TraceRecord {
+server/ai/knowledge.ts:53:export interface ZeroSpace {
+server/ai/knowledge.ts:61:export const ZERO_SPACE_ID = "0";
+server/ai/knowledge.ts:63:export const ALPHABET: readonly AlphabetLetter[] = [
+server/ai/knowledge.ts:68:export function createId(prefix: string): string {
+server/ai/knowledge.ts:72:export function createZeroSpace(): ZeroSpace {
+server/ai/universal/universal-system.ts:1:export interface UniversalRequest {
+server/ai/universal/universal-system.ts:7:export function normalizeUniversalRequest(
+server/ai/project-search.ts:4:export interface ProjectSearchResult {
+server/ai/project-search.ts:41:export async function searchProject(
+server/ai/researcher.ts:3:export interface ResearchResult {
+server/ai/researcher.ts:10:export async function researchProject(
