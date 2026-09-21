@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-09-21T16:48:02.344421",
+  "engine": "UniversalOperationEngine",
+  "operationCount": 48,
+  "principle": "One controlled operation contract, many verified domain adapters.",
+  "requiresAdapters": true,
+  "requiresVerification": true,
+  "requiresAuthorizationForDestructiveActions": true,
+  "domains": [
+    "TEXT",
+    "DOCUMENT",
+    "CODE",
+    "FILE",
+    "DATA",
+    "DATABASE",
+    "IMAGE",
+    "VIDEO",
+    "AUDIO",
+    "CAPTION",
+    "PROJECT",
+    "CONFIGURATION",
+    "AI_WORKFLOW",
+    "SYSTEM_COMPONENT"
+  ]
+}

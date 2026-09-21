@@ -1,0 +1,51 @@
+{
+  "system": "Universal Everything Loop",
+  "purpose": "Provide a controlled feedback loop connecting observation, understanding, memory, research, reasoning, planning, execution, verification, correction and learning.",
+  "loop": [
+    "OBSERVE",
+    "UNDERSTAND",
+    "REMEMBER",
+    "RESEARCH",
+    "REASON",
+    "PLAN",
+    "EXECUTE",
+    "MONITOR",
+    "VERIFY",
+    "CORRECT",
+    "LEARN",
+    "STORE",
+    "ADAPT",
+    "REPEAT"
+  ],
+  "termination": [
+    "VERIFIED_RESULT",
+    "TASK_COMPLETE",
+    "USER_STOP",
+    "MAX_ITERATIONS",
+    "SAFE_MODE",
+    "RESOURCE_LIMIT",
+    "AUTHORIZATION_REQUIRED"
+  ],
+  "integrates": [
+    "MEMORY",
+    "RESEARCH",
+    "MASTER_MIND",
+    "PLANNING",
+    "OPERATIONS",
+    "VERIFICATION",
+    "RCA",
+    "CAPA",
+    "LEARNING",
+    "CONTINUITY",
+    "HEARTBEAT",
+    "AUDIT"
+  ],
+  "principles": [
+    "Loops are controlled rather than literally infinite.",
+    "A verified completed task should terminate its active execution loop.",
+    "System-level monitoring may continue independently.",
+    "Verification is required before treating a result as correct.",
+    "Failures enter correction or safe mode rather than uncontrolled repetition.",
+    "Resource, authorization and safety boundaries remain active."
+  ]
+}

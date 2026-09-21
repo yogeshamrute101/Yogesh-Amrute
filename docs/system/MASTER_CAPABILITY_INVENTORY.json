@@ -1,0 +1,495 @@
+{
+  "generatedAt": "2026-09-21T16:36:04.399Z",
+  "project": "/workspaces/Yogesh-Amrute",
+  "architecture": "VidoAI Universal Integrated System",
+  "capabilityCount": 97,
+  "present": 97,
+  "missing": 0,
+  "capabilities": [
+    {
+      "name": "Aggregation",
+      "dir": "aggregation",
+      "exists": true
+    },
+    {
+      "name": "Universal Core",
+      "dir": "universal",
+      "exists": true
+    },
+    {
+      "name": "Autonomous Mind",
+      "dir": "mind",
+      "exists": true
+    },
+    {
+      "name": "Multimodal Perception",
+      "dir": "perception",
+      "exists": true
+    },
+    {
+      "name": "Activity Understanding",
+      "dir": "activity",
+      "exists": true
+    },
+    {
+      "name": "Decision Engine",
+      "dir": "decision",
+      "exists": true
+    },
+    {
+      "name": "Long-Term Thinking",
+      "dir": "longterm",
+      "exists": true
+    },
+    {
+      "name": "MasterMind",
+      "dir": "mastermind",
+      "exists": true
+    },
+    {
+      "name": "Sense Engine",
+      "dir": "sense",
+      "exists": true
+    },
+    {
+      "name": "Projection Engine",
+      "dir": "projection",
+      "exists": true
+    },
+    {
+      "name": "Advanced Planning",
+      "dir": "planning",
+      "exists": true
+    },
+    {
+      "name": "Continuity",
+      "dir": "continuity",
+      "exists": true
+    },
+    {
+      "name": "Portability",
+      "dir": "portability",
+      "exists": true
+    },
+    {
+      "name": "Universal Research",
+      "dir": "research",
+      "exists": true
+    },
+    {
+      "name": "Scientific Method",
+      "dir": "science",
+      "exists": true
+    },
+    {
+      "name": "Mission Control",
+      "dir": "mission",
+      "exists": true
+    },
+    {
+      "name": "Operations Center",
+      "dir": "operations",
+      "exists": true
+    },
+    {
+      "name": "Social Interaction",
+      "dir": "social",
+      "exists": true
+    },
+    {
+      "name": "Safety Intelligence",
+      "dir": "safety",
+      "exists": true
+    },
+    {
+      "name": "World Intelligence",
+      "dir": "world",
+      "exists": true
+    },
+    {
+      "name": "Human-Computer Command",
+      "dir": "interaction",
+      "exists": true
+    },
+    {
+      "name": "System Integrity",
+      "dir": "integrity",
+      "exists": true
+    },
+    {
+      "name": "Physical AI",
+      "dir": "physicalai",
+      "exists": true
+    },
+    {
+      "name": "Affective Life",
+      "dir": "affective",
+      "exists": true
+    },
+    {
+      "name": "Connectivity",
+      "dir": "connectivity",
+      "exists": true
+    },
+    {
+      "name": "Capability Control",
+      "dir": "control",
+      "exists": true
+    },
+    {
+      "name": "Gap Utilization",
+      "dir": "gap",
+      "exists": true
+    },
+    {
+      "name": "Multi-Tasking",
+      "dir": "multitask",
+      "exists": true
+    },
+    {
+      "name": "Always-On System",
+      "dir": "daemon",
+      "exists": true
+    },
+    {
+      "name": "Document/File Manager",
+      "dir": "files",
+      "exists": true
+    },
+    {
+      "name": "Book Writing",
+      "dir": "writing",
+      "exists": true
+    },
+    {
+      "name": "Logic Control",
+      "dir": "logic",
+      "exists": true
+    },
+    {
+      "name": "Memory & Knowledge",
+      "dir": "memory",
+      "exists": true
+    },
+    {
+      "name": "Verification",
+      "dir": "verification",
+      "exists": true
+    },
+    {
+      "name": "Governance",
+      "dir": "governance",
+      "exists": true
+    },
+    {
+      "name": "Resource Management",
+      "dir": "resources",
+      "exists": true
+    },
+    {
+      "name": "Resilience",
+      "dir": "resilience",
+      "exists": true
+    },
+    {
+      "name": "Simulation",
+      "dir": "simulation",
+      "exists": true
+    },
+    {
+      "name": "Audit",
+      "dir": "audit",
+      "exists": true
+    },
+    {
+      "name": "Integration",
+      "dir": "integration",
+      "exists": true
+    },
+    {
+      "name": "Human Oversight",
+      "dir": "oversight",
+      "exists": true
+    },
+    {
+      "name": "Evolution",
+      "dir": "evolution",
+      "exists": true
+    },
+    {
+      "name": "Identity & Context",
+      "dir": "identity",
+      "exists": true
+    },
+    {
+      "name": "Truth & Uncertainty",
+      "dir": "truth",
+      "exists": true
+    },
+    {
+      "name": "Privacy",
+      "dir": "privacy",
+      "exists": true
+    },
+    {
+      "name": "Security",
+      "dir": "security",
+      "exists": true
+    },
+    {
+      "name": "Quality Assurance",
+      "dir": "qa",
+      "exists": true
+    },
+    {
+      "name": "Performance",
+      "dir": "performance",
+      "exists": true
+    },
+    {
+      "name": "Change Management",
+      "dir": "versioning",
+      "exists": true
+    },
+    {
+      "name": "Disaster Recovery",
+      "dir": "disaster",
+      "exists": true
+    },
+    {
+      "name": "Communication",
+      "dir": "communication",
+      "exists": true
+    },
+    {
+      "name": "UX & Accessibility",
+      "dir": "ux",
+      "exists": true
+    },
+    {
+      "name": "Localization",
+      "dir": "localization",
+      "exists": true
+    },
+    {
+      "name": "Policy & Ethics",
+      "dir": "policy",
+      "exists": true
+    },
+    {
+      "name": "Experimentation",
+      "dir": "experimentation",
+      "exists": true
+    },
+    {
+      "name": "Dependencies",
+      "dir": "dependencies",
+      "exists": true
+    },
+    {
+      "name": "Deployment",
+      "dir": "deployment",
+      "exists": true
+    },
+    {
+      "name": "System Constitution",
+      "dir": "constitution",
+      "exists": true
+    },
+    {
+      "name": "Self Diagnostics",
+      "dir": "diagnostics",
+      "exists": true
+    },
+    {
+      "name": "Root Cause Analysis",
+      "dir": "rca",
+      "exists": true
+    },
+    {
+      "name": "Corrective & Preventive Action",
+      "dir": "capa",
+      "exists": true
+    },
+    {
+      "name": "Capability Registry",
+      "dir": "capabilities",
+      "exists": true
+    },
+    {
+      "name": "Knowledge Graph",
+      "dir": "knowledgegraph",
+      "exists": true
+    },
+    {
+      "name": "Goals & Mission",
+      "dir": "goals",
+      "exists": true
+    },
+    {
+      "name": "Canary Testing",
+      "dir": "canary",
+      "exists": true
+    },
+    {
+      "name": "Explainability",
+      "dir": "explainability",
+      "exists": true
+    },
+    {
+      "name": "System Event Bus",
+      "dir": "eventbus",
+      "exists": true
+    },
+    {
+      "name": "Reality Boundary",
+      "dir": "reality",
+      "exists": true
+    },
+    {
+      "name": "Closed Loop Improvement",
+      "dir": "improvement",
+      "exists": true
+    },
+    {
+      "name": "Entry Registry",
+      "dir": "entries",
+      "exists": true
+    },
+    {
+      "name": "Differentiation",
+      "dir": "differentiation",
+      "exists": true
+    },
+    {
+      "name": "Identity Map",
+      "dir": "identitymap",
+      "exists": true
+    },
+    {
+      "name": "Project Awareness",
+      "dir": "projectawareness",
+      "exists": true
+    },
+    {
+      "name": "Engineering Context",
+      "dir": "engineeringcontext",
+      "exists": true
+    },
+    {
+      "name": "Command Safety",
+      "dir": "commandsafety",
+      "exists": true
+    },
+    {
+      "name": "Continuous Life Loop",
+      "dir": "lifeloop",
+      "exists": true
+    },
+    {
+      "name": "System Heartbeat",
+      "dir": "heartbeat",
+      "exists": true
+    },
+    {
+      "name": "Fast Project Agent",
+      "dir": "fastagent",
+      "exists": true
+    },
+    {
+      "name": "VidoAI Assistant Core",
+      "dir": "assistant",
+      "exists": true
+    },
+    {
+      "name": "System Orchestrator",
+      "dir": "orchestrator",
+      "exists": true
+    },
+    {
+      "name": "Human Capability System",
+      "dir": "humancapability",
+      "exists": true
+    },
+    {
+      "name": "Medical Intelligence",
+      "dir": "medical",
+      "exists": true
+    },
+    {
+      "name": "Engineering Operations",
+      "dir": "engineering",
+      "exists": true
+    },
+    {
+      "name": "Universal Technical Operations",
+      "dir": "technical",
+      "exists": true
+    },
+    {
+      "name": "Universal System Builder",
+      "dir": "systembuilder",
+      "exists": true
+    },
+    {
+      "name": "Food & Activity Intelligence",
+      "dir": "foodactivity",
+      "exists": true
+    },
+    {
+      "name": "Universal AI Hub",
+      "dir": "aihub",
+      "exists": true
+    },
+    {
+      "name": "Aerospace Engineering",
+      "dir": "aerospace",
+      "exists": true
+    },
+    {
+      "name": "Chemical Safety",
+      "dir": "chemistry",
+      "exists": true
+    },
+    {
+      "name": "Solar Energy Intelligence",
+      "dir": "solar",
+      "exists": true
+    },
+    {
+      "name": "Universal Signal Intelligence",
+      "dir": "signals",
+      "exists": true
+    },
+    {
+      "name": "Universal Editing",
+      "dir": "editing",
+      "exists": true
+    },
+    {
+      "name": "Mathematics",
+      "dir": "math",
+      "exists": true
+    },
+    {
+      "name": "Commerce Intelligence",
+      "dir": "commerce",
+      "exists": true
+    },
+    {
+      "name": "Human Skills",
+      "dir": "humanskills",
+      "exists": true
+    },
+    {
+      "name": "Restricted Capability Access",
+      "dir": "access",
+      "exists": true
+    },
+    {
+      "name": "Self Error Repair",
+      "dir": "selfrepair",
+      "exists": true
+    }
+  ]
+}

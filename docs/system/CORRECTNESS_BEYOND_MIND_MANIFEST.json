@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-09-21T16:45:16.646664",
+  "architecture": "Correctness & Beyond-Mind",
+  "correctnessTarget": 0.9999,
+  "guarantee": false,
+  "principle": "Measure verification; never assume correctness.",
+  "newModules": [
+    "causal",
+    "correctness",
+    "horizon",
+    "metareasoning",
+    "provenance",
+    "reliability",
+    "simulation",
+    "uncertainty",
+    "verification",
+    "worldmodel"
+  ],
+  "integrationPipeline": [
+    "INTENT",
+    "CONTEXT",
+    "EVIDENCE",
+    "REASONING",
+    "CONTRADICTION_CHECK",
+    "UNCERTAINTY",
+    "SIMULATION",
+    "SAFETY",
+    "AUTHORIZATION",
+    "EXECUTION",
+    "INDEPENDENT_VERIFICATION",
+    "EXPECTED_VS_ACTUAL",
+    "RCA",
+    "CAPA",
+    "REGRESSION_TEST",
+    "MEMORY_UPDATE",
+    "AUDIT"
+  ]
+}

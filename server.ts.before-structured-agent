@@ -1,0 +1,57 @@
+import express from "express";
+import path from "path";
+
+const app = express();
+const PORT = Number(process.env.PORT) || 3000;
+
+// In production, dist/ is next to server.cjs
+const distPath = path.join(process.cwd(), "dist");
+
+app.use(express.json());
+
+app.post("/api/ai/co-pilot-edit", async (req, res) => {
+  try {
+    const { GoogleGenAI } = await import("@google/genai");
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    const prompt = String(req.body?.prompt || "").trim();
+    if (!prompt) return res.status(400).json({ success: false, error: "Prompt cannot be empty." });
+    const result = await ai.models.generateContent({
+      model: "gemini-3.6-flash",
+      contents: "You are an AI video editing copilot. Understand the user request and return a concise explanation. User request: " + prompt
+    });
+    return res.json({ success: true, data: { intent: "ai-copilot", explanation: result.text || "Gemini processed the request.", operations: [], warnings: [] } });
+  } catch (error) {
+    console.error("Co-Pilot Gemini error:", error);
+    return res.status(500).json({ success: false, error: "AI is temporarily unavailable." });
+  }
+});
+
+app.post("/api/ai/reel-maker", (req, res) => {
+  const { clips = [], vibe, targetDurationSec, musicGenre } = req.body ?? {};
+
+  res.json({
+    success: true,
+    data: {
+      intent: "reel-maker",
+      explanation: "Reel Maker request received by the backend.",
+      operations: [],
+      warnings: [],
+      planSummary: [
+        `Vibe: ${vibe ?? "default"}`,
+        `Duration: ${targetDurationSec ?? 0}s`,
+        `Music: ${musicGenre ?? "default"}`,
+        `Clips: ${Array.isArray(clips) ? clips.length : 0}`,
+      ],
+    },
+  });
+});
+
+app.use(express.static(distPath));
+
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+});

@@ -1,0 +1,38 @@
+{
+  "system": "Chess Intelligence",
+  "capabilities": [
+    "BOARD_REPRESENTATION",
+    "LEGAL_MOVE_ANALYSIS",
+    "POSITION_EVALUATION",
+    "CANDIDATE_MOVE_SEARCH",
+    "TACTICAL_ANALYSIS",
+    "OPENING_ANALYSIS",
+    "ENDGAME_ANALYSIS",
+    "OPPONENT_MOVE_ANALYSIS",
+    "GAME_HISTORY",
+    "ERROR_ANALYSIS",
+    "OUTPUT_LEARNING"
+  ],
+  "loop": [
+    "READ_BOARD",
+    "VALIDATE_POSITION",
+    "GENERATE_LEGAL_MOVES",
+    "ANALYZE_POSITION",
+    "SEARCH_CANDIDATES",
+    "EVALUATE",
+    "SELECT_MOVE",
+    "VERIFY_LEGALITY",
+    "PLAY",
+    "OBSERVE_OPPONENT",
+    "UPDATE_POSITION",
+    "LEARN"
+  ],
+  "principles": [
+    "Never play an unverified illegal move.",
+    "Evaluate multiple candidate moves when sufficient compute is available.",
+    "Use deeper search or an external authorized chess engine when available.",
+    "Record the complete game for post-game analysis.",
+    "Learn from verified game outcomes and identified mistakes.",
+    "A guaranteed win is not possible against every opponent."
+  ]
+}

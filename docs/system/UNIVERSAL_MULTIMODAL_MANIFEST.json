@@ -1,0 +1,61 @@
+{
+  "system": "Universal Multimodal Understanding and Creation Center",
+  "input_modalities": [
+    "TEXT",
+    "IMAGE",
+    "CAMERA",
+    "AUDIO",
+    "VIDEO",
+    "MAP",
+    "DOCUMENT",
+    "SENSOR"
+  ],
+  "domains": [
+    "DESIGN",
+    "LAYOUT",
+    "MAP",
+    "TRACKING",
+    "GRAPHICS",
+    "GEOMETRY",
+    "ACTIVITY",
+    "CHEMISTRY",
+    "PSYCHOLOGY",
+    "HISTORY",
+    "KNOWLEDGE",
+    "DICTIONARY",
+    "LANGUAGE",
+    "MEDIA",
+    "ANIMATION"
+  ],
+  "pipeline": [
+    "INGEST",
+    "PERCEIVE",
+    "IDENTIFY",
+    "UNDERSTAND",
+    "CORRELATE",
+    "REASON",
+    "PLAN",
+    "CREATE",
+    "VERIFY",
+    "LEARN"
+  ],
+  "media_creation": [
+    "TEXT_TO_STORYBOARD",
+    "IMAGE_TO_ANIMATION_PLAN",
+    "VIDEO_TO_MOTION_ANALYSIS",
+    "CAMERA_TO_ACTIVITY_ANALYSIS",
+    "AUDIO_TO_TRANSCRIPTION",
+    "AUDIO_EVENT_ANALYSIS",
+    "MULTIMODAL_TIMELINE",
+    "OUTPUT_VERIFICATION"
+  ],
+  "principles": [
+    "Separate observation from inference.",
+    "Keep uncertainty when evidence is insufficient.",
+    "Chemical interpretation requires validated domain knowledge and safety controls.",
+    "Psychology analysis is contextual and must not be treated as automatic diagnosis.",
+    "External knowledge sources require source attribution and freshness checks.",
+    "Animation generation requires actual rendering models/tools for final media output.",
+    "Learning must be based on verified outcomes rather than assumptions."
+  ]
+}

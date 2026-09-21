@@ -1,0 +1,43 @@
+{
+  "system": "Universal Domain Understanding Center",
+  "domains": [
+    "GEOMETRY",
+    "PHYSICS",
+    "CHEMISTRY",
+    "MATHEMATICS",
+    "SYMBOLS",
+    "EXCEL",
+    "WORD",
+    "PDF",
+    "PRESENTATION",
+    "PPD",
+    "TEMPLATES",
+    "FILES",
+    "FOLDERS",
+    "SOFTWARE",
+    "NETWORKS",
+    "CONNECTIONS",
+    "WORLD",
+    "OFFICE"
+  ],
+  "workflow": [
+    "INPUT",
+    "IDENTIFY_DOMAIN",
+    "PARSE_STRUCTURE",
+    "UNDERSTAND",
+    "RELATE",
+    "VERIFY",
+    "TRANSFORM",
+    "VALIDATE",
+    "OUTPUT",
+    "TRACE"
+  ],
+  "principles": [
+    "domain-aware",
+    "evidence-based",
+    "unit-aware",
+    "traceable",
+    "permission-aware",
+    "human-review-for-high-impact-actions"
+  ]
+}

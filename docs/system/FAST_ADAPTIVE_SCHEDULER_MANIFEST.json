@@ -1,0 +1,52 @@
+{
+  "system": "Fast Adaptive Work Scheduler",
+  "principles": [
+    "Priority scheduling",
+    "First come first serve within equivalent priority",
+    "Deadline awareness",
+    "Small-step decomposition",
+    "Dependency-aware parallel execution",
+    "Unnecessary-step elimination",
+    "Safe step replacement",
+    "Early completion",
+    "Low-latency execution",
+    "Verification before critical completion"
+  ],
+  "scheduler": [
+    "RECEIVE",
+    "QUEUE",
+    "PRIORITIZE",
+    "DECOMPOSE",
+    "CHECK_DEPENDENCIES",
+    "REMOVE_UNNECESSARY_STEPS",
+    "REPLACE_SAFE_SLOW_STEPS",
+    "PARALLELIZE",
+    "EXECUTE",
+    "EARLY_FINISH",
+    "VERIFY",
+    "LEARN"
+  ],
+  "ordering": [
+    "CRITICAL",
+    "DEADLINE",
+    "HIGH",
+    "NORMAL",
+    "BACKGROUND",
+    "FCFS_WITHIN_EQUIVALENT_PRIORITY"
+  ],
+  "speed_methods": [
+    "PARALLELISM",
+    "BATCHING",
+    "CACHING",
+    "STREAMING",
+    "REUSE",
+    "EARLY_EXIT",
+    "LOW_LATENCY_IO"
+  ],
+  "safety_rules": [
+    "Never skip a mandatory safety or verification step.",
+    "A replacement must preserve required correctness.",
+    "Dependent work must wait for required prerequisites.",
+    "Critical operations require appropriate authorization."
+  ]
+}

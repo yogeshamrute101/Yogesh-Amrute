@@ -1,0 +1,37 @@
+{
+  "system": "Space-Time Scalable Project Expansion",
+  "purpose": "Allow projects to expand, contract and decompose according to available space, time and resources.",
+  "dimensions": [
+    "SPACE",
+    "TIME",
+    "COMPUTE",
+    "STORAGE",
+    "NETWORK",
+    "WORKFORCE",
+    "MATERIAL",
+    "BUDGET"
+  ],
+  "lifecycle": [
+    "DEFINE",
+    "SIZE",
+    "PLAN",
+    "DECOMPOSE",
+    "RESOURCE_MAP",
+    "BUILD",
+    "INTEGRATE",
+    "VERIFY",
+    "SCALE",
+    "MONITOR",
+    "MAINTAIN",
+    "COMPLETE"
+  ],
+  "principles": [
+    "Scale only within available resources and authorized boundaries.",
+    "Break massive projects into independently verifiable modules.",
+    "Expand horizontally or vertically when appropriate.",
+    "Preserve dependencies and traceability during expansion.",
+    "Use checkpoints before major scaling operations.",
+    "Pause or contract when resources become insufficient.",
+    "Verification remains mandatory at every major expansion stage."
+  ]
+}

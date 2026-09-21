@@ -1,0 +1,42 @@
+{
+  "system": "Best Option Selection Intelligence",
+  "pipeline": [
+    "UNDERSTAND_GOAL",
+    "COLLECT_OPTIONS",
+    "FILTER_INVALID_OPTIONS",
+    "CHECK_CONSTRAINTS",
+    "CHECK_EVIDENCE",
+    "CHECK_EXPERIENCE",
+    "SIMULATE",
+    "EVALUATE",
+    "RISK_CHECK",
+    "VERIFY",
+    "SELECT",
+    "EXECUTE",
+    "OBSERVE_RESULT",
+    "LEARN"
+  ],
+  "criteria": [
+    "GOAL_FIT",
+    "CORRECTNESS",
+    "SAFETY",
+    "RELIABILITY",
+    "EVIDENCE",
+    "EXPERIENCE",
+    "EXPECTED_BENEFIT",
+    "TIME_COST",
+    "RESOURCE_COST",
+    "COMPLEXITY",
+    "RISK",
+    "REVERSIBILITY"
+  ],
+  "rules": [
+    "Unavailable options are excluded.",
+    "Options below safety or correctness thresholds are excluded.",
+    "Best means best fit for the current goal and constraints.",
+    "A score is not proof of correctness.",
+    "Uncertainty must remain visible.",
+    "Actual outcomes update future decisions.",
+    "No option is selected when no eligible option passes the gates."
+  ]
+}

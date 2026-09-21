@@ -1,0 +1,38 @@
+{
+  "system": "Reversible Step and Instruction Control",
+  "flow": [
+    "READ_INSTRUCTIONS",
+    "UNDERSTAND",
+    "PLAN",
+    "CHECK_DEPENDENCIES",
+    "EXECUTE_STEP",
+    "CHECKPOINT",
+    "VERIFY",
+    "CONTINUE"
+  ],
+  "failure_flow": [
+    "DETECT_ERROR",
+    "IDENTIFY_ROOT_CAUSE",
+    "CHECK_INSTRUCTION_COMPLIANCE",
+    "RETURN_TO_LAST_VALID_CHECKPOINT",
+    "CORRECT",
+    "REEXECUTE",
+    "REVERIFY",
+    "CONTINUE"
+  ],
+  "correction_actions": [
+    "RETRY",
+    "RETURN_TO_CHECKPOINT",
+    "REEXECUTE",
+    "REQUEST_CLARIFICATION",
+    "STOP"
+  ],
+  "principles": [
+    "Do not silently ignore mandatory instructions.",
+    "Do not continue after an unresolved critical violation.",
+    "Prefer verified checkpoints over arbitrary rollback.",
+    "Revalidate after correction.",
+    "Preserve traceability of original and corrected actions.",
+    "Destructive or high-impact rollback requires appropriate authorization."
+  ]
+}

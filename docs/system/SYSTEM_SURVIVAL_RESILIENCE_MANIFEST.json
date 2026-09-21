@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-09-21T16:51:18.793944",
+  "component": "SystemSurvivalResilience",
+  "goal": "maximize_availability_and_recoverability",
+  "guarantee": false,
+  "failureClasses": [
+    "CRASH",
+    "PROCESS_EXIT",
+    "NETWORK_LOSS",
+    "AI_PROVIDER_FAILURE",
+    "STORAGE_FAILURE",
+    "CORRUPTED_STATE",
+    "RESOURCE_EXHAUSTION",
+    "DEPENDENCY_FAILURE",
+    "DEVICE_OFFLINE",
+    "UNKNOWN"
+  ],
+  "recoveryStages": [
+    "DETECT",
+    "CLASSIFY",
+    "CHECKPOINT",
+    "ISOLATE",
+    "RETRY",
+    "BACKOFF",
+    "FAILOVER",
+    "RESTORE",
+    "ROLLBACK",
+    "RESTART",
+    "VERIFY",
+    "RESUME"
+  ],
+  "safeFallback": "SAFE_MODE",
+  "requiresExternalSupervisor": true,
+  "requiresDurableStorageForProduction": true
+}

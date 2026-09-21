@@ -1,0 +1,165 @@
+import express from "express";
+import path from "path";
+
+const app = express();
+const PORT = Number(process.env.PORT) || 3000;
+
+// In production, dist/ is next to server.cjs
+const distPath = path.join(process.cwd(), "dist");
+
+app.use(express.json());
+
+app.post("/api/ai/co-pilot-edit", async (req, res) => {
+  try {
+    const { GoogleGenAI } = await import("@google/genai");
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({
+        success: false,
+        error: "GEMINI_API_KEY is not configured.",
+      });
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
+
+    const prompt = String(req.body?.prompt || "").trim();
+    const currentTimeline = req.body?.currentTimeline ?? {};
+
+    if (!prompt) {
+      return res.status(400).json({
+        success: false,
+        error: "Prompt cannot be empty.",
+      });
+    }
+
+    const systemInstruction = `
+You are a professional AI video editing copilot.
+
+Your job is to understand the user's editing request and convert it into
+ACTIONABLE structured video-editing operations.
+
+Return ONLY valid JSON. Do not use markdown. Do not explain outside JSON.
+
+Required JSON structure:
+{
+  "intent": "short description of the editing intent",
+  "explanation": "brief human-readable explanation",
+  "operations": [],
+  "warnings": [],
+  "title": "optional short title"
+}
+
+Each operation MUST use one of these types:
+TRIM, SPLIT, DELETE, MOVE, DUPLICATE, SPEED, VOLUME, MUTE,
+ROTATE, CROP, FILTER, TRANSITION, TEXT, CAPTION, AUDIO,
+REMOVE_SILENCE, DETECT_SCENES, CREATE_REEL, CHANGE_ASPECT_RATIO.
+
+Operation fields may include:
+clipIndex, clipId, startMs, endMs, newStartTrimMs, newEndTrimMs,
+splitAtMs, value, speed, volume, degrees, rotation, crop, transform,
+colorAdjustments, enabled, isMuted, muted, dynamic, filter, name,
+transition, content, text, captionText, style.
+
+Rules:
+- NEVER return an empty operations array when the user's request clearly
+  asks for an editing action.
+- Use the current timeline information when selecting clip indexes.
+- Use clipIndex starting from 0.
+- For "make it faster/slower", use SPEED with a numeric speed value.
+      - SPEED MUST always be between 0.25 and 4.0 inclusive. NEVER generate a SPEED below 0.25 or above 4.0.
+- SPEED MUST always be between 0.25 and 4.0 inclusive. NEVER generate a SPEED below 0.25 or above 4.0.
+- For mute/unmute, use MUTE with muted true/false.
+- For captions/subtitles, use CAPTION.
+- For adding text, use TEXT.
+- For removing silence, use REMOVE_SILENCE.
+- For detecting scenes, use DETECT_SCENES.
+- For making a Reel, use CREATE_REEL.
+- For changing aspect ratio, use CHANGE_ASPECT_RATIO.
+- For trimming, provide appropriate timing fields when the user gives times.
+- If the user asks for a general style change such as cinematic, create
+  concrete operations such as FILTER, COLOR-related fields, SPEED, TEXT,
+  AUDIO, or TRANSITION when appropriate rather than only describing the idea.
+- Do not invent nonexistent clip IDs.
+- If exact timing is not provided, prefer operations that can safely be
+  interpreted by the existing editor.
+`;
+
+    const userContext = JSON.stringify({
+      request: prompt,
+      currentTimeline,
+    });
+
+    const result = await ai.models.generateContent({
+      model: "gemini-3.6-flash",
+      contents: systemInstruction + "\n\nUSER REQUEST:\n" + userContext,
+      config: {
+        responseMimeType: "application/json",
+      },
+    });
+
+    const text = result.text || "";
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      console.error("Gemini returned invalid JSON:", text);
+      return res.status(502).json({
+        success: false,
+        error: "Gemini returned malformed structured data.",
+      });
+    }
+
+    if (!Array.isArray(data.operations)) {
+      data.operations = [];
+    }
+
+    return res.json({
+      success: true,
+      data: {
+        intent: data.intent || "ai-copilot",
+        explanation: data.explanation || "AI generated an editing plan.",
+        operations: data.operations,
+        warnings: Array.isArray(data.warnings) ? data.warnings : [],
+        title: data.title,
+      },
+    });
+  } catch (error) {
+    console.error("Co-Pilot Gemini error:", error);
+    return res.status(500).json({
+      success: false,
+      error: "AI is temporarily unavailable.",
+    });
+  }
+});
+
+app.post("/api/ai/reel-maker", (req, res) => {
+  const { clips = [], vibe, targetDurationSec, musicGenre } = req.body ?? {};
+
+  res.json({
+    success: true,
+    data: {
+      intent: "reel-maker",
+      explanation: "Reel Maker request received by the backend.",
+      operations: [],
+      warnings: [],
+      planSummary: [
+        `Vibe: ${vibe ?? "default"}`,
+        `Duration: ${targetDurationSec ?? 0}s`,
+        `Music: ${musicGenre ?? "default"}`,
+        `Clips: ${Array.isArray(clips) ? clips.length : 0}`,
+      ],
+    },
+  });
+});
+
+app.use(express.static(distPath));
+
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+});

@@ -1,0 +1,50 @@
+{
+  "system": "Universal Meta-System Core",
+  "architecture": "SYSTEM_OF_SYSTEMS",
+  "purpose": [
+    "Coordinate existing capabilities",
+    "Build and operate complex systems",
+    "Reuse existing components",
+    "Reason across domains",
+    "Coordinate multiple projects",
+    "Verify results",
+    "Recover from failures",
+    "Learn from outcomes",
+    "Support future extensibility"
+  ],
+  "control_loop": [
+    "OBSERVE",
+    "UNDERSTAND",
+    "RESEARCH",
+    "MODEL",
+    "DESIGN",
+    "DECOMPOSE",
+    "PRIORITIZE",
+    "ALLOCATE",
+    "EXECUTE",
+    "MONITOR",
+    "VERIFY",
+    "RECOVER",
+    "LEARN",
+    "IMPROVE",
+    "REPEAT"
+  ],
+  "properties": [
+    "MODULAR",
+    "COMPOSABLE",
+    "MULTI_PROJECT",
+    "RESOURCE_AWARE",
+    "VERIFICATION_FIRST",
+    "RECOVERABLE",
+    "EXTENSIBLE",
+    "AUDITABLE",
+    "HUMAN_OVERSIGHT"
+  ],
+  "boundary": [
+    "No literal infinite compute",
+    "No guaranteed perfect prediction",
+    "External systems require authorized interfaces",
+    "High-impact actions require appropriate authorization",
+    "Physical capabilities require compatible hardware"
+  ]
+}

@@ -1,0 +1,27 @@
+import { EngineeringDomain } from "./EngineeringOperationsLayer";
+
+export const ENGINEERING_DOMAINS: EngineeringDomain[] = [
+  "CIVIL",
+  "STRUCTURAL",
+  "MECHANICAL",
+  "ELECTRICAL",
+  "ELECTRONICS",
+  "CONTROL_SYSTEMS",
+  "CHEMICAL",
+  "MATERIALS",
+  "MANUFACTURING",
+  "INDUSTRIAL",
+  "SOFTWARE",
+  "SYSTEMS",
+  "COMPUTER",
+  "NETWORK",
+  "ROBOTICS",
+  "AUTOMOTIVE",
+  "AEROSPACE",
+  "ENERGY",
+  "ENVIRONMENTAL",
+  "BIOMEDICAL",
+  "TELECOMMUNICATIONS",
+  "MARINE",
+  "NUCLEAR_RESEARCH",
+];

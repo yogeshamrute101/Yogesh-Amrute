@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-09-21T16:55:04.772507",
+  "module": "UniversalSystemIntegration",
+  "components": [
+    "ExternalSystemRegistry.ts",
+    "SystemRelationshipGraph.ts",
+    "SystemUnderstandingEngine.ts",
+    "CorrelationEngine.ts",
+    "UniversalIntegrationCenter.ts"
+  ],
+  "systemTypes": [
+    "MOBILE_APP",
+    "WEB_APP",
+    "DESKTOP_APP",
+    "API",
+    "DATABASE",
+    "CLOUD",
+    "DEVICE",
+    "ROBOT",
+    "SERVICE"
+  ],
+  "relationshipGraph": true,
+  "eventCorrelation": true,
+  "capabilityDiscovery": true,
+  "requiresAuthorizedConnector": true
+}

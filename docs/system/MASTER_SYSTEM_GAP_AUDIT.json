@@ -1,0 +1,7 @@
+{
+  "generated": "docs/system/MASTER_SYSTEM_GAP_AUDIT.md",
+  "existing_modules": 98,
+  "missing_modules": [],
+  "lint_exit": 0,
+  "build_exit": 0
+}

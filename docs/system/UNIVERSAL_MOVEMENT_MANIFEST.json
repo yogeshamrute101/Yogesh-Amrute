@@ -1,0 +1,50 @@
+{
+  "system": "Universal Movement Understanding",
+  "domains": [
+    "PHYSICAL",
+    "HUMAN",
+    "ROBOT",
+    "OBJECT",
+    "FILE",
+    "DATA",
+    "NETWORK",
+    "RESOURCE",
+    "PROJECT",
+    "WORKFLOW",
+    "GAME",
+    "TIME",
+    "STATE"
+  ],
+  "movement_types": [
+    "TRANSLATION",
+    "ROTATION",
+    "TRANSFER",
+    "MIGRATION",
+    "PROGRESS",
+    "REGRESSION",
+    "TRANSITION",
+    "REORDER",
+    "START",
+    "STOP",
+    "PAUSE",
+    "RESUME"
+  ],
+  "pipeline": [
+    "DETECT",
+    "IDENTIFY",
+    "TRACK",
+    "UNDERSTAND",
+    "PREDICT",
+    "ACT",
+    "OBSERVE",
+    "VERIFY",
+    "LEARN"
+  ],
+  "principles": [
+    "Movement must be interpreted within its domain and context.",
+    "Physical movement requires appropriate sensors or interfaces.",
+    "A state transition can be a movement even without physical displacement.",
+    "Predictions are probabilistic and based on available evidence.",
+    "Unknown movement should remain UNKNOWN rather than being guessed."
+  ]
+}

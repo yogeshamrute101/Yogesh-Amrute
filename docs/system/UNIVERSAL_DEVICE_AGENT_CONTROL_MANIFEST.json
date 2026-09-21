@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-09-21T16:49:56.373664",
+  "component": "UniversalDeviceAgentControl",
+  "targetTypes": [
+    "MOBILE",
+    "TABLET",
+    "COMPUTER",
+    "SOFTWARE_ROBOT",
+    "SERVER",
+    "CLOUD",
+    "VM",
+    "CONTAINER",
+    "IOT",
+    "PHYSICAL_ROBOT"
+  ],
+  "principles": [
+    "authentication_required",
+    "authorization_required",
+    "capability_check_required",
+    "health_check_required",
+    "verification_required",
+    "audit_required",
+    "no_security_bypass",
+    "no_safety_bypass"
+  ],
+  "degradedModes": [
+    "OFFLINE",
+    "PARTIAL_FAILURE",
+    "RECOVERY",
+    "EMERGENCY_STOP"
+  ],
+  "requiresAdapters": true
+}

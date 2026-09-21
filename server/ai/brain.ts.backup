@@ -1,0 +1,27 @@
+export type BrainRequest = {
+  question: string;
+};
+
+export type BrainResult = {
+  question: string;
+  understanding: string;
+  nextStep: string;
+  status: "ready";
+};
+
+export async function runBrain(
+  request: BrainRequest
+): Promise<BrainResult> {
+  const question = request.question.trim();
+
+  if (!question) {
+    throw new Error("Brain needs a question.");
+  }
+
+  return {
+    question,
+    understanding: `The Brain received: ${question}`,
+    nextStep: "Research and build evidence-backed knowledge.",
+    status: "ready",
+  };
+}

@@ -1,3 +1,5 @@
+import { AiCoPilotModal } from './components/AiCoPilotModal';
+import SystemFrontline from "./components/system/SystemFrontline";
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -53,7 +55,6 @@ import { bgAudioEngine } from './utils/audioSynth';
 import { AndroidFrame } from './components/AndroidFrame';
 import { VideoCanvasPlayer, VideoCanvasPlayerRef } from './components/VideoCanvasPlayer';
 import { Timeline } from './components/Timeline';
-import { AiCoPilotModal } from './components/AiCoPilotModal';
 import { AiReelMakerModal } from './components/AiReelMakerModal';
 import { AiScriptWriterModal } from './components/AiScriptWriterModal';
 import { SocialShareModal } from './components/SocialShareModal';
@@ -153,6 +154,7 @@ export default function App() {
   const [selectedClipId, setSelectedClipId] = useState<string | null>(INITIAL_SAMPLE_CLIPS[0].id);
 
   // Category Tab Selection: 'edit' | 'ai' | 'text' | 'audio' | 'effects' | 'captions'
+ const [isAiCoPilotOpen, setIsAiCoPilotOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<ActiveCategoryTab>('edit');
 
   // View Layout State (defaults to false = Edge-to-Edge full mobile view!)
@@ -160,7 +162,6 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Modals
-  const [isAiCoPilotOpen, setIsAiCoPilotOpen] = useState(false);
   const [isAiReelMakerOpen, setIsAiReelMakerOpen] = useState(false);
   const [isAiScriptWriterOpen, setIsAiScriptWriterOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
@@ -739,7 +740,6 @@ export default function App() {
                   setCurrentPlayheadMs(0);
                   setCurrentScreen('editor');
                 }}
-                onOpenAiCoPilot={() => setIsAiCoPilotOpen(true)}
                 onDeleteProject={(id) => {
                   projectStorage.deleteProject(id);
                   showToast('Project deleted');
@@ -765,7 +765,7 @@ export default function App() {
                 canvasPlayerRef={canvasPlayerRef}
                 onNavigateHome={() => setCurrentScreen('home')}
                 onOpenShareModal={() => setIsShareModalOpen(true)}
-                onOpenAiCoPilot={() => setIsAiCoPilotOpen(true)}
+            onOpenAiCoPilot={() => setIsAiCoPilotOpen(true)}
                 onOpenAiReelMaker={() => setCurrentScreen('reel_maker')}
                 onOpenAiScriptWriter={() => setCurrentScreen('script_writer')}
                 onOpenSceneDetection={() => setIsSceneDetectionOpen(true)}
@@ -982,19 +982,7 @@ export default function App() {
       {/* ======================================================== */}
       {/* 7. MODALS & WORKFLOW DRAWERS                             */}
       {/* ======================================================== */}
-      {isAiCoPilotOpen && (
-        <AiCoPilotModal
-          isOpen={isAiCoPilotOpen}
-          onClose={() => setIsAiCoPilotOpen(false)}
-          timeline={timeline}
-          onApplyTransaction={(newTimeline, auditLog) => {
-            pushHistory(newTimeline);
-            showToast('Co-Pilot Transaction Committed!');
-          }}
-        />
-      )}
-
-      {isAiReelMakerOpen && (
+  {isAiReelMakerOpen && (
         <AiReelMakerModal
           isOpen={isAiReelMakerOpen}
           onClose={() => setIsAiReelMakerOpen(false)}
@@ -1059,14 +1047,27 @@ export default function App() {
         />
       )}
 
-      {isSceneDetectionOpen && (
-        <AiSceneDetectionModal
-          isOpen={isSceneDetectionOpen}
-          onClose={() => setIsSceneDetectionOpen(false)}
-          clips={timeline.clips}
-          onApplyHighlightEdits={handleApplyHighlightEdits}
-        />
-      )}
+        {isSceneDetectionOpen && (
+          <AiSceneDetectionModal
+            isOpen={isSceneDetectionOpen}
+            onClose={() => setIsSceneDetectionOpen(false)}
+            clips={timeline.clips}
+            onApplyHighlightEdits={handleApplyHighlightEdits}
+          />
+        )}
+
+        {isAiCoPilotOpen && (
+      <AiCoPilotModal
+        isOpen={isAiCoPilotOpen}
+        onClose={() => setIsAiCoPilotOpen(false)}
+        timeline={timeline}
+        onApplyTransaction={(newTimeline, auditLog) => {
+          setTimeline(newTimeline);
+          setIsAiCoPilotOpen(false);
+          showToast('AI changes applied successfully');
+        }}
+      />
+    )}
     </div>
   );
 }

@@ -1,0 +1,50 @@
+{
+  "system": "Internal World Ecosystem",
+  "core_roles": [
+    "PROCESSOR",
+    "RESEARCHER",
+    "ANALYST",
+    "PLANNER",
+    "CREATOR",
+    "MAKER",
+    "HELPER",
+    "VERIFIER",
+    "AUDITOR",
+    "TEACHER",
+    "RECOVERY",
+    "QUALITY",
+    "COORDINATOR"
+  ],
+  "worlds": [
+    "KNOWLEDGE",
+    "SCIENCE",
+    "ENGINEERING",
+    "SOFTWARE",
+    "OFFICE",
+    "CREATIVE",
+    "BUSINESS",
+    "QUALITY",
+    "RESEARCH",
+    "PROJECT",
+    "SIMULATION",
+    "HUMAN",
+    "PHYSICAL",
+    "DIGITAL",
+    "CUSTOM"
+  ],
+  "architecture": [
+    "INTERNAL_PROCESSING",
+    "INTERNAL_ROLES",
+    "INTERNAL_WORLDS",
+    "WORLD_RELATIONSHIPS",
+    "CAPABILITY_REGISTRY",
+    "QUALITY_GATES",
+    "VERIFICATION",
+    "RECOVERY",
+    "EXTENSIBILITY"
+  ],
+  "infinity_model": {
+    "meaning": "Extensible hierarchy with no hardcoded category count",
+    "not_meaning": "Infinite computation, storage, energy, or autonomous physical capability"
+  }
+}

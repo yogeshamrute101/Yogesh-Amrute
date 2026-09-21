@@ -1,0 +1,40 @@
+{
+  "system": "Universal Experience Intelligence",
+  "purpose": [
+    "Remember past work",
+    "Learn from verified outcomes",
+    "Reuse successful patterns",
+    "Avoid repeated mistakes",
+    "Update experience with new evidence",
+    "Support future decisions"
+  ],
+  "pipeline": [
+    "OBSERVE",
+    "RECORD",
+    "VERIFY",
+    "ANALYZE_RESULT",
+    "EXTRACT_LESSON",
+    "STORE_EXPERIENCE",
+    "FIND_SIMILAR_EXPERIENCE",
+    "BUILD_PATTERN",
+    "DECIDE",
+    "ACT",
+    "VERIFY",
+    "UPDATE"
+  ],
+  "experience_types": [
+    "SUCCESS",
+    "PARTIAL_SUCCESS",
+    "FAILURE",
+    "UNKNOWN"
+  ],
+  "rules": [
+    "Unverified experience is not trusted experience.",
+    "Recent evidence may supersede stale experience.",
+    "Experience is evidence, not absolute truth.",
+    "Similar situations must still be checked for differences.",
+    "Failures should produce corrective lessons.",
+    "Successful patterns should be reused only when applicable.",
+    "Contradictory experiences remain explicitly represented."
+  ]
+}

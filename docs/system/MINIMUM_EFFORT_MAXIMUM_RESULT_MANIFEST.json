@@ -1,0 +1,32 @@
+{
+  "system": "Minimum Effort Maximum Verified Result",
+  "objective": "Minimize unnecessary work while preserving correctness, safety and traceability.",
+  "optimization_order": [
+    "UNDERSTAND_GOAL",
+    "REUSE_EXISTING_CAPABILITY",
+    "CHECK_CONSTRAINTS",
+    "GENERATE_VALID_PATHS",
+    "REMOVE_REDUNDANT_STEPS",
+    "PARALLELIZE_SAFE_WORK",
+    "EXECUTE",
+    "VERIFY",
+    "CORRECT_IF_REQUIRED",
+    "DELIVER",
+    "STOP_WHEN_COMPLETE"
+  ],
+  "optimization_targets": [
+    "MINIMUM_STEPS",
+    "MINIMUM_TIME",
+    "MINIMUM_COST",
+    "MINIMUM_RESOURCE_USAGE",
+    "MAXIMUM_VERIFIED_CORRECTNESS"
+  ],
+  "rules": [
+    "Correctness has priority over raw speed.",
+    "Do not remove a step that is required for safety or verification.",
+    "Reuse existing verified capabilities whenever possible.",
+    "Parallelize only independent and safe operations.",
+    "Stop unnecessary processing once the required verified result is obtained.",
+    "If correctness cannot be established, mark the result as needing review."
+  ]
+}

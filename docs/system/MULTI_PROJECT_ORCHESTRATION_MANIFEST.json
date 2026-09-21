@@ -1,0 +1,46 @@
+{
+  "system": "Universal Multi-Project Orchestration",
+  "capacity_model": "UNBOUNDED_LOGICAL_PROJECT_REGISTRY",
+  "execution_model": "RESOURCE_AWARE_DYNAMIC_CONCURRENCY",
+  "features": [
+    "MULTIPLE_PROJECTS",
+    "PROJECT_ISOLATION",
+    "PRIORITY",
+    "FIRST_COME_FIRST_SERVE",
+    "TASK_DECOMPOSITION",
+    "DEPENDENCY_MANAGEMENT",
+    "PARALLEL_EXECUTION",
+    "RESOURCE_AWARE_SCHEDULING",
+    "CHECKPOINTING",
+    "RECOVERY",
+    "FAILURE_ISOLATION",
+    "DYNAMIC_PROJECT_REGISTRATION",
+    "AUTOMATIC_RESOURCE_RELEASE"
+  ],
+  "lifecycle": [
+    "REGISTER",
+    "UNDERSTAND",
+    "DECOMPOSE",
+    "PRIORITIZE",
+    "SCHEDULE",
+    "ALLOCATE_RESOURCES",
+    "EXECUTE",
+    "MONITOR",
+    "CHECKPOINT",
+    "VERIFY",
+    "RECOVER_IF_NEEDED",
+    "COMPLETE",
+    "RELEASE_RESOURCES",
+    "LEARN"
+  ],
+  "principles": [
+    "Logical project count is extensible rather than hardcoded.",
+    "Actual simultaneous execution is limited by available resources.",
+    "Projects must remain isolated from each other.",
+    "A failed project should not unnecessarily stop unrelated projects.",
+    "Dependencies must be respected.",
+    "Critical work can be prioritized.",
+    "Equivalent priority uses first-come-first-served ordering.",
+    "Completed projects release execution resources."
+  ]
+}

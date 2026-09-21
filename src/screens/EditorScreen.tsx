@@ -44,8 +44,8 @@ interface EditorScreenProps {
   canvasPlayerRef: React.RefObject<VideoCanvasPlayerRef>;
   onNavigateHome: () => void;
   onOpenShareModal: () => void;
-  onOpenAiCoPilot: () => void;
-  onOpenAiReelMaker: () => void;
+  onOpenAiCoPilot,
+ onOpenAiReelMaker: () => void;
   onOpenAiScriptWriter: () => void;
   onOpenSceneDetection: () => void;
   onOpenClipInspector: () => void;
@@ -88,7 +88,7 @@ export default function EditorScreen({
   onNavigateHome,
   onOpenShareModal,
   onOpenAiCoPilot,
-  onOpenAiReelMaker,
+ onOpenAiReelMaker,
   onOpenAiScriptWriter,
   onOpenSceneDetection,
   onOpenClipInspector,
@@ -207,9 +207,8 @@ export default function EditorScreen({
         {/* Visible ✨ AI Co-Pilot Button on Video Preview */}
         <div className="absolute top-3 right-3 z-20">
           <button
-            onClick={onOpenAiCoPilot}
+          onClick={onOpenAiCoPilot}
             className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#00F0FF] via-[#8B5CF6] to-[#EC4899] text-black font-extrabold text-xs flex items-center gap-1.5 shadow-lg shadow-cyan-500/30 hover:brightness-110 active:scale-95 transition-all cursor-pointer border border-white/20"
-            title="Open VIDOAI Co-Pilot"
           >
             <Sparkles className="w-3.5 h-3.5 fill-black" />
             <span>✨ AI Co-Pilot</span>
@@ -314,14 +313,13 @@ export default function EditorScreen({
         {activeTab === 'ai' && (
           <div className="flex items-center gap-2 w-full">
             <button
-              onClick={onOpenAiCoPilot}
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 cursor-pointer shrink-0"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>✨ AI Co-Pilot</span>
             </button>
             <button
-              onClick={onOpenAiReelMaker}
+          onClick={onOpenAiReelMaker}
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-amber-500 to-pink-500 text-black hover:opacity-95 cursor-pointer shrink-0 shadow-xs"
             >
               <Zap className="w-3.5 h-3.5 fill-black" />
@@ -518,7 +516,6 @@ export default function EditorScreen({
             <span>Add Clip</span>
           </button>
           <button
-            onClick={onOpenAiCoPilot}
             className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-gradient-to-r from-amber-400 to-pink-500 hover:from-amber-300 hover:to-pink-400 text-black text-xs font-extrabold shadow-md shadow-amber-500/20 cursor-pointer transition-transform active:scale-95"
           >
             <Sparkles className="w-3.5 h-3.5 fill-black" />

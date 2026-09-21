@@ -1,0 +1,40 @@
+{
+  "system": "Action Reaction Feedback Engine",
+  "pipeline": [
+    "INPUT",
+    "UNDERSTAND",
+    "PREDICT",
+    "ACT",
+    "OBSERVE_REACTION",
+    "COMPARE",
+    "VERIFY",
+    "CORRECT_OR_ADAPT",
+    "LEARN",
+    "NEXT_ACTION"
+  ],
+  "reaction_types": [
+    "EXPECTED",
+    "POSITIVE",
+    "NEGATIVE",
+    "NEUTRAL",
+    "UNEXPECTED",
+    "ERROR",
+    "UNKNOWN"
+  ],
+  "responses": [
+    "CONTINUE",
+    "ADAPT",
+    "CORRECT",
+    "STOP",
+    "REVIEW"
+  ],
+  "principles": [
+    "Every meaningful action should have an observable outcome when observation is possible.",
+    "Expected reaction and actual reaction must be stored separately.",
+    "Unexpected reactions trigger reassessment rather than blind continuation.",
+    "Negative or unsafe reactions can trigger correction or stop.",
+    "Unknown reactions require more observation rather than invented conclusions.",
+    "Learn from verified action-reaction pairs.",
+    "External systems can only be acted on through authorized interfaces."
+  ]
+}

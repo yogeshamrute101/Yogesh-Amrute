@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-09-21T16:58:10.465226",
+  "module": "UniversalFormulationProductionCenter",
+  "components": [
+    "UniversalFormulationEngine.ts",
+    "FormulaModel.ts",
+    "ProcessManufacturingPlanner.ts",
+    "ProductArchitectureEngine.ts",
+    "UniversalProductionCenter.ts"
+  ],
+  "materialStates": [
+    "LIQUID",
+    "SOLID",
+    "SEMISOLID",
+    "GAS",
+    "POWDER",
+    "COMPOSITE"
+  ],
+  "domains": [
+    "CHEMICAL",
+    "PHARMACEUTICAL",
+    "ELECTRONIC",
+    "MECHANICAL",
+    "AUTOMOTIVE",
+    "AEROSPACE",
+    "ENERGY",
+    "SOFTWARE",
+    "CONSUMER",
+    "INDUSTRIAL"
+  ],
+  "lifecycle": [
+    "REQUIREMENTS",
+    "RESEARCH",
+    "FORMULA_DESIGN",
+    "MATERIAL_SELECTION",
+    "PROCESS_DESIGN",
+    "SIMULATION",
+    "PROTOTYPE",
+    "TEST",
+    "VERIFY",
+    "VALIDATE",
+    "SCALE_UP",
+    "MANUFACTURING",
+    "QUALITY_CONTROL",
+    "MONITOR",
+    "IMPROVE"
+  ],
+  "professionalValidationRequired": true
+}

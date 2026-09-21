@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-09-21T16:55:56.737157",
+  "module": "ResourceEnergySharing",
+  "resourceTypes": [
+    "CPU",
+    "GPU",
+    "MEMORY",
+    "STORAGE",
+    "NETWORK",
+    "API",
+    "BATTERY",
+    "ELECTRICAL_ENERGY",
+    "DEVICE",
+    "ROBOT_COMPUTE",
+    "CLOUD_COMPUTE"
+  ],
+  "capabilities": [
+    "resource_discovery",
+    "capacity_measurement",
+    "authorized_allocation",
+    "reserve_protection",
+    "resource_accounting",
+    "monitoring",
+    "release",
+    "audit"
+  ],
+  "physical_energy_transferRequiresHardwareInterface": true,
+  "authorizationRequired": true
+}

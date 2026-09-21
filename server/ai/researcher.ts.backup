@@ -1,0 +1,57 @@
+import fs from "fs/promises";
+import path from "path";
+
+export interface ResearchResult {
+  question: string;
+  projectKnowledge: string;
+  relevantSections: string[];
+  status: "ready" | "error";
+}
+
+const aggregatePath = path.join(
+  process.cwd(),
+  "aggregation",
+  "project-aggregate.txt"
+);
+
+export async function researchProject(
+  question: string
+): Promise<ResearchResult> {
+  const cleanQuestion = question.trim();
+
+  if (!cleanQuestion) {
+    throw new Error("Researcher needs a question.");
+  }
+
+  try {
+    const knowledge = await fs.readFile(aggregatePath, "utf8");
+
+    const terms = cleanQuestion
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean);
+
+    const sections = knowledge
+      .split(/^===== /m)
+      .filter(Boolean)
+      .filter((section) => {
+        const lower = section.toLowerCase();
+        return terms.some((term) => lower.includes(term));
+      })
+      .slice(0, 10);
+
+    return {
+      question: cleanQuestion,
+      projectKnowledge: knowledge,
+      relevantSections: sections,
+      status: "ready",
+    };
+  } catch (error) {
+    return {
+      question: cleanQuestion,
+      projectKnowledge: "",
+      relevantSections: [],
+      status: "error",
+    };
+  }
+}

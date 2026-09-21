@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-09-21T16:52:21.690152",
+  "researchCenter": "src/core/researchcenter",
+  "projectBuilderCenter": "src/core/projectbuilder",
+  "unifiedCenter": "src/core/centers",
+  "pipeline": [
+    "RESEARCH",
+    "VERIFY",
+    "REQUIREMENTS",
+    "ARCHITECTURE",
+    "BUILD",
+    "TEST",
+    "INDEPENDENT_VERIFICATION",
+    "PROJECT"
+  ],
+  "continuousOperationRequiresRuntime": true,
+  "externalAccessRequiresAuthorization": true
+}

@@ -184,9 +184,11 @@ export class GeminiProvider {
       clearTimeout(timeoutId);
 
       if (!response.ok) {
+        console.error('Co-Pilot HTTP error:', response.status, response.statusText);
+
         return {
           success: false,
-          error: 'AI is temporarily unavailable.',
+          error: `AI server error (${response.status} ${response.statusText || 'Unknown error'}).`,
           code: 'UNAVAILABLE',
         };
       }
@@ -216,13 +218,21 @@ export class GeminiProvider {
           recommendedTitle: json.data.title,
         },
       };
-    } catch (err: any) {
-      clearTimeout(timeoutId);
-      return {
-        success: false,
-        error: 'AI is temporarily unavailable.',
-        code: 'UNAVAILABLE',
-      };
-    }
+      } catch (err: any) {
+        clearTimeout(timeoutId);
+
+        console.error('Co-Pilot request failed:', err);
+
+        const message =
+          err?.name === 'AbortError'
+            ? 'AI request timed out. Please try again.'
+            : err?.message || 'AI is temporarily unavailable.';
+
+        return {
+          success: false,
+          error: message,
+          code: err?.name === 'AbortError' ? 'NETWORK_TIMEOUT' : 'UNAVAILABLE',
+        };
+      }
   }
 }

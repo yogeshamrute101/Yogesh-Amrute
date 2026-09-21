@@ -20,7 +20,6 @@ import { AppScreen, ProjectTimeline, SavedProject, TimelineClip } from '../types
 interface HomeScreenProps {
   onNavigate: (screen: AppScreen) => void;
   onOpenProject: (timeline: ProjectTimeline) => void;
-  onOpenAiCoPilot: () => void;
   recentProjects?: SavedProject[];
   onDeleteProject: (id: string) => void;
   onDuplicateProject: (id: string) => void;
@@ -31,7 +30,6 @@ interface HomeScreenProps {
 export const HomeScreen: React.FC<HomeScreenProps> = ({
   onNavigate,
   onOpenProject,
-  onOpenAiCoPilot,
   recentProjects = [],
   onDeleteProject,
   onDuplicateProject,
@@ -167,7 +165,6 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
             {/* AI Co-Pilot */}
             <button
-              onClick={onOpenAiCoPilot}
               className="p-4 rounded-2xl bg-[#121420] border border-neutral-800 hover:border-cyan-500/50 text-left transition-all group cursor-pointer flex flex-col justify-between h-32"
             >
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-[#00F0FF] flex items-center justify-center group-hover:scale-105 transition-transform">
