@@ -1,0 +1,17 @@
+## Feature Categories
+AI Copilot
+AI Reel Maker
+Timeline
+Captions / STT
+Audio
+Effects
+Export
+Recovery
+Universal Commands
+Autonomous Planning
+Priority Queue
+Learning / Experience
+Verification
+Self-Healing
+Multi-Task Orchestration
+System Health
