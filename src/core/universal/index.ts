@@ -2,6 +2,8 @@ export * from "./UniversalSystem";
 export * from "./UniversalCopilotBridge";
 export * from "./MasterOrchestrator";
 export * from "./MasterCommand";
+export * from "./FinalCommandBridge";
+export * from "./FinalSystemStatus";
 export * from "./orchestration/SelfManager";
 export * from "./verification/SystemVerifier";
 export * from "./integration/FeatureRegistry";

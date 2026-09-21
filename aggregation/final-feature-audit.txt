@@ -1,0 +1,55 @@
+src/core/physicalai/PhysicalAIOrchestrator.ts:107:        message: `Robot capability '${command.action}' is unavailable.`,
+src/core/resourceenergy/ResourceEnergyAllocator.ts:61:        resourceId: "UNAVAILABLE",
+src/core/optionselection/BestOptionEngine.ts:75:        reasons: ["Option is unavailable."],
+src/core/signals/UniversalSignalIntelligence.ts:42:        : "Signal data is unavailable.",
+src/core/universal/integration/UniversalRouter.ts:4:  "reel-maker": ["reel", "short", "viral", "shorts"],
+src/core/universal/integration/registerFeatures.ts:21:  featureRegistry.register("reel-maker", async input => ({
+src/core/universal/integration/registerFeatures.ts:22:    intent: "reel-maker",
+src/core/control/CapabilityControl.ts:68:        reason: "Capability is unavailable or disabled.",
+src/core/survival/DegradedMode.ts:4: * Removes optional workload when resources/dependencies are unavailable.
+src/core/multitask/MultiTaskingEngine.ts:65:            error: "Dependencies or resources are unavailable.",
+src/screens/CaptionsScreen.tsx:17:interface CaptionsScreenProps {
+src/screens/CaptionsScreen.tsx:32:export const CaptionsScreen: React.FC<CaptionsScreenProps> = ({
+src/screens/EditorScreen.tsx:54:  onOpenCaptionsScreen: () => void;
+src/screens/EditorScreen.tsx:97:  onOpenCaptionsScreen,
+src/screens/EditorScreen.tsx:462:              onClick={onOpenCaptionsScreen}
+src/screens/AudioScreen.tsx:110:      console.warn('Microphone permission denied or unavailable:', err);
+src/screens/AiReelMakerScreen.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx:93:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx:101:        throw new Error(response.error || 'AI is temporarily unavailable.');
+src/screens/AiReelMakerScreen.tsx:115:      setErrorMsg(err.message || 'AI is temporarily unavailable.');
+src/components/AiReelMakerModal.tsx:29:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiReelMakerModal.tsx:112:      const response = await GeminiProvider.requestReelMaker({
+src/components/AiReelMakerModal.tsx:123:        throw new Error(response.error || 'AI is temporarily unavailable.');
+src/components/AiReelMakerModal.tsx:140:      setErrorMessage(err.message || 'AI is temporarily unavailable.');
+src/components/AiCoPilotModal.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiCoPilotModal.tsx:24:interface AiCoPilotModalProps {
+src/components/AiCoPilotModal.tsx:31:export const AiCoPilotModal: React.FC<AiCoPilotModalProps> = ({
+src/components/AiCoPilotModal.tsx:68:      // Step 1: Query AI via GeminiProvider
+src/components/AiCoPilotModal.tsx:69:      const res = await GeminiProvider.requestEdit({
+src/components/AiCoPilotModal.tsx:75:        throw new Error(res.error || 'AI is temporarily unavailable.');
+src/components/AiCoPilotModal.tsx:93:      setErrorMsg(err.message || 'AI is temporarily unavailable.');
+src/App.tsx:1:import { AiCoPilotModal } from './components/AiCoPilotModal';
+src/App.tsx:72:import { CaptionsScreen } from './screens/CaptionsScreen';
+src/App.tsx:775:                onOpenCaptionsScreen={() => setCurrentScreen('captions')}
+src/App.tsx:900:              <CaptionsScreen
+src/App.tsx:1060:      <AiCoPilotModal
+src/services/aiProvider/GeminiProvider.ts:22:  code?: 'NETWORK_TIMEOUT' | 'QUOTA_EXCEEDED' | 'AUTH_FAILURE' | 'MALFORMED_JSON' | 'UNAVAILABLE' | 'VALIDATION_FAILED';
+src/services/aiProvider/GeminiProvider.ts:26: * GeminiProvider
+src/services/aiProvider/GeminiProvider.ts:31:export class GeminiProvider {
+src/services/aiProvider/GeminiProvider.ts:34:  static async requestEdit(options: CoPilotRequestOptions): Promise<CoPilotResponse> {
+src/services/aiProvider/GeminiProvider.ts:89:            code: 'QUOTA_EXCEEDED',
+src/services/aiProvider/GeminiProvider.ts:96:            code: 'AUTH_FAILURE',
+src/services/aiProvider/GeminiProvider.ts:101:          error: 'AI is temporarily unavailable.',
+src/services/aiProvider/GeminiProvider.ts:102:          code: 'UNAVAILABLE',
+src/services/aiProvider/GeminiProvider.ts:110:          error: json?.error || 'AI is temporarily unavailable.',
+src/services/aiProvider/GeminiProvider.ts:111:          code: 'UNAVAILABLE',
+src/services/aiProvider/GeminiProvider.ts:153:        error: 'AI is temporarily unavailable.',
+src/services/aiProvider/GeminiProvider.ts:154:        code: 'UNAVAILABLE',
+src/services/aiProvider/GeminiProvider.ts:159:  static async requestReelMaker(options: {
+src/services/aiProvider/GeminiProvider.ts:172:      const response = await fetch('/api/ai/reel-maker', {
+src/services/aiProvider/GeminiProvider.ts:192:          code: 'UNAVAILABLE',
+src/services/aiProvider/GeminiProvider.ts:200:          error: json?.error || 'AI is temporarily unavailable.',
+src/services/aiProvider/GeminiProvider.ts:201:          code: 'UNAVAILABLE',
+src/services/aiProvider/GeminiProvider.ts:229:            : err?.message || 'AI is temporarily unavailable.';
+src/services/aiProvider/GeminiProvider.ts:234:          code: err?.name === 'AbortError' ? 'NETWORK_TIMEOUT' : 'UNAVAILABLE',
