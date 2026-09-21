@@ -1,0 +1,14 @@
+PASS | React application | src
+PASS | App entry | src/App.tsx
+PASS | Universal core | src/core/universal
+PASS | Master orchestrator | src/core/universal/MasterOrchestrator.ts
+PASS | Master command | src/core/universal/MasterCommand.ts
+PASS | Universal bridge | src/core/universal/UniversalCopilotBridge.ts
+PASS | Copilot UI | src/components/AiCoPilotModal.tsx
+PASS | Reel Maker API | server.ts
+PASS | AI services | server/ai
+PASS | Captions | src/screens/CaptionsScreen.tsx
+PASS | Editor | src/screens/EditorScreen.tsx
+
+PASS=11
+WARN=0
