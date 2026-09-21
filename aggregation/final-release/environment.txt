@@ -1,0 +1,7 @@
+Node: v24.20.0
+NPM: 11.19.0
+Git: git version 2.55.0
+
+Package:
+react-example
+0.0.0

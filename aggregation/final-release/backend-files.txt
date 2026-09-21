@@ -1,0 +1,11 @@
+server/ai/brain.ts
+server/ai/evolution.ts
+server/ai/idea-engine.ts
+server/ai/knowledge.ts
+server/ai/project-search.ts
+server/ai/researcher.ts
+server/ai/safety.ts
+server/ai/universal/universal-system.ts
+server/research/AutonomousStudyEngine.ts
+server/research/index.ts
+server/server.ts

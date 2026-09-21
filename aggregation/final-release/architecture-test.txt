@@ -1,0 +1,8 @@
+PASS src/core/universal
+PASS src/core/autonomous
+PASS src/core/VidoAIControlPlane.ts
+PASS src/components/MasterCommandCenter.tsx
+PASS server.ts
+PASS package.json
+PASS npm script: build
+PASS npm script: lint
