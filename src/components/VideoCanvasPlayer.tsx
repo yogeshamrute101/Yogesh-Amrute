@@ -98,7 +98,12 @@ export const VideoCanvasPlayer = forwardRef<VideoCanvasPlayerRef, VideoCanvasPla
   useEffect(() => {
     if (!videoRef.current || !videoLoaded) return;
     if (isPlaying) {
-      videoRef.current.playbackRate = activeClip?.speed || 1.0;
+      const requestedSpeed = activeClip?.speed;
+    const safeSpeed =
+      typeof requestedSpeed === 'number' && Number.isFinite(requestedSpeed)
+        ? Math.max(0.25, Math.min(4.0, requestedSpeed))
+        : 1.0;
+    videoRef.current.playbackRate = safeSpeed;
       videoRef.current.muted = activeClip?.isMuted || false;
       videoRef.current.volume = activeClip?.volume ?? 1.0;
       videoRef.current.play().catch(() => {

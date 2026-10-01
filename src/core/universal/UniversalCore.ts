@@ -1,3 +1,4 @@
+import { UniversalInstructor } from '../instructor/UniversalInstructor';
 /**
  * VidoAI Universal Core
  *
@@ -70,3 +71,6 @@ export class UniversalCore {
     return adapter.execute<T, R>(task);
   }
 }
+
+
+export const universalInstructor = new UniversalInstructor();

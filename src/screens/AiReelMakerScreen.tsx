@@ -22,6 +22,7 @@ import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
 import { validateAiOperations } from '../services/aiOperationValidator';
 import { executeCommandTransaction } from '../services/commandTransaction';
 import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+import { useGenerationJob } from "../hooks/useGenerationJob";
 
 interface AiReelMakerScreenProps {
   onBack: () => void;
@@ -62,11 +63,23 @@ export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
 }) => {
   const safeClips = timeline?.clips || [];
   const [activeStep, setActiveStep] = useState<number>(1);
+  const [generationJobId, setGenerationJobId] = useState<string | null>(null);
+  const [generationStatus, setGenerationStatus] = useState<string | null>(null);
+  const [generatedMediaUrl, setGeneratedMediaUrl] = useState<string | null>(null);
+  const [generatedMediaTitle, setGeneratedMediaTitle] = useState<string | null>(null);
+  const [generatedMediaDuration, setGeneratedMediaDuration] = useState<number | null>(null);
+
+  const insertGeneratedMediaIntoTimeline = (): TimelineClip | null => {
+    if (!generatedMediaUrl) return null;
+    };
+
   const [selectedPreset, setSelectedPreset] = useState<ReelPreset>('Viral Reel');
   const [targetDuration, setTargetDuration] = useState<number>(15);
   const [musicGenre, setMusicGenre] = useState<'phonk' | 'lofi' | 'cinematic' | 'ambient'>('phonk');
   const [removeSilence, setRemoveSilence] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [generatedVideoUrl, setGeneratedVideoUrl] = useState<string | null>(null);
+
   const [generatedPlan, setGeneratedPlan] = useState<any | null>(null);
   const [validationReport, setValidationReport] = useState<ValidationReport | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -80,6 +93,193 @@ export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
     { num: 6, title: 'Export' },
   ];
 
+  const createGenerationJob = async (prompt: string) => {
+    const response = await fetch('/api/generation/jobs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        kind: 'reel',
+        prompt
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Generation request failed (${response.status})`);
+    }
+
+    const data = await response.json();
+    const jobId = data?.job?.id;
+
+    if (!jobId) {
+      throw new Error('Generation job ID was not returned');
+    }
+
+    setGenerationJobId(jobId);
+    setGenerationStatus(data.job.status ?? 'queued');
+
+    return jobId;
+  };
+
+  const startGeneration = async (prompt: string) => {
+    const response = await fetch("/api/generation/jobs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        kind: "reel",
+        prompt,
+      }),
+    });
+
+    const json = await response.json();
+
+    if (!response.ok || !json?.success || !json?.data?.id) {
+      throw new Error(
+        json?.error || "Unable to start video generation."
+      );
+    }
+
+    const jobId = String(json.data.id);
+    setGenerationJobId(jobId);
+
+    for (let attempt = 0; attempt < 120; attempt++) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      const statusResponse = await fetch(
+        `/api/generation/jobs/${encodeURIComponent(jobId)}`
+      );
+
+      const statusJson = await statusResponse.json();
+
+      if (!statusResponse.ok || !statusJson?.success) {
+        throw new Error(
+          statusJson?.error || "Unable to read generation status."
+        );
+      }
+
+      const job = statusJson.data;
+
+      if (job.status === "completed" && job.mediaUrl) {
+        setGeneratedMediaUrl(String(job.mediaUrl));
+        setGeneratedMediaTitle(
+          String(job.title || "AI Generated Reel")
+        );
+        setGeneratedMediaDuration(
+          typeof job.durationSec === "number"
+            ? Math.max(1, job.durationSec)
+            : targetDuration
+        );
+
+        return job;
+      }
+
+      if (job.status === "failed") {
+        throw new Error(
+          job.error || "Video generation failed."
+        );
+      }
+    }
+
+    throw new Error(
+      "Video generation is taking longer than expected."
+    );
+  };
+
+
+
+const saveGeneratedVideoMetadata = (url: string, jobId: string) => {
+  const generation = useGenerationJob();
+
+  const startRealGeneration = async (
+    prompt: string,
+    kind: "text-to-video" | "image-to-video" | "script-to-video" | "reel" = "text-to-video"
+  ) => {
+    const cleanPrompt = prompt.trim();
+
+    if (!cleanPrompt) {
+      return;
+    }
+
+    await generation.generate(kind, cleanPrompt);
+  };
+
+
+  try {
+    const key = "vidoai.project.generatedOutputs";
+    const existing = JSON.parse(localStorage.getItem(key) || "[]");
+
+    const output = {
+      id: `output_${Date.now()}`,
+      jobId,
+      url,
+      type: "video",
+      format: "mp4",
+      source: "veo",
+      createdAt: Date.now(),
+    };
+
+    const outputs = Array.isArray(existing) ? existing : [];
+    localStorage.setItem(
+      key,
+      JSON.stringify([...outputs.slice(-19), output])
+    );
+
+    return output;
+  } catch {
+    return null;
+  }
+};
+
+const createGeneratedTimelineClip = (videoUrl: string): any => ({
+  id: `generated_${Date.now()}`,
+  type: "video",
+  src: videoUrl,
+  url: videoUrl,
+  videoUrl,
+  start: 0,
+  startTime: 0,
+  duration: targetDuration,
+  durationSec: targetDuration,
+  end: targetDuration,
+  source: "ai-generated",
+  name: "AI Generated Video",
+});
+
+const pollGenerationJob = async (jobId: string) => {
+    for (let attempt = 0; attempt < 120; attempt++) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      const response = await fetch(
+        `/api/generation/jobs/${encodeURIComponent(jobId)}`
+      );
+
+      const payload = await response.json();
+
+      if (!response.ok || !payload?.success) {
+        throw new Error(
+          payload?.error || "Unable to read generation job."
+        );
+      }
+
+      const job = payload.data;
+
+      if (job?.status === "completed") {
+        return job;
+      }
+
+      if (job?.status === "failed") {
+        throw new Error(
+          job?.error || "Video generation failed."
+        );
+      }
+    }
+
+    throw new Error(
+      "Video generation is taking longer than expected."
+    );
+  };
+
   const handleGenerate = async () => {
     setLoading(true);
     setErrorMsg(null);
@@ -90,6 +290,22 @@ export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
     }, 800);
 
     try {
+      // Start the real media-generation pipeline.
+      const generationPrompt = [
+      `Create a ${selectedPreset} vertical short-form video.`,
+      `Target duration: ${targetDuration} seconds.`,
+      `Music style: ${musicGenre}.`,
+      removeSilence ? "Remove unnecessary silence." : "",
+      safeClips.length
+        ? `Use the ${safeClips.length} supplied timeline clips as source material.`
+        : "Generate suitable visuals from the requested concept.",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    const jobId = await createGenerationJob(generationPrompt);
+      await pollGenerationJob(jobId);
+
       const response = await GeminiProvider.requestReelMaker({
         clips: timeline.clips,
         preset: selectedPreset,
@@ -102,6 +318,11 @@ export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
       }
 
       setGeneratedPlan(response.data);
+
+
+      if (generatedVideoUrl) {
+        console.log("Generated video ready:", generatedVideoUrl);
+      }
 
       const rawOps = response.data.operations || [];
       if (removeSilence && !rawOps.some((o: any) => o.type === 'REMOVE_SILENCE')) {
@@ -121,17 +342,79 @@ export const AiReelMakerScreen: React.FC<AiReelMakerScreenProps> = ({
 
   const handleApplyAndEdit = () => {
     if (!validationReport || !validationReport.isValid) return;
-    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
-    if (tx.success) {
-      onApplyReel?.(tx.newTimeline);
-      onNavigateToEditor?.();
-    } else {
+
+    const tx = executeCommandTransaction(
+      timeline,
+      validationReport.validatedOperations
+    );
+
+    if (!tx.success) {
       setErrorMsg(`Transaction failed: ${tx.error}`);
+      return;
     }
+
+    let nextTimeline = tx.newTimeline;
+
+    if (generatedMediaUrl) {
+      const durationMs = Math.max(
+        1000,
+        Math.round(generatedMediaDuration * 1000)
+      );
+
+      const generatedClip: TimelineClip = {
+        id: `ai_generated_${Date.now()}`,
+        name: generatedMediaTitle,
+        videoUrl: generatedMediaUrl,
+        startTrimMs: 0,
+        endTrimMs: durationMs,
+        originalDurationMs: durationMs,
+        speed: 1,
+        volume: 1,
+        isMuted: false,
+        filter: "none",
+        transition: "cut",
+        category: "creator",
+      };
+
+      nextTimeline = {
+        ...nextTimeline,
+        clips: [...nextTimeline.clips, generatedClip],
+        updatedAt: Date.now(),
+      };
+    }
+
+    onApplyReel?.(nextTimeline);
+    onNavigateToEditor?.();
   };
 
-  return (
+
+return (
     <div className="flex flex-col h-full bg-[#0A0B10] text-white select-none overflow-y-auto pb-16">
+
+      {generatedVideoUrl && (
+        <section
+          className="mt-4 rounded-xl border p-3"
+          data-testid="generated-video-preview"
+        >
+          <div className="mb-2 text-sm font-medium">
+            Generated Video
+          </div>
+
+          <video
+            src={generatedVideoUrl}
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full rounded-lg"
+          />
+
+          <div className="mt-2 break-all text-xs opacity-70">
+            {generatedVideoUrl}
+          </div>
+        </section>
+      )}
+
+
       {/* HEADER */}
       <div className="px-4 py-4 flex items-center justify-between border-b border-neutral-900 bg-[#0E1018] sticky top-0 z-10">
         <div className="flex items-center gap-3">

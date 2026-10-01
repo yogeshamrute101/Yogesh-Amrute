@@ -1,6 +1,14 @@
+import dotenv from "dotenv";
+dotenv.config({ override: true });
+const interviewOrchestrator = new InterviewOrchestrator();
+import { GoogleVideoProvider } from './src/services/aiProvider/GoogleVideoProvider';
 import express from "express";
 import path from "path";
 
+import { autonomousHost } from "./src/agent/AutonomousHost";
+import { AutonomousExecutionEngine } from "./src/agent/AutonomousExecutionEngine";
+import { MasterAgentCoreAdapter } from "./src/agent/AutonomousCoreAdapter";
+import { InterviewOrchestrator } from './src/core/interview/InterviewOrchestrator';
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
@@ -139,29 +147,153 @@ Rules:
   }
 });
 
-app.post("/api/ai/reel-maker", (req, res) => {
-  const {
-    clips = [],
-    vibe,
-    targetDurationSec,
-    musicGenre,
-  } = req.body ?? {};
+app.post("/api/ai/reel-maker", async (req, res) => {
+  try {
+    const { GoogleGenAI } = await import("@google/genai");
 
-  res.json({
-    success: true,
-    data: {
-      intent: "reel-maker",
-      explanation: "Reel Maker request received by the backend.",
-      operations: [],
-      warnings: [],
-      planSummary: [
-        `Vibe: ${vibe ?? "default"}`,
-        `Duration: ${targetDurationSec ?? 0}s`,
-        `Music: ${musicGenre ?? "default"}`,
-        `Clips: ${Array.isArray(clips) ? clips.length : 0}`,
-      ],
-    },
-  });
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+      return res.status(500).json({
+        success: false,
+        error: "GEMINI_API_KEY is not configured.",
+      });
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
+
+    const {
+      clips = [],
+      preset = "Viral Reel",
+      targetDurationSec = 15,
+      musicGenre = "phonk",
+      removeSilence = true,
+    } = req.body ?? {};
+
+    const safeClips = Array.isArray(clips) ? clips : [];
+
+    const systemInstruction = `
+You are VIDOAI's professional AI Reel Director.
+
+Create a production-ready editing plan from the supplied timeline clips.
+
+Return ONLY valid JSON.
+
+Required structure:
+{
+  "intent": "reel-maker",
+  "title": "short title",
+  "hook": "opening hook",
+  "viralScore": 0,
+  "explanation": "brief explanation",
+  "operations": [],
+  "warnings": [],
+  "planSummary": []
+}
+
+Allowed operations:
+TRIM, SPLIT, DELETE, MOVE, DUPLICATE, SPEED, VOLUME, MUTE,
+ROTATE, CROP, FILTER, TRANSITION, TEXT, CAPTION, AUDIO,
+REMOVE_SILENCE, DETECT_SCENES, CREATE_REEL, CHANGE_ASPECT_RATIO.
+
+Rules:
+- Use clipIndex starting from 0.
+- Do not invent clip IDs.
+- Never use SPEED unless it is genuinely required by the selected style.
+- Default playback speed MUST remain 1.0x.
+- Never return 1.1x or 1.15x as a generic style default.
+- SPEED values must be between 0.25 and 4.0.
+- Prefer safe editing operations over destructive guesses.
+- Target the requested duration.
+- For a vertical Reel, use CHANGE_ASPECT_RATIO to 9:16 when appropriate.
+- Use REMOVE_SILENCE only when requested.
+- Use CREATE_REEL to describe the overall reel construction.
+- Return concrete operations, not just a description.
+- viralScore must be 0-100.
+`;
+
+    const userRequest = JSON.stringify({
+      preset,
+      targetDurationSec,
+      musicGenre,
+      removeSilence,
+      clips: safeClips.map((clip: any, index: number) => ({
+        clipIndex: index,
+        id: clip?.id,
+        name: clip?.name,
+        durationMs:
+          Number(clip?.endTrimMs || 0) -
+          Number(clip?.startTrimMs || 0),
+        speed:
+          typeof clip?.speed === "number" ? clip.speed : 1,
+        category: clip?.category,
+      })),
+    });
+
+    const result = await ai.models.generateContent({
+      model: "gemini-3.6-flash",
+      contents:
+        systemInstruction +
+        "\n\nREEL REQUEST:\n" +
+        userRequest,
+      config: {
+        responseMimeType: "application/json",
+      },
+    });
+
+    const text = result.text || "";
+
+    let data: any;
+
+    try {
+      data = JSON.parse(text);
+    } catch {
+      console.error("Gemini Reel Maker returned invalid JSON:", text);
+
+      return res.status(502).json({
+        success: false,
+        error: "Gemini returned malformed Reel plan.",
+      });
+    }
+
+    if (!Array.isArray(data.operations)) {
+      data.operations = [];
+    }
+
+    if (!Array.isArray(data.warnings)) {
+      data.warnings = [];
+    }
+
+    if (!Array.isArray(data.planSummary)) {
+      data.planSummary = [];
+    }
+
+    return res.json({
+      success: true,
+      data: {
+        intent: "reel-maker",
+        title: String(data.title || `${preset} Reel`),
+        hook: String(data.hook || ""),
+        viralScore: Math.max(
+          0,
+          Math.min(100, Number(data.viralScore || 0))
+        ),
+        explanation: String(
+          data.explanation || "AI generated a Reel editing plan."
+        ),
+        operations: data.operations,
+        warnings: data.warnings,
+        planSummary: data.planSummary,
+      },
+    });
+  } catch (error) {
+    console.error("Reel Maker Gemini error:", error);
+
+    return res.status(500).json({
+      success: false,
+      error: "AI is temporarily unavailable.",
+    });
+  }
 });
 
 app.post("/api/ai/script", async (req, res) => {
@@ -328,6 +460,289 @@ Rules:
   }
 });
 
+
+// VIDOAI GENERATION PIPELINE
+
+
+type GenerationKind =
+  | "text-to-video"
+  | "image-to-video"
+  | "script-to-video"
+  | "reel";
+
+interface GenerationJob {
+  id: string;
+  kind: GenerationKind;
+  prompt: string;
+  status: "queued" | "processing" | "completed" | "failed";
+  mediaUrl?: string;
+  title?: string;
+  durationSec?: number;
+  error?: string;
+  createdAt: number;
+  updatedAt: number;
+}
+
+const generationJobs = new Map<string, GenerationJob>();
+const GENERATION_JOBS_FILE = "generation-jobs.json";
+
+const loadGenerationJobs = () => {
+  try {
+    const fs = require("fs");
+    if (!fs.existsSync(GENERATION_JOBS_FILE)) return;
+    const parsed = JSON.parse(fs.readFileSync(GENERATION_JOBS_FILE, "utf8"));
+    if (Array.isArray(parsed)) {
+      for (const job of parsed) {
+        if (job?.id) generationJobs.set(job.id, job);
+      }
+    }
+  } catch {
+    // Persistence is best-effort.
+  }
+};
+
+const persistGenerationJobs = () => {
+  try {
+    const fs = require("fs");
+    fs.writeFileSync(
+      GENERATION_JOBS_FILE,
+      JSON.stringify(Array.from(generationJobs.values()), null, 2)
+    );
+  } catch {
+    // Persistence is best-effort.
+  }
+};
+
+loadGenerationJobs();
+
+
+class ServerGenerationProviderAdapter {
+  private provider: any;
+
+  constructor() {
+    const apiKey = process.env.GEMINI_API_KEY?.trim();
+
+    if (!apiKey) {
+      throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+    }
+
+    this.provider = new GoogleVideoProvider(apiKey);
+  }
+
+  async generate(prompt: string, kind: string) {
+    const provider = this.provider;
+
+    if (typeof provider.generateVideo === "function") {
+      return provider.generateVideo(prompt, kind);
+    }
+
+    if (typeof provider.generate === "function") {
+      return provider.generate(prompt, kind);
+    }
+
+    if (typeof provider.createVideo === "function") {
+      return provider.createVideo(prompt, kind);
+    }
+
+    throw new Error(
+      "GoogleVideoProvider has no supported generation method."
+    );
+  }
+}
+
+
+function normalizeGenerationProviderResult(result: any) {
+  if (!result) {
+    throw new Error("Video provider returned no result.");
+  }
+
+  if (result.success === false) {
+    throw new Error(result.error || "Video provider failed.");
+  }
+
+  const mediaUrl =
+    result.mediaUrl ||
+    result.videoUrl ||
+    result.video?.uri ||
+    result.video?.url;
+
+  if (!mediaUrl) {
+    throw new Error(
+      "Video provider completed but returned no playable video URL."
+    );
+  }
+
+  return {
+    mediaUrl,
+    title: result.title || "Generated Video",
+    durationSec:
+      typeof result.durationSec === "number"
+        ? result.durationSec
+        : undefined,
+  };
+}
+
+async function runGenerationProvider(job: GenerationJob) {
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+
+  if (!apiKey) {
+    throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+  }
+
+  const provider = new GoogleVideoProvider(apiKey);
+
+  const request = {
+    prompt: job.prompt,
+    durationSec: job.durationSec ?? 8,
+    aspectRatio: "9:16",
+  };
+
+  const result = await provider.createVideo(request);
+
+  if (!result.success) {
+    throw new Error(
+      result.error || "Google Veo video generation failed."
+    );
+  }
+
+  if (!result.videoUrl) {
+    throw new Error(
+      "Google Veo completed without returning a video URL."
+    );
+  }
+
+  return {
+    mediaUrl: result.videoUrl,
+    title: "Generated Video",
+    durationSec: job.durationSec ?? 8,
+  };
+}
+
+async function processGenerationJob(id: string) {
+  const job = generationJobs.get(id);
+
+  if (!job) return;
+
+  job.status = "processing";
+  job.updatedAt = Date.now();
+  persistGenerationJobs();
+
+  try {
+    const result = await runGenerationProvider(job);
+
+    job.status = "completed";
+    job.mediaUrl = result.mediaUrl;
+    job.title = result.title;
+    job.durationSec = result.durationSec;
+    job.updatedAt = Date.now();
+    persistGenerationJobs();
+  } catch (error: any) {
+    job.status = "failed";
+    job.error =
+      error instanceof Error
+        ? error.message
+        : "Video generation failed.";
+    job.updatedAt = Date.now();
+    persistGenerationJobs();
+  }
+}
+
+app.get("/api/generation/provider-status", (_req, res) => {
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  const configured = Boolean(apiKey);
+
+  res.json({
+    success: true,
+    data: {
+      configured,
+      provider: configured ? "google-veo" : "not-configured",
+      apiKeyConfigured: Boolean(apiKey),
+      message: configured
+        ? "Video generation provider is configured."
+        : "Video generation provider is not configured.",
+    },
+  });
+});
+
+app.post("/api/generation/jobs", (req, res) => {
+  const kind = String(
+    req.body?.kind || "text-to-video"
+  ) as GenerationKind;
+
+  const prompt = String(req.body?.prompt || "").trim();
+
+  if (!prompt) {
+    return res.status(400).json({
+      success: false,
+      error: "Generation prompt cannot be empty.",
+    });
+  }
+
+  const allowedKinds: GenerationKind[] = [
+    "text-to-video",
+    "image-to-video",
+    "script-to-video",
+    "reel",
+  ];
+
+  if (!allowedKinds.includes(kind)) {
+    return res.status(400).json({
+      success: false,
+      error: "Unsupported generation kind.",
+    });
+  }
+
+  const id = `gen_${Date.now()}_${Math.random()
+    .toString(36)
+    .slice(2, 8)}`;
+
+  const now = Date.now();
+
+  const job: GenerationJob = {
+    id,
+    kind,
+    prompt,
+    status: "queued",
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  generationJobs.set(id, job);
+  persistGenerationJobs();
+
+  void processGenerationJob(id);
+
+  return res.status(202).json({
+    success: true,
+    data: job,
+  });
+});
+
+app.get("/api/generation/jobs/:id", (req, res) => {
+  const job = generationJobs.get(req.params.id);
+
+  if (!job) {
+    return res.status(404).json({
+      success: false,
+      error: "Generation job not found.",
+    });
+  }
+
+  return res.json({
+    success: true,
+    data: job,
+  });
+});
+
+app.get("/api/generation/jobs", (_req, res) => {
+  return res.json({
+    success: true,
+    data: Array.from(generationJobs.values()).sort(
+      (a, b) => b.createdAt - a.createdAt
+    ),
+  });
+});
+
 app.use(express.static(distPath));
 
 app.post("/api/universal/plan", async (req, res) => {
@@ -345,7 +760,7 @@ app.post("/api/universal/plan", async (req, res) => {
       });
     }
 
-    res.json({
+    return res.json({
       success: true,
       data: {
         goal: String(goal).trim(),
@@ -366,7 +781,7 @@ app.post("/api/universal/plan", async (req, res) => {
   } catch (error) {
     console.error("Universal system error:", error);
 
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       error: "Universal system request failed.",
     });
@@ -377,8 +792,70 @@ app.get("*", (_req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
 
+
+app.post('/api/interview/session', (req, res) => {
+  try {
+    const topic = String(req.body?.topic ?? '').trim();
+
+    if (!topic) {
+      return res.status(400).json({
+        error: 'A topic is required.',
+      });
+    }
+
+    const session = interviewOrchestrator.createSession({
+      topic,
+      difficulty: req.body?.difficulty,
+      mode: req.body?.mode,
+      questionCount: req.body?.questionCount,
+      language: req.body?.language,
+      candidateName: req.body?.candidateName,
+      context: req.body?.context,
+    });
+
+    return res.json({
+      ok: true,
+      session,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Interview creation failed.',
+    });
+  }
+});
+
+app.post('/api/interview/answer', (req, res) => {
+  try {
+    const session = req.body?.session;
+
+    if (!session) {
+      return res.status(400).json({
+        error: 'Session is required.',
+      });
+    }
+
+    const answer = String(req.body?.answer ?? '');
+
+    const updated = interviewOrchestrator.answer(
+      session,
+      answer,
+    );
+
+    return res.json({
+      ok: true,
+      session: updated,
+      evaluation: updated.evaluations.at(-1) ?? null,
+      summary: interviewOrchestrator.summary(updated),
+    });
+  } catch (error) {
+    return res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Interview evaluation failed.',
+    });
+  }
+});
+
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(
-    `Server running on http://0.0.0.0:${PORT}`
-  );
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });

@@ -530,7 +530,7 @@ export default function App() {
     const report = validateAiOperations(
       [
         { type: 'REMOVE_SILENCE', thresholdDb: -35 },
-        { type: 'SPEED', speed: 1.15 },
+        { type: 'SPEED', speed: 1.0 },
         { type: 'ADD_CAPTIONS', captionText: '⚡️ Silence Removed' },
       ],
       timeline
@@ -728,7 +728,7 @@ export default function App() {
         isDeviceMode={isDeviceMode}
         onToggleDeviceMode={() => setIsDeviceMode(!isDeviceMode)}
         projectName={timeline.name}
-      >
+>
         <div className="w-full h-full flex flex-col justify-between overflow-hidden bg-[#0c0e15]">
           <div className="flex-1 w-full min-h-0 overflow-hidden relative">
             {currentScreen === 'home' && (
@@ -935,7 +935,7 @@ export default function App() {
                   ? 'text-cyan-400 font-bold'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
-            >
+>
               <Home className="w-4 h-4 mb-0.5" />
               <span className="text-[10px]">Home</span>
             </button>
@@ -947,7 +947,7 @@ export default function App() {
                   ? 'text-cyan-400 font-bold'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
-            >
+>
               <FolderOpen className="w-4 h-4 mb-0.5" />
               <span className="text-[10px]">Projects</span>
             </button>
@@ -959,7 +959,7 @@ export default function App() {
                   ? 'text-cyan-400 font-bold'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
-            >
+>
               <Film className="w-4 h-4 mb-0.5" />
               <span className="text-[10px]">Editor</span>
             </button>
@@ -971,7 +971,7 @@ export default function App() {
                   ? 'text-cyan-400 font-bold'
                   : 'text-neutral-400 hover:text-neutral-200'
               }`}
-            >
+>
               <SettingsIcon className="w-4 h-4 mb-0.5" />
               <span className="text-[10px]">Settings</span>
             </button>

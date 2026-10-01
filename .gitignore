@@ -6,3 +6,44 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# VidoAI local recovery/backup artifacts
+.vidoai-backup-*/
+.vidoai-content-ai-backup-*/
+.vidoai-execution-backup-*/
+.vidoai-fullstack-backup-*/
+.vidoai-master-backup-*/
+.vidoai-smart-master-*/
+.vidoai/
+*.before-*.bak
+*.before-*
+*.backup
+*.broken-*
+*.corrupted-*
+*.generation-backup
+*.recovery-backup
+*.pre-*
+
+# VidoAI generated recovery/backup artifacts
+backup-*/
+*-backup-*/
+*-backup
+*.backup
+*.backup-*
+*.bak
+*.bak-*
+*.before-*
+*.repair-backup-*
+repair-*/
+ready:
+"ed -n 1,35p "
+"status - short"
+MASTER_PROMPT.backup.md
+server.ts.veo-backup-*
+src/App.tsx.nav-backup-*
+server.ts.veo-backup-*
+src/App.tsx.nav-backup-*
+
+# Accidental Cloud Shell command artifacts
+ed -n 1,35p *
+status --short

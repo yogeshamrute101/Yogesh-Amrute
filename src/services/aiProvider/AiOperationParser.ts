@@ -138,7 +138,9 @@ export class AiOperationParser {
 
       // Numeric values
       if (typeof item.value === 'number') op.value = item.value;
-      if (typeof item.speed === 'number') op.speed = item.speed;
+      if (typeof item.speed === 'number' && Number.isFinite(item.speed)) {
+      op.speed = Math.max(0.25, Math.min(4.0, item.speed));
+    }
       if (typeof item.volume === 'number') op.volume = item.volume;
       if (typeof item.degrees === 'number') op.degrees = item.degrees;
       if (typeof item.rotation === 'number') op.rotation = item.rotation;

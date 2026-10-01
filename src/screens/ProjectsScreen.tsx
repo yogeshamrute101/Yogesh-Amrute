@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ArrowLeft,
   Plus,
@@ -11,9 +11,11 @@ import {
   Check,
   Search,
 } from 'lucide-react';
+import { getGeneratedOutputs, GeneratedOutput } from '../services/GeneratedOutputStore';
 import { AppScreen, ProjectTimeline, SavedProject } from '../types';
 
 interface ProjectsScreenProps {
+
   onBack: () => void;
   projects?: SavedProject[];
   onOpenProject: (timeline: ProjectTimeline) => void;
@@ -32,6 +34,12 @@ export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({
   onNewProject,
   onRenameProject,
 }) => {
+  const [generatedOutputs, setGeneratedOutputs] = useState<GeneratedOutput[]>([]);
+
+  useEffect(() => {
+    setGeneratedOutputs(getGeneratedOutputs());
+  }, []);
+
   const safeProjects = projects || [];
   const [searchQuery, setSearchQuery] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -67,6 +75,41 @@ export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({
 
   return (
     <div className="flex flex-col h-full bg-[#0A0B10] text-white select-none">
+
+      {generatedOutputs.length > 0 && (
+        <section className="mt-6 rounded-xl border p-4">
+          <h2 className="mb-3 text-lg font-semibold">
+            AI Generated Outputs
+          </h2>
+
+          <div className="grid gap-4">
+            {generatedOutputs.slice().reverse().map((output) => (
+              <article
+                key={output.id}
+                className="rounded-lg border p-3"
+              >
+                <video
+                  src={output.url}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full rounded-lg"
+                />
+
+                <div className="mt-2 text-sm font-medium">
+                  AI Generated Video
+                </div>
+
+                <div className="text-xs opacity-60">
+                  {new Date(output.createdAt).toLocaleString()}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+
       {/* HEADER */}
       <div className="px-4 py-4 flex items-center justify-between border-b border-neutral-900 bg-[#0E1018] sticky top-0 z-10">
         <div className="flex items-center gap-3">

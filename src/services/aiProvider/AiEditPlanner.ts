@@ -277,7 +277,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'vibrant',
-          speed: 1.1,
+          speed: 1.0,
           genre: 'lofi',
           targetDurationSec: 30,
           hookStyle: 'Did you know this? 💡',
@@ -307,7 +307,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'golden_hour',
-          speed: 1.1,
+          speed: 1.0,
           genre: 'lofi',
           targetDurationSec: 30,
           hookStyle: 'How Top Founders Scale 📈',
@@ -317,7 +317,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'noir',
-          speed: 1.15,
+          speed: 1.0,
           genre: 'cinematic',
           targetDurationSec: 20,
           hookStyle: 'No Excuses. Day One. ⚡️',
@@ -327,7 +327,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'vibrant',
-          speed: 1.15,
+          speed: 1.0,
           genre: 'phonk',
           targetDurationSec: 15,
           hookStyle: 'The Upgrade You Needed 🔥',
@@ -337,7 +337,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'vibrant',
-          speed: 1.15,
+          speed: 1.0,
           genre: 'phonk',
           targetDurationSec: 30,
           hookStyle: 'You Won’t Believe What Happened 🤯',
@@ -348,7 +348,7 @@ export class AiEditPlanner {
         return {
           aspectRatio: '9:16',
           filter: 'golden_hour',
-          speed: 1.15,
+          speed: 1.0,
           genre: 'lofi',
           targetDurationSec: 20,
           hookStyle: 'Save this for your next project ✨',

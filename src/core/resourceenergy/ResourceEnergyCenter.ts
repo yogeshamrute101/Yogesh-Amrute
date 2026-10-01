@@ -1,12 +1,6 @@
-import {
-  ExternalResourceRegistry
-} from "./ExternalResourceRegistry";
-import {
-  ResourceEnergyAllocator
-} from "./ResourceEnergyAllocator";
-import {
-  EnergySafetyGovernor
-} from "./EnergySafetyGovernor";
+import { ExternalResourceRegistry } from './ExternalResourceRegistry';
+import { ResourceEnergyAllocator } from './ResourceEnergyAllocator';
+import { EnergySafetyGovernor } from './EnergySafetyGovernor';
 
 export class ResourceEnergyCenter {
   readonly registry = new ExternalResourceRegistry();

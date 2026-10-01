@@ -127,26 +127,60 @@ ${targetDurationSec} seconds
 LANGUAGE:
 ${language}
 
-Develop the story from beginning to ending.
+Return ONLY valid JSON matching EXACTLY this structure:
 
-Create:
-- title
-- logline
-- genre
-- visual style
-- characters
-- complete scene-by-scene screenplay
-- dialogue
-- voice-over
-- camera directions
-- lighting
-- image-generation prompts
-- image-to-video prompts
-- music
-- sound effects
-- captions
-- transitions
+{
+  "title": "",
+  "logline": "",
+  "genre": "",
+  "visualStyle": "",
+  "targetDurationSec": 0,
+  "characters": [
+    {
+      "name": "",
+      "role": "",
+      "personality": "",
+      "appearance": ""
+    }
+  ],
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "durationSec": 0,
+      "location": "",
+      "timeOfDay": "",
+      "characters": [],
+      "action": "",
+      "dialogue": "",
+      "voiceOver": "",
+      "camera": "",
+      "lighting": "",
+      "imagePrompt": "",
+      "videoPrompt": "",
+      "music": "",
+      "soundEffects": "",
+      "caption": "",
+      "transition": ""
+    }
+  ]
+}
 
-Return ONLY valid JSON.
+RULES:
+1. Maintain character appearance and personality throughout the film.
+2. Make every scene logically connect to the previous scene.
+3. Scene durations MUST add up exactly to targetDurationSec.
+4. imagePrompt must be suitable for AI image generation.
+5. videoPrompt must be suitable for image-to-video generation.
+6. Include cinematic camera movement.
+7. Include music and sound design.
+8. Dialogue and voice-over must fit the scene.
+9. Use the requested language: ${language}.
+10. If educational, keep factual claims accurate and avoid unsupported claims.
+11. For long films, create a clear beginning, middle and ending.
+12. sceneNumber must start at 1 and increment sequentially.
+13. Do not add fields outside the specified JSON structure.
+14. Do not use markdown.
+15. Do not wrap JSON in code fences.
+16. Return JSON only.
 `;
 }
