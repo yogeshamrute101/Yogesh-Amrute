@@ -1,0 +1,47 @@
+[
+  {
+    "id": "gen_1790606615914_n3ais3",
+    "kind": "text-to-video",
+    "prompt": "PERSISTENCE STATUS TEST - pharmaceutical drug discovery",
+    "status": "failed",
+    "createdAt": 1790606615914,
+    "updatedAt": 1790606615926,
+    "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  },
+  {
+    "id": "gen_1790607237562_714uxa",
+    "kind": "text-to-video",
+    "prompt": "Create a professional 10-second pharmaceutical drug discovery explainer video.",
+    "status": "failed",
+    "createdAt": 1790607237562,
+    "updatedAt": 1790607237565,
+    "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  },
+  {
+    "id": "gen_1790608965045_ll180z",
+    "kind": "text-to-video",
+    "prompt": "Professional pharmaceutical drug discovery explainer, laboratory research visuals, 10 seconds.",
+    "status": "failed",
+    "createdAt": 1790608965045,
+    "updatedAt": 1790608965051,
+    "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  },
+  {
+    "id": "gen_1790609665363_mnmyg5",
+    "kind": "text-to-video",
+    "prompt": "Create a professional 8-second pharmaceutical research video showing drug discovery, molecular analysis, protein-target interaction, laboratory research, and modern scientific visualization.",
+    "status": "failed",
+    "createdAt": 1790609665363,
+    "updatedAt": 1790609665366,
+    "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  },
+  {
+    "id": "gen_1790609772053_lqfl8c",
+    "kind": "text-to-video",
+    "prompt": "Create a professional 8-second pharmaceutical research video showing modern drug discovery, molecular structures, protein-target interaction, laboratory research, and scientific data visualization. No logos or copyrighted characters.",
+    "status": "failed",
+    "createdAt": 1790609772053,
+    "updatedAt": 1790609772061,
+    "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  }
+]

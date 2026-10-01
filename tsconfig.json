@@ -22,5 +22,18 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "repair-*",
+    "repair-backup-*",
+    "*.backup*",
+    "backup-*",
+    "backup-*/**",
+    ".vidoai-backup-*",
+    ".vidoai-master-backup-*",
+    ".vidoai-smart-master-*",
+    "node_modules",
+    "dist",
+    "capability-toolbus-backup-*"
+  ]
 }
