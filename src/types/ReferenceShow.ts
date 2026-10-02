@@ -20,7 +20,7 @@ export interface ReferenceAnalysis {
   staging: string;
   pacing: string;
   audienceInteraction: string;
-  audioStructure: string;
+  audioStructure: string[];
   visualPatterns: string[];
   productionElements: string[];
   originalityRequirements: string[];
