@@ -181,3 +181,7 @@ class MasterOrchestrator {
 }
 
 export const masterOrchestrator = new MasterOrchestrator();
+
+/* CINEMATIC MOVIE PIPELINE AVAILABLE
+ * Subject -> Role -> World -> Character -> Voice -> Scene -> Timeline -> Export
+ */

@@ -37,3 +37,8 @@ export class ToolBus {
     return tool.execute(input);
   }
 }
+
+/* VIDOAI CINEMATIC MOVIE ENGINE REGISTRATION MARKER
+ * Runtime adapters may register cinematicMovieEngine through the existing ToolBus.
+ * No provider is fabricated here.
+ */
