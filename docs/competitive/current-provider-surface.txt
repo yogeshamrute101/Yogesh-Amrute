@@ -1,0 +1,216 @@
+src/components/AiCoPilotModal.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiCoPilotModal.tsx:22:import { AiEditPlanner, PlanAnalysis } from '../services/aiProvider/AiEditPlanner';
+src/components/AiCoPilotModal.tsx:68:      // Step 1: Query AI via GeminiProvider
+src/components/AiCoPilotModal.tsx:69:      const res = await GeminiProvider.requestEdit({
+src/components/AiReelMakerModal.tsx:29:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiReelMakerModal.tsx:30:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/components/AiReelMakerModal.tsx:112:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-scope-final:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.recovery-backup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-real-generation:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:265:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.generation-backup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.generation-backup:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.generation-backup:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:24:import { AiEditPlanner } from '../services/aiProvider/AiEditPlanner';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:246:      const response = await GeminiProvider.requestReelMaker({
+src/core/fullstack/ProjectContext.ts:46:    /integration|provider|adapter|connector|workflow|agent/.test(lower)
+src/core/fullstack/FullStackUnderstandingEngine.ts:36:    /integrate|integration|connect|workflow|agent|provider|external|api key/.test(
+src/core/camera/live/LiveCameraTypes.ts:63:  status: 'ready' | 'needs-camera' | 'needs-provider' | 'failed';
+src/core/camera/match/ReferenceMatchEngine.ts:11:export interface ReferenceMatchProvider {
+src/core/camera/match/ReferenceMatchEngine.ts:45:  private provider: ReferenceMatchProvider | null = null;
+src/core/camera/match/ReferenceMatchEngine.ts:47:  setProvider(provider: ReferenceMatchProvider): void {
+src/core/camera/match/ReferenceMatchEngine.ts:48:    this.provider = provider;
+src/core/camera/match/ReferenceMatchEngine.ts:64:    if (!this.provider?.available) {
+src/core/camera/match/ReferenceMatchEngine.ts:66:        status: 'needs-provider',
+src/core/camera/match/ReferenceMatchEngine.ts:70:          'Reference matching requires a connected vision/image editing provider.',
+src/core/camera/match/ReferenceMatchEngine.ts:79:          await this.provider.generateCandidate({
+src/core/camera/match/ReferenceAnalyzer.ts:16:     * Provider-independent structural analysis.
+src/core/camera/match/ReferenceAnalyzer.ts:18:     * not fabricated here; connected vision providers can replace
+src/core/camera/match/LiveReferenceMatchController.ts:22:  setProvider(
+src/core/camera/match/LiveReferenceMatchController.ts:23:    provider: Parameters<
+src/core/camera/match/LiveReferenceMatchController.ts:24:      ReferenceMatchEngine['setProvider']
+src/core/camera/match/LiveReferenceMatchController.ts:27:    this.engine.setProvider(provider);
+src/core/camera/match/ReferenceMatchTypes.ts:74:    | 'needs-provider'
+src/core/camera/match/ReferenceMatchTypes.ts:84:    | 'needs-provider'
+src/core/survival/SurvivalOrchestrator.ts:12:  | "AI_PROVIDER_FAILURE"
+src/core/aihub/UniversalAIHub.ts:1:export type AIProvider =
+src/core/aihub/UniversalAIHub.ts:26:  preferredProvider?: AIProvider;
+src/core/aihub/UniversalAIHub.ts:32:  provider: AIProvider;
+src/core/aihub/UniversalAIHub.ts:42:export interface AIProviderAdapter {
+src/core/aihub/UniversalAIHub.ts:43:  provider: AIProvider;
+src/core/aihub/UniversalAIHub.ts:55:  private providers = new Map<AIProvider, AIProviderAdapter>();
+src/core/aihub/UniversalAIHub.ts:57:  registerProvider(adapter: AIProviderAdapter): void {
+src/core/aihub/UniversalAIHub.ts:58:    this.providers.set(adapter.provider, adapter);
+src/core/aihub/UniversalAIHub.ts:61:  listProviders(): AIProvider[] {
+src/core/aihub/UniversalAIHub.ts:62:    return [...this.providers.keys()];
+src/core/aihub/UniversalAIHub.ts:66:    const candidates = request.preferredProvider
+src/core/aihub/UniversalAIHub.ts:67:      ? [request.preferredProvider]
+src/core/aihub/UniversalAIHub.ts:68:      : this.providers.keys();
+src/core/aihub/UniversalAIHub.ts:70:    for (const provider of candidates) {
+src/core/aihub/UniversalAIHub.ts:71:      const adapter = this.providers.get(provider);
+src/core/aihub/UniversalAIHub.ts:89:      provider: "LOCAL",
+src/core/aihub/UniversalAIHub.ts:91:      answer: "No authorized AI provider is currently available.",
+src/core/master/tools/BuiltInCapabilityTools.ts:27:          `Tool "${id}" is defined but its real provider is not connected.`,
+src/core/master/tools/BuiltInCapabilityTools.ts:38:    'Generates video through a configured video provider.'
+src/core/master/tools/BuiltInCapabilityTools.ts:44:    'Generates images through a configured image provider.'
+src/core/master/tools/BuiltInCapabilityTools.ts:50:    'Generates or processes audio through a configured audio provider.'
+src/core/master/SmartMasterUnderstanding.ts:82:    /integrate|integration|provider|connector|external/.test(value)
+src/core/workflow/AiProviderAdapter.ts:7:export interface WorkflowAiProvider {
+src/core/workflow/AiProviderAdapter.ts:17:export class AiProviderAdapter implements AgentExecutionAdapter {
+src/core/workflow/AiProviderAdapter.ts:18:  constructor(private readonly provider: WorkflowAiProvider) {}
+src/core/workflow/AiProviderAdapter.ts:28:      throw new Error('AI provider adapter requires a prompt');
+src/core/workflow/AiProviderAdapter.ts:31:    if (!this.provider || typeof this.provider.execute !== 'function') {
+src/core/workflow/AiProviderAdapter.ts:33:        'AI provider is not connected to the workflow runtime'
+src/core/workflow/AiProviderAdapter.ts:37:    return this.provider.execute(normalizedPrompt, {
+src/core/media/auto/AutoMediaTypes.ts:73:  requiresProvider: boolean;
+src/core/media/auto/AutoMediaPlanner.ts:70:      requiresProvider: operations.some(operation =>
+src/core/universal/UniversalCore.ts:7: * processors, storage implementations and service providers.
+src/agent/team/BuiltInAgents.ts:52:          "Research provider/tool execution is not connected yet.",
+src/agent/team/BuiltInAgents.ts:135:          "Voice provider/tool execution is not connected yet.",
+src/services/aiProvider/VideoGenerationProvider.ts:13:  providerJobId?: string;
+src/services/aiProvider/VideoGenerationProvider.ts:15:  provider?: string;
+src/services/aiProvider/VideoGenerationProvider.ts:18:export interface VideoGenerationProvider {
+src/services/aiProvider/GeminiProvider.ts:26: * GeminiProvider
+src/services/aiProvider/GeminiProvider.ts:27: * Secure client-side provider abstraction that handles communication with the backend
+src/services/aiProvider/GeminiProvider.ts:31:export class GeminiProvider {
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:3:  VideoGenerationProvider,
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:6:} from "./VideoGenerationProvider";
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:8:export class GoogleVideoProvider implements VideoGenerationProvider {
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:23:      const operation = await this.ai.models.generateVideos({
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:38:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:45:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:47:        providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:52:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:76:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:85:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:97:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:99:          providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:109:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:120:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:128:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:130:        providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:137:        provider: "google-veo",
+src/services/aiProvider/VideoGenerationProviderFactory.ts:2:  VideoGenerationProvider,
+src/services/aiProvider/VideoGenerationProviderFactory.ts:5:} from "./VideoGenerationProvider";
+src/services/aiProvider/VideoGenerationProviderFactory.ts:7:class UnconfiguredVideoProvider implements VideoGenerationProvider {
+src/services/aiProvider/VideoGenerationProviderFactory.ts:13:      provider: "unconfigured",
+src/services/aiProvider/VideoGenerationProviderFactory.ts:15:        "No video generation provider is configured. Configure a supported provider before starting video generation.",
+src/services/aiProvider/VideoGenerationProviderFactory.ts:26:      provider: "unconfigured",
+src/services/aiProvider/VideoGenerationProviderFactory.ts:28:      error: "No video generation provider is configured.",
+src/services/aiProvider/VideoGenerationProviderFactory.ts:33:export function getVideoGenerationProvider(
+src/services/aiProvider/VideoGenerationProviderFactory.ts:34:  providerName = "unconfigured"
+src/services/aiProvider/VideoGenerationProviderFactory.ts:35:): VideoGenerationProvider {
+src/services/aiProvider/VideoGenerationProviderFactory.ts:36:  const provider = providerName.toLowerCase();
+src/services/aiProvider/VideoGenerationProviderFactory.ts:38:  switch (provider) {
+src/services/aiProvider/VideoGenerationProviderFactory.ts:40:      return new UnconfiguredVideoProvider();
+src/services/aiProvider/GoogleVideoProvider.ts:3:  VideoGenerationProvider,
+src/services/aiProvider/GoogleVideoProvider.ts:6:} from "./VideoGenerationProvider";
+src/services/aiProvider/GoogleVideoProvider.ts:8:export class GoogleVideoProvider implements VideoGenerationProvider {
+src/services/aiProvider/GoogleVideoProvider.ts:23:      const operation = await this.ai.models.generateVideos({
+src/services/aiProvider/GoogleVideoProvider.ts:38:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:45:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:47:        providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts:52:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:76:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:85:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:97:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:99:          providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts:109:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:120:          provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:128:        provider: "google-veo",
+src/services/aiProvider/GoogleVideoProvider.ts:130:        providerJobId: jobId,
+src/services/aiProvider/GoogleVideoProvider.ts:137:        provider: "google-veo",
+server.ts:4:import { GoogleVideoProvider } from './src/services/aiProvider/GoogleVideoProvider';
+server.ts:100:    const result = await ai.models.generateContent({
+server.ts:233:    const result = await ai.models.generateContent({
+server.ts:388:    const result = await ai.models.generateContent({
+server.ts:519:class ServerGenerationProviderAdapter {
+server.ts:520:  private provider: any;
+server.ts:529:    this.provider = new GoogleVideoProvider(apiKey);
+server.ts:533:    const provider = this.provider;
+server.ts:535:    if (typeof provider.generateVideo === "function") {
+server.ts:536:      return provider.generateVideo(prompt, kind);
+server.ts:539:    if (typeof provider.generate === "function") {
+server.ts:540:      return provider.generate(prompt, kind);
+server.ts:543:    if (typeof provider.createVideo === "function") {
+server.ts:544:      return provider.createVideo(prompt, kind);
+server.ts:548:      "GoogleVideoProvider has no supported generation method."
+server.ts:554:function normalizeGenerationProviderResult(result: any) {
+server.ts:556:    throw new Error("Video provider returned no result.");
+server.ts:560:    throw new Error(result.error || "Video provider failed.");
+server.ts:571:      "Video provider completed but returned no playable video URL."
+server.ts:585:async function runGenerationProvider(job: GenerationJob) {
+server.ts:592:  const provider = new GoogleVideoProvider(apiKey);
+server.ts:600:  const result = await provider.createVideo(request);
+server.ts:631:    const result = await runGenerationProvider(job);
+server.ts:650:app.get("/api/generation/provider-status", (_req, res) => {
+server.ts:658:      provider: configured ? "google-veo" : "not-configured",
+server.ts:661:        ? "Video generation provider is configured."
+server.ts:662:        : "Video generation provider is not configured.",

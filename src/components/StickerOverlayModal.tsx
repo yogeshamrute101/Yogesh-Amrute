@@ -68,7 +68,7 @@ export const StickerOverlayModal: React.FC<StickerOverlayModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4">
       <div className="bg-[#12131a] border border-neutral-800 rounded-t-3xl sm:rounded-2xl w-full max-w-md max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom duration-200">
-        
+
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-800 bg-[#161822]">
           <div className="flex items-center gap-2">
@@ -85,7 +85,7 @@ export const StickerOverlayModal: React.FC<StickerOverlayModalProps> = ({
 
         {/* Content */}
         <div className="p-5 overflow-y-auto space-y-5 text-xs text-neutral-200">
-          
+
           {/* Viral Badges Grid */}
           <div>
             <span className="text-[11px] text-neutral-400 block mb-2 font-medium">Trending Hook Badges</span>

@@ -188,7 +188,7 @@ export const SocialShareModal: React.FC<SocialShareModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div className="w-full max-w-xl bg-[#12131a] rounded-t-3xl sm:rounded-2xl border border-neutral-800 shadow-2xl flex flex-col overflow-hidden max-h-[90vh]">
-        
+
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-neutral-800 flex items-center justify-between bg-[#161822]">
           <div className="flex items-center gap-2.5">
@@ -215,7 +215,7 @@ export const SocialShareModal: React.FC<SocialShareModalProps> = ({
 
         {/* Content Body */}
         <div className="p-5 overflow-y-auto space-y-4 flex-1 text-neutral-200 text-xs">
-          
+
           {/* Export Settings Panel */}
           <div className="p-4 rounded-2xl bg-neutral-900 border border-neutral-800 space-y-3.5">
             <div className="flex items-center justify-between">

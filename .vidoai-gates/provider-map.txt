@@ -1,0 +1,209 @@
+src/App.tsx.navfix2-20260930-133416:617:      const res = await fetch('/api/ai/captions', {
+src/App.tsx.nav-backup-20260930-133257:617:      const res = await fetch('/api/ai/captions', {
+src/components/AiCoPilotModal.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiCoPilotModal.tsx:68:      // Step 1: Query AI via GeminiProvider
+src/components/AiCoPilotModal.tsx:69:      const res = await GeminiProvider.requestEdit({
+src/components/AiReelMakerModal.tsx:29:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/components/AiReelMakerModal.tsx:112:      const response = await GeminiProvider.requestReelMaker({
+src/components/AiSceneDetectionModal.tsx:28:      const res = await fetch('/api/ai/scene-detection', {
+src/components/SocialShareModal.tsx:65:        const res = await fetch('/api/ai/social-package', {
+src/components/camera/LiveCameraStudio.tsx:136:            <span>Image → Video: {result.plan.imageToVideo ? 'ON' : 'OFF'}</span>
+src/components/AiScriptWriterModal.tsx:39:      const res = await fetch('/api/ai/script', {
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-scope-final:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-scope-final:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-scope-final:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-scope-final:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-scope-final:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiScriptScreen.tsx:45:      const res = await fetch('/api/ai/script', {
+src/screens/AiReelMakerScreen.tsx.recovery-backup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.recovery-backup:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.recovery-backup:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.recovery-backup:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.recovery-backup:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-real-generation:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:96:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-real-generation:123:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-real-generation:148:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-real-generation:236:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-real-generation:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:105:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:132:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:157:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:210:          const response = await fetch(`/api/generation/jobs/${jobId}`);
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:265:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:96:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:123:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:148:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:236:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.generation-backup:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.generation-backup:96:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.generation-backup:123:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.generation-backup:148:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.generation-backup:236:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.generation-backup:292:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:254:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:310:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:97:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:124:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:149:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:253:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:309:      const response = await GeminiProvider.requestReelMaker({
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:21:import { GeminiProvider } from '../services/aiProvider/GeminiProvider';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:94:    const response = await fetch('/api/generation/jobs', {
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:121:    const response = await fetch("/api/generation/jobs", {
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:146:      const statusResponse = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:190:      const response = await fetch(
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:246:      const response = await GeminiProvider.requestReelMaker({
+src/App.tsx.before-types-import-fix-20260930-132833:616:      const res = await fetch('/api/ai/captions', {
+src/App.tsx.backup-20260930-122645:616:      const res = await fetch('/api/ai/captions', {
+src/App.tsx:617:      const res = await fetch('/api/ai/captions', {
+src/core/camera/live/LiveCameraPlanner.ts:75:    const imageToVideo =
+src/core/camera/live/LiveCameraPlanner.ts:76:      request.imageToVideo === true ||
+src/core/camera/live/LiveCameraPlanner.ts:99:    if (imageToVideo) {
+src/core/camera/live/LiveCameraPlanner.ts:112:      imageToVideo,
+src/core/camera/live/LiveCameraPlanner.ts.before-lint-repair-20260930-154353:76:    const imageToVideo =
+src/core/camera/live/LiveCameraPlanner.ts.before-lint-repair-20260930-154353:77:      request.imageToVideo === true ||
+src/core/camera/live/LiveCameraPlanner.ts.before-lint-repair-20260930-154353:100:    if (imageToVideo) {
+src/core/camera/live/LiveCameraPlanner.ts.before-lint-repair-20260930-154353:113:      imageToVideo,
+src/core/camera/live/LiveCameraTypes.ts:45:  imageToVideo?: boolean;
+src/core/camera/live/LiveCameraTypes.ts:55:  imageToVideo: boolean;
+src/agent/team/BuiltInAgents.ts:71:        const response = await fetch(`${baseUrl}/api/ai/reel-maker`, {
+src/App.tsx.before-master-repair-20260930-132640:616:      const res = await fetch('/api/ai/captions', {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:617:      const res = await fetch('/api/ai/captions', {
+src/services/generation/generationApi.ts:30:  const response = await fetch(url, {
+src/services/aiProvider/GeminiProvider.ts:26: * GeminiProvider
+src/services/aiProvider/GeminiProvider.ts:31:export class GeminiProvider {
+src/services/aiProvider/GeminiProvider.ts:55:      const response = await fetch('/api/ai/co-pilot-edit', {
+src/services/aiProvider/GeminiProvider.ts:172:      const response = await fetch('/api/ai/reel-maker', {
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:8:export class GoogleVideoProvider implements VideoGenerationProvider {
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:11:  constructor(apiKey = process.env.GEMINI_API_KEY) {
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:13:      throw new Error("GEMINI_API_KEY is not configured.");
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:23:      const operation = await this.ai.models.generateVideos({
+src/services/aiProvider/GoogleVideoProvider.ts:8:export class GoogleVideoProvider implements VideoGenerationProvider {
+src/services/aiProvider/GoogleVideoProvider.ts:11:  constructor(apiKey = process.env.GEMINI_API_KEY) {
+src/services/aiProvider/GoogleVideoProvider.ts:13:      throw new Error("GEMINI_API_KEY is not configured.");
+src/services/aiProvider/GoogleVideoProvider.ts:23:      const operation = await this.ai.models.generateVideos({
+src/App.tsx.repair-backup-20260930-132410:616:      const res = await fetch('/api/ai/captions', {
+server.ts:4:import { GoogleVideoProvider } from './src/services/aiProvider/GoogleVideoProvider';
+server.ts:23:    const apiKey = process.env.GEMINI_API_KEY;
+server.ts:28:        error: "GEMINI_API_KEY is not configured.",
+server.ts:154:    const apiKey = process.env.GEMINI_API_KEY;
+server.ts:159:        error: "GEMINI_API_KEY is not configured.",
+server.ts:303:    const apiKey = process.env.GEMINI_API_KEY;
+server.ts:308:        error: "GEMINI_API_KEY is not configured.",
+server.ts:523:    const apiKey = process.env.GEMINI_API_KEY?.trim();
+server.ts:526:      throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+server.ts:529:    this.provider = new GoogleVideoProvider(apiKey);
+server.ts:535:    if (typeof provider.generateVideo === "function") {
+server.ts:536:      return provider.generateVideo(prompt, kind);
+server.ts:548:      "GoogleVideoProvider has no supported generation method."
+server.ts:586:  const apiKey = process.env.GEMINI_API_KEY?.trim();
+server.ts:589:    throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+server.ts:592:  const provider = new GoogleVideoProvider(apiKey);
+server.ts:651:  const apiKey = process.env.GEMINI_API_KEY?.trim();

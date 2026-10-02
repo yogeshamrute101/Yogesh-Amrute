@@ -20,7 +20,7 @@ export const CoPilotPanel: React.FC<CoPilotPanelProps> = ({
   return (
     <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="w-full max-w-2xl h-[80vh] rounded-2xl border border-cyan-500/30 bg-[#0b0f19] shadow-2xl overflow-hidden flex flex-col">
-        
+
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
           <div>
             <h2 className="text-lg font-bold text-white">

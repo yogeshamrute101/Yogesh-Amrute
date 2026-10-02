@@ -1,0 +1,665 @@
+src/App.tsx.navfix2-20260930-133416:979:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/App.tsx.nav-backup-20260930-133257:979:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/components/AiReelMakerModal.tsx:57:const WORKFLOW_STEPS = [
+src/components/AiReelMakerModal.tsx:106:    // Simulate animated step progression through the 15-step workflow
+src/components/AiReelMakerModal.tsx:288:          {/* Workflow Pipeline Progress Indicator */}
+src/components/AiReelMakerModal.tsx:294:                  <span>Processing 15-Step AI Workflow...</span>
+src/components/AiReelMakerModal.tsx:310:                Current: <span className="text-white">{WORKFLOW_STEPS[currentStepIndex]}</span>
+src/components/system/SystemFrontline.tsx:16:  { name: "Safety Intelligence", status: "ACTIVE", purpose: "Preventive and corrective safety workflow" },
+src/components/system/SystemFrontline.tsx:64:    setMessage("Recovery workflow initiated. System remains in safe operating mode.");
+src/components/MasterCommandCenter.tsx:3:  executeMasterCommand,
+src/components/MasterCommandCenter.tsx:5:} from "../core/universal/MasterCommand";
+src/components/MasterCommandCenter.tsx:7:export default function MasterCommandCenter() {
+src/components/MasterCommandCenter.tsx:23:      const response = await executeMasterCommand(value);
+src/App.tsx.before-types-import-fix-20260930-132833:977:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/App.tsx.backup-20260930-122645:977:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/App.tsx:983:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/core/interview/InterviewOrchestrator.ts:8:export class InterviewOrchestrator {
+src/core/agent-platform/types/index.ts:35:export interface AgentWorkflow {
+src/core/agent-platform/types/index.ts:49:  workflowId: string;
+src/core/agent-platform/storage/WorkflowStore.ts:1:import type { AgentWorkflow } from '../types';
+src/core/agent-platform/storage/WorkflowStore.ts:3:const KEY = 'vidoai.agent.workflows';
+src/core/agent-platform/storage/WorkflowStore.ts:5:export class WorkflowStore {
+src/core/agent-platform/storage/WorkflowStore.ts:6:  list(): AgentWorkflow[] {
+src/core/agent-platform/storage/WorkflowStore.ts:15:    return this.list().find((workflow) => workflow.id === id);
+src/core/agent-platform/storage/WorkflowStore.ts:18:  save(workflow: AgentWorkflow) {
+src/core/agent-platform/storage/WorkflowStore.ts:19:    const workflows = this.list().filter(
+src/core/agent-platform/storage/WorkflowStore.ts:20:      (item) => item.id !== workflow.id
+src/core/agent-platform/storage/WorkflowStore.ts:23:    workflows.push({
+src/core/agent-platform/storage/WorkflowStore.ts:24:      ...workflow,
+src/core/agent-platform/storage/WorkflowStore.ts:28:    localStorage.setItem(KEY, JSON.stringify(workflows));
+src/core/agent-platform/storage/WorkflowStore.ts:29:    return workflow;
+src/core/agent-platform/storage/WorkflowStore.ts:33:    const workflows = this.list().filter(
+src/core/agent-platform/storage/WorkflowStore.ts:34:      (workflow) => workflow.id !== id
+src/core/agent-platform/storage/WorkflowStore.ts:37:    localStorage.setItem(KEY, JSON.stringify(workflows));
+src/core/agent-platform/index.ts:2:export * from './engine/WorkflowEngine';
+src/core/agent-platform/index.ts:5:export * from './storage/WorkflowStore';
+src/core/agent-platform/README.md:9:→ Workflow
+src/core/agent-platform/engine/WorkflowEngine.ts:4:  AgentWorkflow,
+src/core/agent-platform/engine/WorkflowEngine.ts:15:export class WorkflowEngine {
+src/core/agent-platform/engine/WorkflowEngine.ts:23:    workflow: AgentWorkflow,
+src/core/agent-platform/engine/WorkflowEngine.ts:28:      workflowId: workflow.id,
+src/core/agent-platform/engine/WorkflowEngine.ts:39:      const ordered = this.orderNodes(workflow);
+src/core/agent-platform/engine/WorkflowEngine.ts:70:  private orderNodes(workflow: AgentWorkflow): AgentNode[] {
+src/core/agent-platform/engine/WorkflowEngine.ts:73:    workflow.nodes.forEach((node) => incoming.set(node.id, 0));
+src/core/agent-platform/engine/WorkflowEngine.ts:75:    workflow.edges.forEach((edge) => {
+src/core/agent-platform/engine/WorkflowEngine.ts:79:    const queue = workflow.nodes.filter(
+src/core/agent-platform/engine/WorkflowEngine.ts:89:      for (const edge of workflow.edges.filter(
+src/core/agent-platform/engine/WorkflowEngine.ts:96:          const next = workflow.nodes.find(
+src/core/agent-platform/engine/WorkflowEngine.ts:105:    return result.length === workflow.nodes.length
+src/core/agent-platform/engine/WorkflowEngine.ts:107:      : workflow.nodes;
+src/core/agent-platform/engine/AgentRuntime.ts:1:import { WorkflowEngine } from './WorkflowEngine';
+src/core/agent-platform/engine/AgentRuntime.ts:2:import type { AgentNode, AgentWorkflow } from '../types';
+src/core/agent-platform/engine/AgentRuntime.ts:5:  readonly engine = new WorkflowEngine();
+src/core/agent-platform/engine/AgentRuntime.ts:64:  execute(workflow: AgentWorkflow, input: unknown) {
+src/core/agent-platform/engine/AgentRuntime.ts:65:    return this.engine.execute(workflow, input);
+src/core/agent-platform/planner/PromptAgentPlanner.ts:1:import type { AgentWorkflow } from '../types';
+src/core/agent-platform/planner/PromptAgentPlanner.ts:4:  createWorkflow(prompt: string): AgentWorkflow {
+src/core/agent-platform/planner/PromptAgentPlanner.ts:9:      name: 'AI Generated Workflow',
+src/core/multiproject/ProjectIsolation.ts:1:import { Project } from "./MultiProjectOrchestrator";
+src/core/multiproject/index.ts:1:export * from "./MultiProjectOrchestrator";
+src/core/multiproject/ProjectResourceScheduler.ts:4:} from "./MultiProjectOrchestrator";
+src/core/multiproject/ProjectRecovery.ts:1:import { ProjectExecutionState } from "./MultiProjectOrchestrator";
+src/core/multiproject/MultiProjectOrchestrator.ts:57:export class MultiProjectOrchestrator {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:64:export class HumanCapabilityOrchestrator {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:123:export default HumanCapabilityOrchestrator;
+src/core/humancapability/index.ts:1:export * from "./HumanCapabilityOrchestrator";
+src/core/humancapability/registerHumanCapabilities.ts:2:  HumanCapabilityOrchestrator,
+src/core/humancapability/registerHumanCapabilities.ts:4:} from "./HumanCapabilityOrchestrator";
+src/core/humancapability/registerHumanCapabilities.ts:7:  const system = new HumanCapabilityOrchestrator();
+src/core/movement/UniversalMovementEngine.ts:11:  | "WORKFLOW"
+src/core/physicalai/index.ts:1:export * from "./PhysicalAIOrchestrator";
+src/core/physicalai/PhysicalAIOrchestrator.ts:59:export class PhysicalAIOrchestrator {
+src/core/physicalai/PhysicalAIOrchestrator.ts:211:export const physicalAI = new PhysicalAIOrchestrator();
+src/core/fullstack/ProjectContext.ts:46:    /integration|provider|adapter|connector|workflow|agent/.test(lower)
+src/core/fullstack/FullStackUnderstandingEngine.ts:36:    /integrate|integration|connect|workflow|agent|provider|external|api key/.test(
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:5:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:8:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:21:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:22:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:26:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:69:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:88:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:95:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:97:      workflow,
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:4:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:6:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:7:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:11:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:57:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:64:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:65:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts:1:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime.js';
+src/core/agent/VidoAIAgent.ts:2:import { AgentAdapter } from '../workflow/adapters/AgentAdapter.js';
+src/core/agent/VidoAIAgent.ts:3:import { ToolBusAdapter } from '../workflow/adapters/ToolBusAdapter.js';
+src/core/agent/VidoAIAgent.ts:6:  private runtime = createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts:17:      throw new Error('Workflow runtime not ready');
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:4:  WorkflowDefinition,
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:5:  WorkflowEngine,
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:6:} from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:9:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:11:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:12:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:16:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:59:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:69:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:76:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:77:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:5:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:7:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:8:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:12:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:55:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:74:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:81:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:82:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:5:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:8:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:21:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:22:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:26:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:69:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:88:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:95:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:97:      workflow,
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:2:  WorkflowDefinition,
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:3:  WorkflowEngine,
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:4:} from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:7:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:9:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:10:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:14:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:56:    const workflow = await this.createWorkflow(prompt);
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:57:    return this.engine.execute(workflow, prompt);
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:2:import { AgentExecutionAdapter } from '../workflow/AgentNodeExecutor';
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:9:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:11:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:12:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:16:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:62:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:69:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:70:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:5:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:7:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:8:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:12:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:55:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:65:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:72:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:73:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-fix:1:import { WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-fix:2:import { AgentExecutionAdapter } from '../workflow/AgentNodeExecutor';
+src/core/agent/VidoAIAgent.ts.bak-before-fix:3:import { ToolExecutionAdapter } from '../workflow/ToolNodeExecutor';
+src/core/agent/VidoAIAgent.ts.bak-before-fix:4:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-fix:8:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-fix:9:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-fix:13:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-fix:59:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-fix:68:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-fix:75:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-fix:77:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-fix:80:    }).execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:1:import { WorkflowEngine, WorkflowDefinition } from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:4:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:6:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:7:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:11:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:58:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:65:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:66:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:2:  WorkflowDefinition,
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:3:  WorkflowEngine,
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:4:} from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:7:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:9:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:10:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:14:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:60:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:67:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:68:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:2:  WorkflowDefinition,
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:3:  WorkflowEngine,
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:4:} from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:7:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:9:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:10:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:14:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:56:    const workflow = await this.createWorkflow(prompt);
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:57:    return this.engine.execute(workflow, prompt);
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:2:import { createWorkflowRuntime } from '../workflow/WorkflowRuntime';
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:3:  WorkflowDefinition,
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:4:  WorkflowEngine,
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:5:} from '../workflow/WorkflowEngine';
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:8:  private readonly engine = new WorkflowEngine();
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:10:  async createWorkflow(prompt: string): Promise<WorkflowDefinition> {
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:11:    const id = `workflow_${Date.now()}`;
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:15:      name: 'AI Generated Workflow',
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:58:    return createWorkflowRuntime({
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:68:        workflowId: `workflow_${Date.now()}`,
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:75:    const workflow = await this.createWorkflow(normalizedPrompt);
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:76:    return this.engine.execute(workflow, normalizedPrompt);
+src/core/instructor/InstructorRealWorldActionTypes.ts:5:  | 'workflow'
+src/core/instructor/InstructorExecutionBridge.ts:12:  autonomousExecutionEngine?: unknown;
+src/core/instructor/InstructorExecutionBridge.ts:32:      autonomousExecutionEngine: Boolean(
+src/core/instructor/InstructorExecutionBridge.ts:33:        this.adapters.autonomousExecutionEngine,
+src/core/instructor/InstructorExecutionBridge.ts:40:      this.adapters.toolBus || this.adapters.autonomousExecutionEngine,
+src/core/instructor/InstructorRealWorldExecutor.ts:49:      /\b(create|generate|make|build|design|produce|video|image|workflow|app)\b/.test(
+src/core/workflows/WorkflowEngine.ts:1:import type { AgentWorkflow } from './WorkflowTypes';
+src/core/workflows/WorkflowEngine.ts:4:export interface WorkflowExecutionResult {
+src/core/workflows/WorkflowEngine.ts:5:  workflowId: string;
+src/core/workflows/WorkflowEngine.ts:11:export async function executeWorkflow(
+src/core/workflows/WorkflowEngine.ts:12:  workflow: AgentWorkflow,
+src/core/workflows/WorkflowEngine.ts:13:): Promise<WorkflowExecutionResult> {
+src/core/workflows/WorkflowEngine.ts:17:    for (const node of workflow.nodes) {
+src/core/workflows/WorkflowEngine.ts:29:      workflowId: workflow.id,
+src/core/workflows/WorkflowEngine.ts:35:      workflowId: workflow.id,
+src/core/workflows/WorkflowTypes.ts:1:export type WorkflowNodeType =
+src/core/workflows/WorkflowTypes.ts:8:export interface WorkflowNode {
+src/core/workflows/WorkflowTypes.ts:10:  type: WorkflowNodeType;
+src/core/workflows/WorkflowTypes.ts:15:export interface WorkflowEdge {
+src/core/workflows/WorkflowTypes.ts:21:export interface AgentWorkflow {
+src/core/workflows/WorkflowTypes.ts:25:  nodes: WorkflowNode[];
+src/core/workflows/WorkflowTypes.ts:26:  edges: WorkflowEdge[];
+src/core/agents/AgentRegistry.ts:21:    description: 'Coordinates video-generation workflows.',
+src/core/agents/AgentRegistry.ts:28:    description: 'Coordinates narration and voice workflows.',
+src/core/agents/AgentRegistry.ts:42:    description: 'Validates workflow outputs before export.',
+src/core/survival/SurvivalOrchestrator.ts:2: * VidoAI Resilience / Survival Orchestrator
+src/core/survival/SurvivalOrchestrator.ts:68:export class SurvivalOrchestrator {
+src/core/survival/index.ts:1:export * from "./SurvivalOrchestrator";
+src/core/survival/CheckpointManager.ts:8:import type { SystemCheckpoint } from "./SurvivalOrchestrator";
+src/core/master/tools/BuiltInCapabilityTools.ts:78:    'workflow-runtime',
+src/core/master/tools/BuiltInCapabilityTools.ts:79:    'workflow',
+src/core/master/tools/BuiltInCapabilityTools.ts:80:    'Executes registered agent workflows.'
+src/core/master/tools/CapabilityToolBus.ts:11:  | 'workflow'
+src/core/master/execution/MasterExecutionTypes.ts:11:  | 'workflow'
+src/core/master/execution/MasterInstructor.ts:37:  if (/(workflow|automation|flow|pipeline)/.test(p)) {
+src/core/master/execution/MasterInstructor.ts:38:    return 'workflow';
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:38:  if (/(workflow|automation|flow|pipeline)/.test(p)) {
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:39:    return 'workflow';
+src/core/master/SmartMasterTypes.ts:11:  | 'workflow'
+src/core/master/index.ts:4:export * from './SmartMasterOrchestrator';
+src/core/master/SmartMasterUnderstanding.ts:76:    /workflow|automation|pipeline|orchestration|n8n/.test(value)
+src/core/master/SmartMasterUnderstanding.ts:78:    domains.add('workflow');
+src/core/master/SmartMasterUnderstanding.ts:183:      domains.includes('workflow'),
+src/core/workflow/queue/WorkflowQueue.ts:3:  workflowId: string;
+src/core/workflow/queue/WorkflowQueue.ts:9:export class WorkflowQueue {
+src/core/workflow/queue/WorkflowQueue.ts:13:  constructor(private runner: (workflowId: string, input: unknown) => Promise<unknown>) {}
+src/core/workflow/queue/WorkflowQueue.ts:15:  enqueue(workflowId: string, input: unknown, maxRetries = 2) {
+src/core/workflow/queue/WorkflowQueue.ts:18:      workflowId,
+src/core/workflow/queue/WorkflowQueue.ts:24:    console.log(`[Queue] Enqueued ${job.id} -> ${workflowId}`);
+src/core/workflow/queue/WorkflowQueue.ts:37:        const result = await this.runner(job.workflowId, job.input);
+src/core/workflow/AgentWorkflowExecutor.ts:2:  WorkflowNode,
+src/core/workflow/AgentWorkflowExecutor.ts:3:  WorkflowNodeExecutor,
+src/core/workflow/AgentWorkflowExecutor.ts:4:  WorkflowExecutionContext,
+src/core/workflow/AgentWorkflowExecutor.ts:5:} from './WorkflowEngine';
+src/core/workflow/AgentWorkflowExecutor.ts:9:    node: WorkflowNode,
+src/core/workflow/AgentWorkflowExecutor.ts:10:    context: WorkflowExecutionContext
+src/core/workflow/AgentWorkflowExecutor.ts:14:export class AgentWorkflowExecutor implements WorkflowNodeExecutor {
+src/core/workflow/AgentWorkflowExecutor.ts:18:    node: WorkflowNode,
+src/core/workflow/AgentWorkflowExecutor.ts:19:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts:1:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts:9:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts:15:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts:18:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts:19:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts:23:export interface WorkflowExecutionContext {
+src/core/workflow/WorkflowEngine.ts:29:export interface WorkflowNodeExecutor {
+src/core/workflow/WorkflowEngine.ts:31:    node: WorkflowNode,
+src/core/workflow/WorkflowEngine.ts:32:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts:36:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts:37:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts:44:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts:45:  private executors = new Map<string, WorkflowNodeExecutor>();
+src/core/workflow/WorkflowEngine.ts:47:  registerExecutor(type: string, executor: WorkflowNodeExecutor): void {
+src/core/workflow/WorkflowEngine.ts:52:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts:55:  ): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts:60:      const nodes = Array.isArray(workflow?.nodes) ? workflow.nodes : [];
+src/core/workflow/WorkflowEngine.ts:78:              `No executor registered for workflow node type: ${String(node.type)}`
+src/core/workflow/WorkflowEngine.ts:93:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts:100:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/registry/WorkflowRegistry.ts:1:import { WorkflowRuntime, type WorkflowRuntimeOptions } from '../WorkflowRuntime.js';
+src/core/workflow/registry/WorkflowRegistry.ts:3:export interface RegisteredWorkflow {
+src/core/workflow/registry/WorkflowRegistry.ts:6:  runtime: WorkflowRuntime;
+src/core/workflow/registry/WorkflowRegistry.ts:10:  private workflows = new Map<string, RegisteredWorkflow>();
+src/core/workflow/registry/WorkflowRegistry.ts:12:  register(id: string, name: string, options: WorkflowRuntimeOptions) {
+src/core/workflow/registry/WorkflowRegistry.ts:13:    const runtime = new WorkflowRuntime(options);
+src/core/workflow/registry/WorkflowRegistry.ts:14:    const entry: RegisteredWorkflow = { id, name, runtime };
+src/core/workflow/registry/WorkflowRegistry.ts:15:    this.workflows.set(id, entry);
+src/core/workflow/registry/WorkflowRegistry.ts:21:    return this.workflows.get(id);
+src/core/workflow/registry/WorkflowRegistry.ts:25:    return Array.from(this.workflows.values()).map(w => ({
+src/core/workflow/registry/WorkflowRegistry.ts:33:    const wf = this.workflows.get(id);
+src/core/workflow/registry/WorkflowRegistry.ts:34:    if (!wf) throw new Error(`Workflow ${id} not found`);
+src/core/workflow/registry/WorkflowRegistry.ts:39:export const workflowRegistry = new Registry();
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:2:  WorkflowNode,
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:3:  WorkflowNodeExecutor,
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:4:  WorkflowExecutionContext,
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:5:} from './WorkflowEngine';
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:8:export class AgentNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:12:    node: WorkflowNode,
+src/core/workflow/AgentNodeExecutor.ts.before-recursion-fix:13:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:1:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:9:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:15:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:18:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:19:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:23:export interface WorkflowExecutionContext {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:28:export interface WorkflowNodeExecutor {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:30:    node: WorkflowNode,
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:31:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:35:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:36:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:43:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:44:  private executors = new Map<string, WorkflowNodeExecutor>();
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:46:  registerExecutor(type: string, executor: WorkflowNodeExecutor): void {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:51:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:54:  ): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:61:      const nodes = Array.isArray(workflow?.nodes) ? workflow.nodes : [];
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:77:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.before-node-runtime:84:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:2:  WorkflowNode,
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:3:  WorkflowNodeExecutor,
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:4:  WorkflowExecutionContext,
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:5:} from './WorkflowEngine';
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:14:export class VerifyNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:16:    node: WorkflowNode,
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:17:    context: WorkflowExecutionContext
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:25:        reason: 'No previous workflow output is available',
+src/core/workflow/VerifyNodeExecutor.ts.bak-before-verify-upgrade:39:        reason: 'Previous workflow step reported failure',
+src/core/workflow/health.ts:1:import { workflowRegistry } from './registry/WorkflowRegistry.js';
+src/core/workflow/health.ts:3:export function getWorkflowHealth() {
+src/core/workflow/health.ts:4:  const workflows = workflowRegistry.getAllStatus();
+src/core/workflow/health.ts:5:  const allReady = workflows.every((w: any) => w.ready);
+src/core/workflow/health.ts:10:    workflows,
+src/core/workflow/AiProviderAdapter.ts:2:  WorkflowNode,
+src/core/workflow/AiProviderAdapter.ts:3:  WorkflowExecutionContext,
+src/core/workflow/AiProviderAdapter.ts:4:} from './WorkflowEngine';
+src/core/workflow/AiProviderAdapter.ts:7:export interface WorkflowAiProvider {
+src/core/workflow/AiProviderAdapter.ts:11:      node?: WorkflowNode;
+src/core/workflow/AiProviderAdapter.ts:12:      context?: WorkflowExecutionContext;
+src/core/workflow/AiProviderAdapter.ts:18:  constructor(private readonly provider: WorkflowAiProvider) {}
+src/core/workflow/AiProviderAdapter.ts:22:    node: WorkflowNode,
+src/core/workflow/AiProviderAdapter.ts:23:    context: WorkflowExecutionContext
+src/core/workflow/AiProviderAdapter.ts:33:        'AI provider is not connected to the workflow runtime'
+src/core/workflow/WorkflowEngine.ts.before-final-fix:1:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts.before-final-fix:2:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.before-final-fix:9:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.before-final-fix:10:  async execute(workflow: any, prompt?: string): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts.before-final-fix:14:      for (const node of workflow?.nodes ?? []) {
+src/core/workflow/WorkflowEngine.ts.before-final-fix:19:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.before-final-fix:24:          workflow,
+src/core/workflow/WorkflowEngine.ts.before-final-fix:29:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:1:export type WorkflowNodeType =
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:11:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:13:  type: WorkflowNodeType;
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:18:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:24:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:28:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:29:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:32:export interface WorkflowExecution {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:34:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:41:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:43:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:45:  ): Promise<WorkflowExecution> {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:50:    logs.push(`Workflow started: ${workflow.name}`);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:53:      const ordered = this.topologicalOrder(workflow);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:104:      logs.push('Workflow completed');
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:108:        workflowId: workflow.id,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:117:      logs.push(`Workflow failed: ${message}`);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:121:        workflowId: workflow.id,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:130:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:131:  ): WorkflowNode[] {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:132:    const nodes = new Map(workflow.nodes.map((node) => [node.id, node]));
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:135:    for (const node of workflow.nodes) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:139:    for (const edge of workflow.edges) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:143:    const queue = workflow.nodes
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:147:    const result: WorkflowNode[] = [];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:155:      for (const edge of workflow.edges.filter(
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:165:    if (result.length !== workflow.nodes.length) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:166:      throw new Error('Workflow contains a cycle or invalid dependency');
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:173:mkdir -p src/core/agent src/core/workflow src/core/agent/tools && \
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:174:cat > src/core/workflow/WorkflowEngine.ts <<'EOF'
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:175:export type WorkflowNodeType =
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:185:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:187:  type: WorkflowNodeType;
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:192:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:198:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:202:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:203:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:206:export interface WorkflowExecution {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:208:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:215:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:217:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:219:  ): Promise<WorkflowExecution> {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:224:    logs.push(`Workflow started: ${workflow.name}`);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:227:      const ordered = this.topologicalOrder(workflow);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:278:      logs.push('Workflow completed');
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:282:        workflowId: workflow.id,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:291:      logs.push(`Workflow failed: ${message}`);
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:295:        workflowId: workflow.id,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:304:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:305:  ): WorkflowNode[] {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:306:    const nodes = new Map(workflow.nodes.map((node) => [node.id, node]));
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:309:    for (const node of workflow.nodes) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:313:    for (const edge of workflow.edges) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:317:    const queue = workflow.nodes
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:321:    const result: WorkflowNode[] = [];
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:329:      for (const edge of workflow.edges.filter(
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:339:    if (result.length !== workflow.nodes.length) {
+src/core/workflow/WorkflowEngine.ts.corrupted-20260929-121957:340:      throw new Error('Workflow contains a cycle or invalid dependency');
+src/core/workflow/ToolNodeExecutor.ts:2:  WorkflowNode,
+src/core/workflow/ToolNodeExecutor.ts:3:  WorkflowNodeExecutor,
+src/core/workflow/ToolNodeExecutor.ts:4:  WorkflowExecutionContext,
+src/core/workflow/ToolNodeExecutor.ts:5:} from './WorkflowEngine';
+src/core/workflow/ToolNodeExecutor.ts:11:    context: WorkflowExecutionContext
+src/core/workflow/ToolNodeExecutor.ts:15:export class ToolNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/ToolNodeExecutor.ts:19:    node: WorkflowNode,
+src/core/workflow/ToolNodeExecutor.ts:20:    context: WorkflowExecutionContext
+src/core/workflow/ToolNodeExecutor.ts:42:    const enrichedContext: WorkflowExecutionContext = {
+src/core/workflow/ToolNodeExecutor.ts:46:        workflowNodeId: node.id,
+src/core/workflow/ToolNodeExecutor.ts:47:        workflowNodeType: node.type,
+src/core/workflow/index.ts:1:export * from './WorkflowIntegrationStatus.js';
+src/core/workflow/index.ts:2:export * from './WorkflowRuntime.js';
+src/core/workflow/index.ts:5:export * from './registry/WorkflowRegistry.js';
+src/core/workflow/index.ts:6:export * from './video/VideoWorkflow.js';
+src/core/workflow/index.ts:7:export * from './queue/WorkflowQueue.js';
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:1:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:9:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:15:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:18:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:19:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:23:export interface WorkflowExecutionContext {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:29:export interface WorkflowNodeExecutor {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:31:    node: WorkflowNode,
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:32:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:36:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:37:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:44:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:45:  private executors = new Map<string, WorkflowNodeExecutor>();
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:47:  registerExecutor(type: string, executor: WorkflowNodeExecutor): void {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:52:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:55:  ): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:60:      const nodes = Array.isArray(workflow?.nodes) ? workflow.nodes : [];
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:78:              `No executor registered for workflow node type: ${String(node.type)}`
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:93:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.bak-before-graph-runtime:100:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/adapters/ToolBusAdapter.ts:1:import type { WorkflowAdapter } from '../WorkflowRuntime.js';
+src/core/workflow/adapters/ToolBusAdapter.ts:3:export class ToolBusAdapter implements WorkflowAdapter {
+src/core/workflow/adapters/AgentAdapter.ts:1:import type { WorkflowAdapter } from '../WorkflowRuntime.js';
+src/core/workflow/adapters/AgentAdapter.ts:3:export class AgentAdapter implements WorkflowAdapter {
+src/core/workflow/VerifyNodeExecutor.ts:2:  WorkflowNode,
+src/core/workflow/VerifyNodeExecutor.ts:3:  WorkflowNodeExecutor,
+src/core/workflow/VerifyNodeExecutor.ts:4:  WorkflowExecutionContext,
+src/core/workflow/VerifyNodeExecutor.ts:5:} from './WorkflowEngine';
+src/core/workflow/VerifyNodeExecutor.ts:14:export class VerifyNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/VerifyNodeExecutor.ts:16:    node: WorkflowNode,
+src/core/workflow/VerifyNodeExecutor.ts:17:    context: WorkflowExecutionContext
+src/core/workflow/VerifyNodeExecutor.ts:25:        reason: 'No previous workflow output is available',
+src/core/workflow/VerifyNodeExecutor.ts:39:        reason: 'Previous workflow step reported failure',
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:1:import { WorkflowEngine } from './WorkflowEngine';
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:7:export interface WorkflowRuntimeOptions {
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:12:export function createWorkflowRuntime(
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:13:  options: WorkflowRuntimeOptions
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:14:): WorkflowEngine {
+src/core/workflow/WorkflowRuntime.ts.bak-before-toolbus-wiring:15:  const engine = new WorkflowEngine();
+src/core/workflow/ToolBusAdapter.ts:1:import { WorkflowExecutionContext } from './WorkflowEngine';
+src/core/workflow/ToolBusAdapter.ts:4:export interface WorkflowToolBus {
+src/core/workflow/ToolBusAdapter.ts:8:    context?: WorkflowExecutionContext
+src/core/workflow/ToolBusAdapter.ts:13:  constructor(private readonly toolBus: WorkflowToolBus) {}
+src/core/workflow/ToolBusAdapter.ts:18:    context: WorkflowExecutionContext
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:2:  WorkflowNode,
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:3:  WorkflowNodeExecutor,
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:4:  WorkflowExecutionContext,
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:5:} from './WorkflowEngine';
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:11:    context: WorkflowExecutionContext
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:15:export class ToolNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:19:    node: WorkflowNode,
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:20:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:1:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:8:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:14:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:17:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:18:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:22:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:23:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:30:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:32:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:34:  ): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:38:      for (const node of workflow?.nodes ?? []) {
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:43:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:48:          workflow,
+src/core/workflow/WorkflowEngine.ts.before-agent-runtime:53:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/video/VideoWorkflow.ts:1:import { workflowRegistry } from '../registry/WorkflowRegistry.js';
+src/core/workflow/video/VideoWorkflow.ts:5:export function initVideoWorkflows() {
+src/core/workflow/video/VideoWorkflow.ts:6:  workflowRegistry.register('video-gen', 'Video Generation', {
+src/core/workflow/video/VideoWorkflow.ts:10:  workflowRegistry.register('video-enhance', 'Video Enhance', {
+src/core/workflow/video/VideoWorkflow.ts:14:  workflowRegistry.register('video-thumb', 'Thumbnail Gen', {
+src/core/workflow/AgentNodeExecutor.ts:2:  WorkflowNode,
+src/core/workflow/AgentNodeExecutor.ts:3:  WorkflowNodeExecutor,
+src/core/workflow/AgentNodeExecutor.ts:4:  WorkflowExecutionContext,
+src/core/workflow/AgentNodeExecutor.ts:5:} from './WorkflowEngine';
+src/core/workflow/AgentNodeExecutor.ts:10:    node: WorkflowNode,
+src/core/workflow/AgentNodeExecutor.ts:11:    context: WorkflowExecutionContext
+src/core/workflow/AgentNodeExecutor.ts:15:export class AgentNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/AgentNodeExecutor.ts:19:    node: WorkflowNode,
+src/core/workflow/AgentNodeExecutor.ts:20:    context: WorkflowExecutionContext
+src/core/workflow/AgentNodeExecutor.ts:35:    const enrichedContext: WorkflowExecutionContext = {
+src/core/workflow/AgentNodeExecutor.ts:39:        workflowNodeId: node.id,
+src/core/workflow/AgentNodeExecutor.ts:40:        workflowNodeType: node.type,
+src/core/workflow/OutputNodeExecutor.ts:2:  WorkflowNode,
+src/core/workflow/OutputNodeExecutor.ts:3:  WorkflowNodeExecutor,
+src/core/workflow/OutputNodeExecutor.ts:4:  WorkflowExecutionContext,
+src/core/workflow/OutputNodeExecutor.ts:5:} from './WorkflowEngine';
+src/core/workflow/OutputNodeExecutor.ts:7:export interface WorkflowOutput {
+src/core/workflow/OutputNodeExecutor.ts:14:export class OutputNodeExecutor implements WorkflowNodeExecutor {
+src/core/workflow/OutputNodeExecutor.ts:16:    node: WorkflowNode,
+src/core/workflow/OutputNodeExecutor.ts:17:    context: WorkflowExecutionContext
+src/core/workflow/OutputNodeExecutor.ts:18:  ): Promise<WorkflowOutput> {
+src/core/workflow/WorkflowRuntime.ts:1:import { getWorkflowIntegrationStatus, type WorkflowIntegrationStatus } from './WorkflowIntegrationStatus.js';
+src/core/workflow/WorkflowRuntime.ts:3:export interface WorkflowAdapter {
+src/core/workflow/WorkflowRuntime.ts:7:export interface WorkflowRuntimeOptions {
+src/core/workflow/WorkflowRuntime.ts:8:  agentAdapter?: WorkflowAdapter;
+src/core/workflow/WorkflowRuntime.ts:9:  toolAdapter?: WorkflowAdapter;
+src/core/workflow/WorkflowRuntime.ts:12:export class WorkflowRuntime {
+src/core/workflow/WorkflowRuntime.ts:13:  private agentAdapter?: WorkflowAdapter;
+src/core/workflow/WorkflowRuntime.ts:14:  private toolAdapter?: WorkflowAdapter;
+src/core/workflow/WorkflowRuntime.ts:16:  constructor(options: WorkflowRuntimeOptions) {
+src/core/workflow/WorkflowRuntime.ts:21:  getStatus(): WorkflowIntegrationStatus {
+src/core/workflow/WorkflowRuntime.ts:22:    return getWorkflowIntegrationStatus({
+src/core/workflow/WorkflowRuntime.ts:32:        `Workflow not ready - agent: ${status.agent.connected}, toolBus: ${status.toolBus.connected}`
+src/core/workflow/WorkflowRuntime.ts:42:export function createWorkflowRuntime(options: WorkflowRuntimeOptions) {
+src/core/workflow/WorkflowRuntime.ts:43:  return new WorkflowRuntime(options);
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:1:export interface WorkflowNode {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:9:export interface WorkflowEdge {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:15:export interface WorkflowDefinition {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:18:  nodes: WorkflowNode[];
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:19:  edges: WorkflowEdge[];
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:23:export interface WorkflowExecutionContext {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:29:export interface WorkflowNodeExecutor {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:31:    node: WorkflowNode,
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:32:    context: WorkflowExecutionContext
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:36:export interface WorkflowExecutionResult {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:37:  workflowId: string;
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:44:export class WorkflowEngine {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:45:  private executors = new Map<string, WorkflowNodeExecutor>();
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:47:  registerExecutor(type: string, executor: WorkflowNodeExecutor): void {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:52:    workflow: WorkflowDefinition,
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:55:  ): Promise<WorkflowExecutionResult> {
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:60:      const nodes = Array.isArray(workflow?.nodes) ? workflow.nodes : [];
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:78:              `No executor registered for workflow node type: ${String(node.type)}`
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:93:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowEngine.ts.bak-before-verify-gate:100:        workflowId: String(workflow?.id ?? `workflow_${Date.now()}`),
+src/core/workflow/WorkflowIntegrationStatus.ts:1:export interface WorkflowIntegrationStatus {
+src/core/workflow/WorkflowIntegrationStatus.ts:11:export function getWorkflowIntegrationStatus(options: {
+src/core/workflow/WorkflowIntegrationStatus.ts:14:}): WorkflowIntegrationStatus {
+src/core/orchestrator/registerExisting.ts:1:import { SystemOrchestrator } from "./SystemOrchestrator";
+src/core/orchestrator/registerExisting.ts:3:export function createSystemOrchestrator() {
+src/core/orchestrator/registerExisting.ts:4:  const system = new SystemOrchestrator();
+src/core/orchestrator/registerExisting.ts:31:      evidence: ["Registered in central system orchestrator"],
+src/core/orchestrator/index.ts:1:export * from "./SystemOrchestrator";
+src/core/orchestrator/SystemOrchestrator.ts:35:export class SystemOrchestrator {
+src/core/autonomous/types.ts:42:export interface Workflow {
+src/core/autonomous/integration/registerBuiltInFeatures.ts:25:    description: "Audio and music workflows.",
+src/core/autonomous/integration/registerBuiltInFeatures.ts:31:    description: "General video editing workflow.",
+src/core/autonomous/integration/registerBuiltInFeatures.ts:37:    description: "Final media export workflow.",
+src/core/autonomous/index.ts.before-lint-repair-20260930-154353:5:export * from "./workflow/AutonomousWorkflowEngine";
+src/core/autonomous/AutonomousOS.ts:11:  AutonomousWorkflowEngine,
+src/core/autonomous/AutonomousOS.ts:13:} from './workflow/AutonomousWorkflowEngine';
+src/core/autonomous/AutonomousOS.ts:42:  readonly engine = new AutonomousWorkflowEngine();
+src/core/autonomous/AutonomousOS.ts:46:    return this.engine.createWorkflow(goal);
+src/core/autonomous/AutonomousOS.ts:108:      workflows: this.engine.workflowsList(),
+src/core/autonomous/AutonomousOS.ts.before-factory-20260930-135412:6:  AutonomousWorkflowEngine,
+src/core/autonomous/AutonomousOS.ts.before-factory-20260930-135412:8:} from './workflow/AutonomousWorkflowEngine';
+src/core/autonomous/AutonomousOS.ts.before-factory-20260930-135412:13:  readonly engine = new AutonomousWorkflowEngine();
+src/core/autonomous/AutonomousOS.ts.before-factory-20260930-135412:17:    return this.engine.createWorkflow(goal);
+src/core/autonomous/AutonomousOS.ts.before-factory-20260930-135412:27:      workflows: this.engine.workflowsList(),
+src/core/autonomous/index.ts:5:export * from "./workflow/AutonomousWorkflowEngine";
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:11:  AutonomousWorkflowEngine,
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:13:} from './workflow/AutonomousWorkflowEngine';
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:44:  readonly engine = new AutonomousWorkflowEngine();
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:48:    return this.engine.createWorkflow(goal);
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:102:      workflows: this.engine.workflowsList(),
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:1:import { AutonomousTask, Workflow } from "../types";
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:12:export class AutonomousWorkflowEngine {
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:18:  private workflows: Workflow[] = [];
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:20:  createWorkflow(goal: string): Workflow {
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:23:    const workflow: Workflow = {
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:24:      id: `workflow_${Date.now()}`,
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:25:      name: "Autonomous Workflow",
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:32:    this.workflows.push(workflow);
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:36:      "workflow.created",
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:37:      `Workflow created for: ${goal}`,
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:42:    return workflow;
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:127:  workflowsList() {
+src/core/autonomous/workflow/AutonomousWorkflowEngine.ts:128:    return [...this.workflows];
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:11:  AutonomousWorkflowEngine,
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:13:} from './workflow/AutonomousWorkflowEngine';
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:44:  readonly engine = new AutonomousWorkflowEngine();
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:48:    return this.engine.createWorkflow(goal);
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:102:      workflows: this.engine.workflowsList(),
+src/core/cloud/CloudDataTypes.ts:5:  | 'workflow'
+src/core/universal/FinalCommandBridge.ts:2:  executeMasterCommand,
+src/core/universal/FinalCommandBridge.ts:4:} from "./MasterCommand";
+src/core/universal/FinalCommandBridge.ts:10:  const result = await executeMasterCommand(command, priority);
+src/core/universal/FinalSystemStatus.ts:1:import { getMasterSystemState } from "./MasterCommand";
+src/core/universal/MasterCommand.ts:1:import { masterOrchestrator } from "./MasterOrchestrator";
+src/core/universal/MasterCommand.ts:3:export async function executeMasterCommand(
+src/core/universal/MasterCommand.ts:14:  return masterOrchestrator.execute(
+src/core/universal/MasterCommand.ts:21:  return masterOrchestrator.state();
+src/core/universal/index.ts:3:export * from "./MasterOrchestrator";
+src/core/universal/index.ts:4:export * from "./MasterCommand";
+src/core/universal/MasterOrchestrator.ts:28:class MasterOrchestrator {
+src/core/universal/MasterOrchestrator.ts:183:export const masterOrchestrator = new MasterOrchestrator();
+src/core/universalcontrol/UniversalControlOrchestrator.ts:2: * VidoAI Universal Control Orchestrator
+src/core/universalcontrol/UniversalControlOrchestrator.ts:112:export class UniversalControlOrchestrator {
+src/core/universalcontrol/index.ts:1:export * from "./UniversalControlOrchestrator";
+src/core/VidoAIControlPlane.ts:90:      const workflow = this.autonomous.create(goal);
+src/core/systembuilder/SystemTemplates.ts:20:      "Workflow",
+src/core/systembuilder/SystemTemplates.ts:29:      "Laboratory Workflow",
+src/core/systembuilder/SystemTemplates.ts:49:      "Workflow",
+src/agent/AutonomousExecutionEngine.ts:16:export class AutonomousExecutionEngine {
+src/agent/index.ts:3:export * from "./AutonomousExecutionEngine";
+src/agent/team/AgentTeamRuntime.ts:1:import { teamOrchestrator } from "./TeamOrchestrator";
+src/agent/team/AgentTeamRuntime.ts:22:    const result = await teamOrchestrator.delegate(
+src/agent/team/index.ts:3:export * from "./TeamOrchestrator";
+src/agent/team/TeamOrchestrator.ts:7:export class TeamOrchestrator {
+src/agent/team/TeamOrchestrator.ts:17:        agentId: "team-orchestrator",
+src/agent/team/TeamOrchestrator.ts:38:export const teamOrchestrator = new TeamOrchestrator();
+src/agent/team/BuiltInAgents.ts:10:    name: "Master Orchestrator",
+src/App.tsx.before-master-repair-20260930-132640:977:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:978:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/App.tsx.repair-backup-20260930-132410:977:      {/* 7. MODALS & WORKFLOW DRAWERS                             */}
+src/server.ts:2:import { initVideoWorkflows } from './core/workflow/video/VideoWorkflow.js';
+src/server.ts:3:import { workflowRegistry } from './core/workflow/registry/WorkflowRegistry.js';
+src/server.ts:4:import { getWorkflowHealth } from './core/workflow/health.js';
+src/server.ts:5:import { WorkflowQueue } from './core/workflow/queue/WorkflowQueue.js';
+src/server.ts:10:// Init workflows on boot
+src/server.ts:11:initVideoWorkflows();
+src/server.ts:12:const queue = new WorkflowQueue((id, input) => workflowRegistry.run(id, input));
+src/server.ts:16:  res.json(getWorkflowHealth());
+src/server.ts:20:  res.json(getWorkflowHealth());
+src/server.ts:25:  const { workflowId = 'video-gen', prompt } = req.body;
+src/server.ts:28:  const jobId = queue.enqueue(workflowId, { prompt });
+src/server.ts:29:  res.json({ jobId, workflowId, status: 'queued' });
+src/server.ts:32:// List workflows
+src/server.ts:33:app.get('/api/workflows', (req, res) => {
+src/server.ts:34:  res.json(workflowRegistry.getAllStatus());
+src/server.ts:40:  console.log('Health:', getWorkflowHealth());
+server.ts:3:const interviewOrchestrator = new InterviewOrchestrator();
+server.ts:9:import { AutonomousExecutionEngine } from "./src/agent/AutonomousExecutionEngine";
+server.ts:11:import { InterviewOrchestrator } from './src/core/interview/InterviewOrchestrator';
+server.ts:769:        workflow: [
+server.ts:806:    const session = interviewOrchestrator.createSession({
+server.ts:840:    const updated = interviewOrchestrator.answer(
+server.ts:849:      summary: interviewOrchestrator.summary(updated),

@@ -49,7 +49,7 @@ const MAX_VOLUME = 1.0;
  * - Safe operation count ceiling
  * - Supported operation types
  * - Non-empty timeline integrity
- * 
+ *
  * If validation fails, returns isValid: false and timeline is NEVER modified.
  */
 export function validateAiOperations(

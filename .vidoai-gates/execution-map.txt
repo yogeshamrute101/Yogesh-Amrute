@@ -1,0 +1,138 @@
+src/App.tsx.navfix2-20260930-133416:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.navfix2-20260930-133416:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.navfix2-20260930-133416:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.nav-backup-20260930-133257:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.nav-backup-20260930-133257:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.nav-backup-20260930-133257:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/components/AiCoPilotModal.tsx:20:import { executeCommandTransaction } from '../services/commandTransaction';
+src/components/AiCoPilotModal.tsx:109:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/AiReelMakerModal.tsx:28:import { executeCommandTransaction } from '../services/commandTransaction';
+src/components/AiReelMakerModal.tsx:150:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/system/SystemFrontline.tsx:58:  const runTask = () => {
+src/components/system/SystemFrontline.tsx:123:        <button onClick={runTask}>Start Multi-Task</button>
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-scope-final:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.recovery-backup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-real-generation:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:297:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.generation-backup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.generation-backup:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:278:    const tx = executeCommandTransaction(
+src/App.tsx.before-types-import-fix-20260930-132833:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.before-types-import-fix-20260930-132833:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-types-import-fix-20260930-132833:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.backup-20260930-122645:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.backup-20260930-122645:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.backup-20260930-122645:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/core/agent/VidoAIAgent.ts:3:import { ToolBusAdapter } from '../workflow/adapters/ToolBusAdapter.js';
+src/core/agent/VidoAIAgent.ts:8:    toolAdapter: new ToolBusAdapter(),
+src/core/instructor/InstructorExecutionBridge.ts:8:  toolBus?: unknown;
+src/core/instructor/InstructorExecutionBridge.ts:12:  autonomousExecutionEngine?: unknown;
+src/core/instructor/InstructorExecutionBridge.ts:28:      toolBus: Boolean(this.adapters.toolBus),
+src/core/instructor/InstructorExecutionBridge.ts:32:      autonomousExecutionEngine: Boolean(
+src/core/instructor/InstructorExecutionBridge.ts:33:        this.adapters.autonomousExecutionEngine,
+src/core/instructor/InstructorExecutionBridge.ts:40:      this.adapters.toolBus || this.adapters.autonomousExecutionEngine,
+src/core/master/tools/index.ts:1:export * from './CapabilityToolBus';
+src/core/master/tools/BuiltInCapabilityTools.ts:5:  capabilityToolBus,
+src/core/master/tools/BuiltInCapabilityTools.ts:6:} from './CapabilityToolBus';
+src/core/master/tools/BuiltInCapabilityTools.ts:85:  if (!capabilityToolBus.get(tool.id)) {
+src/core/master/tools/BuiltInCapabilityTools.ts:86:    capabilityToolBus.register(tool);
+src/core/master/tools/MasterToolRouter.ts:2:  capabilityToolBus,
+src/core/master/tools/MasterToolRouter.ts:5:} from './CapabilityToolBus';
+src/core/master/tools/MasterToolRouter.ts:11:    return capabilityToolBus.findByCapability(capability);
+src/core/master/tools/MasterToolRouter.ts:19:    return capabilityToolBus.execute(
+src/core/master/tools/MasterToolRouter.ts:32:    return capabilityToolBus.list();
+src/core/master/tools/CapabilityToolBus.ts:40:export class CapabilityToolBus {
+src/core/master/tools/CapabilityToolBus.ts:112:export const capabilityToolBus = new CapabilityToolBus();
+src/core/workflow/ToolNodeExecutor.ts:33:        `Tool "${toolName}" cannot execute: no ToolBus adapter is connected`
+src/core/workflow/index.ts:4:export * from './adapters/ToolBusAdapter.js';
+src/core/workflow/adapters/index.ts:2:export * from './ToolBusAdapter.js';
+src/core/workflow/adapters/ToolBusAdapter.ts:3:export class ToolBusAdapter implements WorkflowAdapter {
+src/core/workflow/adapters/ToolBusAdapter.ts:5:    console.log('[ToolBusAdapter] processing:', input);
+src/core/workflow/adapters/ToolBusAdapter.ts:6:    // Yaha tumhara ToolBus / Tool execution logic
+src/core/workflow/ToolBusAdapter.ts:4:export interface WorkflowToolBus {
+src/core/workflow/ToolBusAdapter.ts:12:export class ToolBusAdapter implements ToolExecutionAdapter {
+src/core/workflow/ToolBusAdapter.ts:13:  constructor(private readonly toolBus: WorkflowToolBus) {}
+src/core/workflow/ToolBusAdapter.ts:23:      throw new Error('ToolBus adapter requires a tool name');
+src/core/workflow/ToolBusAdapter.ts:26:    return this.toolBus.execute(
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:33:        `Tool "${toolName}" cannot execute: no ToolBus adapter is connected`
+src/core/workflow/video/VideoWorkflow.ts:3:import { ToolBusAdapter } from '../adapters/ToolBusAdapter.js';
+src/core/workflow/video/VideoWorkflow.ts:8:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/video/VideoWorkflow.ts:12:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/video/VideoWorkflow.ts:16:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/WorkflowRuntime.ts:32:        `Workflow not ready - agent: ${status.agent.connected}, toolBus: ${status.toolBus.connected}`
+src/core/workflow/WorkflowIntegrationStatus.ts:5:  toolBus: {
+src/core/workflow/WorkflowIntegrationStatus.ts:27:    toolBus: {
+src/core/universal/executor/UniversalExecutor.ts:9:export async function executeTask(
+src/core/universal/security/PermissionManager.ts:1:import type { Permission } from '../ToolBus';
+src/core/universal/agents/MasterAgent.ts:1:import { ToolBus } from '../ToolBus';
+src/core/universal/agents/MasterAgent.ts:8:  readonly tools = new ToolBus();
+src/core/universal/orchestrator/UniversalOrchestrator.ts:3:import { executeTask } from "../executor/UniversalExecutor";
+src/core/universal/orchestrator/UniversalOrchestrator.ts:15:  handler?: Parameters<typeof executeTask>[1]
+src/core/universal/orchestrator/UniversalOrchestrator.ts:34:    await executeTask(task, handler);
+src/core/universal/ToolBus.ts:14:export class ToolBus {
+src/agent/AutonomousExecutionEngine.ts:4:  AutonomousCoreAdapter,
+src/agent/AutonomousExecutionEngine.ts:7:} from "./AutonomousCoreAdapter";
+src/agent/AutonomousExecutionEngine.ts:16:export class AutonomousExecutionEngine {
+src/agent/AutonomousExecutionEngine.ts:17:  constructor(private readonly core: AutonomousCoreAdapter) {}
+src/agent/AutonomousCoreAdapter.ts:15:export interface AutonomousCoreAdapter {
+src/agent/AutonomousCoreAdapter.ts:24:export class MasterAgentCoreAdapter implements AutonomousCoreAdapter {
+src/agent/index.ts:2:export * from "./AutonomousCoreAdapter";
+src/agent/index.ts:3:export * from "./AutonomousExecutionEngine";
+src/App.tsx.before-master-repair-20260930-132640:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.before-master-repair-20260930-132640:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-master-repair-20260930-132640:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.before-jsx-tag-repair-20260930-133132:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/services/commandTransaction.ts:477:export function executeCommandTransaction(
+src/App.tsx.repair-backup-20260930-132410:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.repair-backup-20260930-132410:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.repair-backup-20260930-132410:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+server.ts:9:import { AutonomousExecutionEngine } from "./src/agent/AutonomousExecutionEngine";
+server.ts:10:import { MasterAgentCoreAdapter } from "./src/agent/AutonomousCoreAdapter";

@@ -1,0 +1,20 @@
+src/core/access/RestrictedCapabilityAccess.ts:47:        reason: "Protected capabilities are locked: owner authorization is not configured.",
+src/core/physicalai/simulation/SimulationLayer.ts:21:        "Simulation adapter is not connected to a physics engine yet.",
+src/core/agent/VidoAIAgent.ts.bak-before-fix:71:        error: 'Agent execution adapter is not connected',
+src/core/master/tools/BuiltInCapabilityTools.ts:27:          `Tool "${id}" is defined but its real provider is not connected.`,
+src/core/workflow/AgentWorkflowExecutor.ts:24:        reason: 'No agent execution adapter registered',
+src/core/workflow/AiProviderAdapter.ts:33:        'AI provider is not connected to the workflow runtime'
+src/core/media/auto/AutoMediaExecutor.ts:47:          message: `Capability '${operation}' is not connected to a real media engine.`,
+src/core/media/auto/AutoMediaExecutor.ts:109:        : 'Automatic editing plan was evaluated, but one or more real capabilities are not connected or verified.',
+src/core/universal/integration/FeatureRegistry.ts:20:        error: `Feature '${name}' is not connected yet.`,
+src/agent/team/BuiltInAgents.ts:52:          "Research provider/tool execution is not connected yet.",
+src/agent/team/BuiltInAgents.ts:135:          "Voice provider/tool execution is not connected yet.",
+src/agent/team/BuiltInAgents.ts:160:          "Editor command execution adapter is not connected yet.",
+src/services/aiProvider/GoogleVideoProvider.ts.before-final-fix:13:      throw new Error("GEMINI_API_KEY is not configured.");
+src/services/aiProvider/GoogleVideoProvider.ts:13:      throw new Error("GEMINI_API_KEY is not configured.");
+server.ts:28:        error: "GEMINI_API_KEY is not configured.",
+server.ts:159:        error: "GEMINI_API_KEY is not configured.",
+server.ts:308:        error: "GEMINI_API_KEY is not configured.",
+server.ts:526:      throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+server.ts:589:    throw new Error("Google Veo is not configured. Set GEMINI_API_KEY.");
+server.ts:662:        : "Video generation provider is not configured.",

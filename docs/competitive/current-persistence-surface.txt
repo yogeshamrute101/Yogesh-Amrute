@@ -1,0 +1,948 @@
+src/App.tsx.navfix2-20260930-133416:45:  ProjectTimeline,
+src/App.tsx.navfix2-20260930-133416:51:  SavedProject
+src/App.tsx.navfix2-20260930-133416:68:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.navfix2-20260930-133416:74:import { projectStorage } from './services/projectStorage';
+src/App.tsx.navfix2-20260930-133416:78:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.navfix2-20260930-133416:141:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.navfix2-20260930-133416:143:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.navfix2-20260930-133416:146:  // Core Project State
+src/App.tsx.navfix2-20260930-133416:147:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.navfix2-20260930-133416:148:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.navfix2-20260930-133416:149:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.navfix2-20260930-133416:180:  // Restore autosaved project on mount
+src/App.tsx.navfix2-20260930-133416:183:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.navfix2-20260930-133416:196:  // Autosave project on updates to projectStorage
+src/App.tsx.navfix2-20260930-133416:199:      projectStorage.saveProject(timeline);
+src/App.tsx.navfix2-20260930-133416:200:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.navfix2-20260930-133416:213:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.navfix2-20260930-133416:250:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.navfix2-20260930-133416:254:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.navfix2-20260930-133416:256:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.navfix2-20260930-133416:264:  const handleCreateEmptyProject = () => {
+src/App.tsx.navfix2-20260930-133416:269:    showToast('Loaded Sample Demo Project');
+src/App.tsx.navfix2-20260930-133416:279:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.navfix2-20260930-133416:730:        projectName={timeline.name}
+src/App.tsx.navfix2-20260930-133416:736:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.navfix2-20260930-133416:738:                onOpenProject={(proj) => {
+src/App.tsx.navfix2-20260930-133416:743:                onDeleteProject={(id) => {
+src/App.tsx.navfix2-20260930-133416:744:                  projectStorage.deleteProject(id);
+src/App.tsx.navfix2-20260930-133416:745:                  showToast('Project deleted');
+src/App.tsx.navfix2-20260930-133416:747:                onDuplicateProject={(id) => {
+src/App.tsx.navfix2-20260930-133416:748:                  projectStorage.duplicateProject(id);
+src/App.tsx.navfix2-20260930-133416:749:                  showToast('Project duplicated');
+src/App.tsx.navfix2-20260930-133416:751:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.navfix2-20260930-133416:752:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.navfix2-20260930-133416:832:            {currentScreen === 'projects' && (
+src/App.tsx.navfix2-20260930-133416:833:              <ProjectsScreen
+src/App.tsx.navfix2-20260930-133416:834:                projects={projectStorage.getProjects()}
+src/App.tsx.navfix2-20260930-133416:835:                onOpenProject={(proj) => {
+src/App.tsx.navfix2-20260930-133416:840:                onDeleteProject={(id) => {
+src/App.tsx.navfix2-20260930-133416:841:                  projectStorage.deleteProject(id);
+src/App.tsx.navfix2-20260930-133416:842:                  showToast('Project deleted');
+src/App.tsx.navfix2-20260930-133416:844:                onDuplicateProject={(id) => {
+src/App.tsx.navfix2-20260930-133416:845:                  projectStorage.duplicateProject(id);
+src/App.tsx.navfix2-20260930-133416:846:                  showToast('Project duplicated');
+src/App.tsx.navfix2-20260930-133416:848:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.navfix2-20260930-133416:849:                onRenameProject={(id, newName) => {
+src/App.tsx.navfix2-20260930-133416:850:                  const all = projectStorage.getProjects();
+src/App.tsx.navfix2-20260930-133416:853:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.navfix2-20260930-133416:854:                    showToast('Project renamed');
+src/App.tsx.navfix2-20260930-133416:929:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.navfix2-20260930-133416:943:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.navfix2-20260930-133416:945:                currentScreen === 'projects'
+src/App.tsx.navfix2-20260930-133416:950:              <span className="text-[10px]">Projects</span>
+src/App.tsx.nav-backup-20260930-133257:45:  ProjectTimeline,
+src/App.tsx.nav-backup-20260930-133257:51:  SavedProject
+src/App.tsx.nav-backup-20260930-133257:68:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.nav-backup-20260930-133257:74:import { projectStorage } from './services/projectStorage';
+src/App.tsx.nav-backup-20260930-133257:78:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.nav-backup-20260930-133257:141:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.nav-backup-20260930-133257:143:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.nav-backup-20260930-133257:146:  // Core Project State
+src/App.tsx.nav-backup-20260930-133257:147:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.nav-backup-20260930-133257:148:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.nav-backup-20260930-133257:149:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.nav-backup-20260930-133257:180:  // Restore autosaved project on mount
+src/App.tsx.nav-backup-20260930-133257:183:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.nav-backup-20260930-133257:196:  // Autosave project on updates to projectStorage
+src/App.tsx.nav-backup-20260930-133257:199:      projectStorage.saveProject(timeline);
+src/App.tsx.nav-backup-20260930-133257:200:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.nav-backup-20260930-133257:213:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.nav-backup-20260930-133257:250:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.nav-backup-20260930-133257:254:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.nav-backup-20260930-133257:256:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.nav-backup-20260930-133257:264:  const handleCreateEmptyProject = () => {
+src/App.tsx.nav-backup-20260930-133257:269:    showToast('Loaded Sample Demo Project');
+src/App.tsx.nav-backup-20260930-133257:279:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.nav-backup-20260930-133257:730:        projectName={timeline.name}
+src/App.tsx.nav-backup-20260930-133257:736:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.nav-backup-20260930-133257:738:                onOpenProject={(proj) => {
+src/App.tsx.nav-backup-20260930-133257:743:                onDeleteProject={(id) => {
+src/App.tsx.nav-backup-20260930-133257:744:                  projectStorage.deleteProject(id);
+src/App.tsx.nav-backup-20260930-133257:745:                  showToast('Project deleted');
+src/App.tsx.nav-backup-20260930-133257:747:                onDuplicateProject={(id) => {
+src/App.tsx.nav-backup-20260930-133257:748:                  projectStorage.duplicateProject(id);
+src/App.tsx.nav-backup-20260930-133257:749:                  showToast('Project duplicated');
+src/App.tsx.nav-backup-20260930-133257:751:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.nav-backup-20260930-133257:752:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.nav-backup-20260930-133257:832:            {currentScreen === 'projects' && (
+src/App.tsx.nav-backup-20260930-133257:833:              <ProjectsScreen
+src/App.tsx.nav-backup-20260930-133257:834:                projects={projectStorage.getProjects()}
+src/App.tsx.nav-backup-20260930-133257:835:                onOpenProject={(proj) => {
+src/App.tsx.nav-backup-20260930-133257:840:                onDeleteProject={(id) => {
+src/App.tsx.nav-backup-20260930-133257:841:                  projectStorage.deleteProject(id);
+src/App.tsx.nav-backup-20260930-133257:842:                  showToast('Project deleted');
+src/App.tsx.nav-backup-20260930-133257:844:                onDuplicateProject={(id) => {
+src/App.tsx.nav-backup-20260930-133257:845:                  projectStorage.duplicateProject(id);
+src/App.tsx.nav-backup-20260930-133257:846:                  showToast('Project duplicated');
+src/App.tsx.nav-backup-20260930-133257:848:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.nav-backup-20260930-133257:849:                onRenameProject={(id, newName) => {
+src/App.tsx.nav-backup-20260930-133257:850:                  const all = projectStorage.getProjects();
+src/App.tsx.nav-backup-20260930-133257:853:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.nav-backup-20260930-133257:854:                    showToast('Project renamed');
+src/App.tsx.nav-backup-20260930-133257:929:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.nav-backup-20260930-133257:943:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.nav-backup-20260930-133257:945:                currentScreen === 'projects'
+src/App.tsx.nav-backup-20260930-133257:950:              <span className="text-[10px]">Projects</span>
+src/types.ts:107:export interface SavedProject {
+src/types.ts:110:  timeline: ProjectTimeline;
+src/types.ts:123:  | 'projects'
+src/types.ts:126:export interface ProjectTimeline {
+src/components/AiCoPilotModal.tsx:18:import { AiCoPilotResult, ProjectTimeline, ValidationReport } from '../types';
+src/components/AiCoPilotModal.tsx:27:  timeline: ProjectTimeline;
+src/components/AiCoPilotModal.tsx:28:  onApplyTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/AiReelMakerModal.tsx:26:import { ProjectTimeline, ReelPreset, ValidationReport } from '../types';
+src/components/AiReelMakerModal.tsx:35:  timeline: ProjectTimeline;
+src/components/AiReelMakerModal.tsx:36:  onApplyReelTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/SocialShareModal.tsx:17:import { AspectRatio, ExportSettings, ProjectTimeline, SocialPackageResponse } from '../types';
+src/components/SocialShareModal.tsx:24:  timeline: ProjectTimeline;
+src/components/AndroidFrame.tsx:8:  projectName: string;
+src/components/AndroidFrame.tsx:15:  projectName,
+src/screens/ProjectsScreen.tsx.generation-backup:14:import { getGeneratedOutputs, GeneratedOutput } from '../services/GeneratedOutputStore';
+src/screens/ProjectsScreen.tsx.generation-backup:15:import { AppScreen, ProjectTimeline, SavedProject } from '../types';
+src/screens/ProjectsScreen.tsx.generation-backup:17:interface ProjectsScreenProps {
+src/screens/ProjectsScreen.tsx.generation-backup:20:  projects?: SavedProject[];
+src/screens/ProjectsScreen.tsx.generation-backup:21:  onOpenProject: (timeline: ProjectTimeline) => void;
+src/screens/ProjectsScreen.tsx.generation-backup:22:  onDeleteProject: (id: string) => void;
+src/screens/ProjectsScreen.tsx.generation-backup:23:  onDuplicateProject: (id: string) => void;
+src/screens/ProjectsScreen.tsx.generation-backup:24:  onNewProject: () => void;
+src/screens/ProjectsScreen.tsx.generation-backup:25:  onRenameProject?: (id: string, newName: string) => void;
+src/screens/ProjectsScreen.tsx.generation-backup:28:export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({
+src/screens/ProjectsScreen.tsx.generation-backup:30:  projects = [],
+src/screens/ProjectsScreen.tsx.generation-backup:31:  onOpenProject,
+src/screens/ProjectsScreen.tsx.generation-backup:32:  onDeleteProject,
+src/screens/ProjectsScreen.tsx.generation-backup:33:  onDuplicateProject,
+src/screens/ProjectsScreen.tsx.generation-backup:34:  onNewProject,
+src/screens/ProjectsScreen.tsx.generation-backup:35:  onRenameProject,
+src/screens/ProjectsScreen.tsx.generation-backup:37:  const [generatedOutputs, setGeneratedOutputs] = useState<GeneratedOutput[]>([]);
+src/screens/ProjectsScreen.tsx.generation-backup:40:    setGeneratedOutputs(getGeneratedOutputs());
+src/screens/ProjectsScreen.tsx.generation-backup:43:  const safeProjects = projects || [];
+src/screens/ProjectsScreen.tsx.generation-backup:48:  const filtered = safeProjects.filter((p) =>
+src/screens/ProjectsScreen.tsx.generation-backup:64:  const startRenaming = (p: SavedProject) => {
+src/screens/ProjectsScreen.tsx.generation-backup:71:      onRenameProject(id, tempName.trim());
+src/screens/ProjectsScreen.tsx.generation-backup:79:      {generatedOutputs.length > 0 && (
+src/screens/ProjectsScreen.tsx.generation-backup:86:            {generatedOutputs.slice().reverse().map((output) => (
+src/screens/ProjectsScreen.tsx.generation-backup:123:            <h1 className="text-sm font-bold tracking-wide text-white">PROJECTS</h1>
+src/screens/ProjectsScreen.tsx.generation-backup:129:          onClick={onNewProject}
+src/screens/ProjectsScreen.tsx.generation-backup:145:            placeholder="Search saved projects..."
+src/screens/ProjectsScreen.tsx.generation-backup:156:            <p className="text-xs text-neutral-400 font-medium">No projects found</p>
+src/screens/ProjectsScreen.tsx.generation-backup:158:              onClick={onNewProject}
+src/screens/ProjectsScreen.tsx.generation-backup:161:              Create New Project
+src/screens/ProjectsScreen.tsx.generation-backup:173:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx.generation-backup:217:                        onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx.generation-backup:249:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx.generation-backup:258:                    onClick={() => onDuplicateProject(proj.id)}
+src/screens/ProjectsScreen.tsx.generation-backup:260:                    title="Duplicate Project"
+src/screens/ProjectsScreen.tsx.generation-backup:265:                    onClick={() => onDeleteProject(proj.id)}
+src/screens/ProjectsScreen.tsx.generation-backup:267:                    title="Delete Project"
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-scope-final:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-scope-final:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-scope-final:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiScriptScreen.tsx:14:import { AiScriptResponse, CaptionItem, ProjectTimeline } from '../types';
+src/screens/AiScriptScreen.tsx:18:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.recovery-backup:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.recovery-backup:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.recovery-backup:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/ProjectsScreen.tsx:14:import { getGeneratedOutputs, GeneratedOutput } from '../services/GeneratedOutputStore';
+src/screens/ProjectsScreen.tsx:15:import { AppScreen, ProjectTimeline, SavedProject } from '../types';
+src/screens/ProjectsScreen.tsx:17:interface ProjectsScreenProps {
+src/screens/ProjectsScreen.tsx:20:  projects?: SavedProject[];
+src/screens/ProjectsScreen.tsx:21:  onOpenProject: (timeline: ProjectTimeline) => void;
+src/screens/ProjectsScreen.tsx:22:  onDeleteProject: (id: string) => void;
+src/screens/ProjectsScreen.tsx:23:  onDuplicateProject: (id: string) => void;
+src/screens/ProjectsScreen.tsx:24:  onNewProject: () => void;
+src/screens/ProjectsScreen.tsx:25:  onRenameProject?: (id: string, newName: string) => void;
+src/screens/ProjectsScreen.tsx:28:export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({
+src/screens/ProjectsScreen.tsx:30:  projects = [],
+src/screens/ProjectsScreen.tsx:31:  onOpenProject,
+src/screens/ProjectsScreen.tsx:32:  onDeleteProject,
+src/screens/ProjectsScreen.tsx:33:  onDuplicateProject,
+src/screens/ProjectsScreen.tsx:34:  onNewProject,
+src/screens/ProjectsScreen.tsx:35:  onRenameProject,
+src/screens/ProjectsScreen.tsx:37:  const [generatedOutputs, setGeneratedOutputs] = useState<GeneratedOutput[]>([]);
+src/screens/ProjectsScreen.tsx:40:    setGeneratedOutputs(getGeneratedOutputs());
+src/screens/ProjectsScreen.tsx:43:  const safeProjects = projects || [];
+src/screens/ProjectsScreen.tsx:48:  const filtered = safeProjects.filter((p) =>
+src/screens/ProjectsScreen.tsx:64:  const startRenaming = (p: SavedProject) => {
+src/screens/ProjectsScreen.tsx:71:      onRenameProject(id, tempName.trim());
+src/screens/ProjectsScreen.tsx:79:      {generatedOutputs.length > 0 && (
+src/screens/ProjectsScreen.tsx:86:            {generatedOutputs.slice().reverse().map((output) => (
+src/screens/ProjectsScreen.tsx:123:            <h1 className="text-sm font-bold tracking-wide text-white">PROJECTS</h1>
+src/screens/ProjectsScreen.tsx:129:          onClick={onNewProject}
+src/screens/ProjectsScreen.tsx:145:            placeholder="Search saved projects..."
+src/screens/ProjectsScreen.tsx:156:            <p className="text-xs text-neutral-400 font-medium">No projects found</p>
+src/screens/ProjectsScreen.tsx:158:              onClick={onNewProject}
+src/screens/ProjectsScreen.tsx:161:              Create New Project
+src/screens/ProjectsScreen.tsx:173:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx:217:                        onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx:249:                  onClick={() => onOpenProject(proj.timeline)}
+src/screens/ProjectsScreen.tsx:258:                    onClick={() => onDuplicateProject(proj.id)}
+src/screens/ProjectsScreen.tsx:260:                    title="Duplicate Project"
+src/screens/ProjectsScreen.tsx:265:                    onClick={() => onDeleteProject(proj.id)}
+src/screens/ProjectsScreen.tsx:267:                    title="Delete Project"
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-real-generation:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-real-generation:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-real-generation:192:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/EditorScreen.tsx:26:  ProjectTimeline,
+src/screens/EditorScreen.tsx:37:  timeline: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/CaptionsScreen.tsx.backup:15:import { CaptionItem, CaptionStyle, ProjectTimeline } from '../types';
+src/screens/CaptionsScreen.tsx.backup:19:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/CaptionsScreen.tsx:15:import { CaptionItem, CaptionStyle, ProjectTimeline } from '../types';
+src/screens/CaptionsScreen.tsx:19:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:192:    const key = "vidoai.project.generatedOutputs";
+src/screens/AudioScreen.tsx:16:import { AudioTrackItem, ProjectTimeline } from '../types';
+src/screens/AudioScreen.tsx:21:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.generation-backup:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.generation-backup:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.generation-backup:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.generation-backup:192:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:210:    const key = "vidoai.project.generatedOutputs";
+src/screens/SettingsScreen.tsx:187:            All project edits and video timelines are safely stored locally on your device in your browser's persistent storage.
+src/screens/HomeScreen.tsx:18:import { AppScreen, ProjectTimeline, SavedProject, TimelineClip } from '../types';
+src/screens/HomeScreen.tsx:22:  onOpenProject: (timeline: ProjectTimeline) => void;
+src/screens/HomeScreen.tsx:23:  recentProjects?: SavedProject[];
+src/screens/HomeScreen.tsx:24:  onDeleteProject: (id: string) => void;
+src/screens/HomeScreen.tsx:25:  onDuplicateProject: (id: string) => void;
+src/screens/HomeScreen.tsx:26:  onCreateNewProjectWithFiles: (files: FileList) => void;
+src/screens/HomeScreen.tsx:27:  onCreateEmptyProject: () => void;
+src/screens/HomeScreen.tsx:32:  onOpenProject,
+src/screens/HomeScreen.tsx:33:  recentProjects = [],
+src/screens/HomeScreen.tsx:34:  onDeleteProject,
+src/screens/HomeScreen.tsx:35:  onDuplicateProject,
+src/screens/HomeScreen.tsx:36:  onCreateNewProjectWithFiles,
+src/screens/HomeScreen.tsx:37:  onCreateEmptyProject,
+src/screens/HomeScreen.tsx:39:  const safeProjects = recentProjects || [];
+src/screens/HomeScreen.tsx:48:      onCreateNewProjectWithFiles(e.target.files);
+src/screens/HomeScreen.tsx:103:        {/* PRIMARY ACTION: + NEW PROJECT CARD */}
+src/screens/HomeScreen.tsx:113:                Select video clips from your device or start a blank project.
+src/screens/HomeScreen.tsx:130:              onClick={onCreateEmptyProject}
+src/screens/HomeScreen.tsx:221:        {/* RECENT PROJECTS SECTION */}
+src/screens/HomeScreen.tsx:225:              Recent Projects ({safeProjects.length})
+src/screens/HomeScreen.tsx:228:              onClick={() => onNavigate('projects')}
+src/screens/HomeScreen.tsx:236:          {safeProjects.length === 0 ? (
+src/screens/HomeScreen.tsx:239:              <p className="text-xs text-neutral-400 font-medium">No projects saved yet</p>
+src/screens/HomeScreen.tsx:241:                Tap "+ New Project" above to create your first video.
+src/screens/HomeScreen.tsx:246:              {safeProjects.slice(0, 3).map((proj) => (
+src/screens/HomeScreen.tsx:252:                    onClick={() => onOpenProject(proj.timeline)}
+src/screens/HomeScreen.tsx:292:                      onClick={() => onDuplicateProject(proj.id)}
+src/screens/HomeScreen.tsx:299:                      onClick={() => onDeleteProject(proj.id)}
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:29:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:30:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:209:    const key = "vidoai.project.generatedOutputs";
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:20:import { AspectRatio, ProjectTimeline, ReelPreset, TimelineClip, ValidationReport } from '../types';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:28:  timeline?: ProjectTimeline;
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:29:  onApplyReel?: (newTimeline: ProjectTimeline) => void;
+src/App.tsx.before-types-import-fix-20260930-132833:44:  ProjectTimeline,
+src/App.tsx.before-types-import-fix-20260930-132833:50:  SavedProject
+src/App.tsx.before-types-import-fix-20260930-132833:67:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.before-types-import-fix-20260930-132833:73:import { projectStorage } from './services/projectStorage';
+src/App.tsx.before-types-import-fix-20260930-132833:77:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.before-types-import-fix-20260930-132833:140:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.before-types-import-fix-20260930-132833:142:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.before-types-import-fix-20260930-132833:145:  // Core Project State
+src/App.tsx.before-types-import-fix-20260930-132833:146:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.before-types-import-fix-20260930-132833:147:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-types-import-fix-20260930-132833:148:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-types-import-fix-20260930-132833:179:  // Restore autosaved project on mount
+src/App.tsx.before-types-import-fix-20260930-132833:182:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.before-types-import-fix-20260930-132833:195:  // Autosave project on updates to projectStorage
+src/App.tsx.before-types-import-fix-20260930-132833:198:      projectStorage.saveProject(timeline);
+src/App.tsx.before-types-import-fix-20260930-132833:199:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-types-import-fix-20260930-132833:212:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.before-types-import-fix-20260930-132833:249:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.before-types-import-fix-20260930-132833:253:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-types-import-fix-20260930-132833:255:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.before-types-import-fix-20260930-132833:263:  const handleCreateEmptyProject = () => {
+src/App.tsx.before-types-import-fix-20260930-132833:268:    showToast('Loaded Sample Demo Project');
+src/App.tsx.before-types-import-fix-20260930-132833:278:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.before-types-import-fix-20260930-132833:729:        projectName={timeline.name}
+src/App.tsx.before-types-import-fix-20260930-132833:734:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.before-types-import-fix-20260930-132833:736:                onOpenProject={(proj) => {
+src/App.tsx.before-types-import-fix-20260930-132833:741:                onDeleteProject={(id) => {
+src/App.tsx.before-types-import-fix-20260930-132833:742:                  projectStorage.deleteProject(id);
+src/App.tsx.before-types-import-fix-20260930-132833:743:                  showToast('Project deleted');
+src/App.tsx.before-types-import-fix-20260930-132833:745:                onDuplicateProject={(id) => {
+src/App.tsx.before-types-import-fix-20260930-132833:746:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-types-import-fix-20260930-132833:747:                  showToast('Project duplicated');
+src/App.tsx.before-types-import-fix-20260930-132833:749:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.before-types-import-fix-20260930-132833:750:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-types-import-fix-20260930-132833:830:            {currentScreen === 'projects' && (
+src/App.tsx.before-types-import-fix-20260930-132833:831:              <ProjectsScreen
+src/App.tsx.before-types-import-fix-20260930-132833:832:                projects={projectStorage.getProjects()}
+src/App.tsx.before-types-import-fix-20260930-132833:833:                onOpenProject={(proj) => {
+src/App.tsx.before-types-import-fix-20260930-132833:838:                onDeleteProject={(id) => {
+src/App.tsx.before-types-import-fix-20260930-132833:839:                  projectStorage.deleteProject(id);
+src/App.tsx.before-types-import-fix-20260930-132833:840:                  showToast('Project deleted');
+src/App.tsx.before-types-import-fix-20260930-132833:842:                onDuplicateProject={(id) => {
+src/App.tsx.before-types-import-fix-20260930-132833:843:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-types-import-fix-20260930-132833:844:                  showToast('Project duplicated');
+src/App.tsx.before-types-import-fix-20260930-132833:846:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-types-import-fix-20260930-132833:847:                onRenameProject={(id, newName) => {
+src/App.tsx.before-types-import-fix-20260930-132833:848:                  const all = projectStorage.getProjects();
+src/App.tsx.before-types-import-fix-20260930-132833:851:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.before-types-import-fix-20260930-132833:852:                    showToast('Project renamed');
+src/App.tsx.before-types-import-fix-20260930-132833:927:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.before-types-import-fix-20260930-132833:941:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.before-types-import-fix-20260930-132833:943:                currentScreen === 'projects'
+src/App.tsx.before-types-import-fix-20260930-132833:948:              <span className="text-[10px]">Projects</span>
+src/App.tsx.backup-20260930-122645:44:  ProjectTimeline,
+src/App.tsx.backup-20260930-122645:50:  SavedProject
+src/App.tsx.backup-20260930-122645:67:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.backup-20260930-122645:73:import { projectStorage } from './services/projectStorage';
+src/App.tsx.backup-20260930-122645:77:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.backup-20260930-122645:140:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.backup-20260930-122645:142:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.backup-20260930-122645:145:  // Core Project State
+src/App.tsx.backup-20260930-122645:146:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.backup-20260930-122645:147:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.backup-20260930-122645:148:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.backup-20260930-122645:179:  // Restore autosaved project on mount
+src/App.tsx.backup-20260930-122645:182:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.backup-20260930-122645:195:  // Autosave project on updates to projectStorage
+src/App.tsx.backup-20260930-122645:198:      projectStorage.saveProject(timeline);
+src/App.tsx.backup-20260930-122645:199:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.backup-20260930-122645:212:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.backup-20260930-122645:249:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.backup-20260930-122645:253:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.backup-20260930-122645:255:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.backup-20260930-122645:263:  const handleCreateEmptyProject = () => {
+src/App.tsx.backup-20260930-122645:268:    showToast('Loaded Sample Demo Project');
+src/App.tsx.backup-20260930-122645:278:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.backup-20260930-122645:729:        projectName={timeline.name}
+src/App.tsx.backup-20260930-122645:734:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.backup-20260930-122645:736:                onOpenProject={(proj) => {
+src/App.tsx.backup-20260930-122645:741:                onDeleteProject={(id) => {
+src/App.tsx.backup-20260930-122645:742:                  projectStorage.deleteProject(id);
+src/App.tsx.backup-20260930-122645:743:                  showToast('Project deleted');
+src/App.tsx.backup-20260930-122645:745:                onDuplicateProject={(id) => {
+src/App.tsx.backup-20260930-122645:746:                  projectStorage.duplicateProject(id);
+src/App.tsx.backup-20260930-122645:747:                  showToast('Project duplicated');
+src/App.tsx.backup-20260930-122645:749:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.backup-20260930-122645:750:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.backup-20260930-122645:830:            {currentScreen === 'projects' && (
+src/App.tsx.backup-20260930-122645:831:              <ProjectsScreen
+src/App.tsx.backup-20260930-122645:832:                projects={projectStorage.getProjects()}
+src/App.tsx.backup-20260930-122645:833:                onOpenProject={(proj) => {
+src/App.tsx.backup-20260930-122645:838:                onDeleteProject={(id) => {
+src/App.tsx.backup-20260930-122645:839:                  projectStorage.deleteProject(id);
+src/App.tsx.backup-20260930-122645:840:                  showToast('Project deleted');
+src/App.tsx.backup-20260930-122645:842:                onDuplicateProject={(id) => {
+src/App.tsx.backup-20260930-122645:843:                  projectStorage.duplicateProject(id);
+src/App.tsx.backup-20260930-122645:844:                  showToast('Project duplicated');
+src/App.tsx.backup-20260930-122645:846:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.backup-20260930-122645:847:                onRenameProject={(id, newName) => {
+src/App.tsx.backup-20260930-122645:848:                  const all = projectStorage.getProjects();
+src/App.tsx.backup-20260930-122645:851:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.backup-20260930-122645:852:                    showToast('Project renamed');
+src/App.tsx.backup-20260930-122645:927:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.backup-20260930-122645:941:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.backup-20260930-122645:943:                currentScreen === 'projects'
+src/App.tsx.backup-20260930-122645:948:              <span className="text-[10px]">Projects</span>
+src/App.tsx:45:  ProjectTimeline,
+src/App.tsx:51:  SavedProject
+src/App.tsx:68:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx:74:import { projectStorage } from './services/projectStorage';
+src/App.tsx:78:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx:141:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx:143:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx:146:  // Core Project State
+src/App.tsx:147:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx:148:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx:149:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx:180:  // Restore autosaved project on mount
+src/App.tsx:183:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx:196:  // Autosave project on updates to projectStorage
+src/App.tsx:199:      projectStorage.saveProject(timeline);
+src/App.tsx:200:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx:213:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx:250:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx:254:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx:256:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx:264:  const handleCreateEmptyProject = () => {
+src/App.tsx:269:    showToast('Loaded Sample Demo Project');
+src/App.tsx:279:    (newTimeline: ProjectTimeline) => {
+src/App.tsx:730:        projectName={timeline.name}
+src/App.tsx:736:                recentProjects={projectStorage.getProjects()}
+src/App.tsx:738:                onOpenProject={(proj) => {
+src/App.tsx:743:                onDeleteProject={(id) => {
+src/App.tsx:744:                  projectStorage.deleteProject(id);
+src/App.tsx:745:                  showToast('Project deleted');
+src/App.tsx:747:                onDuplicateProject={(id) => {
+src/App.tsx:748:                  projectStorage.duplicateProject(id);
+src/App.tsx:749:                  showToast('Project duplicated');
+src/App.tsx:751:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx:752:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx:832:            {currentScreen === 'projects' && (
+src/App.tsx:833:              <ProjectsScreen
+src/App.tsx:834:                projects={projectStorage.getProjects()}
+src/App.tsx:835:                onOpenProject={(proj) => {
+src/App.tsx:840:                onDeleteProject={(id) => {
+src/App.tsx:841:                  projectStorage.deleteProject(id);
+src/App.tsx:842:                  showToast('Project deleted');
+src/App.tsx:844:                onDuplicateProject={(id) => {
+src/App.tsx:845:                  projectStorage.duplicateProject(id);
+src/App.tsx:846:                  showToast('Project duplicated');
+src/App.tsx:848:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx:849:                onRenameProject={(id, newName) => {
+src/App.tsx:850:                  const all = projectStorage.getProjects();
+src/App.tsx:853:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx:854:                    showToast('Project renamed');
+src/App.tsx:929:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx:944:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx:946:                currentScreen === 'projects'
+src/App.tsx:952:              <span className="text-[10px]">Projects</span>
+src/core/aggregation/README.md:15:Knowledge/Project State
+src/core/aggregation/README.md:57:Existing project data remains authoritative.
+src/core/multiproject/ProjectIsolation.ts:1:import { Project } from "./MultiProjectOrchestrator";
+src/core/multiproject/ProjectIsolation.ts:3:export interface ProjectIsolationContext {
+src/core/multiproject/ProjectIsolation.ts:4:  projectId: string;
+src/core/multiproject/ProjectIsolation.ts:10:export class ProjectIsolation {
+src/core/multiproject/ProjectIsolation.ts:11:  create(project: Project): ProjectIsolationContext {
+src/core/multiproject/ProjectIsolation.ts:13:      projectId: project.id,
+src/core/multiproject/ProjectIsolation.ts:14:      namespace: `project:${project.id}`,
+src/core/multiproject/ProjectIsolation.ts:15:      dataBoundary: `data:${project.id}`,
+src/core/multiproject/ProjectIsolation.ts:16:      resourceBoundary: `resources:${project.id}`,
+src/core/multiproject/index.ts:1:export * from "./MultiProjectOrchestrator";
+src/core/multiproject/index.ts:2:export * from "./ProjectResourceScheduler";
+src/core/multiproject/index.ts:3:export * from "./ProjectIsolation";
+src/core/multiproject/index.ts:4:export * from "./ProjectRecovery";
+src/core/multiproject/ProjectResourceScheduler.ts:2:  Project,
+src/core/multiproject/ProjectResourceScheduler.ts:3:  ProjectTask,
+src/core/multiproject/ProjectResourceScheduler.ts:4:} from "./MultiProjectOrchestrator";
+src/core/multiproject/ProjectResourceScheduler.ts:14:export class ProjectResourceScheduler {
+src/core/multiproject/ProjectResourceScheduler.ts:15:  selectProjects(
+src/core/multiproject/ProjectResourceScheduler.ts:16:    projects: Project[],
+src/core/multiproject/ProjectResourceScheduler.ts:20:    const candidates = projects.filter(
+src/core/multiproject/ProjectResourceScheduler.ts:21:      project =>
+src/core/multiproject/ProjectResourceScheduler.ts:22:        project.status !== "COMPLETED" &&
+src/core/multiproject/ProjectResourceScheduler.ts:23:        project.status !== "FAILED"
+src/core/multiproject/ProjectResourceScheduler.ts:26:    const selected: Project[] = [];
+src/core/multiproject/ProjectResourceScheduler.ts:28:    for (const project of candidates) {
+src/core/multiproject/ProjectResourceScheduler.ts:31:      const budget = project.resourceBudget ?? {};
+src/core/multiproject/ProjectResourceScheduler.ts:40:        selected.push(project);
+src/core/multiproject/ProjectResourceScheduler.ts:48:    tasks: ProjectTask[],
+src/core/multiproject/ProjectRecovery.ts:1:import { ProjectExecutionState } from "./MultiProjectOrchestrator";
+src/core/multiproject/ProjectRecovery.ts:3:export class ProjectRecovery {
+src/core/multiproject/ProjectRecovery.ts:5:    state: ProjectExecutionState
+src/core/multiproject/ProjectRecovery.ts:11:    checkpoint: ProjectExecutionState
+src/core/multiproject/MultiProjectOrchestrator.ts:1:export type ProjectStatus =
+src/core/multiproject/MultiProjectOrchestrator.ts:10:export type ProjectPriority =
+src/core/multiproject/MultiProjectOrchestrator.ts:16:export interface ProjectTask {
+src/core/multiproject/MultiProjectOrchestrator.ts:18:  projectId: string;
+src/core/multiproject/MultiProjectOrchestrator.ts:25:export interface Project {
+src/core/multiproject/MultiProjectOrchestrator.ts:29:  priority: ProjectPriority;
+src/core/multiproject/MultiProjectOrchestrator.ts:30:  status: ProjectStatus;
+src/core/multiproject/MultiProjectOrchestrator.ts:31:  tasks: ProjectTask[];
+src/core/multiproject/MultiProjectOrchestrator.ts:42:export interface ProjectExecutionState {
+src/core/multiproject/MultiProjectOrchestrator.ts:43:  projectId: string;
+src/core/multiproject/MultiProjectOrchestrator.ts:50:const priorityRank: Record<ProjectPriority, number> = {
+src/core/multiproject/MultiProjectOrchestrator.ts:57:export class MultiProjectOrchestrator {
+src/core/multiproject/MultiProjectOrchestrator.ts:58:  private projects = new Map<string, Project>();
+src/core/multiproject/MultiProjectOrchestrator.ts:59:  private states = new Map<string, ProjectExecutionState>();
+src/core/multiproject/MultiProjectOrchestrator.ts:61:  register(project: Project) {
+src/core/multiproject/MultiProjectOrchestrator.ts:62:    if (!this.projects.has(project.id)) {
+src/core/multiproject/MultiProjectOrchestrator.ts:63:      this.projects.set(project.id, { ...project });
+src/core/multiproject/MultiProjectOrchestrator.ts:64:      this.states.set(project.id, {
+src/core/multiproject/MultiProjectOrchestrator.ts:65:        projectId: project.id,
+src/core/multiproject/MultiProjectOrchestrator.ts:72:    return this.projects.get(project.id);
+src/core/multiproject/MultiProjectOrchestrator.ts:75:  get(projectId: string) {
+src/core/multiproject/MultiProjectOrchestrator.ts:76:    return this.projects.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:80:    return [...this.projects.values()];
+src/core/multiproject/MultiProjectOrchestrator.ts:84:    return [...this.projects.values()]
+src/core/multiproject/MultiProjectOrchestrator.ts:86:        project =>
+src/core/multiproject/MultiProjectOrchestrator.ts:87:          project.status !== "COMPLETED" &&
+src/core/multiproject/MultiProjectOrchestrator.ts:88:          project.status !== "FAILED"
+src/core/multiproject/MultiProjectOrchestrator.ts:100:  runnableTasks(projectId: string) {
+src/core/multiproject/MultiProjectOrchestrator.ts:101:    const project = this.projects.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:102:    const state = this.states.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:104:    if (!project || !state) return [];
+src/core/multiproject/MultiProjectOrchestrator.ts:108:    return project.tasks.filter(task => {
+src/core/multiproject/MultiProjectOrchestrator.ts:118:    projectId: string,
+src/core/multiproject/MultiProjectOrchestrator.ts:119:    patch: Partial<ProjectExecutionState>
+src/core/multiproject/MultiProjectOrchestrator.ts:121:    const current = this.states.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:130:    this.states.set(projectId, updated);
+src/core/multiproject/MultiProjectOrchestrator.ts:134:  complete(projectId: string) {
+src/core/multiproject/MultiProjectOrchestrator.ts:135:    const project = this.projects.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:137:    if (!project) return;
+src/core/multiproject/MultiProjectOrchestrator.ts:139:    project.status = "COMPLETED";
+src/core/multiproject/MultiProjectOrchestrator.ts:140:    this.projects.set(projectId, project);
+src/core/multiproject/MultiProjectOrchestrator.ts:143:  fail(projectId: string) {
+src/core/multiproject/MultiProjectOrchestrator.ts:144:    const project = this.projects.get(projectId);
+src/core/multiproject/MultiProjectOrchestrator.ts:146:    if (!project) return;
+src/core/multiproject/MultiProjectOrchestrator.ts:148:    project.status = "FAILED";
+src/core/multiproject/MultiProjectOrchestrator.ts:149:    this.projects.set(projectId, project);
+src/core/multiproject/MultiProjectOrchestrator.ts:153:    return [...this.projects.values()].filter(
+src/core/multiproject/MultiProjectOrchestrator.ts:154:      project => project.status === "RUNNING"
+src/core/law/UniversalLawEngine.ts:8:  | "PROJECT"
+src/core/assistant/VidoAIAssistantCore.ts:13:  projectState?: unknown;
+src/core/assistant/VidoAIAssistantCore.ts:52:      "Use available project context",
+src/core/identity/IdentityContextLayer.ts:3:  projectId?: string;
+src/core/projection/ProjectionEngine.ts:1:export interface Projection {
+src/core/projection/ProjectionEngine.ts:11:export interface ProjectionContext {
+src/core/projection/ProjectionEngine.ts:18:export class ProjectionEngine {
+src/core/projection/ProjectionEngine.ts:19:  project(context: ProjectionContext): Projection[] {
+src/core/projection/ProjectionEngine.ts:24:        id: `projection-${Date.now()}-1`,
+src/core/projection/ProjectionEngine.ts:33:        id: `projection-${Date.now()}-2`,
+src/core/projection/ProjectionEngine.ts:42:        id: `projection-${Date.now()}-3`,
+src/core/projection/index.ts:1:export * from "./ProjectionEngine";
+src/core/humancapability/HumanCapabilityOrchestrator.ts:14:  | "MANAGE_PROJECTS"
+src/core/humancapability/registerHumanCapabilities.ts:22:    "MANAGE_PROJECTS",
+src/core/creator/CreatorEngine.ts:7:  | "PROJECT"
+src/core/movement/UniversalMovementEngine.ts:10:  | "PROJECT"
+src/core/fullstack/ProjectContext.ts:1:export interface ProjectFile {
+src/core/fullstack/ProjectContext.ts:12:export interface ProjectContext {
+src/core/fullstack/ProjectContext.ts:14:  files: ProjectFile[];
+src/core/fullstack/ProjectContext.ts:21:export function classifyFile(path: string): ProjectFile {
+src/core/fullstack/ProjectContext.ts:28:  let layer: ProjectFile['layer'] = 'unknown';
+src/core/fullstack/index.ts:5:export * from './ProjectContext';
+src/core/researchcenter/RunningResearchCenter.ts:23:export interface ResearchProject {
+src/core/researchcenter/RunningResearchCenter.ts:37:  private projects = new Map<string, ResearchProject>();
+src/core/researchcenter/RunningResearchCenter.ts:39:  createProject(input: Omit<ResearchProject, "createdAt" | "updatedAt">): ResearchProject {
+src/core/researchcenter/RunningResearchCenter.ts:42:    const project: ResearchProject = {
+src/core/researchcenter/RunningResearchCenter.ts:48:    this.projects.set(project.id, project);
+src/core/researchcenter/RunningResearchCenter.ts:49:    return project;
+src/core/researchcenter/RunningResearchCenter.ts:52:  updateProject(id: string, patch: Partial<ResearchProject>): ResearchProject | undefined {
+src/core/researchcenter/RunningResearchCenter.ts:53:    const current = this.projects.get(id);
+src/core/researchcenter/RunningResearchCenter.ts:56:    const updated: ResearchProject = {
+src/core/researchcenter/RunningResearchCenter.ts:64:    this.projects.set(id, updated);
+src/core/researchcenter/RunningResearchCenter.ts:68:  getProject(id: string): ResearchProject | undefined {
+src/core/researchcenter/RunningResearchCenter.ts:69:    return this.projects.get(id);
+src/core/researchcenter/RunningResearchCenter.ts:72:  listProjects(): ResearchProject[] {
+src/core/researchcenter/RunningResearchCenter.ts:73:    return [...this.projects.values()];
+src/core/researchcenter/RunningResearchCenter.ts:77:    this.updateProject(id, { state: "PAUSED" });
+src/core/researchcenter/RunningResearchCenter.ts:81:    this.updateProject(id, { state: "DISCOVERING" });
+src/core/projectawareness/index.ts:1:export * from "./ProjectAwareness";
+src/core/projectawareness/ProjectAwareness.ts:1:export type ProjectState = {
+src/core/projectawareness/ProjectAwareness.ts:16:export class ProjectAwareness {
+src/core/projectawareness/ProjectAwareness.ts:17:  private state: ProjectState = {
+src/core/projectawareness/ProjectAwareness.ts:26:  update(partial: Partial<ProjectState>) {
+src/core/worlds/InternalWorldRegistry.ts:11:  | "PROJECT"
+src/core/editing/UniversalEditingEngine.ts:9:  | "PROJECT"
+src/core/mind/AutonomousMind.ts:132:      nextStep: "Validate result and update project memory.",
+src/core/gap/GapUtilizationEngine.ts:61:          "Evaluate it for an existing incomplete or planned project."
+src/core/integrity/SystemIntegrity.ts:87:  audit(projectRoot: string): IntegrityReport {
+src/core/fastagent/FastProjectAgent.ts:17:export class FastProjectAgent {
+src/core/fastagent/FastProjectAgent.ts:27:        summary: "No project evidence available.",
+src/core/fastagent/FastProjectAgent.ts:35:      summary: "Project evidence received and ready for analysis.",
+src/core/fastagent/index.ts:1:export * from "./FastProjectAgent";
+src/core/orchestrator/registerExisting.ts:10:    ["project-awareness", "Project Awareness"],
+src/core/orchestrator/registerExisting.ts:22:    ["fast-agent", "Fast Project Agent"],
+src/core/centers/ResearchProjectBuilderCenter.ts:2:import { ProjectBuilderCenter } from "../projectbuilder";
+src/core/centers/ResearchProjectBuilderCenter.ts:4:export class ResearchProjectBuilderCenter {
+src/core/centers/ResearchProjectBuilderCenter.ts:6:  readonly builder = new ProjectBuilderCenter();
+src/core/centers/ResearchProjectBuilderCenter.ts:9:   * Research can become an input to project construction.
+src/core/centers/ResearchProjectBuilderCenter.ts:13:  createResearchDrivenProject(
+src/core/centers/ResearchProjectBuilderCenter.ts:15:    projectId: string,
+src/core/centers/ResearchProjectBuilderCenter.ts:16:    projectName: string,
+src/core/centers/ResearchProjectBuilderCenter.ts:19:    const research = this.research.getProject(researchId);
+src/core/centers/ResearchProjectBuilderCenter.ts:22:      throw new Error(`Research project not found: ${researchId}`);
+src/core/centers/ResearchProjectBuilderCenter.ts:25:    return this.builder.createProject({
+src/core/centers/ResearchProjectBuilderCenter.ts:26:      id: projectId,
+src/core/centers/ResearchProjectBuilderCenter.ts:27:      name: projectName,
+src/core/centers/ResearchProjectBuilderCenter.ts:32:          id: `${projectId}-research`,
+src/core/centers/ResearchProjectBuilderCenter.ts:38:          id: `${projectId}-architecture`,
+src/core/centers/ResearchProjectBuilderCenter.ts:39:          title: "Create project architecture",
+src/core/centers/ResearchProjectBuilderCenter.ts:40:          dependencies: [`${projectId}-research`],
+src/core/centers/ResearchProjectBuilderCenter.ts:44:          id: `${projectId}-build`,
+src/core/centers/ResearchProjectBuilderCenter.ts:45:          title: "Build project",
+src/core/centers/ResearchProjectBuilderCenter.ts:46:          dependencies: [`${projectId}-architecture`],
+src/core/centers/ResearchProjectBuilderCenter.ts:50:          id: `${projectId}-verify`,
+src/core/centers/ResearchProjectBuilderCenter.ts:52:          dependencies: [`${projectId}-build`],
+src/core/centers/index.ts:1:export * from "./ResearchProjectBuilderCenter";
+src/core/cloud/CloudDataTypes.ts:2:  | 'project'
+src/core/cloud/CloudDataTypes.ts:26:  projectId: string;
+src/core/projectbuilder/ProjectBuilderCenter.ts:2: * VidoAI Running Project Builder Center
+src/core/projectbuilder/ProjectBuilderCenter.ts:4: * Project lifecycle:
+src/core/projectbuilder/ProjectBuilderCenter.ts:11:export type ProjectBuildState =
+src/core/projectbuilder/ProjectBuilderCenter.ts:33:export interface ManagedProject {
+src/core/projectbuilder/ProjectBuilderCenter.ts:37:  state: ProjectBuildState;
+src/core/projectbuilder/ProjectBuilderCenter.ts:43:export class ProjectBuilderCenter {
+src/core/projectbuilder/ProjectBuilderCenter.ts:44:  private projects = new Map<string, ManagedProject>();
+src/core/projectbuilder/ProjectBuilderCenter.ts:46:  createProject(input: Omit<ManagedProject, "createdAt" | "updatedAt">): ManagedProject {
+src/core/projectbuilder/ProjectBuilderCenter.ts:49:    const project: ManagedProject = {
+src/core/projectbuilder/ProjectBuilderCenter.ts:55:    this.projects.set(project.id, project);
+src/core/projectbuilder/ProjectBuilderCenter.ts:56:    return project;
+src/core/projectbuilder/ProjectBuilderCenter.ts:59:  updateState(id: string, state: ProjectBuildState): ManagedProject | undefined {
+src/core/projectbuilder/ProjectBuilderCenter.ts:60:    const project = this.projects.get(id);
+src/core/projectbuilder/ProjectBuilderCenter.ts:61:    if (!project) return undefined;
+src/core/projectbuilder/ProjectBuilderCenter.ts:63:    project.state = state;
+src/core/projectbuilder/ProjectBuilderCenter.ts:64:    project.updatedAt = Date.now();
+src/core/projectbuilder/ProjectBuilderCenter.ts:65:    this.projects.set(id, project);
+src/core/projectbuilder/ProjectBuilderCenter.ts:67:    return project;
+src/core/projectbuilder/ProjectBuilderCenter.ts:70:  addTask(id: string, task: BuildTask): ManagedProject | undefined {
+src/core/projectbuilder/ProjectBuilderCenter.ts:71:    const project = this.projects.get(id);
+src/core/projectbuilder/ProjectBuilderCenter.ts:72:    if (!project) return undefined;
+src/core/projectbuilder/ProjectBuilderCenter.ts:74:    project.tasks.push(task);
+src/core/projectbuilder/ProjectBuilderCenter.ts:75:    project.updatedAt = Date.now();
+src/core/projectbuilder/ProjectBuilderCenter.ts:76:    this.projects.set(id, project);
+src/core/projectbuilder/ProjectBuilderCenter.ts:78:    return project;
+src/core/projectbuilder/ProjectBuilderCenter.ts:81:  listProjects(): ManagedProject[] {
+src/core/projectbuilder/ProjectBuilderCenter.ts:82:    return [...this.projects.values()];
+src/core/projectbuilder/index.ts:1:export * from "./ProjectBuilderCenter";
+src/core/commandsafety/CommandSafety.ts:59:        reason: "Command primarily inspects project state."
+src/core/universal/types/SystemTypes.ts:15:  projectId?: string;
+src/core/universal/UniversalSystem.ts:86:      return ["validate project", "prepare export", "export media", "verify export"];
+src/core/systembuilder/SystemTemplates.ts:18:      "Projects",
+src/core/planning/AdvancedPlanner.ts:33:  projections?: unknown[];
+src/core/planning/AdvancedPlanner.ts:74:        "Projection confidence decreases with time horizon.",
+src/core/projectexpansion/SpaceTimeProjectPlanner.ts:1:export interface ProjectSchedule {
+src/core/projectexpansion/SpaceTimeProjectPlanner.ts:8:export class SpaceTimeProjectPlanner {
+src/core/projectexpansion/SpaceTimeProjectPlanner.ts:13:  ): ProjectSchedule[] {
+src/core/projectexpansion/index.ts:1:export * from "./MassiveProjectEngine";
+src/core/projectexpansion/index.ts:2:export * from "./SpaceTimeProjectPlanner";
+src/core/projectexpansion/MassiveProjectEngine.ts:1:export interface ProjectNode {
+src/core/projectexpansion/MassiveProjectEngine.ts:10:  projectId: string;
+src/core/projectexpansion/MassiveProjectEngine.ts:12:  nodes: ProjectNode[];
+src/core/projectexpansion/MassiveProjectEngine.ts:16:export class MassiveProjectEngine {
+src/core/projectexpansion/MassiveProjectEngine.ts:18:    projectId: string,
+src/core/projectexpansion/MassiveProjectEngine.ts:23:      id: `${projectId}-${index + 1}`,
+src/core/projectexpansion/MassiveProjectEngine.ts:29:      projectId,
+src/App.tsx.before-master-repair-20260930-132640:44:  ProjectTimeline,
+src/App.tsx.before-master-repair-20260930-132640:50:  SavedProject
+src/App.tsx.before-master-repair-20260930-132640:67:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.before-master-repair-20260930-132640:73:import { projectStorage } from './services/projectStorage';
+src/App.tsx.before-master-repair-20260930-132640:77:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.before-master-repair-20260930-132640:140:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.before-master-repair-20260930-132640:142:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.before-master-repair-20260930-132640:145:  // Core Project State
+src/App.tsx.before-master-repair-20260930-132640:146:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.before-master-repair-20260930-132640:147:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-master-repair-20260930-132640:148:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-master-repair-20260930-132640:179:  // Restore autosaved project on mount
+src/App.tsx.before-master-repair-20260930-132640:182:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.before-master-repair-20260930-132640:195:  // Autosave project on updates to projectStorage
+src/App.tsx.before-master-repair-20260930-132640:198:      projectStorage.saveProject(timeline);
+src/App.tsx.before-master-repair-20260930-132640:199:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-master-repair-20260930-132640:212:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.before-master-repair-20260930-132640:249:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.before-master-repair-20260930-132640:253:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-master-repair-20260930-132640:255:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.before-master-repair-20260930-132640:263:  const handleCreateEmptyProject = () => {
+src/App.tsx.before-master-repair-20260930-132640:268:    showToast('Loaded Sample Demo Project');
+src/App.tsx.before-master-repair-20260930-132640:278:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.before-master-repair-20260930-132640:729:        projectName={timeline.name}
+src/App.tsx.before-master-repair-20260930-132640:734:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.before-master-repair-20260930-132640:736:                onOpenProject={(proj) => {
+src/App.tsx.before-master-repair-20260930-132640:741:                onDeleteProject={(id) => {
+src/App.tsx.before-master-repair-20260930-132640:742:                  projectStorage.deleteProject(id);
+src/App.tsx.before-master-repair-20260930-132640:743:                  showToast('Project deleted');
+src/App.tsx.before-master-repair-20260930-132640:745:                onDuplicateProject={(id) => {
+src/App.tsx.before-master-repair-20260930-132640:746:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-master-repair-20260930-132640:747:                  showToast('Project duplicated');
+src/App.tsx.before-master-repair-20260930-132640:749:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.before-master-repair-20260930-132640:750:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-master-repair-20260930-132640:830:            {currentScreen === 'projects' && (
+src/App.tsx.before-master-repair-20260930-132640:831:              <ProjectsScreen
+src/App.tsx.before-master-repair-20260930-132640:832:                projects={projectStorage.getProjects()}
+src/App.tsx.before-master-repair-20260930-132640:833:                onOpenProject={(proj) => {
+src/App.tsx.before-master-repair-20260930-132640:838:                onDeleteProject={(id) => {
+src/App.tsx.before-master-repair-20260930-132640:839:                  projectStorage.deleteProject(id);
+src/App.tsx.before-master-repair-20260930-132640:840:                  showToast('Project deleted');
+src/App.tsx.before-master-repair-20260930-132640:842:                onDuplicateProject={(id) => {
+src/App.tsx.before-master-repair-20260930-132640:843:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-master-repair-20260930-132640:844:                  showToast('Project duplicated');
+src/App.tsx.before-master-repair-20260930-132640:846:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-master-repair-20260930-132640:847:                onRenameProject={(id, newName) => {
+src/App.tsx.before-master-repair-20260930-132640:848:                  const all = projectStorage.getProjects();
+src/App.tsx.before-master-repair-20260930-132640:851:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.before-master-repair-20260930-132640:852:                    showToast('Project renamed');
+src/App.tsx.before-master-repair-20260930-132640:927:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.before-master-repair-20260930-132640:941:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.before-master-repair-20260930-132640:943:                currentScreen === 'projects'
+src/App.tsx.before-master-repair-20260930-132640:948:              <span className="text-[10px]">Projects</span>
+src/App.tsx.before-jsx-tag-repair-20260930-133132:45:  ProjectTimeline,
+src/App.tsx.before-jsx-tag-repair-20260930-133132:51:  SavedProject
+src/App.tsx.before-jsx-tag-repair-20260930-133132:68:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.before-jsx-tag-repair-20260930-133132:74:import { projectStorage } from './services/projectStorage';
+src/App.tsx.before-jsx-tag-repair-20260930-133132:78:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:141:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.before-jsx-tag-repair-20260930-133132:143:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.before-jsx-tag-repair-20260930-133132:146:  // Core Project State
+src/App.tsx.before-jsx-tag-repair-20260930-133132:147:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:148:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:149:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:180:  // Restore autosaved project on mount
+src/App.tsx.before-jsx-tag-repair-20260930-133132:183:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:196:  // Autosave project on updates to projectStorage
+src/App.tsx.before-jsx-tag-repair-20260930-133132:199:      projectStorage.saveProject(timeline);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:200:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-jsx-tag-repair-20260930-133132:213:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:250:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:254:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.before-jsx-tag-repair-20260930-133132:256:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:264:  const handleCreateEmptyProject = () => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:269:    showToast('Loaded Sample Demo Project');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:279:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:730:        projectName={timeline.name}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:735:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:737:                onOpenProject={(proj) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:742:                onDeleteProject={(id) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:743:                  projectStorage.deleteProject(id);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:744:                  showToast('Project deleted');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:746:                onDuplicateProject={(id) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:747:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:748:                  showToast('Project duplicated');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:750:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:751:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:831:            {currentScreen === 'projects' && (
+src/App.tsx.before-jsx-tag-repair-20260930-133132:832:              <ProjectsScreen
+src/App.tsx.before-jsx-tag-repair-20260930-133132:833:                projects={projectStorage.getProjects()}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:834:                onOpenProject={(proj) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:839:                onDeleteProject={(id) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:840:                  projectStorage.deleteProject(id);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:841:                  showToast('Project deleted');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:843:                onDuplicateProject={(id) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:844:                  projectStorage.duplicateProject(id);
+src/App.tsx.before-jsx-tag-repair-20260930-133132:845:                  showToast('Project duplicated');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:847:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:848:                onRenameProject={(id, newName) => {
+src/App.tsx.before-jsx-tag-repair-20260930-133132:849:                  const all = projectStorage.getProjects();
+src/App.tsx.before-jsx-tag-repair-20260930-133132:852:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.before-jsx-tag-repair-20260930-133132:853:                    showToast('Project renamed');
+src/App.tsx.before-jsx-tag-repair-20260930-133132:928:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:942:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.before-jsx-tag-repair-20260930-133132:944:                currentScreen === 'projects'
+src/App.tsx.before-jsx-tag-repair-20260930-133132:949:              <span className="text-[10px]">Projects</span>
+src/services/GeneratedOutputStore.ts:1:export type GeneratedOutput = {
+src/services/GeneratedOutputStore.ts:11:const STORAGE_KEY = "vidoai.project.generatedOutputs";
+src/services/GeneratedOutputStore.ts:13:export function getGeneratedOutputs(): GeneratedOutput[] {
+src/services/GeneratedOutputStore.ts:24:export function saveGeneratedOutput(
+src/services/GeneratedOutputStore.ts:25:  output: GeneratedOutput
+src/services/GeneratedOutputStore.ts:26:): GeneratedOutput[] {
+src/services/GeneratedOutputStore.ts:27:  const outputs = getGeneratedOutputs();
+src/services/GeneratedOutputStore.ts:43:export function removeGeneratedOutput(id: string): void {
+src/services/GeneratedOutputStore.ts:44:  const next = getGeneratedOutputs().filter(
+src/services/generation/GeneratedOutputStore.ts:1:export interface GeneratedOutput {
+src/services/generation/GeneratedOutputStore.ts:14:const read = (): GeneratedOutput[] => {
+src/services/generation/GeneratedOutputStore.ts:24:const write = (items: GeneratedOutput[]) => {
+src/services/generation/GeneratedOutputStore.ts:28:export const GeneratedOutputStore = {
+src/services/generation/GeneratedOutputStore.ts:29:  list(): GeneratedOutput[] {
+src/services/generation/GeneratedOutputStore.ts:34:    output: Omit<GeneratedOutput, "id" | "createdAt">
+src/services/generation/GeneratedOutputStore.ts:35:  ): GeneratedOutput {
+src/services/generation/GeneratedOutputStore.ts:44:    const item: GeneratedOutput = {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:1:export interface GeneratedOutput {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:14:const read = (): GeneratedOutput[] => {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:24:const write = (items: GeneratedOutput[]) => {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:28:export const GeneratedOutputStore = {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:29:  list(): GeneratedOutput[] {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:34:    output: Omit<GeneratedOutput, "id" | "createdAt">
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:35:  ): GeneratedOutput {
+src/services/generation/GeneratedOutputStore.ts.before-ui-sync:36:    const item: GeneratedOutput = {
+src/services/aiProvider/AiEditPlanner.ts:1:import { AiEditOperation, AiPlanItem, ProjectTimeline, ReelPreset } from '../../types';
+src/services/aiProvider/AiEditPlanner.ts:16:  static analyzePlan(operations: AiEditOperation[], timeline: ProjectTimeline): PlanAnalysis {
+src/services/aiProvider/AiEditPlanner.ts:123:            description: `Switch project canvas to ${hasAspectChange}`,
+src/services/aiProvider/AiEditPlanner.ts:354:          hookStyle: 'Save this for your next project ✨',
+src/services/aiProvider/GeminiProvider.ts:1:import { ProjectTimeline } from '../../types';
+src/services/aiProvider/GeminiProvider.ts:7:  timeline: ProjectTimeline;
+src/services/ai/ScriptTimelineAdapter.ts:1:import type { AiScriptResponse, CaptionItem, ProjectTimeline, TimelineClip } from '../../types';
+src/services/ai/ScriptTimelineAdapter.ts:33:  timeline: ProjectTimeline,
+src/services/ai/ScriptTimelineAdapter.ts:34:): ProjectTimeline {
+src/services/ai/ScriptTimelineAdapter.ts.before-timeline-type-fix-20261001-145211:1:import type { AiScriptResponse, CaptionItem, ProjectTimeline, TimelineClip } from '../../types';
+src/services/ai/ScriptTimelineAdapter.ts.before-timeline-type-fix-20261001-145211:33:  timeline: ProjectTimeline,
+src/services/ai/ScriptTimelineAdapter.ts.before-timeline-type-fix-20261001-145211:34:): ProjectTimeline {
+src/services/commandTransaction.ts:4:  ProjectTimeline,
+src/services/commandTransaction.ts:10:  originalSnapshot: ProjectTimeline;
+src/services/commandTransaction.ts:11:  draftTimeline: ProjectTimeline;
+src/services/commandTransaction.ts:19:  newTimeline: ProjectTimeline;
+src/services/commandTransaction.ts:33:  static beginTransaction(timeline: ProjectTimeline): TransactionSession {
+src/services/commandTransaction.ts:34:    const originalSnapshot: ProjectTimeline = JSON.parse(JSON.stringify(timeline));
+src/services/commandTransaction.ts:35:    const draftTimeline: ProjectTimeline = JSON.parse(JSON.stringify(timeline));
+src/services/commandTransaction.ts:478:  currentTimeline: ProjectTimeline,
+src/services/projectStorage.ts:1:import { ProjectTimeline, SavedProject, TimelineClip } from '../types';
+src/services/projectStorage.ts:4:const STORAGE_KEY = 'vidoai_saved_projects_v2';
+src/services/projectStorage.ts:5:const CURRENT_PROJECT_KEY = 'vidoai_active_project_id';
+src/services/projectStorage.ts:7:export const DEFAULT_INITIAL_PROJECT: ProjectTimeline = {
+src/services/projectStorage.ts:67:export const projectStorage = {
+src/services/projectStorage.ts:68:  getProjects(): SavedProject[] {
+src/services/projectStorage.ts:72:        // Seed default initial project
+src/services/projectStorage.ts:73:        const defaultSaved: SavedProject = {
+src/services/projectStorage.ts:74:          id: DEFAULT_INITIAL_PROJECT.id,
+src/services/projectStorage.ts:75:          name: DEFAULT_INITIAL_PROJECT.name,
+src/services/projectStorage.ts:76:          timeline: DEFAULT_INITIAL_PROJECT,
+src/services/projectStorage.ts:77:          thumbnailUrl: DEFAULT_INITIAL_PROJECT.clips[0]?.thumbnail,
+src/services/projectStorage.ts:81:        const sample2: SavedProject = {
+src/services/projectStorage.ts:85:            ...DEFAULT_INITIAL_PROJECT,
+src/services/projectStorage.ts:101:      console.warn('Failed to parse saved projects:', e);
+src/services/projectStorage.ts:106:  saveProject(timeline: ProjectTimeline): void {
+src/services/projectStorage.ts:108:      const projects = this.getProjects();
+src/services/projectStorage.ts:115:      const existingIdx = projects.findIndex((p) => p.id === timeline.id);
+src/services/projectStorage.ts:116:      const entry: SavedProject = {
+src/services/projectStorage.ts:118:        name: timeline.name || 'Untitled Project',
+src/services/projectStorage.ts:126:        projects[existingIdx] = entry;
+src/services/projectStorage.ts:128:        projects.unshift(entry);
+src/services/projectStorage.ts:131:      localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+src/services/projectStorage.ts:132:      localStorage.setItem(CURRENT_PROJECT_KEY, timeline.id);
+src/services/projectStorage.ts:134:      console.warn('Failed to save project:', e);
+src/services/projectStorage.ts:138:  deleteProject(id: string): SavedProject[] {
+src/services/projectStorage.ts:139:    const projects = this.getProjects().filter((p) => p.id !== id);
+src/services/projectStorage.ts:140:    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+src/services/projectStorage.ts:141:    return projects;
+src/services/projectStorage.ts:144:  duplicateProject(id: string): SavedProject | null {
+src/services/projectStorage.ts:145:    const projects = this.getProjects();
+src/services/projectStorage.ts:146:    const source = projects.find((p) => p.id === id);
+src/services/projectStorage.ts:150:    const duplicatedTimeline: ProjectTimeline = {
+src/services/projectStorage.ts:157:    const newEntry: SavedProject = {
+src/services/projectStorage.ts:166:    projects.unshift(newEntry);
+src/services/projectStorage.ts:167:    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+src/services/projectStorage.ts:171:  createNewProjectWithClips(clips: TimelineClip[], projectName = 'New Video Project'): ProjectTimeline {
+src/services/projectStorage.ts:172:    const newTimeline: ProjectTimeline = {
+src/services/projectStorage.ts:174:      name: projectName,
+src/services/projectStorage.ts:191:    this.saveProject(newTimeline);
+src/services/aiOperationValidator.ts:6:  ProjectTimeline,
+src/services/aiOperationValidator.ts:57:  timeline: ProjectTimeline
+src/services/aiOperationValidator.ts:637:function resolveTargetClip(op: AiEditOperation, timeline: ProjectTimeline): TimelineClip | null {
+src/App.tsx.repair-backup-20260930-132410:44:  ProjectTimeline,
+src/App.tsx.repair-backup-20260930-132410:50:  SavedProject
+src/App.tsx.repair-backup-20260930-132410:67:import { ProjectsScreen } from './screens/ProjectsScreen';
+src/App.tsx.repair-backup-20260930-132410:73:import { projectStorage } from './services/projectStorage';
+src/App.tsx.repair-backup-20260930-132410:77:const INITIAL_TIMELINE: ProjectTimeline = {
+src/App.tsx.repair-backup-20260930-132410:140:  // Screen Navigation State ('home' | 'editor' | 'reel_maker' | 'script_writer' | 'captions' | 'audio' | 'projects' | 'settings')
+src/App.tsx.repair-backup-20260930-132410:142:  const [recentProjects, setRecentProjects] = useState<SavedProject[]>(() => projectStorage.getProjects());
+src/App.tsx.repair-backup-20260930-132410:145:  // Core Project State
+src/App.tsx.repair-backup-20260930-132410:146:  const [timeline, setTimeline] = useState<ProjectTimeline>(INITIAL_TIMELINE);
+src/App.tsx.repair-backup-20260930-132410:147:  const [history, setHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.repair-backup-20260930-132410:148:  const [redoHistory, setRedoHistory] = useState<ProjectTimeline[]>([]);
+src/App.tsx.repair-backup-20260930-132410:179:  // Restore autosaved project on mount
+src/App.tsx.repair-backup-20260930-132410:182:      const saved = localStorage.getItem('vidoai_studio_project');
+src/App.tsx.repair-backup-20260930-132410:195:  // Autosave project on updates to projectStorage
+src/App.tsx.repair-backup-20260930-132410:198:      projectStorage.saveProject(timeline);
+src/App.tsx.repair-backup-20260930-132410:199:      setRecentProjects(projectStorage.getProjects());
+src/App.tsx.repair-backup-20260930-132410:212:  const handleCreateNewProjectWithFiles = async (files: FileList) => {
+src/App.tsx.repair-backup-20260930-132410:249:        const newProj = projectStorage.createNewProjectWithClips(clips, projName);
+src/App.tsx.repair-backup-20260930-132410:253:        setRecentProjects(projectStorage.getProjects());
+src/App.tsx.repair-backup-20260930-132410:255:        showToast(`Created project with ${clips.length} video(s)!`);
+src/App.tsx.repair-backup-20260930-132410:263:  const handleCreateEmptyProject = () => {
+src/App.tsx.repair-backup-20260930-132410:268:    showToast('Loaded Sample Demo Project');
+src/App.tsx.repair-backup-20260930-132410:278:    (newTimeline: ProjectTimeline) => {
+src/App.tsx.repair-backup-20260930-132410:729:        projectName={timeline.name}
+src/App.tsx.repair-backup-20260930-132410:734:                recentProjects={projectStorage.getProjects()}
+src/App.tsx.repair-backup-20260930-132410:736:                onOpenProject={(proj) => {
+src/App.tsx.repair-backup-20260930-132410:741:                onDeleteProject={(id) => {
+src/App.tsx.repair-backup-20260930-132410:742:                  projectStorage.deleteProject(id);
+src/App.tsx.repair-backup-20260930-132410:743:                  showToast('Project deleted');
+src/App.tsx.repair-backup-20260930-132410:745:                onDuplicateProject={(id) => {
+src/App.tsx.repair-backup-20260930-132410:746:                  projectStorage.duplicateProject(id);
+src/App.tsx.repair-backup-20260930-132410:747:                  showToast('Project duplicated');
+src/App.tsx.repair-backup-20260930-132410:749:                onCreateNewProjectWithFiles={(files) => handleCreateNewProjectWithFiles(files)}
+src/App.tsx.repair-backup-20260930-132410:750:                onCreateEmptyProject={() => handleCreateEmptyProject()}
+src/App.tsx.repair-backup-20260930-132410:830:            {currentScreen === 'projects' && (
+src/App.tsx.repair-backup-20260930-132410:831:              <ProjectsScreen
+src/App.tsx.repair-backup-20260930-132410:832:                projects={projectStorage.getProjects()}
+src/App.tsx.repair-backup-20260930-132410:833:                onOpenProject={(proj) => {
+src/App.tsx.repair-backup-20260930-132410:838:                onDeleteProject={(id) => {
+src/App.tsx.repair-backup-20260930-132410:839:                  projectStorage.deleteProject(id);
+src/App.tsx.repair-backup-20260930-132410:840:                  showToast('Project deleted');
+src/App.tsx.repair-backup-20260930-132410:842:                onDuplicateProject={(id) => {
+src/App.tsx.repair-backup-20260930-132410:843:                  projectStorage.duplicateProject(id);
+src/App.tsx.repair-backup-20260930-132410:844:                  showToast('Project duplicated');
+src/App.tsx.repair-backup-20260930-132410:846:                onNewProject={() => handleCreateEmptyProject()}
+src/App.tsx.repair-backup-20260930-132410:847:                onRenameProject={(id, newName) => {
+src/App.tsx.repair-backup-20260930-132410:848:                  const all = projectStorage.getProjects();
+src/App.tsx.repair-backup-20260930-132410:851:                    projectStorage.saveProject({ ...p.timeline, name: newName });
+src/App.tsx.repair-backup-20260930-132410:852:                    showToast('Project renamed');
+src/App.tsx.repair-backup-20260930-132410:927:          {/* Bottom Android Navigation Bar (Tabs: Home, Projects, Editor, Settings) */}
+src/App.tsx.repair-backup-20260930-132410:941:              onClick={() => setCurrentScreen('projects')}
+src/App.tsx.repair-backup-20260930-132410:943:                currentScreen === 'projects'
+src/App.tsx.repair-backup-20260930-132410:948:              <span className="text-[10px]">Projects</span>
+src/hooks/useGenerationJob.ts:2:import { GeneratedOutputStore } from "../services/generation/GeneratedOutputStore";
+src/hooks/useGenerationJob.ts:32:            GeneratedOutputStore.save({
+src/hooks/useGenerationJob.ts.before-ui-sync:2:import { GeneratedOutputStore } from "../services/generation/GeneratedOutputStore";
+src/hooks/useGenerationJob.ts.before-ui-sync:32:            GeneratedOutputStore.save({
+server.ts:487:const GENERATION_JOBS_FILE = "generation-jobs.json";

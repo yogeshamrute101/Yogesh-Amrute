@@ -1,6 +1,6 @@
 export type AspectRatio = '9:16' | '1:1' | '16:9' | '4:5';
 
-export type FilterType = 
+export type FilterType =
   | 'none'
   | 'cinematic'
   | 'cyberpunk'
@@ -9,22 +9,22 @@ export type FilterType =
   | 'vibrant'
   | 'golden_hour';
 
-export type TransitionType = 
-  | 'none' 
-  | 'cut' 
-  | 'fade' 
-  | 'dissolve' 
-  | 'wipe' 
-  | 'zoom_in' 
-  | 'slide_left' 
+export type TransitionType =
+  | 'none'
+  | 'cut'
+  | 'fade'
+  | 'dissolve'
+  | 'wipe'
+  | 'zoom_in'
+  | 'slide_left'
   | 'glitch'
   | 'flash';
 
-export type CaptionStyle = 
-  | 'yellow_viral' 
-  | 'minimal_dark' 
-  | 'neon_cyber' 
-  | 'comic_pop' 
+export type CaptionStyle =
+  | 'yellow_viral'
+  | 'minimal_dark'
+  | 'neon_cyber'
+  | 'comic_pop'
   | 'clean_glass';
 
 export interface ClipTransform {

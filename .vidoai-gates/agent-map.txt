@@ -1,0 +1,29 @@
+src/core/workflows/WorkflowEngine.ts:21:          throw new Error(`Agent not registered: ${agentId}`);
+src/core/agents/AgentRegistry.ts:12:    id: 'research-agent',
+src/core/agents/AgentRegistry.ts:19:    id: 'video-agent',
+src/core/agents/AgentRegistry.ts:26:    id: 'voice-agent',
+src/core/agents/AgentRegistry.ts:33:    id: 'editor-agent',
+src/core/agents/AgentRegistry.ts:40:    id: 'qa-agent',
+src/core/master/tools/BuiltInCapabilityTools.ts:74:    'Executes registered autonomous agents.'
+src/core/master/tools/BuiltInCapabilityTools.ts:80:    'Executes registered agent workflows.'
+src/agent/AutonomousExecutionEngine.ts:1:import { registerBuiltInAgents } from "./team/BuiltInAgents";
+src/agent/AutonomousExecutionEngine.ts:14:registerBuiltInAgents();
+src/agent/team/AgentTeamRuntime.ts:22:    const result = await teamOrchestrator.delegate(
+src/agent/team/AgentRegistry.ts:6:  register(agent: TeamAgent): void {
+src/agent/team/TeamOrchestrator.ts:8:  async delegate(
+src/agent/team/BuiltInAgents.ts:5:function createMasterDelegateAgent(): TeamAgent {
+src/agent/team/BuiltInAgents.ts:42:    id: "research-agent",
+src/agent/team/BuiltInAgents.ts:50:        agentId: "research-agent",
+src/agent/team/BuiltInAgents.ts:60:    id: "video-agent",
+src/agent/team/BuiltInAgents.ts:90:            agentId: "video-agent",
+src/agent/team/BuiltInAgents.ts:100:          agentId: "video-agent",
+src/agent/team/BuiltInAgents.ts:112:          agentId: "video-agent",
+src/agent/team/BuiltInAgents.ts:125:    id: "voice-agent",
+src/agent/team/BuiltInAgents.ts:133:        agentId: "voice-agent",
+src/agent/team/BuiltInAgents.ts:143:    id: "editor-agent",
+src/agent/team/BuiltInAgents.ts:158:        agentId: "editor-agent",
+src/agent/team/BuiltInAgents.ts:168:    id: "qa-agent",
+src/agent/team/BuiltInAgents.ts:176:        agentId: "qa-agent",
+src/agent/team/BuiltInAgents.ts:186:export function registerBuiltInAgents(): void {
+src/agent/team/BuiltInAgents.ts:188:    createMasterDelegateAgent(),
+src/agent/team/BuiltInAgents.ts:197:    agentRegistry.register(agent);

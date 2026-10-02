@@ -1,0 +1,290 @@
+src/App.tsx.navfix2-20260930-133416:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.navfix2-20260930-133416:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.navfix2-20260930-133416:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.navfix2-20260930-133416:986:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx.navfix2-20260930-133416:1060:        onApplyTransaction={(newTimeline, auditLog) => {
+src/App.tsx.nav-backup-20260930-133257:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.nav-backup-20260930-133257:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.nav-backup-20260930-133257:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.nav-backup-20260930-133257:986:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx.nav-backup-20260930-133257:1060:        onApplyTransaction={(newTimeline, auditLog) => {
+src/components/UniversalCommandBar.tsx:31:          : "Needs recovery or feature connection"
+src/components/AiCoPilotModal.tsx:20:import { executeCommandTransaction } from '../services/commandTransaction';
+src/components/AiCoPilotModal.tsx:28:  onApplyTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/AiCoPilotModal.tsx:35:  onApplyTransaction,
+src/components/AiCoPilotModal.tsx:99:  const handleApplyTransaction = () => {
+src/components/AiCoPilotModal.tsx:108:    // Step 4: Atomic timeline transaction (all or nothing)
+src/components/AiCoPilotModal.tsx:109:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/AiCoPilotModal.tsx:111:      onApplyTransaction(tx.newTimeline, tx.auditLog);
+src/components/AiCoPilotModal.tsx:114:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/components/AiCoPilotModal.tsx:294:                  Atomic Transaction Operations:
+src/components/AiCoPilotModal.tsx:316:                  onClick={handleApplyTransaction}
+src/components/AiReelMakerModal.tsx:28:import { executeCommandTransaction } from '../services/commandTransaction';
+src/components/AiReelMakerModal.tsx:36:  onApplyReelTransaction: (newTimeline: ProjectTimeline, auditLog: string[]) => void;
+src/components/AiReelMakerModal.tsx:79:  onApplyReelTransaction,
+src/components/AiReelMakerModal.tsx:128:      // Verify and validate operations
+src/components/AiReelMakerModal.tsx:146:  const handleCommitTransaction = () => {
+src/components/AiReelMakerModal.tsx:149:    // Single Atomic Undo Transaction
+src/components/AiReelMakerModal.tsx:150:    const tx = executeCommandTransaction(timeline, validationReport.validatedOperations);
+src/components/AiReelMakerModal.tsx:152:      onApplyReelTransaction(tx.newTimeline, tx.auditLog);
+src/components/AiReelMakerModal.tsx:155:      setErrorMessage(`Transaction failed: ${tx.error}`);
+src/components/AiReelMakerModal.tsx:365:              {/* Commit Transaction Button */}
+src/components/AiReelMakerModal.tsx:367:                onClick={handleCommitTransaction}
+src/components/AiReelMakerModal.tsx:371:                <span>Commit Reel Transaction (Atomic Undo Supported)</span>
+src/components/UniversalSystemPanel.tsx:3:import { verifySystemIntegrity } from "../core/universal/verification/SystemVerifier";
+src/components/UniversalSystemPanel.tsx:19:        verification: verifySystemIntegrity(),
+src/components/UniversalSystemPanel.tsx:31:        One simple command → plan → execute → verify → recover → learn.
+src/components/system/SystemFrontline.tsx:13:  { name: "24×7 Always-On", status: "MONITORING", purpose: "Heartbeat, health and recovery" },
+src/components/system/SystemFrontline.tsx:21:  { name: "Connectivity", status: "READY", purpose: "Authorized network, API and device connectivity" },
+src/components/system/SystemFrontline.tsx:22:  { name: "Capability Control", status: "ACTIVE", purpose: "Permission, resource and execution control" },
+src/components/system/SystemFrontline.tsx:64:    setMessage("Recovery workflow initiated. System remains in safe operating mode.");
+src/components/system/SystemFrontline.tsx:124:        <button onClick={recover}>Recovery Check</button>
+src/components/system/SystemFrontline.tsx:173:          → ACT → VERIFY → RECOVER → LEARN → IMPROVE
+src/components/MasterCommandCenter.tsx:33:          : "Recovery required."
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-scope-final:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-scope-final:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-scope-final:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-final3:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-action-wiring:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-9-error-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.recovery-backup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.recovery-backup:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.recovery-backup:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160120:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-final-generation-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-scope-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generate-wiring:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.corrupted-20260929-121957:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-real-generation:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-real-generation:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-real-generation:335:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:297:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-cleanup:303:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-11-error-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix-2:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-jsx-scope-final2:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.broken-20260928-160322:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-generation-polling:335:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AudioScreen.tsx:110:      console.warn('Microphone permission denied or unavailable:', err);
+src/screens/AiReelMakerScreen.tsx.generation-backup:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.generation-backup:329:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.generation-backup:335:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.backup-20260928-165654:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:347:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-repair-20260928-165746:353:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/SettingsScreen.tsx:92:                <span className="text-[10px] text-neutral-400">Strict JSON validation & atomic rollback</span>
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:346:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.before-generation-block-fix:352:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:23:import { executeCommandTransaction } from '../services/commandTransaction';
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:278:    const tx = executeCommandTransaction(
+src/screens/AiReelMakerScreen.tsx.pre-generation-20260928-123820.bak:284:      setErrorMsg(`Transaction failed: ${tx.error}`);
+src/App.tsx.before-types-import-fix-20260930-132833:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.before-types-import-fix-20260930-132833:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-types-import-fix-20260930-132833:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.before-types-import-fix-20260930-132833:984:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx.before-types-import-fix-20260930-132833:1058:        onApplyTransaction={(newTimeline, auditLog) => {
+src/App.tsx.backup-20260930-122645:65:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx.backup-20260930-122645:518:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.backup-20260930-122645:537:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx.backup-20260930-122645:984:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx.backup-20260930-122645:1058:        onApplyTransaction={(newTimeline, auditLog) => {
+src/App.tsx:66:import { executeCommandTransaction } from './services/commandTransaction';
+src/App.tsx:519:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:538:    const tx = executeCommandTransaction(timeline, report.validatedOperations);
+src/App.tsx:990:          onApplyReelTransaction={(newTimeline, auditLog) => {
+src/App.tsx:1064:        onApplyTransaction={(newTimeline, auditLog) => {
+src/core/metasystem/MetaSystemPlanner.ts:8:  recoveryPoints: string[];
+src/core/metasystem/MetaSystemPlanner.ts:21:        "VERIFY",
+src/core/metasystem/MetaSystemPlanner.ts:33:      recoveryPoints: [
+src/core/metasystem/MetaSystemPlanner.ts:35:        "rollback-on-failure",
+src/core/metasystem/MetaSystemCore.ts:7:  | "VERIFY"
+src/core/metasystem/MetaSystemCore.ts:99:        "Verify before completion",
+src/core/metasystem/MetaSystemCore.ts:102:      nextActions: ["Execute through authorized runtime."],
+src/core/aggregation/README.md:19:Recovery / Validation
+src/core/disaster/DisasterRecoveryLayer.ts:1:export type RecoveryPlan = {
+src/core/disaster/DisasterRecoveryLayer.ts:5:  rollbackAvailable: boolean;
+src/core/disaster/DisasterRecoveryLayer.ts:8:export class DisasterRecoveryLayer {
+src/core/disaster/DisasterRecoveryLayer.ts:9:  evaluate(plan: RecoveryPlan) {
+src/core/disaster/DisasterRecoveryLayer.ts:12:      recoverable: plan.backupAvailable || plan.rollbackAvailable
+src/core/disaster/index.ts:1:export * from "./DisasterRecoveryLayer";
+src/core/plugincontracts/UniversalPluginContract.ts:8:  permissions: string[];
+src/core/agent-platform/README.md:12:→ Verification/Recovery
+src/core/multiproject/index.ts:4:export * from "./ProjectRecovery";
+src/core/multiproject/ProjectRecovery.ts:3:export class ProjectRecovery {
+src/core/access/RestrictedCapabilityAccess.ts:31:  authorize(request: CapabilityAccessRequest): AccessDecision {
+src/core/resourceenergy/ResourceEnergyAllocator.ts:34:          resource.authorized &&
+src/core/resourceenergy/ResourceEnergyAllocator.ts:66:        reason: "Insufficient authorized resource capacity"
+src/core/resourceenergy/ExternalResourceRegistry.ts:23:  authorized: boolean;
+src/core/resourceenergy/ExternalResourceRegistry.ts:46:        resource.authorized &&
+src/core/verification/VerificationLayer.ts:9:  verify(input: {
+src/core/continuity/ContinuityEngine.ts:27:export interface RecoveryResult {
+src/core/continuity/ContinuityEngine.ts:67:  restore(pkg: TransferPackage): RecoveryResult {
+src/core/math/MathematicsEngine.ts:45:        "Verify with test values.",
+src/core/systemintegration/ExternalSystemRegistry.ts:21:  authorized: boolean;
+src/core/lifecycle/ResultLifecycle.ts:8:  | "VERIFY"
+src/core/safety/SafetyIntelligence.ts:144:  verify(): {
+src/core/selfrepair/SelfErrorRepairEngine.ts:17:  | "VERIFYING"
+src/core/selfrepair/SelfErrorRepairEngine.ts:103:        status: "VERIFYING",
+src/core/assistant/VidoAIAssistantCore.ts:7:  | "VERIFY"
+src/core/assistant/VidoAIAssistantCore.ts:16:  permissions?: string[];
+src/core/assistant/VidoAIAssistantCore.ts:56:      "Verify the result",
+src/core/evolution/CapabilityEvolutionEngine.ts:7:  | "ROLLBACK";
+src/core/stepcontrol/ReversibleStepController.ts:94:  rollbackToCheckpoint(id: string) {
+src/core/internalroles/InternalRoleRegistry.ts:12:  | "RECOVERY"
+src/core/humancapability/HumanCapabilityOrchestrator.ts:108:      reason: "Capability available within configured permissions.",
+src/core/networkunderstanding/NetworkUnderstandingEngine.ts:17:  authorized?: boolean;
+src/core/networkunderstanding/NetworkUnderstandingEngine.ts:25:      controlAllowed: node.authorized === true,
+src/core/physicalai/safety/PhysicalSafety.ts:5:  verifyAfterAction: boolean;
+src/core/physicalai/safety/PhysicalSafety.ts:12:  verifyAfterAction: true,
+src/core/physicalai/PhysicalAIOrchestrator.ts:176:  verify(commandId: string, success: boolean): PhysicalExecutionResult {
+src/core/vision/VisionInstructorTypes.ts:18:export type VisionPermission =
+src/core/vision/VisionInstructorTypes.ts:28:  permission: VisionPermission;
+src/core/vision/VisionInstructorTypes.ts:40:  status: 'ready' | 'permission-required' | 'insufficient-data';
+src/core/vision/VisionInstructor.ts:13:    if (input.permission !== 'granted') {
+src/core/vision/VisionInstructor.ts:18:        explanation: 'Camera permission is not available.',
+src/core/vision/VisionInstructor.ts:43:    if (input.permission !== 'granted') {
+src/core/vision/VisionInstructor.ts:45:        status: 'permission-required',
+src/core/resilience/ResilienceLayer.ts:1:export type RecoveryState = "healthy" | "degraded" | "recovering" | "safe-mode";
+src/core/resilience/ResilienceLayer.ts:4:  private state: RecoveryState = "healthy";
+src/core/fullstack/FullStackUnderstandingEngine.ts:74:  if (/test|verify|validate|check/.test(text)) {
+src/core/researchcenter/RunningResearchCenter.ts:5: * DISCOVER -> COLLECT -> VERIFY -> SYNTHESIZE -> STORE -> UPDATE -> REPORT
+src/core/researchcenter/RunningResearchCenter.ts:15:  | "VERIFYING"
+src/core/camera/match/ReferenceMatchPlanner.ts:29:        'verify-candidates',
+src/core/mission/MissionControl.ts:9:  | "RECOVERY"
+src/core/lifeloop/ContinuousLifeLoop.ts:7:  | "VERIFY"
+src/core/lifeloop/ContinuousLifeLoop.ts:59:        "VERIFY",
+src/core/improvement/ClosedLoopImprovement.ts:8:  | "VERIFY"
+src/core/migration/FutureMigrationEngine.ts:6:  rollbackSteps: string[];
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:48:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:49:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:50:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:61:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-cleanup:62:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:33:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:34:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:35:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:46:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-real-provider-boundary:47:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:38:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:39:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:40:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:51:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-orphan-import-fix:52:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:34:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:35:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:36:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:47:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-integration:48:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:48:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:49:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:50:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:61:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-duplicate-runtime-fix:62:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:36:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:37:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:38:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:49:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.before-workflow-fix:50:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:38:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:39:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:40:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:51:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-adapter-cleanup:52:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:34:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:35:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:36:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:47:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-runtime-fix:48:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-fix:35:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-fix:36:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-fix:37:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-fix:48:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-fix:49:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:33:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:34:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:35:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:46:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-agent-adapter:47:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:36:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:37:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:38:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:49:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.before-runtime-integration:50:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:36:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:37:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:38:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:49:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.before-runtime-contract:50:        { from: 'verify', to: 'output' },
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:37:          id: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:38:          type: 'verify',
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:39:          name: 'Verify Result',
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:50:        { from: 'tool', to: 'verify' },
+src/core/agent/VidoAIAgent.ts.bak-before-import-repair:51:        { from: 'verify', to: 'output' },
+src/core/technical/registerTechnicalCapabilities.ts:28:  "RECOVERY",
+src/core/technical/UniversalTechnicalOperations.ts:26:  | "RECOVERY";
+src/core/technical/UniversalTechnicalOperations.ts:50:  | "VERIFY"
+src/core/technical/UniversalTechnicalOperations.ts:72:    | "VERIFYING"
+src/core/security/SecurityLayer.ts:4:  authorized: boolean;
+src/core/security/SecurityLayer.ts:12:      allowed: input.authenticated && input.authorized && input.risks.length === 0
+src/core/operations/OperationsCenter.ts:65:      "RECOVERY"
+src/core/operations/OperationsCenter.ts:70:      `Recovery initiated: ${reason}`
+src/core/operations/UniversalOperationEngine.ts:5: * It does not bypass permissions, safety, validation or verification.
+src/core/operations/UniversalOperationEngine.ts:34:  | "ROLLBACK"
+src/core/operations/UniversalOperationEngine.ts:48:  | "VERIFY"
+src/core/operations/UniversalOperationEngine.ts:56:  | "AUTHORIZED"
+src/core/operations/UniversalOperationEngine.ts:104:  verify(
+src/core/operations/UniversalOperationEngine.ts:109:  rollback?(
+src/core/operations/UniversalOperationEngine.ts:129:      "COMPARE","DIFF","PATCH","ROLLBACK","RESTORE","DUPLICATE",
+src/core/operations/UniversalOperationEngine.ts:131:      "EXPORT","CREATE","ARCHIVE","UNARCHIVE","VALIDATE","VERIFY","SIMULATE"
+src/core/operations/UniversalOperationEngine.ts:192:    return adapter.verify(request, result);
+src/core/editing/UniversalEditingEngine.ts:75:        "Record the change for recovery/version history.",
+src/core/unifiedlayer/UnifiedMetaLayer.ts:113:  verify(executionId: string, output: unknown, verified: boolean) {
+src/core/universalloop/UniversalEverythingLoop.ts:10:  | "VERIFY"
+src/core/universalloop/UniversalEverythingLoop.ts:41:  verify?: (state: UniversalLoopState) => Promise<boolean> | boolean;
+src/core/universalloop/UniversalEverythingLoop.ts:57:  "VERIFY",
+src/core/universalloop/UniversalEverythingLoop.ts:99:          if (stage === "VERIFY") {
+src/core/universalloop/UniversalEverythingLoop.ts:100:            const verified = hooks.verify
+src/core/universalloop/UniversalEverythingLoop.ts:101:              ? await hooks.verify(state)
+src/core/governance/GovernanceLayer.ts:1:export type PermissionLevel = "observe" | "suggest" | "request" | "execute" | "admin";
+src/core/governance/GovernanceLayer.ts:4:  private order: PermissionLevel[] = ["observe", "suggest", "request", "execute", "admin"];
+src/core/governance/GovernanceLayer.ts:6:  allowed(requi

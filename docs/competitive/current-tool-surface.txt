@@ -1,0 +1,384 @@
+src/components/UniversalCommandBar.tsx:52:        capability and routes the work automatically.
+src/components/system/SystemFrontline.tsx:11:  { name: "Universal Core", status: "ACTIVE", purpose: "Universal capability foundation" },
+src/components/system/SystemFrontline.tsx:15:  { name: "System Integrity", status: "ACTIVE", purpose: "Find missing capabilities and system gaps" },
+src/components/system/SystemFrontline.tsx:22:  { name: "Capability Control", status: "ACTIVE", purpose: "Permission, resource and execution control" },
+src/components/system/SystemFrontline.tsx:55:    setMessage("Full system scan completed. Checking gaps, resources and capabilities.");
+src/components/system/SystemFrontline.tsx:136:      <h2>System Capabilities</h2>
+src/screens/HomeScreen.tsx:138:        {/* AI CAPABILITY GRID CARDS */}
+src/core/metasystem/SystemOfSystems.ts:4:  capabilities: string[];
+src/core/metasystem/SystemOfSystems.ts:20:      capabilities: system.capabilities,
+src/core/metasystem/SystemOfSystems.ts:24:  findCapability(capability: string) {
+src/core/metasystem/SystemOfSystems.ts:26:      system.capabilities.includes(capability)
+src/core/metasystem/MetaSystemCore.ts:11:export interface SystemCapability {
+src/core/metasystem/MetaSystemCore.ts:24:  requiredCapabilities?: string[];
+src/core/metasystem/MetaSystemCore.ts:37:  private capabilities = new Map<string, SystemCapability>();
+src/core/metasystem/MetaSystemCore.ts:40:  registerCapability(capability: SystemCapability) {
+src/core/metasystem/MetaSystemCore.ts:41:    this.capabilities.set(capability.id, capability);
+src/core/metasystem/MetaSystemCore.ts:42:    return capability;
+src/core/metasystem/MetaSystemCore.ts:52:      capabilityCount: this.capabilities.size,
+src/core/metasystem/MetaSystemCore.ts:54:      enabledCapabilities: [...this.capabilities.values()]
+src/core/metasystem/MetaSystemCore.ts:74:    const missing = (task.requiredCapabilities ?? []).filter(
+src/core/metasystem/MetaSystemCore.ts:75:      id => !this.capabilities.get(id)?.enabled
+src/core/metasystem/MetaSystemCore.ts:83:        steps: ["Inspect requirements", "Check capabilities"],
+src/core/metasystem/MetaSystemCore.ts:84:        evidence: [`Missing capabilities: ${missing.join(", ")}`],
+src/core/metasystem/MetaSystemCore.ts:85:        nextActions: ["Add or enable required capabilities."],
+src/core/metasystem/MetaSystemCore.ts:96:        "Reuse existing capabilities",
+src/core/metasystem/MetaSystemCore.ts:101:      evidence: ["Required registered capabilities are available."],
+src/core/extensibility/ExtensionRegistry.ts:6:  capabilities: string[];
+src/core/plugincontracts/UniversalPluginContract.ts:7:  capabilities: string[];
+src/core/access/index.ts:1:export * from "./RestrictedCapabilityAccess";
+src/core/access/RestrictedCapabilityAccess.ts:3:export interface CapabilityAccessRequest {
+src/core/access/RestrictedCapabilityAccess.ts:4:  capability: string;
+src/core/access/RestrictedCapabilityAccess.ts:17:export class RestrictedCapabilityAccess {
+src/core/access/RestrictedCapabilityAccess.ts:18:  private readonly protectedCapabilities = new Set([
+src/core/access/RestrictedCapabilityAccess.ts:31:  authorize(request: CapabilityAccessRequest): AccessDecision {
+src/core/access/RestrictedCapabilityAccess.ts:32:    const protectedCapability =
+src/core/access/RestrictedCapabilityAccess.ts:33:      this.protectedCapabilities.has(request.capability);
+src/core/access/RestrictedCapabilityAccess.ts:35:    if (!protectedCapability) {
+src/core/access/RestrictedCapabilityAccess.ts:38:        reason: "Capability is not in the protected high-risk set.",
+src/core/access/RestrictedCapabilityAccess.ts:47:        reason: "Protected capabilities are locked: owner authorization is not configured.",
+src/core/access/RestrictedCapabilityAccess.ts:77:        "Protected harmful capabilities remain blocked even with owner authorization.",
+src/core/verification/VerificationContract.ts:4: * All important capabilities should eventually pass through this contract.
+src/core/medical/registerMedicalCapabilities.ts:3:export const MEDICAL_CAPABILITIES: MedicalDomain[] = [
+src/core/systemintegration/SystemUnderstandingEngine.ts:8:  capabilities: string[];
+src/core/systemintegration/SystemUnderstandingEngine.ts:23:      capabilities: [...system.capabilities],
+src/core/systemintegration/SystemUnderstandingEngine.ts:26:      unknowns: system.capabilities.length
+src/core/systemintegration/SystemUnderstandingEngine.ts:28:        : ["Capabilities have not been discovered."]
+src/core/systemintegration/ExternalSystemRegistry.ts:18:  capabilities: string[];
+src/core/evolution/CapabilityEvolutionEngine.ts:20:export class CapabilityEvolutionEngine {
+src/core/internalroles/InternalRoleRegistry.ts:20:  capabilities: string[];
+src/core/humancapability/HumanCapabilityOrchestrator.ts:1:export type HumanCapabilityDomain =
+src/core/humancapability/HumanCapabilityOrchestrator.ts:39:export interface HumanCapability {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:41:  domain: HumanCapabilityDomain;
+src/core/humancapability/HumanCapabilityOrchestrator.ts:52:  domain: HumanCapabilityDomain;
+src/core/humancapability/HumanCapabilityOrchestrator.ts:64:export class HumanCapabilityOrchestrator {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:65:  private capabilities = new Map<string, HumanCapability>();
+src/core/humancapability/HumanCapabilityOrchestrator.ts:68:  register(capability: HumanCapability) {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:69:    this.capabilities.set(capability.id, capability);
+src/core/humancapability/HumanCapabilityOrchestrator.ts:76:  getCapabilities() {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:77:    return [...this.capabilities.values()];
+src/core/humancapability/HumanCapabilityOrchestrator.ts:85:    const capability = [...this.capabilities.values()].find(
+src/core/humancapability/HumanCapabilityOrchestrator.ts:89:    if (!capability) {
+src/core/humancapability/HumanCapabilityOrchestrator.ts:93:        reason: "Required capability is not available.",
+src/core/humancapability/HumanCapabilityOrchestrator.ts:107:      mode: capability.executionMode,
+src/core/humancapability/HumanCapabilityOrchestrator.ts:108:      reason: "Capability available within configured permissions.",
+src/core/humancapability/HumanCapabilityOrchestrator.ts:123:export default HumanCapabilityOrchestrator;
+src/core/humancapability/index.ts:1:export * from "./HumanCapabilityOrchestrator";
+src/core/humancapability/registerHumanCapabilities.ts:2:  HumanCapabilityOrchestrator,
+src/core/humancapability/registerHumanCapabilities.ts:3:  HumanCapability,
+src/core/humancapability/registerHumanCapabilities.ts:4:} from "./HumanCapabilityOrchestrator";
+src/core/humancapability/registerHumanCapabilities.ts:6:export function createHumanCapabilitySystem() {
+src/core/humancapability/registerHumanCapabilities.ts:7:  const system = new HumanCapabilityOrchestrator();
+src/core/humancapability/registerHumanCapabilities.ts:37:    const capability: HumanCapability = {
+src/core/humancapability/registerHumanCapabilities.ts:40:      description: `Capability layer for ${domain.toLowerCase()} operations.`,
+src/core/humancapability/registerHumanCapabilities.ts:55:    system.register(capability);
+src/core/physicalai/PhysicalAIOrchestrator.ts:28:  capabilities: string[];
+src/core/physicalai/PhysicalAIOrchestrator.ts:103:    if (!robot.capabilities.includes(command.action)) {
+src/core/physicalai/PhysicalAIOrchestrator.ts:107:        message: `Robot capability '${command.action}' is unavailable.`,
+src/core/physicalai/PhysicalAIOrchestrator.ts:126:      message: "Command passed capability checks and is ready for safety validation.",
+src/core/physicalai/robot/HumanoidRobot.ts:4:  capabilities: string[];
+src/core/physicalai/robot/HumanoidRobot.ts:12:  capabilities: [
+src/core/interaction/HumanComputerCommand.ts:33:export interface ComputerCapability {
+src/core/interaction/HumanComputerCommand.ts:50:  private capabilities = new Map<string, ComputerCapability>();
+src/core/interaction/HumanComputerCommand.ts:53:  registerCapability(capability: ComputerCapability): void {
+src/core/interaction/HumanComputerCommand.ts:54:    this.capabilities.set(capability.id, capability);
+src/core/interaction/HumanComputerCommand.ts:116:    return [...this.capabilities.values()].some(
+src/core/interaction/HumanComputerCommand.ts:117:      (capability) =>
+src/core/interaction/HumanComputerCommand.ts:118:        capability.enabled &&
+src/core/interaction/HumanComputerCommand.ts:119:        capability.id.toUpperCase() === intent.toUpperCase(),
+src/core/interaction/HumanComputerCommand.ts:156:          `Computer capability '${understanding.intent}' is not registered or enabled.`,
+src/core/interaction/HumanComputerCommand.ts:181:  getCapabilities(): ComputerCapability[] {
+src/core/interaction/HumanComputerCommand.ts:182:    return [...this.capabilities.values()];
+src/core/worlds/InternalWorldRegistry.ts:23:  capabilities: string[];
+src/core/agent/VidoAIAgent.ts:3:import { ToolBusAdapter } from '../workflow/adapters/ToolBusAdapter.js';
+src/core/agent/VidoAIAgent.ts:8:    toolAdapter: new ToolBusAdapter(),
+src/core/control/CapabilityControl.ts:27:export interface CapabilityPolicy {
+src/core/control/CapabilityControl.ts:28:  capability: string;
+src/core/control/CapabilityControl.ts:38:  capability: string;
+src/core/control/CapabilityControl.ts:52:export class CapabilityControl {
+src/core/control/CapabilityControl.ts:53:  private policies = new Map<string, CapabilityPolicy>();
+src/core/control/CapabilityControl.ts:57:  registerPolicy(policy: CapabilityPolicy): void {
+src/core/control/CapabilityControl.ts:58:    this.policies.set(policy.capability, policy);
+src/core/control/CapabilityControl.ts:62:    const policy = this.policies.get(request.capability);
+src/core/control/CapabilityControl.ts:68:        reason: "Capability is unavailable or disabled.",
+src/core/control/CapabilityControl.ts:77:        reason: "Resource is outside the capability policy.",
+src/core/control/CapabilityControl.ts:110:      reason: "Capability and resource policy passed.",
+src/core/control/CapabilityControl.ts:131:  enableCapability(capability: string): boolean {
+src/core/control/CapabilityControl.ts:132:    const policy = this.policies.get(capability);
+src/core/control/CapabilityControl.ts:138:  disableCapability(capability: string): boolean {
+src/core/control/CapabilityControl.ts:139:    const policy = this.policies.get(capability);
+src/core/control/CapabilityControl.ts:145:  getPolicies(): CapabilityPolicy[] {
+src/core/control/CapabilityControl.ts:164:export const capabilityControl = new CapabilityControl();
+src/core/control/index.ts:1:export * from "./CapabilityControl";
+src/core/portability/PortabilityEngine.ts:7:export interface RuntimeCapabilities {
+src/core/portability/PortabilityEngine.ts:18:  missingCapabilities: string[];
+src/core/portability/PortabilityEngine.ts:26:    requiredCapabilities: string[],
+src/core/portability/PortabilityEngine.ts:27:    runtime: RuntimeCapabilities
+src/core/portability/PortabilityEngine.ts:29:    const missingCapabilities = requiredCapabilities.filter(
+src/core/portability/PortabilityEngine.ts:30:      (capability) => !runtime.features.includes(capability)
+src/core/portability/PortabilityEngine.ts:34:      compatible: missingCapabilities.length === 0,
+src/core/portability/PortabilityEngine.ts:36:      missingCapabilities,
+src/core/unifiedlayer/LayerAggregationEngine.ts:15:    capabilities?: string[];
+src/core/unifiedlayer/LayerAggregationEngine.ts:22:        purpose: item.purpose ?? "Registered system capability",
+src/core/unifiedlayer/LayerAggregationEngine.ts:23:        capabilities: item.capabilities ?? [],
+src/core/unifiedlayer/DynamicLayerFactory.ts:10:    capabilities: string[] = []
+src/core/unifiedlayer/DynamicLayerFactory.ts:17:      capabilities,
+src/core/unifiedlayer/UnifiedMetaLayer.ts:15:  capabilities: string[];
+src/core/mind/AutonomousMind.ts:41:export interface MindCapability {
+src/core/mind/AutonomousMind.ts:48:  private readonly capabilities: MindCapability[] = [];
+src/core/mind/AutonomousMind.ts:50:  registerCapability(capability: MindCapability): void {
+src/core/mind/AutonomousMind.ts:51:    this.capabilities.push(capability);
+src/core/mind/AutonomousMind.ts:67:    const capable = this.capabilities
+src/core/mind/AutonomousMind.ts:75:        "Check available capabilities",
+src/core/mind/AutonomousMind.ts:77:          ? `Use compatible capability: ${capable.join(", ")}`
+src/core/mind/AutonomousMind.ts:78:          : "Determine whether additional capability is required",
+src/core/mind/AutonomousMind.ts:95:    const capability = this.capabilities.find((item) =>
+src/core/mind/AutonomousMind.ts:99:    if (!capability) {
+src/core/mind/AutonomousMind.ts:101:        status: "no-compatible-capability",
+src/core/mind/AutonomousMind.ts:102:        message: "No compatible capability is currently available.",
+src/core/mind/AutonomousMind.ts:106:    return capability.execute(context, plan);
+src/core/gap/GapUtilizationEngine.ts:4:  | "UNUSED_CAPABILITY"
+src/core/gap/GapUtilizationEngine.ts:31:    capabilities?: string[];
+src/core/gap/GapUtilizationEngine.ts:66:    for (const capability of input.capabilities ?? []) {
+src/core/gap/GapUtilizationEngine.ts:67:      if (!capability.trim()) {
+src/core/gap/GapUtilizationEngine.ts:69:          "UNUSED_CAPABILITY",
+src/core/gap/GapUtilizationEngine.ts:70:          "capability",
+src/core/gap/GapUtilizationEngine.ts:71:          "Capability appears unused.",
+src/core/gap/GapUtilizationEngine.ts:83:          "Match it with available capabilities and continue safely."
+src/core/efficiency/SmartExecutionPlanner.ts:4:  reusableCapability?: string;
+src/core/efficiency/SmartExecutionPlanner.ts:11:    const reusable = tasks.filter(x => x.reusableCapability);
+src/core/instructor/InstructorExecutionBridge.ts:8:  toolBus?: unknown;
+src/core/instructor/InstructorExecutionBridge.ts:28:      toolBus: Boolean(this.adapters.toolBus),
+src/core/instructor/InstructorExecutionBridge.ts:40:      this.adapters.toolBus || this.adapters.autonomousExecutionEngine,
+src/core/integrity/SystemIntegrity.ts:41:  missingCapabilities: string[];
+src/core/integrity/SystemIntegrity.ts:47:const REQUIRED_CAPABILITIES = [
+src/core/integrity/SystemIntegrity.ts:241:      "Add permission and capability registry.",
+src/core/integrity/SystemIntegrity.ts:263:      missingCapabilities: REQUIRED_CAPABILITIES,
+src/core/agents/AgentRegistry.ts:8:    capabilities: ['research', 'script', 'video', 'voice', 'editor', 'qa'],
+src/core/agents/AgentRegistry.ts:15:    capabilities: ['research'],
+src/core/agents/AgentRegistry.ts:22:    capabilities: ['script', 'video'],
+src/core/agents/AgentRegistry.ts:29:    capabilities: ['voice'],
+src/core/agents/AgentRegistry.ts:36:    capabilities: ['editor', 'captions', 'audio', 'effects'],
+src/core/agents/AgentRegistry.ts:43:    capabilities: ['qa', 'export'],
+src/core/agents/AgentRegistry.ts:49:  return agents.map((agent) => ({ ...agent, capabilities: [...agent.capabilities] }));
+src/core/agents/AgentTypes.ts:1:export type AgentCapability =
+src/core/agents/AgentTypes.ts:17:  capabilities: AgentCapability[];
+src/core/master/tools/index.ts:1:export * from './CapabilityToolBus';
+src/core/master/tools/index.ts:2:export * from './BuiltInCapabilityTools';
+src/core/master/tools/BuiltInCapabilityTools.ts:2:  CapabilityTool,
+src/core/master/tools/BuiltInCapabilityTools.ts:3:  CapabilityToolContext,
+src/core/master/tools/BuiltInCapabilityTools.ts:4:  CapabilityToolResult,
+src/core/master/tools/BuiltInCapabilityTools.ts:5:  capabilityToolBus,
+src/core/master/tools/BuiltInCapabilityTools.ts:6:} from './CapabilityToolBus';
+src/core/master/tools/BuiltInCapabilityTools.ts:10:  capability: CapabilityTool['capability'],
+src/core/master/tools/BuiltInCapabilityTools.ts:12:): CapabilityTool {
+src/core/master/tools/BuiltInCapabilityTools.ts:15:    capability,
+src/core/master/tools/BuiltInCapabilityTools.ts:20:      _context: CapabilityToolContext
+src/core/master/tools/BuiltInCapabilityTools.ts:21:    ): Promise<CapabilityToolResult> {
+src/core/master/tools/BuiltInCapabilityTools.ts:24:        capability,
+src/core/master/tools/BuiltInCapabilityTools.ts:34:const tools: CapabilityTool[] = [
+src/core/master/tools/BuiltInCapabilityTools.ts:68:    'Builds or updates backend/API capabilities.'
+src/core/master/tools/BuiltInCapabilityTools.ts:85:  if (!capabilityToolBus.get(tool.id)) {
+src/core/master/tools/BuiltInCapabilityTools.ts:86:    capabilityToolBus.register(tool);
+src/core/master/tools/MasterToolRouter.ts:2:  capabilityToolBus,
+src/core/master/tools/MasterToolRouter.ts:3:  CapabilityToolResult,
+src/core/master/tools/MasterToolRouter.ts:4:  ToolCapability,
+src/core/master/tools/MasterToolRouter.ts:5:} from './CapabilityToolBus';
+src/core/master/tools/MasterToolRouter.ts:7:import './BuiltInCapabilityTools';
+src/core/master/tools/MasterToolRouter.ts:10:  resolve(capability: ToolCapability) {
+src/core/master/tools/MasterToolRouter.ts:11:    return capabilityToolBus.findByCapability(capability);
+src/core/master/tools/MasterToolRouter.ts:15:    capability: ToolCapability,
+src/core/master/tools/MasterToolRouter.ts:18:  ): Promise<CapabilityToolResult> {
+src/core/master/tools/MasterToolRouter.ts:19:    return capabilityToolBus.execute(
+src/core/master/tools/MasterToolRouter.ts:20:      capability,
+src/core/master/tools/MasterToolRouter.ts:32:    return capabilityToolBus.list();
+src/core/master/tools/CapabilityToolBus.ts:1:export type ToolCapability =
+src/core/master/tools/CapabilityToolBus.ts:15:export interface CapabilityToolContext {
+src/core/master/tools/CapabilityToolBus.ts:21:export interface CapabilityToolResult {
+src/core/master/tools/CapabilityToolBus.ts:23:  capability: ToolCapability;
+src/core/master/tools/CapabilityToolBus.ts:30:export interface CapabilityTool {
+src/core/master/tools/CapabilityToolBus.ts:32:  capability: ToolCapability;
+src/core/master/tools/CapabilityToolBus.ts:36:    context: CapabilityToolContext
+src/core/master/tools/CapabilityToolBus.ts:37:  ): Promise<CapabilityToolResult>;
+src/core/master/tools/CapabilityToolBus.ts:40:export class CapabilityToolBus {
+src/core/master/tools/CapabilityToolBus.ts:41:  private readonly tools = new Map<string, CapabilityTool>();
+src/core/master/tools/CapabilityToolBus.ts:43:  register(tool: CapabilityTool) {
+src/core/master/tools/CapabilityToolBus.ts:52:  findByCapability(capability: ToolCapability) {
+src/core/master/tools/CapabilityToolBus.ts:54:      tool => tool.capability === capability
+src/core/master/tools/CapabilityToolBus.ts:61:      capability: tool.capability,
+src/core/master/tools/CapabilityToolBus.ts:68:    capability: ToolCapability,
+src/core/master/tools/CapabilityToolBus.ts:69:    context: CapabilityToolContext
+src/core/master/tools/CapabilityToolBus.ts:70:  ): Promise<CapabilityToolResult> {
+src/core/master/tools/CapabilityToolBus.ts:71:    const candidates = this.findByCapability(capability);
+src/core/master/tools/CapabilityToolBus.ts:78:        capability,
+src/core/master/tools/CapabilityToolBus.ts:81:          `No executable tool is currently connected for capability "${capability}".`,
+src/core/master/tools/CapabilityToolBus.ts:100:        capability,
+src/core/master/tools/CapabilityToolBus.ts:105:            : 'Capability execution failed.',
+src/core/master/tools/CapabilityToolBus.ts:112:export const capabilityToolBus = new CapabilityToolBus();
+src/core/master/execution/MasterExecutionTypes.ts:1:export type ExecutionCapability =
+src/core/master/execution/MasterExecutionTypes.ts:26:  capability: ExecutionCapability;
+src/core/master/execution/MasterExecutionTypes.ts:34:  capability: ExecutionCapability;
+src/core/master/execution/MasterInstructor.ts:2:  ExecutionCapability,
+src/core/master/execution/MasterInstructor.ts:6:function detectCapability(prompt: string): ExecutionCapability {
+src/core/master/execution/MasterInstructor.ts:64:  const capability = detectCapability(goal);
+src/core/master/execution/MasterInstructor.ts:69:    capability,
+src/core/master/execution/MasterInstructor.ts:71:    confidence: capability === 'text' ? 0.55 : 0.9,
+src/core/master/execution/MasterInstructor.ts:77:    ].includes(capability),
+src/core/master/execution/MasterInstructor.ts:87:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts:94:      id: 'select-capability',
+src/core/master/execution/MasterInstructor.ts:95:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts:96:      action: 'select-capability',
+src/core/master/execution/MasterInstructor.ts:97:      description: 'Select the correct built-in capability, agent, or external tool.',
+src/core/master/execution/MasterInstructor.ts:103:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts:111:      capability: 'testing',
+src/core/master/execution/MasterInstructor.ts:119:      capability: 'recovery',
+src/core/master/execution/MasterInstructor.ts:135:      'The instructor must execute the requested capability and verify the actual result. Planning alone is not considered completion.',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:2:  ExecutionCapability,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:7:function detectCapability(prompt: string): ExecutionCapability {
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:65:  const capability = detectCapability(goal);
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:70:    capability,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:72:    confidence: capability === 'text' ? 0.55 : 0.9,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:78:    ].includes(capability),
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:88:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:95:      id: 'select-capability',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:96:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:97:      action: 'select-capability',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:98:      description: 'Select the correct built-in capability, agent, or external tool.',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:104:      capability: intent.capability,
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:112:      capability: 'testing',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:120:      capability: 'recovery',
+src/core/master/execution/MasterInstructor.ts.before-lint-repair-20260930-154353:136:      'The instructor must execute the requested capability and verify the actual result. Planning alone is not considered completion.',
+src/core/workflow/ToolNodeExecutor.ts:33:        `Tool "${toolName}" cannot execute: no ToolBus adapter is connected`
+src/core/workflow/index.ts:4:export * from './adapters/ToolBusAdapter.js';
+src/core/workflow/adapters/index.ts:2:export * from './ToolBusAdapter.js';
+src/core/workflow/adapters/ToolBusAdapter.ts:3:export class ToolBusAdapter implements WorkflowAdapter {
+src/core/workflow/adapters/ToolBusAdapter.ts:5:    console.log('[ToolBusAdapter] processing:', input);
+src/core/workflow/adapters/ToolBusAdapter.ts:6:    // Yaha tumhara ToolBus / Tool execution logic
+src/core/workflow/ToolBusAdapter.ts:4:export interface WorkflowToolBus {
+src/core/workflow/ToolBusAdapter.ts:12:export class ToolBusAdapter implements ToolExecutionAdapter {
+src/core/workflow/ToolBusAdapter.ts:13:  constructor(private readonly toolBus: WorkflowToolBus) {}
+src/core/workflow/ToolBusAdapter.ts:23:      throw new Error('ToolBus adapter requires a tool name');
+src/core/workflow/ToolBusAdapter.ts:26:    return this.toolBus.execute(
+src/core/workflow/ToolNodeExecutor.ts.bak-before-toolbus:33:        `Tool "${toolName}" cannot execute: no ToolBus adapter is connected`
+src/core/workflow/video/VideoWorkflow.ts:3:import { ToolBusAdapter } from '../adapters/ToolBusAdapter.js';
+src/core/workflow/video/VideoWorkflow.ts:8:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/video/VideoWorkflow.ts:12:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/video/VideoWorkflow.ts:16:    toolAdapter: new ToolBusAdapter(),
+src/core/workflow/WorkflowRuntime.ts:32:        `Workflow not ready - agent: ${status.agent.connected}, toolBus: ${status.toolBus.connected}`
+src/core/workflow/WorkflowIntegrationStatus.ts:5:  toolBus: {
+src/core/workflow/WorkflowIntegrationStatus.ts:27:    toolBus: {
+src/core/orchestrator/registerExisting.ts:6:  const capabilities = [
+src/core/orchestrator/registerExisting.ts:25:  for (const [id, name] of capabilities) {
+src/core/orchestrator/registerExisting.ts:26:    system.registerCapability({
+src/core/orchestrator/SystemOrchestrator.ts:1:export type CapabilityStatus =
+src/core/orchestrator/SystemOrchestrator.ts:10:export interface Capability {
+src/core/orchestrator/SystemOrchestrator.ts:13:  status: CapabilityStatus;
+src/core/orchestrator/SystemOrchestrator.ts:36:  private capabilities = new Map<string, Capability>();
+src/core/orchestrator/SystemOrchestrator.ts:39:  registerCapability(capability: Capability) {
+src/core/orchestrator/SystemOrchestrator.ts:40:    this.capabilities.set(capability.id, capability);
+src/core/orchestrator/SystemOrchestrator.ts:47:  getCapability(id: string) {
+src/core/orchestrator/SystemOrchestrator.ts:48:    return this.capabilities.get(id);
+src/core/orchestrator/SystemOrchestrator.ts:52:    const values = [...this.capabilities.values()];
+src/core/orchestrator/SystemOrchestrator.ts:107:    for (const capability of this.capabilities.values()) {
+src/core/orchestrator/SystemOrchestrator.ts:108:      for (const dependency of capability.dependencies) {
+src/core/orchestrator/SystemOrchestrator.ts:109:        const dependencyCapability = this.capabilities.get(dependency);
+src/core/orchestrator/SystemOrchestrator.ts:111:        if (!dependencyCapability) {
+src/core/orchestrator/SystemOrchestrator.ts:113:            `${capability.id}: missing dependency ${dependency}`
+src/core/orchestrator/SystemOrchestrator.ts:122:        "Capability registry",
+src/core/autonomous/AutonomousOS.ts:79:  async runMasterCapability(
+src/core/autonomous/AutonomousOS.ts:80:    capability: Parameters<typeof masterToolRouter.execute>[0],
+src/core/autonomous/AutonomousOS.ts:85:      capability,
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:87:  async runMasterCapability(
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:88:    capability: Parameters<typeof masterToolRouter.execute>[0],
+src/core/autonomous/AutonomousOS.ts.before-final-repair-20260930-153410:93:      capability,
+src/core/autonomous/agents/AgentRegistry.ts:23:    description: "Runs registered application capabilities.",
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:87:  async runMasterCapability(
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:88:    capability: Parameters<typeof masterToolRouter.execute>[0],
+src/core/autonomous/AutonomousOS.ts.before-syntax-repair-20260930-152407:93:      capability,
+src/core/capabilities/index.ts:1:export * from "./CapabilityRegistry";
+src/core/capabilities/CapabilityRegistry.ts:1:export type CapabilityStatus =
+src/core/capabilities/CapabilityRegistry.ts:10:export type Capability = {
+src/core/capabilities/CapabilityRegistry.ts:13:  status: CapabilityStatus;
+src/core/capabilities/CapabilityRegistry.ts:17:export class CapabilityRegistry {
+src/core/capabilities/CapabilityRegistry.ts:18:  private capabilities = new Map<string, Capability>();
+src/core/capabilities/CapabilityRegistry.ts:20:  register(capability: Capability) {
+src/core/capabilities/CapabilityRegistry.ts:21:    this.capabilities.set(capability.id, capability);
+src/core/capabilities/CapabilityRegistry.ts:22:    return capability;
+src/core/capabilities/CapabilityRegistry.ts:25:  update(id: string, status: CapabilityStatus) {
+src/core/capabilities/CapabilityRegistry.ts:26:    const item = this.capabilities.get(id);
+src/core/capabilities/CapabilityRegistry.ts:33:    return [...this.capabilities.values()];
+src/core/media/auto/AutoMediaExecutor.ts:8:export interface AutoMediaCapability {
+src/core/media/auto/AutoMediaExecutor.ts:22:  private readonly capabilities = new Map<
+src/core/media/auto/AutoMediaExecutor.ts:24:    AutoMediaCapability
+src/core/media/auto/AutoMediaExecutor.ts:27:  register(capability: AutoMediaCapability): void {
+src/core/media/auto/AutoMediaExecutor.ts:28:    this.capabilities.set(capability.operation, capability);
+src/core/media/auto/AutoMediaExecutor.ts:40:      const capability = this.capabilities.get(operation);
+src/core/media/auto/AutoMediaExecutor.ts:42:      if (!capability?.available || !capability.execute) {
+src/core/media/auto/AutoMediaExecutor.ts:47:          message: `Capability '${operation}' is not connected to a real media engine.`,
+src/core/media/auto/AutoMediaExecutor.ts:55:        const result = await capability.execute(input);
+src/core/media/auto/AutoMediaExecutor.ts:109:        : 'Automatic editing plan was evaluated, but one or more real capabilities are not connected or verified.',
+src/core/universal/UniversalCore.ts:28:  capabilities: string[];
+src/core/universal/UniversalCore.ts:67:        error: `No compatible capability found for operation: ${task.operation}`,
+src/core/universal/security/PermissionManager.ts:1:import type { Permission } from '../ToolBus';
+src/core/universal/agents/MasterAgent.ts:1:import { ToolBus } from '../ToolBus';
+src/core/universal/agents/MasterAgent.ts:8:  readonly tools = new ToolBus();
+src/core/universal/ToolBus.ts:9:  capabilities: string[];
+src/core/universal/ToolBus.ts:14:export class ToolBus {
+src/core/universal/ToolBus.ts:21:  search(capability: string) {
+src/core/universal/ToolBus.ts:23:      t.capabilities.includes(capability)
+src/core/connectivity/ConnectivityManager.ts:26:  capabilities: string[];
+src/core/connectivity/ConnectivityManager.ts:35:  capability: string;
+src/core/connectivity/ConnectivityManager.ts:43:  capability: string;
+src/core/connectivity/ConnectivityManager.ts:95:    if (!endpoint.capabilities.includes(request.capability)) {
+src/core/connectivity/ConnectivityManager.ts:99:          `Capability '${request.capability}' is not available.`,
+src/core/connectivity/ConnectivityManager.ts:118:        capability: request.capability,
+src/core/connectivity/ConnectivityManager.ts:131:      capability: request.capability,
+src/core/connectivity/ConnectivityManager.ts:145:        capability: "disconnect",
+src/core/connectivity/ConnectivityManager.ts:156:      capability: "disconnect",
+src/core/universalcontrol/UniversalControlOrchestrator.ts:65:  capabilities: ControlAction[];
+src/core/unknown/UnknownCapabilityRegistry.ts:1:export interface UnknownCapability {
+src/core/unknown/UnknownCapabilityRegistry.ts:10:export class UnknownCapabilityRegistry {
+src/core/unknown/UnknownCapabilityRegistry.ts:11:  private items = new Map<string, UnknownCapability>();
+src/core/unknown/UnknownCapabilityRegistry.ts:13:  add(item: UnknownCapability) {
+src/core/unknown/UnknownCapabilityRegistry.ts:20:    if (!item) throw new Error(`Unknown capability not found: ${id}`);
+src/core/unknown/index.ts:1:export * from "./UnknownCapabilityRegistry";
+src/core/VidoAIControlPlane.ts:69:  async runCapability(
+src/core/VidoAIControlPlane.ts:70:    capability: Parameters<typeof masterToolRouter.execute>[0],
+src/core/VidoAIControlPlane.ts:75:      capability,
+src/agent/AutonomousExecutionEngine.ts:11:  capabilities?: string[];
+src/agent/AutonomousExecutionEngine.ts:32:      capabilities: options.capabilities ?? [],
+src/agent/AutonomousCoreAdapter.ts:6:  capabilities?: string[];
+src/agent/team/AgentTeamRuntime.ts:2:import { routeCapabilities } from "./CapabilityRouter";
+src/agent/team/AgentTeamRuntime.ts:15:  const matches = routeCapabilities(prompt);
+src/agent/team/AgentTeamRuntime.ts:17:  const plan = matches.map((match) => match.capability);
+src/agent/team/AgentTeamRuntime.ts:26:        capabilities: plan,
+src/agent/team/AgentTeamRuntime.ts:28:      match.capability,
+src/agent/team/AgentRegistry.ts:18:  findByCapability(capability: string): TeamAgent[] {
+src/agent/team/AgentRegistry.ts:22:        agent.capabilities.includes(capability),
+src/agent/team/index.ts:4:export * from "./CapabilityRouter";
+src/agent/team/CapabilityRouter.ts:3:export type CapabilityMatch = {
+src/agent/team/CapabilityRouter.ts:4:  capability: string;
+src/agent/team/CapabilityRouter.ts:9:  capability: string;
+src/agent/team/CapabilityRouter.ts:13:    capability: "research",
+src/agent/team/CapabilityRouter.ts:23:    capability: "document-analysis",
+src/agent/team/CapabilityRouter.ts:32:    capability: "video-generation",
+src/agent/team/CapabilityRouter.ts:42:    capability: "voice",
+src/agent/team/CapabilityRouter.ts:53:    capability: "editor-control",
+src/agent/team/CapabilityRouter.ts:68:export function routeCapabilities(prompt: string): CapabilityMatch[] {
+src/agent/team/CapabilityRouter.ts:69:  const matches: CapabilityMatch[] = [];
+src/agent/team/CapabilityRouter.ts:76:    if (hits > 0 && agentRegistry.findByCapability(rule.capability).length) {
+src/agent/team/CapabilityRouter.ts:78:        capability: rule.capability,
+src/agent/team/CapabilityRouter.ts:86:      capability: "orchestration",
+src/agent/team/TeamOrchestrator.ts:10:    capability: string,
+src/agent/team/TeamOrchestrator.ts:12:    const agents = agentRegistry.findByCapability(capability);
+src/agent/team/TeamOrchestrator.ts:18:        error: `No available agent for capability: ${capability}`,
+src/agent/team/TeamOrchestrator.ts:27:  capabilities(): string[] {
+src/agent/team/TeamOrchestrator.ts:32:          .flatMap((agent) => agent.capabilities),
+src/agent/team/BuiltInAgents.ts:11:    capabilities: [
+src/agent/team/BuiltInAgents.ts:44:    capabilities: ["research", "document-analysis"],
+src/agent/team/BuiltInAgents.ts:62:    capabilities: ["video-generation", "video-editing"],
+src/agent/team/BuiltInAgents.ts:127:    capabilities: ["stt", "tts", "voice"],
+src/agent/team/BuiltInAgents.ts:145:    capabilities: [
+src/agent/team/BuiltInAgents.ts:170:    capabilities: ["testing", "verification", "quality-assurance"],
+src/agent/team/AgentTypes.ts:7:  capabilities?: string[];
+src/agent/team/AgentTypes.ts:21:  capabilities: string[];

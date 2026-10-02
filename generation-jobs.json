@@ -70,5 +70,68 @@
     "createdAt": 1790908500139,
     "updatedAt": 1790908500313,
     "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790908609377_nnry75",
+    "kind": "text-to-video",
+    "prompt": "test",
+    "status": "failed",
+    "createdAt": 1790908609377,
+    "updatedAt": 1790908609542,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790909429086_whxvp2",
+    "kind": "text-to-video",
+    "prompt": "VIDOAI persistence smoke test",
+    "status": "failed",
+    "createdAt": 1790909429086,
+    "updatedAt": 1790909429255,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790909688341_jdb25g",
+    "kind": "text-to-video",
+    "prompt": "VIDOAI persistence recovery smoke test",
+    "status": "failed",
+    "createdAt": 1790909688341,
+    "updatedAt": 1790909688561,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790909986676_7jq8ij",
+    "kind": "text-to-video",
+    "prompt": "contract smoke test",
+    "status": "failed",
+    "createdAt": 1790909986676,
+    "updatedAt": 1790909986922,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790909986736_b37hrb",
+    "kind": "text-to-video",
+    "prompt": "123",
+    "status": "failed",
+    "createdAt": 1790909986736,
+    "updatedAt": 1790909986932,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790910083032_1ksukr",
+    "kind": "text-to-video",
+    "prompt": "VIDOAI provider pipeline verification",
+    "status": "failed",
+    "createdAt": 1790910083032,
+    "updatedAt": 1790910083273,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790910083087_giv2ad",
+    "kind": "text-to-video",
+    "prompt": "VIDOAI lifecycle verification",
+    "status": "failed",
+    "createdAt": 1790910083087,
+    "updatedAt": 1790910083275,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
   }
 ]
