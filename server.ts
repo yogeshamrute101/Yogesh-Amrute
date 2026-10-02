@@ -1,4 +1,6 @@
 import dotenv from "dotenv";
+import { getUniversalRuntimeSnapshot } from './src/services/aiProvider/universal/UniversalRuntimeApi';
+import { bootstrapUniversalProviders } from './src/services/aiProvider/universal/UniversalProviderBootstrap';
 dotenv.config({ override: true });
 const interviewOrchestrator = new InterviewOrchestrator();
 import { GoogleVideoProvider } from './src/services/aiProvider/GoogleVideoProvider';
@@ -9,7 +11,37 @@ import { autonomousHost } from "./src/agent/AutonomousHost";
 import { AutonomousExecutionEngine } from "./src/agent/AutonomousExecutionEngine";
 import { MasterAgentCoreAdapter } from "./src/agent/AutonomousCoreAdapter";
 import { InterviewOrchestrator } from './src/core/interview/InterviewOrchestrator';
+bootstrapUniversalProviders();
+
 const app = express();
+
+
+app.get('/api/universal/providers', (_req, res) => {
+  try {
+    res.json(getUniversalRuntimeSnapshot());
+  } catch (error) {
+    console.error('[universal/providers]', error);
+    res.status(500).json({
+      error: 'Unable to read universal provider state.',
+    });
+  }
+});
+
+app.get('/api/universal/capabilities', (_req, res) => {
+  try {
+    const snapshot = getUniversalRuntimeSnapshot();
+    res.json({
+      capabilities: snapshot.capabilities,
+    });
+  } catch (error) {
+    console.error('[universal/capabilities]', error);
+    res.status(500).json({
+      error: 'Unable to read universal capability state.',
+    });
+  }
+});
+
+
 const PORT = Number(process.env.PORT) || 3000;
 
 const distPath = path.join(process.cwd(), "dist");
