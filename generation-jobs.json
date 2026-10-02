@@ -43,5 +43,32 @@
     "createdAt": 1790609772053,
     "updatedAt": 1790609772061,
     "error": "Video generation provider is not configured. Set VIDEO_GENERATION_PROVIDER_URL and VIDEO_GENERATION_API_KEY."
+  },
+  {
+    "id": "gen_1790908401205_rr771o",
+    "kind": "text-to-video",
+    "prompt": "VidoAI autonomous pipeline smoke test",
+    "status": "failed",
+    "createdAt": 1790908401205,
+    "updatedAt": 1790908401434,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790908428633_i4gd32",
+    "kind": "text-to-video",
+    "prompt": "VidoAI generation lifecycle smoke test",
+    "status": "failed",
+    "createdAt": 1790908428633,
+    "updatedAt": 1790908428785,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
+  },
+  {
+    "id": "gen_1790908500139_iaaytg",
+    "kind": "text-to-video",
+    "prompt": "API contract smoke test",
+    "status": "failed",
+    "createdAt": 1790908500139,
+    "updatedAt": 1790908500313,
+    "error": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]}]}}"
   }
 ]
