@@ -45,7 +45,11 @@ export class AutonomousWorkflowEngine {
   async run(executor: TaskExecutor) {
     const completed: unknown[] = [];
 
-    while (true) {
+    const MAX_WORKFLOW_ITERATIONS = 100;
+
+    let workflowIteration = 0;
+
+    while (workflowIteration++ < MAX_WORKFLOW_ITERATIONS) {
       const task = this.queue.next();
 
       if (!task) break;

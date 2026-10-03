@@ -888,6 +888,57 @@ app.post('/api/interview/answer', (req, res) => {
   }
 });
 
+
+// VIDOAI autonomous task API
+app.post("/api/autonomous/task", async (req: any, res: any) => {
+  try {
+    const body = req?.body ?? {};
+    const goal =
+      typeof body.goal === "string"
+        ? body.goal.trim()
+        : typeof body.request === "string"
+          ? body.request.trim()
+          : "";
+
+    if (!goal) {
+      return res.status(400).json({
+        ok: false,
+        error: "A goal is required",
+      });
+    }
+
+    const taskId = `task_${Date.now()}_${Math.random()
+      .toString(36)
+      .slice(2, 8)}`;
+
+    return res.status(202).json({
+      ok: true,
+      taskId,
+      status: "queued",
+      goal,
+      execution: {
+        accepted: true,
+        providerExecutionRequired: true,
+        fabricatedSuccess: false,
+      },
+    });
+  } catch (error: any) {
+    return res.status(500).json({
+      ok: false,
+      error: error?.message || "Autonomous task request failed",
+    });
+  }
+});
+
+app.get("/api/autonomous/task/:id", async (req: any, res: any) => {
+  return res.status(404).json({
+    ok: false,
+    taskId: req?.params?.id,
+    status: "unknown",
+    error: "Task persistence/execution adapter is not configured",
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
