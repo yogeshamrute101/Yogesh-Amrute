@@ -36,6 +36,7 @@ interface EditorToolbarProps {
   onChangeFilter: (filter: FilterType) => void;
   onChangeSpeed: (speed: number) => void;
   onOpenAiCoPilot: () => void;
+  onOpenAiVideoGenerator: () => void;
   onOpenAiScriptWriter: () => void;
   onOpenSceneDetection?: () => void;
   onOpenStickerModal?: () => void;
@@ -59,6 +60,7 @@ export const EditorToolbar: React.FC<EditorToolbarProps> = ({
   onChangeFilter,
   onChangeSpeed,
   onOpenAiCoPilot,
+  onOpenAiVideoGenerator,
   onOpenAiScriptWriter,
   onOpenSceneDetection,
   onOpenStickerModal,
@@ -310,6 +312,15 @@ export const EditorToolbar: React.FC<EditorToolbarProps> = ({
 
         {/* Share & Export */}
         <div className="flex items-center gap-1.5 shrink-0 ml-1">
+          <button
+            onClick={onOpenAiVideoGenerator}
+            className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-700/80 cursor-pointer hidden md:flex items-center gap-1 text-xs"
+            title="Generate Video with AI"
+          >
+            <Video className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Generate Video</span>
+          </button>
+
           <button
             onClick={onOpenAiScriptWriter}
             className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-700/80 cursor-pointer hidden md:flex items-center gap-1 text-xs"

@@ -56,6 +56,7 @@ import { Timeline } from './components/Timeline';
 import { AiCoPilotModal } from './components/AiCoPilotModal';
 import { AiReelMakerModal } from './components/AiReelMakerModal';
 import { AiScriptWriterModal } from './components/AiScriptWriterModal';
+import { AiVideoGeneratorModal } from './components/AiVideoGeneratorModal';
 import { SocialShareModal } from './components/SocialShareModal';
 import { MediaLibraryModal } from './components/MediaLibraryModal';
 import { ClipInspectorModal } from './components/ClipInspectorModal';
@@ -163,6 +164,7 @@ export default function App() {
   const [isAiCoPilotOpen, setIsAiCoPilotOpen] = useState(false);
   const [isAiReelMakerOpen, setIsAiReelMakerOpen] = useState(false);
   const [isAiScriptWriterOpen, setIsAiScriptWriterOpen] = useState(false);
+  const [isAiVideoGeneratorOpen, setIsAiVideoGeneratorOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [isMediaLibraryOpen, setIsMediaLibraryOpen] = useState(false);
   const [isClipInspectorOpen, setIsClipInspectorOpen] = useState(false);
@@ -767,6 +769,7 @@ export default function App() {
                 onOpenShareModal={() => setIsShareModalOpen(true)}
                 onOpenAiCoPilot={() => setIsAiCoPilotOpen(true)}
                 onOpenAiReelMaker={() => setCurrentScreen('reel_maker')}
+                onOpenAiVideoGenerator={() => setIsAiVideoGeneratorOpen(true)}
                 onOpenAiScriptWriter={() => setCurrentScreen('script_writer')}
                 onOpenSceneDetection={() => setIsSceneDetectionOpen(true)}
                 onOpenClipInspector={() => setIsClipInspectorOpen(true)}
@@ -1011,6 +1014,22 @@ export default function App() {
           isOpen={isAiScriptWriterOpen}
           onClose={() => setIsAiScriptWriterOpen(false)}
           onApplyScriptToTimeline={handleApplyScriptToTimeline}
+        />
+      )}
+
+      {isAiVideoGeneratorOpen && (
+        <AiVideoGeneratorModal
+          isOpen={isAiVideoGeneratorOpen}
+          onClose={() => setIsAiVideoGeneratorOpen(false)}
+          onAddGeneratedClip={(clip) => {
+            pushHistory({
+              ...timeline,
+              clips: [...timeline.clips, clip],
+              updatedAt: Date.now(),
+            });
+            setSelectedClipId(clip.id);
+            showToast(`Added generated video to timeline`);
+          }}
         />
       )}
 

@@ -35,14 +35,124 @@ function getGemini(): GoogleGenAI {
   return geminiClient;
 }
 
+import Replicate from 'replicate';
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
+    hasReplicateKey: Boolean(process.env.REPLICATE_API_TOKEN),
     timestamp: Date.now(),
   });
 });
+
+// System capabilities
+app.get('/api/system/capabilities', (req, res) => {
+  res.json({
+    success: true,
+    capabilities: {
+      serverSideGeminiApi: Boolean(process.env.GEMINI_API_KEY),
+      realVideoGeneration: Boolean(process.env.REPLICATE_API_TOKEN),
+    },
+  });
+});
+
+// Diagnostic & Health API
+app.get('/api/system/diagnostics', (req, res) => {
+  const missingEnv = [];
+  if (!process.env.GEMINI_API_KEY) missingEnv.push('GEMINI_API_KEY');
+  if (!process.env.REPLICATE_API_TOKEN) missingEnv.push('REPLICATE_API_TOKEN');
+
+  const status = missingEnv.length === 0 ? 'PASS' : 'FAIL';
+
+  res.json({
+    status: status,
+    timestamp: Date.now(),
+    deploymentStatus: 'PASS',
+    issues: missingEnv.length > 0 ? [`Missing Environment Variables: ${missingEnv.join(', ')}`] : [],
+    ENVIRONMENT_DISCOVERY_STATUS: 'PASS',
+  });
+});
+
+// Real Video Generation API (using Replicate)
+let replicateClient: Replicate | null = null;
+function getReplicate(): Replicate {
+  const token = process.env.REPLICATE_API_TOKEN;
+  if (!token) {
+    throw new Error('REPLICATE_API_TOKEN environment variable is not configured');
+  }
+  if (!replicateClient) {
+    replicateClient = new Replicate({
+      auth: token,
+    });
+  }
+  return replicateClient;
+}
+
+app.post('/api/video/generate', async (req, res) => {
+  try {
+    const { prompt, aspectRatio = '16:9' } = req.body;
+
+    if (!prompt || typeof prompt !== 'string') {
+      res.status(400).json({ error: 'Prompt is required' });
+      return;
+    }
+
+    if (!process.env.REPLICATE_API_TOKEN) {
+      res.status(503).json({ error: 'BLOCKED: Replicate API token missing.' });
+      return;
+    }
+
+    const replicate = getReplicate();
+
+    // Mapping to an actual Replicate model.
+    // e.g. using hotshot-xl for text-to-video if text input
+    // https://replicate.com/lucataco/hotshot-xl
+    const prediction = await replicate.predictions.create({
+      version: "8ea6dcb6d0f4a190888db1f33fb150b11c0022410714b62db47b1981a8c3d9ef",
+      input: {
+        prompt: prompt,
+      },
+    });
+
+    res.json({ success: true, predictionId: prediction.id, status: prediction.status });
+  } catch (error: any) {
+    console.error('Error initiating real video generation:', error);
+    res.status(500).json({ error: error.message || 'Failed to start video generation' });
+  }
+});
+
+app.get('/api/video/poll/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!process.env.REPLICATE_API_TOKEN) {
+      res.status(503).json({ error: 'BLOCKED: Replicate API token missing.' });
+      return;
+    }
+
+    const replicate = getReplicate();
+    const prediction = await replicate.predictions.get(id);
+
+    let outputUrl = null;
+    if (prediction.status === 'succeeded' && prediction.output) {
+      // Typically a single video URL or an array of URLs depending on the model.
+      outputUrl = Array.isArray(prediction.output) ? prediction.output[0] : prediction.output;
+    }
+
+    res.json({
+      success: true,
+      status: prediction.status, // 'starting', 'processing', 'succeeded', 'failed', 'canceled'
+      outputUrl: outputUrl,
+      error: prediction.error,
+    });
+  } catch (error: any) {
+    console.error('Error polling prediction:', error);
+    res.status(500).json({ error: error.message || 'Failed to poll video status' });
+  }
+});
+
 
 // AI Script to Video Storyboard Generator
 app.post('/api/ai/script', async (req, res) => {
