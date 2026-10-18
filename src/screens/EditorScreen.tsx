@@ -21,6 +21,7 @@ import {
   Zap,
   Flame,
   FileText,
+  Video,
 } from 'lucide-react';
 import {
   ProjectTimeline,
@@ -45,6 +46,7 @@ interface EditorScreenProps {
   onNavigateHome: () => void;
   onOpenShareModal: () => void;
   onOpenAiCoPilot: () => void;
+  onOpenAiVideoGenerator: () => void;
   onOpenAiReelMaker: () => void;
   onOpenAiScriptWriter: () => void;
   onOpenSceneDetection: () => void;
@@ -88,6 +90,7 @@ export default function EditorScreen({
   onNavigateHome,
   onOpenShareModal,
   onOpenAiCoPilot,
+  onOpenAiVideoGenerator,
   onOpenAiReelMaker,
   onOpenAiScriptWriter,
   onOpenSceneDetection,
@@ -319,6 +322,13 @@ export default function EditorScreen({
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>✨ AI Co-Pilot</span>
+            </button>
+            <button
+              onClick={onOpenAiVideoGenerator}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 hover:brightness-110 text-black text-xs font-bold shadow-md shadow-cyan-500/20 cursor-pointer shrink-0 snap-start"
+            >
+              <Video className="w-3.5 h-3.5 fill-black" />
+              <span>Generate Video</span>
             </button>
             <button
               onClick={onOpenAiReelMaker}
