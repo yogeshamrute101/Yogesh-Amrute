@@ -11,8 +11,11 @@ import {
   Check,
   Sparkles,
   RefreshCw,
+  Activity
 } from 'lucide-react';
 import { AspectRatio } from '../types';
+import { EnvironmentDiscoveryEngine, EnvironmentTelemetry } from '../services/diagnostics/EnvironmentDiscoveryEngine';
+import { DiagnosticEngine, DiagnosticReport } from '../services/diagnostics/DiagnosticEngine';
 
 interface SettingsScreenProps {
   onBack: () => void;
@@ -28,6 +31,36 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
   const [resolution, setResolution] = useState<'1080p' | '4k' | '720p'>('1080p');
   const [fps, setFps] = useState<'30' | '60'>('30');
   const [aiModel, setAiModel] = useState<'gemini-3.8-flash' | 'gemini-1.5-pro'>('gemini-3.8-flash');
+
+  const [telemetry, setTelemetry] = React.useState<EnvironmentTelemetry | null>(null);
+  const [diagnosticReport, setDiagnosticReport] = React.useState<DiagnosticReport | null>(null);
+  const [isDiagnosing, setIsDiagnosing] = React.useState(false);
+
+  React.useEffect(() => {
+    EnvironmentDiscoveryEngine.discover().then(setTelemetry);
+  }, []);
+
+  const runDiagnostics = async () => {
+    setIsDiagnosing(true);
+    try {
+      const report = await DiagnosticEngine.runDiagnostics();
+      setDiagnosticReport(report);
+
+      // Autonomous self-repair logic
+      if (report.status === 'FAIL') {
+        for (const issue of report.issues) {
+          if (issue.isRepairable) {
+            await DiagnosticEngine.attemptRepair(issue);
+            // Re-run after repair to verify
+            const verifiedReport = await DiagnosticEngine.runDiagnostics();
+            setDiagnosticReport(verifiedReport);
+          }
+        }
+      }
+    } finally {
+      setIsDiagnosing(false);
+    }
+  };
   const [cacheCleared, setCacheCleared] = useState(false);
 
   const handleClearCache = () => {
@@ -52,6 +85,68 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
       </div>
 
       <div className="p-4 space-y-5 max-w-lg mx-auto w-full">
+
+        {/* ENVIRONMENT & DIAGNOSTICS */}
+        <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-sm">
+          <div className="p-4 border-b border-neutral-800 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-white">
+              <Activity className="w-5 h-5 text-emerald-400" />
+              <h3 className="font-bold text-sm">Environment & Diagnostics</h3>
+            </div>
+            <button
+              onClick={runDiagnostics}
+              disabled={isDiagnosing}
+              className="px-3 py-1.5 rounded-lg text-xs font-bold bg-neutral-800 text-white hover:bg-neutral-700 disabled:opacity-50 flex items-center gap-2 transition-colors cursor-pointer"
+            >
+              <RefreshCw className={`w-3 h-3 ${isDiagnosing ? 'animate-spin' : ''}`} />
+              {isDiagnosing ? 'Checking...' : 'Run Diagnostics'}
+            </button>
+          </div>
+
+          <div className="p-4 space-y-4">
+            {diagnosticReport && (
+              <div className={`p-3 rounded-lg border text-xs font-mono space-y-1 ${diagnosticReport.status === 'PASS' ? 'bg-emerald-950/20 border-emerald-900/50 text-emerald-400' : 'bg-red-950/20 border-red-900/50 text-red-400'}`}>
+                <div>DIAGNOSTIC_STATUS: {diagnosticReport.status}</div>
+                {diagnosticReport.issues.length > 0 && (
+                  <div className="mt-2 space-y-1">
+                    {diagnosticReport.issues.map(issue => (
+                      <div key={issue.id}>• [{issue.severity}] {issue.message}</div>
+                    ))}
+                  </div>
+                )}
+                {diagnosticReport.issues.length === 0 && (
+                  <div className="mt-1 text-emerald-500/70">No critical issues detected.</div>
+                )}
+              </div>
+            )}
+
+            {telemetry ? (
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className="p-3 bg-[#0a0b10] rounded-xl border border-neutral-800">
+                  <span className="text-neutral-500 block mb-1">OS</span>
+                  <span className="text-white font-medium">{telemetry.os}</span>
+                </div>
+                <div className="p-3 bg-[#0a0b10] rounded-xl border border-neutral-800">
+                  <span className="text-neutral-500 block mb-1">Device Memory</span>
+                  <span className="text-white font-medium">{telemetry.deviceMemory === 'UNKNOWN' ? 'UNKNOWN' : `${telemetry.deviceMemory} GB+`}</span>
+                </div>
+                <div className="p-3 bg-[#0a0b10] rounded-xl border border-neutral-800">
+                  <span className="text-neutral-500 block mb-1">Logical Cores</span>
+                  <span className="text-white font-medium">{telemetry.hardwareConcurrency}</span>
+                </div>
+                <div className="p-3 bg-[#0a0b10] rounded-xl border border-neutral-800">
+                  <span className="text-neutral-500 block mb-1">Network</span>
+                  <span className="text-white font-medium">
+                    {typeof telemetry.connection === 'string' ? 'UNKNOWN' : (telemetry.connection.effectiveType || 'WIFI')}
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div className="text-xs text-neutral-500">Discovering environment...</div>
+            )}
+          </div>
+        </div>
+
         {/* 1. AI SETTINGS */}
         <div className="p-4 rounded-2xl bg-[#121420] border border-neutral-800 space-y-3">
           <div className="flex items-center gap-2 text-xs font-bold text-[#00F0FF]">
