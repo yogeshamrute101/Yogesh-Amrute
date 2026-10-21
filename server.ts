@@ -157,11 +157,30 @@ app.get('/api/video/poll/:id', async (req, res) => {
 // AI Script to Video Storyboard Generator
 app.post('/api/ai/script', async (req, res) => {
   try {
-    const { topic, style = 'vlog', targetDuration = 30, audience = 'general' } = req.body;
-    if (!topic || typeof topic !== 'string') {
-      res.status(400).json({ error: 'Topic is required' });
+    let { topic, style = 'vlog', targetDuration = 30, audience = 'general' } = req.body;
+
+    // Strict input validation to prevent prompt injection and DoS
+    if (!topic || typeof topic !== 'string' || topic.length > 200) {
+      res.status(400).json({ error: 'Topic must be a string up to 200 characters' });
       return;
     }
+
+    if (typeof style !== 'string' || style.length > 50) {
+      res.status(400).json({ error: 'Style must be a string up to 50 characters' });
+      return;
+    }
+
+    if (typeof audience !== 'string' || audience.length > 50) {
+      res.status(400).json({ error: 'Audience must be a string up to 50 characters' });
+      return;
+    }
+
+    const duration = parseInt(String(targetDuration), 10);
+    if (isNaN(duration) || duration < 5 || duration > 300) {
+      res.status(400).json({ error: 'Target duration must be a number between 5 and 300 seconds' });
+      return;
+    }
+    targetDuration = duration;
 
     let responseData;
     try {
