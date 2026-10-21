@@ -59,6 +59,13 @@ export class CommandTransactionManager {
       let workingStickers = [...(session.draftTimeline.stickers || [])];
       let workingRatio = session.draftTimeline.aspectRatio;
       let workingAudio = session.draftTimeline.bgAudio ? { ...session.draftTimeline.bgAudio } : null;
+      let cachedDuration: number | null = null;
+      const getTotalDuration = () => {
+        if (cachedDuration === null) {
+          cachedDuration = calculateTotalDuration(workingClips);
+        }
+        return cachedDuration;
+      };
 
       for (let i = 0; i < operations.length; i++) {
         const op = operations[i];
@@ -80,6 +87,7 @@ export class CommandTransactionManager {
               startTrimMs: start,
               endTrimMs: end,
             };
+            cachedDuration = null;
             session.auditLog.push(`Trimmed "${workingClips[idx].name}" to ${start}ms - ${end}ms`);
             break;
           }
@@ -106,6 +114,7 @@ export class CommandTransactionManager {
             };
 
             workingClips.splice(idx, 1, partA, partB);
+            cachedDuration = null;
             session.auditLog.push(`Split "${target.name}" at +${Math.round(op.splitAtMs / 1000)}s`);
             break;
           }
@@ -118,6 +127,7 @@ export class CommandTransactionManager {
               }
               return clip;
             });
+            cachedDuration = null;
             session.auditLog.push(`Adjusted speed to ${spd}x`);
             break;
           }
@@ -234,6 +244,7 @@ export class CommandTransactionManager {
                 name: `${original.name} (Copy)`,
               };
               workingClips.splice(idx + 1, 0, clone);
+              cachedDuration = null;
               session.auditLog.push(`Duplicated clip "${original.name}"`);
             }
             break;
@@ -243,6 +254,7 @@ export class CommandTransactionManager {
             if (op.clipId && workingClips.length > 1) {
               const deleted = workingClips.find((c) => c.id === op.clipId);
               workingClips = workingClips.filter((c) => c.id !== op.clipId);
+              cachedDuration = null;
               session.auditLog.push(`Deleted clip "${deleted?.name || op.clipId}"`);
             }
             break;
@@ -255,7 +267,7 @@ export class CommandTransactionManager {
               type: 'label',
               content,
               startMs: op.startMs || 0,
-              endMs: op.endMs || Math.min(5000, calculateTotalDuration(workingClips)),
+              endMs: op.endMs || Math.min(5000, getTotalDuration()),
               x: 50,
               y: 75,
               scale: 1.1,
@@ -270,7 +282,7 @@ export class CommandTransactionManager {
           case 'CAPTION':
           case 'ADD_CAPTIONS': {
             const text = op.captionText || op.text || '✨ Viral Hook';
-            const totalMs = calculateTotalDuration(workingClips);
+            const totalMs = getTotalDuration();
             const newCap: CaptionItem = {
               id: `cap_${Date.now()}_${i}`,
               text,
@@ -296,7 +308,7 @@ export class CommandTransactionManager {
               volume: op.volume !== undefined ? op.volume : 0.7,
               isMuted: false,
               ducking: true,
-              durationMs: calculateTotalDuration(workingClips),
+              durationMs: getTotalDuration(),
             };
             session.auditLog.push(`Added background track: ${genre}`);
             break;
@@ -314,6 +326,7 @@ export class CommandTransactionManager {
               }
               return clip;
             });
+            cachedDuration = null;
             session.auditLog.push(`Removed silence margins across clips (${threshold}dB)`);
             break;
           }
@@ -338,6 +351,7 @@ export class CommandTransactionManager {
               speed: 1.15,
               endTrimMs: Math.min(c.endTrimMs, c.startTrimMs + 4000),
             }));
+            cachedDuration = null; // Invalidate since clips changed speed/length
             workingAudio = {
               id: `bg_reel_${Date.now()}`,
               title: 'Viral Phonk Surge',
@@ -345,7 +359,7 @@ export class CommandTransactionManager {
               volume: 0.7,
               isMuted: false,
               ducking: true,
-              durationMs: calculateTotalDuration(workingClips),
+              durationMs: getTotalDuration(),
             };
             session.auditLog.push(`Created viral 9:16 Reel (${op.preset || 'Viral Reel'})`);
             break;
